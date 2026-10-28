@@ -282,6 +282,8 @@ const translations = {
         "vol_ph_education": "যেমন: এইচএসসি / স্নাতক / ডিপ্লোমা",
         "vol_lbl_profession": "পেশা",
         "vol_ph_profession": "যেমন: শিক্ষার্থী / চাকরিজীবী / উদ্যোক্তা",
+        "vol_lbl_age": "বয়স",
+        "vol_ph_age": "যেমন: ২২",
         "vol_lbl_blood": "রক্তের গ্রুপ",
         "vol_opt_select_blood": "-- রক্তের গ্রুপ নির্বাচন করুন * --",
         "blood_ap": "A+ (পজিটিভ)",
@@ -621,6 +623,8 @@ const translations = {
         "vol_ph_education": "e.g. HSC / Bachelor's / Diploma",
         "vol_lbl_profession": "Profession / Occupation",
         "vol_ph_profession": "e.g. Student / Service Holder / Entrepreneur",
+        "vol_lbl_age": "Age",
+        "vol_ph_age": "e.g. 22",
         "vol_lbl_blood": "Blood Group",
         "vol_opt_select_blood": "-- Select Blood Group * --",
         "blood_ap": "A+ (Positive)",
@@ -1705,10 +1709,11 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             formType: 'donation',
-                            amount: amountVal,
-                            formattedAmount: formattedAmount,
+                            method: `${channelDisplayName} (${channelAccountTarget})`,
+                            paymentMethod: `${channelDisplayName} (${channelAccountTarget})`,
                             channel: channelDisplayName,
                             channelTarget: channelAccountTarget,
+                            amount: amountVal,
                             trxId: trxId.toUpperCase(),
                             donorName: donorDisplay,
                             isAnonymous: isAnonymous,
@@ -1950,6 +1955,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
             e.preventDefault();
 
             const nameEl = document.getElementById('vol-name');
+            const ageEl = document.getElementById('vol-age');
             const emailEl = document.getElementById('vol-email');
             const phoneEl = document.getElementById('vol-phone');
             const educationEl = document.getElementById('vol-education');
@@ -1959,6 +1965,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
             const addressEl = document.getElementById('vol-address');
 
             const name = (nameEl?.value || '').trim();
+            const age = (ageEl?.value || '').trim();
             const email = (emailEl?.value || '').trim();
             const phone = (phoneEl?.value || '').trim();
             const education = (educationEl?.value || '').trim();
@@ -1977,7 +1984,14 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                 return;
             }
 
-            // 2. Email Address validation (Mandatory & Valid format)
+            // 2. Age validation (Mandatory, 12 to 99 years)
+            const ageNum = parseInt(age, 10);
+            if (!age || isNaN(ageNum) || ageNum < 12 || ageNum > 99) {
+                markError(ageEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার সঠিক বয়স লিখুন (১২-৯৯ বছর)।' : 'Please enter a valid age (12-99 years).');
+                return;
+            }
+
+            // 3. Email Address validation (Mandatory & Valid format)
             if (!email) {
                 markError(emailEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার ইমেইল ঠিকানা লিখুন।' : 'Please enter your email address.');
                 return;
@@ -2059,6 +2073,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
 *ভলান্টিয়ার রেজিস্ট্রেশন আবেদনপত্র*
 ----------------------------------------
 • *নাম:* ${name}
+• *বয়স:* ${age} বছর
 • *ফোন নম্বর:* ${formattedPhone}
 • *ইমেইল:* ${email}
 • *শিক্ষাগত যোগ্যতা:* ${education}
@@ -2075,6 +2090,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
 *Volunteer Registration Application*
 ----------------------------------------
 • *Name:* ${name}
+• *Age:* ${age} years
 • *Phone Number:* ${formattedPhone}
 • *Email:* ${email}
 • *Education:* ${education}
@@ -2104,6 +2120,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                         body: JSON.stringify({
                             formType: 'volunteer',
                             name: name,
+                            age: age,
                             phone: formattedPhone,
                             email: email,
                             education: education,
