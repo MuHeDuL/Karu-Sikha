@@ -247,6 +247,8 @@ const translations = {
         "vol_opt_ewgsf": "EWGSF প্রকল্প (নারী ক্ষমতায়ন, হ্যান্ড পেইন্ট ও মাসিক স্বাস্থ্য)",
         "vol_opt_blood": "জরুরি রক্তদান ও ফ্রি মেডিকেল ক্যাম্পেইন",
         "vol_opt_media": "ডিজিটাল প্রচারণা, পডকাস্ট, রিলস ও পোস্টার ডিজাইন",
+        "vol_opt_others": "অন্যান্য (Others)",
+        "vol_ph_others": "পছন্দের ক্ষেত্রটি লিখুন (যেমন: ফটোগ্রাফি / ইভেন্ট / গবেষণা)",
         "vol_lbl_addr": "বর্তমান ঠিকানা",
         "vol_ph_addr": "যেমন: গ্রাম/মহল্লা, উপজেলা/থানা, জেলা",
         "vol_btn_submit": "আবেদন জমা দিন",
@@ -532,6 +534,8 @@ const translations = {
         "vol_opt_ewgsf": "EWGSF Project (Women Empowerment, Handpaint & Health)",
         "vol_opt_blood": "Emergency Voluntary Blood Donation & Free Medical Camps",
         "vol_opt_media": "Digital Media, Podcasts, Video Reels & Design",
+        "vol_opt_others": "Others",
+        "vol_ph_others": "Specify your preferred area (e.g. Photography / Events / Research)",
         "vol_lbl_addr": "Present Address",
         "vol_ph_addr": "e.g. Village/Area, Upazila/Thana, District",
         "vol_btn_submit": "Submit Application",
@@ -1226,6 +1230,23 @@ function setupModals() {
 
     const volunteerForm = document.getElementById('volunteer-form');
     if (volunteerForm) {
+        // Toggle custom "Others" specify input
+        const domainSelect = document.getElementById('vol-domain');
+        const othersWrap = document.getElementById('vol-others-wrap');
+        const othersInput = document.getElementById('vol-others-specify');
+
+        if (domainSelect && othersWrap) {
+            domainSelect.addEventListener('change', () => {
+                if (domainSelect.value === 'others') {
+                    othersWrap.classList.remove('hidden');
+                    if (othersInput) othersInput.focus();
+                } else {
+                    othersWrap.classList.add('hidden');
+                    if (othersInput) othersInput.value = '';
+                }
+            });
+        }
+
         // Clear error highlighting whenever user types or selects
         const formInputs = volunteerForm.querySelectorAll('input, select');
         formInputs.forEach(input => {
@@ -1265,7 +1286,6 @@ function setupModals() {
             const profession = (professionEl?.value || '').trim();
             const blood = (bloodEl?.value || '').trim();
             const domain = (domainEl?.value || '').trim();
-            const domainText = domainEl && domainEl.selectedIndex >= 0 ? domainEl.options[domainEl.selectedIndex].text.trim() : '';
             const address = (addressEl?.value || '').trim();
 
             // 1. Full Name validation (Mandatory, Min 3 chars)
@@ -1319,10 +1339,18 @@ function setupModals() {
                 return;
             }
 
-            // 7. Preferred Initiative / Domain validation (Mandatory)
+            // 7. Preferred Initiative / Domain validation (Mandatory, with Others support)
             if (!domain) {
                 markError(domainEl, currentLang === 'bn' ? 'অনুগ্রহ করে পছন্দের প্রকল্প বা কার্যক্ষেত্র নির্বাচন করুন।' : 'Please select your preferred project/domain.');
                 return;
+            }
+
+            let domainDisplay = domainEl && domainEl.selectedIndex >= 0 ? domainEl.options[domainEl.selectedIndex].text.trim() : '';
+            if (domain === 'others') {
+                const specifiedArea = (othersInput?.value || '').trim();
+                if (specifiedArea) {
+                    domainDisplay = currentLang === 'bn' ? `অন্যান্য (${specifiedArea})` : `Others (${specifiedArea})`;
+                }
             }
 
             // 8. Present Address validation (Mandatory)
@@ -1343,39 +1371,41 @@ function setupModals() {
                 day: 'numeric'
             });
 
+            // Safe universal WhatsApp formatting: Uses standard Unicode bullets (•) and plain ASCII dividers
+            // Guaranteed to never corrupt into '?' on Windows Desktop WhatsApp, Mac, or Mobile
             let waMessage = '';
             if (currentLang === 'bn') {
                 waMessage =
 `*কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি*
-📋 *ভলান্টিয়ার রেজিস্ট্রেশন আবেদনপত্র*
-━━━━━━━━━━━━━━━━━━━━
-👤 *নাম:* ${name}
-📞 *ফোন নম্বর:* ${formattedPhone}
-📧 *ইমেইল:* ${email}
-🎓 *শিক্ষাগত যোগ্যতা:* ${education}
-💼 *পেশা:* ${profession}
-🩸 *রক্তের গ্রুপ:* ${blood}
-🎯 *আগ্রহের প্রকল্প:* ${domainText}
-📍 *বর্তমান ঠিকানা:* ${address}
-━━━━━━━━━━━━━━━━━━━━
-📅 *তারিখ:* ${dateStr}
-🤝 *আমি কারু শিখা যুব উন্নয়ন সোসাইটিতে ভলান্টিয়ার হিসেবে যুক্ত হতে আগ্রহী।*`;
+*ভলান্টিয়ার রেজিস্ট্রেশন আবেদনপত্র*
+----------------------------------------
+• *নাম:* ${name}
+• *ফোন নম্বর:* ${formattedPhone}
+• *ইমেইল:* ${email}
+• *শিক্ষাগত যোগ্যতা:* ${education}
+• *পেশা:* ${profession}
+• *রক্তের গ্রুপ:* ${blood}
+• *আগ্রহের ক্ষেত্র:* ${domainDisplay}
+• *বর্তমান ঠিকানা:* ${address}
+----------------------------------------
+• *তারিখ:* ${dateStr}
+• *আবেদন:* আমি কারু শিখা যুব উন্নয়ন সোসাইটিতে ভলান্টিয়ার হিসেবে যুক্ত হতে আগ্রহী।`;
             } else {
                 waMessage =
 `*Karu Shikha Youth Development Society*
-📋 *Volunteer Registration Application*
-━━━━━━━━━━━━━━━━━━━━
-👤 *Name:* ${name}
-📞 *Phone Number:* ${formattedPhone}
-📧 *Email:* ${email}
-🎓 *Education:* ${education}
-💼 *Profession:* ${profession}
-🩸 *Blood Group:* ${blood}
-🎯 *Interested Project:* ${domainText}
-📍 *Address:* ${address}
-━━━━━━━━━━━━━━━━━━━━
-📅 *Date:* ${dateStr}
-🤝 *I am interested in joining Karu Shikha Youth Development Society as an active volunteer.*`;
+*Volunteer Registration Application*
+----------------------------------------
+• *Name:* ${name}
+• *Phone Number:* ${formattedPhone}
+• *Email:* ${email}
+• *Education:* ${education}
+• *Profession:* ${profession}
+• *Blood Group:* ${blood}
+• *Interested Area:* ${domainDisplay}
+• *Address:* ${address}
+----------------------------------------
+• *Date:* ${dateStr}
+• *Statement:* I am interested in joining Karu Shikha Youth Development Society as an active volunteer.`;
             }
 
             const waUrl = `https://wa.me/8801795023942?text=${encodeURIComponent(waMessage)}`;
@@ -1390,6 +1420,7 @@ function setupModals() {
 
             if (volunteerModal) volunteerModal.classList.add('hidden');
             volunteerForm.reset();
+            if (othersWrap) othersWrap.classList.add('hidden');
             formInputs.forEach(input => {
                 input.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/30');
                 input.classList.add('border-white/10');
