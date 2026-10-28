@@ -211,7 +211,7 @@ const translations = {
         "don_sub": "আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।",
         "don_lbl_amount": "অনুদানের পরিমাণ (টাকা / BDT)",
         "don_ph_amount": "যেমন: ৫০০ / ১০০০ / ২০০০",
-        "don_help_amount": "আপনি কত টাকা পাঠিয়েছেন তা লিখুন (কমপক্ষে ১০ টাকা)।",
+        "don_help_amount": "অনুদানের পরিমাণ লিখুন (০-এর উপরে যেকোনো পরিমাণ)।",
         "amt_500": "৳৫০০",
         "amt_1000": "৳১,০০০",
         "amt_2000": "৳২,০০০",
@@ -265,6 +265,7 @@ const translations = {
         "don_receipt_date": "তারিখ ও সময়:",
         "don_receipt_anon": "নাম প্রকাশে অনিচ্ছুক (Anonymous)",
         "don_btn_send_wa": "হোয়াটসঅ্যাপে স্লিপ পাঠান",
+        "don_btn_pdf": "পিডিএফ / রশিদ ডাউনলোড",
         "don_btn_copy_slip": "স্লিপ কপি করুন",
         "don_btn_new_donate": "নতুন অনুদান বা বন্ধ করুন",
         "vol_title": "কারু শিখায় ভলান্টিয়ার রেজিস্ট্রেশন",
@@ -547,7 +548,7 @@ const translations = {
         "don_sub": "Every contribution directly funds Project Your Mentor and grassroots welfare.",
         "don_lbl_amount": "Donation Amount (BDT)",
         "don_ph_amount": "e.g. 500 / 1000 / 2000",
-        "don_help_amount": "Enter the amount you sent (minimum BDT 10).",
+        "don_help_amount": "Enter your donation amount (any amount greater than 0).",
         "amt_500": "BDT 500",
         "amt_1000": "BDT 1,000",
         "amt_2000": "BDT 2,000",
@@ -601,6 +602,7 @@ const translations = {
         "don_receipt_date": "Date & Time:",
         "don_receipt_anon": "Anonymous Donor",
         "don_btn_send_wa": "Send Slip via WhatsApp",
+        "don_btn_pdf": "Download PDF / Receipt",
         "don_btn_copy_slip": "Copy Slip",
         "don_btn_new_donate": "New Donation / Close",
         "vol_title": "Volunteer Registration with Karu Shikha",
@@ -1301,12 +1303,14 @@ function setupModals() {
     const receiptPhoneRow = document.getElementById('receipt-phone-row');
     const receiptDateEl = document.getElementById('receipt-date');
     const receiptSendWaBtn = document.getElementById('receipt-send-wa-btn');
+    const receiptPdfBtn = document.getElementById('receipt-pdf-btn');
     const receiptCopyBtn = document.getElementById('receipt-copy-btn');
     const receiptCloseBtn = document.getElementById('receipt-close-btn');
 
     let currentChannel = 'bkash'; // Default active channel
     let lastReceiptText = '';
     let lastWaReceiptUrl = '';
+    let lastReceiptData = {};
 
     const resetDonationView = () => {
         if (donateFormView) donateFormView.classList.remove('hidden');
@@ -1510,9 +1514,9 @@ function setupModals() {
             const trxId = (donateTrxInput?.value || '').trim();
             const note = (donateNoteInput?.value || '').trim();
 
-            // 1. Amount Validation
-            if (isNaN(amountVal) || amountVal < 10) {
-                markDonationError(customAmountInput, currentLang === 'bn' ? 'অনুগ্রহ করে সঠিক অনুদানের পরিমাণ লিখুন (কমপক্ষে ১০ টাকা)।' : 'Please enter a valid donation amount (at least BDT 10).');
+            // 1. Amount Validation (Must be greater than 0, no restriction)
+            if (isNaN(amountVal) || amountVal <= 0) {
+                markDonationError(customAmountInput, currentLang === 'bn' ? 'অনুগ্রহ করে সঠিক অনুদানের পরিমাণ লিখুন।' : 'Please enter a valid donation amount.');
                 return;
             }
 
@@ -1628,6 +1632,16 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
 
             lastWaReceiptUrl = `https://wa.me/8801795023942?text=${encodeURIComponent(lastReceiptText)}`;
 
+            lastReceiptData = {
+                amount: formattedAmount,
+                method: `${channelDisplayName} • ${channelAccountTarget}`,
+                trxId: trxId.toUpperCase(),
+                donor: donorDisplay,
+                phone: !isAnonymous ? formattedPhone : '',
+                date: dateTimeDisplay,
+                note: note
+            };
+
             // Switch to Success/Receipt View
             if (donateFormView) donateFormView.classList.add('hidden');
             if (donateSuccessView) donateSuccessView.classList.remove('hidden');
@@ -1646,6 +1660,114 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                 window.open(lastWaReceiptUrl, '_blank', 'noopener,noreferrer');
             }
         });
+    }
+
+    // Native Browser Print / Save as PDF generator (0 KB extra library, zero lag, 100% native Bangla rendering)
+    const printReceiptVoucher = () => {
+        if (!lastReceiptData.trxId) return;
+        const isBn = currentLang === 'bn';
+        const iframe = document.createElement('iframe');
+        iframe.style.position = 'fixed';
+        iframe.style.right = '0';
+        iframe.style.bottom = '0';
+        iframe.style.width = '0';
+        iframe.style.height = '0';
+        iframe.style.border = '0';
+        document.body.appendChild(iframe);
+
+        const doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(`<!DOCTYPE html>
+<html lang="${currentLang}">
+<head>
+    <meta charset="UTF-8">
+    <title>Donation_Receipt_${lastReceiptData.trxId}</title>
+    <style>
+        @page { size: A4 portrait; margin: 15mm; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hind Siliguri", "Kalpurush", Arial, sans-serif; }
+        body { background: #fff; color: #1e293b; padding: 25px; line-height: 1.5; }
+        .voucher { max-width: 660px; margin: 0 auto; border: 2px solid #ea580c; border-radius: 16px; padding: 26px; position: relative; background: #fff; }
+        .header { text-align: center; border-bottom: 2px dashed #cbd5e1; padding-bottom: 16px; margin-bottom: 18px; }
+        .org-title { font-size: 21px; font-weight: 900; color: #0f172a; margin-bottom: 3px; }
+        .org-sub { font-size: 12px; color: #64748b; margin-bottom: 5px; }
+        .reg-badge { display: inline-block; background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
+        .receipt-badge { background: #0284c7; color: #fff; font-size: 12px; font-weight: 800; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .amount-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .amount-lbl { font-size: 12px; color: #64748b; font-weight: 600; }
+        .amount-val { font-size: 22px; color: #ea580c; font-weight: 900; font-family: monospace; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 18px; }
+        td { padding: 9px 12px; font-size: 12.5px; border-bottom: 1px solid #f1f5f9; }
+        td.label { color: #64748b; font-weight: 600; width: 38%; }
+        td.value { color: #0f172a; font-weight: 700; }
+        .footer { text-align: center; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 11px; color: #94a3b8; }
+        .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-25deg); font-size: 60px; color: rgba(234, 88, 12, 0.04); font-weight: 900; pointer-events: none; white-space: nowrap; }
+    </style>
+</head>
+<body>
+    <div class="voucher">
+        <div class="watermark">KARU SHIKHA</div>
+        <div class="header">
+            <h1 class="org-title">${isBn ? 'কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি' : 'Karu Shikha Youth Development Society'}</h1>
+            <p class="org-sub">${isBn ? 'লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।' : 'Lakshmipur Pourashava Station Market, Faridpur Sadar, Faridpur.'}</p>
+            <span class="reg-badge">${isBn ? 'যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭ • স্থাপিত: ৩১ জানুয়ারি ২০১৯' : 'Govt. Reg No: YDA-97 • Estd: 31 January 2019'}</span>
+        </div>
+        <div style="text-align: center;">
+            <span class="receipt-badge">${isBn ? 'অনুদানের প্রাপ্তি স্বীকার স্লিপ' : 'OFFICIAL DONATION ACKNOWLEDGEMENT SLIP'}</span>
+        </div>
+        <div class="amount-box">
+            <span class="amount-lbl">${isBn ? 'অনুদানের পরিমাণ' : 'Donation Amount'}</span>
+            <span class="amount-val">${lastReceiptData.amount}</span>
+        </div>
+        <table>
+            <tr>
+                <td class="label">${isBn ? 'পেমেন্ট মাধ্যম' : 'Payment Channel'}:</td>
+                <td class="value">${lastReceiptData.method}</td>
+            </tr>
+            <tr>
+                <td class="label">${isBn ? 'ট্রানজেকশন আইডি (TrxID)' : 'Transaction ID (TrxID)'}:</td>
+                <td class="value" style="color: #0284c7; font-family: monospace;">${lastReceiptData.trxId}</td>
+            </tr>
+            <tr>
+                <td class="label">${isBn ? 'অনুদাতার নাম' : 'Donor Name'}:</td>
+                <td class="value">${lastReceiptData.donor}</td>
+            </tr>
+            ${lastReceiptData.phone ? `
+            <tr>
+                <td class="label">${isBn ? 'মোবাইল নম্বর' : 'Contact Phone'}:</td>
+                <td class="value">${lastReceiptData.phone}</td>
+            </tr>` : ''}
+            <tr>
+                <td class="label">${isBn ? 'তারিখ ও সময়' : 'Date & Time'}:</td>
+                <td class="value">${lastReceiptData.date}</td>
+            </tr>
+            ${lastReceiptData.note ? `
+            <tr>
+                <td class="label">${isBn ? 'বার্তা / মন্তব্য' : 'Note / Message'}:</td>
+                <td class="value">${lastReceiptData.note}</td>
+            </tr>` : ''}
+        </table>
+        <div class="footer">
+            <p>${isBn ? 'আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।' : 'Every contribution directly funds Project Your Mentor & welfare initiatives.'}</p>
+            <p style="margin-top: 3px;">${isBn ? 'এটি একটি ডিজিটাল স্বীকৃতি রসিদ • কারু শিখার সাথে থাকার জন্য ধন্যবাদ।' : 'This is a digital acknowledgment receipt • Thank you for your support.'}</p>
+        </div>
+    </div>
+</body>
+</html>`);
+        doc.close();
+
+        setTimeout(() => {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+            setTimeout(() => {
+                if (document.body.contains(iframe)) {
+                    document.body.removeChild(iframe);
+                }
+            }, 3000);
+        }, 500);
+    };
+
+    if (receiptPdfBtn) {
+        receiptPdfBtn.addEventListener('click', printReceiptVoucher);
     }
 
     if (receiptCopyBtn) {
