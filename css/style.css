@@ -454,6 +454,14 @@ header .header-donate-btn:hover {
 header .header-donate-btn:active {
     transform: scale(0.97);
 }
+header .header-donate-btn img {
+    filter: drop-shadow(0 1px 3px rgba(249, 115, 22, 0.4));
+    transition: transform 0.25s ease;
+    vertical-align: middle;
+}
+header .header-donate-btn:hover img {
+    transform: scale(1.1) rotate(-3deg);
+}
 
 /* Mobile Sticky Bottom Floating Action Bar */
 .mobile-bottom-bar {
