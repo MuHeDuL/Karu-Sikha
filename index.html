@@ -1008,62 +1008,247 @@
 
     <!-- DONATION MODAL -->
     <div id="donate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
-        <div class="glass-panel modal-card bg-slate-900/95 border border-white/15 rounded-3xl p-5 sm:p-8 max-w-md w-full shadow-2xl relative max-h-[92vh] overflow-y-auto">
-            <button id="close-donate-modal" class="absolute top-4 right-4 sm:top-5 sm:right-5 text-slate-400 hover:text-white text-2xl font-bold cursor-pointer">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-white/15 rounded-3xl p-5 sm:p-7 max-w-lg w-full shadow-2xl relative max-h-[92vh] overflow-y-auto">
+            <button id="close-donate-modal" class="absolute top-4 right-4 sm:top-5 sm:right-5 text-slate-400 hover:text-white text-2xl font-bold cursor-pointer transition-colors z-10">
                 &times;
             </button>
 
-            <div class="text-center mb-5">
-                <div class="w-14 h-12 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center p-2 mx-auto mb-2.5 shadow-lg shadow-orange-500/20">
-                    <img src="assets/donate-icon.png" alt="Donate Icon" class="w-full h-full object-contain">
+            <!-- FORM VIEW -->
+            <div id="donate-form-view">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-300 text-[11px] font-bold uppercase tracking-wider mb-2" data-i18n="don_badge">
+                        উপায় ১ • সরাসরি অনুদান মাধ্যম
+                    </span>
+                    <div class="w-12 h-11 rounded-2xl bg-orange-500/15 border border-orange-500/30 flex items-center justify-center p-2 mx-auto mb-2 shadow-lg shadow-orange-500/20">
+                        <img src="assets/donate-icon.png" alt="Donate Icon" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-black text-white" data-i18n="don_title">কারু শিখা সমাজকল্যাণ তহবিলে অনুদান</h3>
+                    <p class="text-xs text-slate-400 mt-1" data-i18n="don_sub">আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।</p>
                 </div>
-                <h3 class="text-lg sm:text-xl font-bold text-white" data-i18n="don_title">কারু শিখা সমাজকল্যাণ তহবিলে অনুদান</h3>
-                <p class="text-xs text-slate-400 mt-1" data-i18n="don_sub">আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।</p>
+
+                <form id="donate-form" class="space-y-3.5" novalidate>
+                    <!-- 1. Amount Selection -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="don_lbl_amount">অনুদানের পরিমাণ নির্বাচন করুন (টাকা)</label>
+                        <div class="grid grid-cols-4 gap-1.5 sm:gap-2">
+                            <button type="button" class="amount-pill py-2 rounded-xl border border-white/10 text-xs font-bold bg-orange-500 text-white cursor-pointer transition-colors" data-amount="500" data-i18n="amt_500">৳৫০০</button>
+                            <button type="button" class="amount-pill py-2 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer transition-colors" data-amount="1000" data-i18n="amt_1000">৳১,০০০</button>
+                            <button type="button" class="amount-pill py-2 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer transition-colors" data-amount="2000" data-i18n="amt_2000">৳২,০০০</button>
+                            <button type="button" class="amount-pill py-2 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer transition-colors" data-amount="5000" data-i18n="amt_5000">৳৫,০০০</button>
+                        </div>
+                        <div class="mt-2 relative">
+                            <div class="flex items-center justify-between mb-1">
+                                <label class="text-[11px] font-semibold text-slate-400" data-i18n="don_lbl_custom">কাস্টম পরিমাণ (টাকা / BDT)</label>
+                            </div>
+                            <div class="relative">
+                                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-orange-400 font-bold text-sm">৳</span>
+                                <input type="number" id="custom-donation-amount" value="500" min="10" step="10" class="w-full bg-slate-950 border border-white/10 rounded-xl pl-8 pr-4 py-2 text-xs sm:text-sm text-white focus:outline-none focus:border-orange-500 font-semibold transition-colors">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Payment Channel Tabs -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="don_lbl_gateway">পেমেন্ট মাধ্যম নির্বাচন করুন</label>
+                        <div class="grid grid-cols-3 gap-2" id="payment-channel-tabs">
+                            <button type="button" data-channel="bkash" class="pay-channel-btn p-2 rounded-xl border-2 border-pink-500 bg-pink-500/15 text-pink-300 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer">
+                                <span class="text-xs font-black text-pink-400">bKash</span>
+                                <span class="text-[10px] text-pink-300/80 font-medium">Personal</span>
+                            </button>
+                            <button type="button" data-channel="nagad" class="pay-channel-btn p-2 rounded-xl border border-white/10 bg-slate-950 text-slate-300 hover:border-orange-500/50 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer">
+                                <span class="text-xs font-black text-orange-400">Nagad</span>
+                                <span class="text-[10px] text-orange-300/80 font-medium">Personal</span>
+                            </button>
+                            <button type="button" data-channel="bank" class="pay-channel-btn p-2 rounded-xl border border-white/10 bg-slate-950 text-slate-300 hover:border-sky-500/50 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer">
+                                <span class="text-xs font-black text-sky-400">Bank Transfer</span>
+                                <span class="text-[10px] text-sky-300/80 font-medium">Account</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Dynamic Channel Account Details Card -->
+                    <div id="channel-details-box" class="rounded-2xl p-3 sm:p-3.5 border bg-gradient-to-b from-slate-950 to-slate-900 border-pink-500/30 transition-all">
+                        <!-- MFS (bKash & Nagad) View -->
+                        <div id="channel-mfs-details" class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span id="channel-type-badge" class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30" data-i18n="don_badge_personal">
+                                    Personal (Send Money)
+                                </span>
+                                <span class="text-[10px] text-slate-400" data-i18n="don_mfs_subtext">বাংলাদেশ / ২৪/৭ সচল</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-black/50 border border-white/10 rounded-xl px-3 py-2 sm:py-2.5">
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block" id="channel-num-label" data-i18n="don_lbl_bkash_no">বিকাশ পার্সোনাল নম্বর:</span>
+                                    <span class="text-sm sm:text-base font-black tracking-wider text-white select-all font-mono">01795-023942</span>
+                                </div>
+                                <button type="button" id="copy-mfs-btn" data-copy="01795023942" class="px-3 py-1.5 rounded-lg bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+                                    <span>📋</span>
+                                    <span class="copy-text" data-i18n="don_copy_btn">নম্বর কপি</span>
+                                </button>
+                            </div>
+                            <p id="channel-mfs-instruction" class="text-[11px] text-slate-300 bg-white/5 p-2 rounded-lg border border-white/5" data-i18n="don_bkash_inst">
+                                বিকাশ অ্যাপ বা *২৪৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।
+                            </p>
+                        </div>
+
+                        <!-- Bank Account View (Hidden by default) -->
+                        <div id="channel-bank-details" class="hidden space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30" data-i18n="don_badge_bank">
+                                    অফিসিয়াল ব্যাংক একাউন্ট
+                                </span>
+                                <span class="text-[10px] text-slate-400" data-i18n="don_bank_subtext">BEFTN / NPSB / শাখা ডিপোজিট</span>
+                            </div>
+                            <div class="bg-black/50 border border-white/10 rounded-xl p-3 space-y-2 text-xs">
+                                <div>
+                                    <span class="text-[10px] text-slate-400 block" data-i18n="don_bank_name_lbl">একাউন্টের নাম:</span>
+                                    <span class="font-bold text-white text-xs sm:text-sm">Karu Shikha Youth Development Society</span>
+                                </div>
+                                <div class="flex items-center justify-between border-t border-white/5 pt-2">
+                                    <div>
+                                        <span class="text-[10px] text-slate-400 block" data-i18n="don_bank_ac_lbl">একাউন্ট নম্বর:</span>
+                                        <span class="font-mono font-bold text-white text-xs sm:text-sm tracking-wider select-all">2032102000579</span>
+                                    </div>
+                                    <button type="button" class="copy-bank-field-btn px-2.5 py-1 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-semibold text-[11px] transition-colors cursor-pointer" data-copy="2032102000579">
+                                        <span class="copy-text" data-i18n="don_copy_ac">একাউন্ট নং কপি</span>
+                                    </button>
+                                </div>
+                                <div class="flex items-center justify-between border-t border-white/5 pt-2">
+                                    <div>
+                                        <span class="text-[10px] text-slate-400 block" data-i18n="don_bank_routing_lbl">রাউটিং নম্বর:</span>
+                                        <span class="font-mono font-bold text-white text-xs sm:text-sm tracking-wider select-all">200291451</span>
+                                    </div>
+                                    <button type="button" class="copy-bank-field-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-[11px] transition-colors cursor-pointer" data-copy="200291451">
+                                        <span class="copy-text" data-i18n="don_copy_routing">রাউটিং নং কপি</span>
+                                    </button>
+                                </div>
+                                <div class="border-t border-white/5 pt-2">
+                                    <span class="text-[10px] text-slate-400 block" data-i18n="don_bank_branch_lbl">শাখা:</span>
+                                    <span class="font-medium text-slate-200" data-i18n="don_bank_branch_val">তেপাখোলা শাখা, ফরিদপুর</span>
+                                </div>
+                            </div>
+                            <p class="text-[11px] text-slate-300 bg-white/5 p-2 rounded-lg border border-white/5" data-i18n="don_bank_inst">
+                                BEFTN, NPSB, RTGS বা সরাসরি যেকোনো শাখা থেকে ডিপোজিট করা যাবে।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 4. Anonymous Donation Option -->
+                    <div class="space-y-2">
+                        <label class="flex items-start gap-2.5 p-2.5 sm:p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/40 cursor-pointer transition-all">
+                            <input type="checkbox" id="donate-anonymous" class="mt-0.5 w-4 h-4 rounded text-orange-500 focus:ring-orange-500 border-white/20 bg-slate-900 cursor-pointer accent-orange-500">
+                            <div class="text-left">
+                                <span class="block text-xs font-bold text-white" data-i18n="don_lbl_anonymous">আমি নাম প্রকাশে অনিচ্ছুক (Donate Anonymously)</span>
+                                <span class="block text-[11px] text-slate-400 mt-0.5" data-i18n="don_sub_anonymous">নাম ও ফোন নম্বর ছাড়াই অনুদান দিতে টিক দিন। আপনার পরিচয় সম্পূর্ণ গোপন থাকবে।</span>
+                            </div>
+                        </label>
+
+                        <!-- Contact Inputs (Name & Phone) - Collapses when anonymous is checked -->
+                        <div id="donor-contact-fields" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 transition-all">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">
+                                    <span data-i18n="don_lbl_name">আপনার পূর্ণ নাম</span> <span class="text-rose-400 font-bold">*</span>
+                                </label>
+                                <input type="text" id="donate-name" placeholder="যেমন: মো: রফিকুল ইসলাম" data-i18n-placeholder="don_ph_name" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">
+                                    <span data-i18n="don_lbl_phone">মোবাইল নম্বর</span> <span class="text-rose-400 font-bold">*</span>
+                                </label>
+                                <input type="tel" id="donate-phone" placeholder="01XXXXXXXXX" data-i18n-placeholder="don_ph_phone" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400 transition-colors">
+                            </div>
+                        </div>
+
+                        <!-- Anonymous Notice (Shown when anonymous is checked) -->
+                        <div id="donor-anonymous-notice" class="hidden p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-[11px] text-orange-300 leading-relaxed">
+                            <span data-i18n="don_anonymous_notice">✓ আপনার পরিচয় সম্পূর্ণ গোপন রাখা হবে। কারু শিখার সমাজকল্যাণ তহবিলে অবদানের জন্য আন্তরিক ধন্যবাদ।</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Transaction ID / Deposit Slip No (Required) -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">
+                            <span data-i18n="don_lbl_trxid">ট্রানজেকশন আইডি (TrxID) / স্লিপ নং</span> <span class="text-rose-400 font-bold">*</span>
+                        </label>
+                        <input type="text" id="donate-trxid" required placeholder="যেমন: 9J38A7K9 অথবা ব্যাংক স্লিপ নং" data-i18n-placeholder="don_ph_trxid" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white font-mono focus:outline-none focus:border-orange-500 transition-colors uppercase">
+                        <p class="text-[10px] text-slate-400 mt-1" data-i18n="don_help_trxid">টাকা পাঠানোর পর প্রাপ্ত TrxID বা স্লিপের রেফারেন্স নম্বর লিখুন।</p>
+                    </div>
+
+                    <!-- 6. Message / Note (Optional) -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">
+                            <span data-i18n="don_lbl_note">বার্তা বা পরামর্শ (ঐচ্ছিক)</span>
+                        </label>
+                        <input type="text" id="donate-note" placeholder="কোনো বিশেষ বার্তা বা দোয়ার অনুরোধ থাকলে লিখুন..." data-i18n-placeholder="don_ph_note" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400 transition-colors">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="donate-submit-btn" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-orange-500/25 transition-all cursor-pointer flex items-center justify-center gap-2">
+                        <img src="assets/donate-icon.png" alt="" class="w-4 h-4 object-contain">
+                        <span data-i18n="don_btn_submit">অনুদানের তথ্য নিশ্চিত করুন</span>
+                    </button>
+                </form>
             </div>
 
-            <form id="donate-form" class="space-y-3.5">
+            <!-- SUCCESS / RECEIPT VIEW (Shown after form submission) -->
+            <div id="donate-success-view" class="hidden text-center space-y-4 py-2">
+                <div class="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-2xl mx-auto shadow-lg shadow-emerald-500/20">
+                    ✓
+                </div>
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5" data-i18n="don_lbl_amount">অনুদানের পরিমাণ নির্বাচন করুন (টাকা)</label>
-                    <div class="grid grid-cols-4 gap-1.5 sm:gap-2">
-                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold bg-[#f97316] text-white cursor-pointer" data-amount="500" data-i18n="amt_500">৳৫০০</button>
-                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer" data-amount="1000" data-i18n="amt_1000">৳১,০০০</button>
-                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer" data-amount="2000" data-i18n="amt_2000">৳২,০০০</button>
-                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer" data-amount="5000" data-i18n="amt_5000">৳৫,০০০</button>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold uppercase tracking-wider mb-1" data-i18n="don_receipt_badge">
+                        অফিসিয়াল ট্রানজেকশন রশিদ
+                    </span>
+                    <h3 class="text-lg sm:text-xl font-black text-white" data-i18n="don_success_title">অনুদানের তথ্য সফলভাবে সংরক্ষিত হয়েছে!</h3>
+                    <p class="text-xs text-slate-400 mt-0.5" data-i18n="don_success_sub">কারু শিখা সমাজকল্যাণ তহবিলে আপনার অনুদানের তথ্য নথিভুক্ত করা হয়েছে।</p>
+                </div>
+
+                <!-- Structured Receipt Card -->
+                <div class="bg-black/50 border border-white/10 rounded-2xl p-4 text-left text-xs space-y-2.5">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                        <span class="text-slate-400" data-i18n="don_receipt_amt">অনুদানের পরিমাণ:</span>
+                        <span id="receipt-amount" class="text-base font-black text-orange-400 font-mono">৳500</span>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                        <span class="text-slate-400" data-i18n="don_receipt_method">পেমেন্ট মাধ্যম:</span>
+                        <span id="receipt-method" class="font-bold text-white">bKash Personal (01795023942)</span>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                        <span class="text-slate-400" data-i18n="don_receipt_trx">ট্রানজেকশন আইডি:</span>
+                        <span id="receipt-trxid" class="font-mono font-bold text-emerald-400 tracking-wider">9J38A7K9</span>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                        <span class="text-slate-400" data-i18n="don_receipt_donor">অনুদাতা:</span>
+                        <span id="receipt-donor" class="font-semibold text-white">নাম প্রকাশে অনিচ্ছুক</span>
+                    </div>
+                    <div class="flex items-center justify-between border-b border-white/5 pb-2" id="receipt-phone-row">
+                        <span class="text-slate-400" data-i18n="don_receipt_phone">মোবাইল নম্বর:</span>
+                        <span id="receipt-phone" class="font-mono font-medium text-slate-200">01795023942</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-slate-400" data-i18n="don_receipt_date">তারিখ ও সময়:</span>
+                        <span id="receipt-date" class="text-slate-300 font-medium">29 Oct, 2026</span>
                     </div>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="don_lbl_custom">কাস্টম পরিমাণ (টাকা / BDT)</label>
-                    <input type="number" id="custom-donation-amount" value="500" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-400">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="don_lbl_gateway">পেমেন্ট মাধ্যম</label>
-                    <div class="grid grid-cols-3 gap-2">
-                        <label class="border border-white/10 rounded-xl p-2 text-center cursor-pointer flex flex-col items-center hover:border-pink-500 bg-slate-950">
-                            <input type="radio" name="paymethod" checked class="hidden">
-                            <span class="text-xs font-bold text-pink-400">bKash</span>
-                        </label>
-                        <label class="border border-white/10 rounded-xl p-2 text-center cursor-pointer flex flex-col items-center hover:border-orange-500 bg-slate-950">
-                            <input type="radio" name="paymethod" class="hidden">
-                            <span class="text-xs font-bold text-orange-500">Nagad</span>
-                        </label>
-                        <label class="border border-white/10 rounded-xl p-2 text-center cursor-pointer flex flex-col items-center hover:border-sky-500 bg-slate-950">
-                            <input type="radio" name="paymethod" class="hidden">
-                            <span class="text-xs font-bold text-sky-400">Rocket / Bank</span>
-                        </label>
+                <!-- Receipt Actions -->
+                <div class="space-y-2 pt-1">
+                    <button type="button" id="receipt-send-wa-btn" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <span>📲</span>
+                        <span data-i18n="don_btn_send_wa">হোয়াটসঅ্যাপে স্লিপ পাঠান</span>
+                    </button>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button type="button" id="receipt-copy-btn" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-white/10 transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                            <span>📋</span>
+                            <span class="copy-text" data-i18n="don_btn_copy_slip">স্লিপ কপি করুন</span>
+                        </button>
+                        <button type="button" id="receipt-close-btn" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs border border-white/10 transition-colors cursor-pointer" data-i18n="don_btn_new_donate">
+                            নতুন অনুদান বা বন্ধ করুন
+                        </button>
                     </div>
                 </div>
-
-                <div class="grid grid-cols-2 gap-2">
-                    <input type="text" placeholder="আপনার নাম" data-i18n-placeholder="don_ph_name" required class="bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400">
-                    <input type="tel" placeholder="মোবাইল নম্বর" data-i18n-placeholder="don_ph_phone" required class="bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400">
-                </div>
-
-                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-orange-500/25 transition-all cursor-pointer" data-i18n="don_btn_submit">
-                    নিশ্চিত করুন ও অনুদান সম্পন্ন করুন
-                </button>
-            </form>
+            </div>
         </div>
     </div>
 

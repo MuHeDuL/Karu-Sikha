@@ -206,6 +206,7 @@ const translations = {
         "footer_rights": "© ২০২৬ কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি। সর্বস্বত্ব সংরক্ষিত।",
         "footer_privacy": "গোপনীয়তা নীতি",
         "footer_terms": "ব্যবহারের নিয়মাবলী",
+        "don_badge": "উপায় ১ • সরাসরি অনুদান মাধ্যম",
         "don_title": "কারু শিখা সমাজকল্যাণ তহবিলে অনুদান",
         "don_sub": "আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।",
         "don_lbl_amount": "অনুদানের পরিমাণ নির্বাচন করুন (টাকা)",
@@ -214,10 +215,54 @@ const translations = {
         "amt_2000": "৳২,০০০",
         "amt_5000": "৳৫,০০০",
         "don_lbl_custom": "কাস্টম পরিমাণ (টাকা / BDT)",
-        "don_lbl_gateway": "পেমেন্ট মাধ্যম",
-        "don_ph_name": "আপনার নাম",
-        "don_ph_phone": "মোবাইল নম্বর",
-        "don_btn_submit": "নিশ্চিত করুন ও অনুদান সম্পন্ন করুন",
+        "don_lbl_gateway": "পেমেন্ট মাধ্যম নির্বাচন করুন",
+        "don_tab_bkash": "bKash (বিকাশ)",
+        "don_tab_nagad": "Nagad (নগদ)",
+        "don_tab_bank": "Bank (ব্যাংক)",
+        "don_badge_personal": "Personal (Send Money)",
+        "don_badge_bank": "অফিসিয়াল ব্যাংক একাউন্ট",
+        "don_mfs_subtext": "বাংলাদেশ / ২৪/৭ সচল",
+        "don_lbl_bkash_no": "বিকাশ পার্সোনাল নম্বর:",
+        "don_lbl_nagad_no": "নগদ পার্সোনাল নম্বর:",
+        "don_copy_btn": "নম্বর কপি",
+        "don_copied_btn": "✓ কপি হয়েছে!",
+        "don_copy_ac": "একাউন্ট নং কপি",
+        "don_copy_routing": "রাউটিং নং কপি",
+        "don_bkash_inst": "বিকাশ অ্যাপ বা *২৪৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।",
+        "don_nagad_inst": "নগদ অ্যাপ বা *১৬৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।",
+        "don_bank_name_lbl": "একাউন্টের নাম:",
+        "don_bank_ac_lbl": "একাউন্ট নম্বর:",
+        "don_bank_routing_lbl": "রাউটিং নম্বর:",
+        "don_bank_branch_lbl": "শাখা:",
+        "don_bank_branch_val": "তেপাখোলা শাখা, ফরিদপুর",
+        "don_bank_subtext": "BEFTN / NPSB / শাখা ডিপোজিট",
+        "don_bank_inst": "BEFTN, NPSB, RTGS বা সরাসরি যেকোনো শাখা থেকে ডিপোজিট করা যাবে।",
+        "don_lbl_anonymous": "আমি নাম প্রকাশে অনিচ্ছুক (Donate Anonymously)",
+        "don_sub_anonymous": "নাম ও ফোন নম্বর ছাড়াই অনুদান দিতে টিক দিন। আপনার পরিচয় সম্পূর্ণ গোপন থাকবে।",
+        "don_anonymous_notice": "✓ আপনার পরিচয় সম্পূর্ণ গোপন রাখা হবে। কারু শিখার সমাজকল্যাণ তহবিলে অবদানের জন্য আন্তরিক ধন্যবাদ।",
+        "don_lbl_name": "আপনার পূর্ণ নাম",
+        "don_ph_name": "যেমন: মো: রফিকুল ইসলাম",
+        "don_lbl_phone": "মোবাইল নম্বর",
+        "don_ph_phone": "01XXXXXXXXX",
+        "don_lbl_trxid": "ট্রানজেকশন আইডি (TrxID) / স্লিপ নং",
+        "don_ph_trxid": "যেমন: 9J38A7K9 অথবা ব্যাংক স্লিপ নং",
+        "don_help_trxid": "টাকা পাঠানোর পর প্রাপ্ত TrxID বা স্লিপের রেফারেন্স নম্বর লিখুন।",
+        "don_lbl_note": "বার্তা বা পরামর্শ (ঐচ্ছিক)",
+        "don_ph_note": "কোনো বিশেষ বার্তা বা দোয়ার অনুরোধ থাকলে লিখুন...",
+        "don_btn_submit": "অনুদানের তথ্য নিশ্চিত করুন",
+        "don_success_title": "অনুদানের তথ্য সফলভাবে সংরক্ষিত হয়েছে!",
+        "don_success_sub": "কারু শিখা সমাজকল্যাণ তহবিলে আপনার অনুদানের তথ্য নথিভুক্ত করা হয়েছে।",
+        "don_receipt_badge": "অফিসিয়াল ট্রানজেকশন রশিদ",
+        "don_receipt_amt": "অনুদানের পরিমাণ:",
+        "don_receipt_method": "পেমেন্ট মাধ্যম:",
+        "don_receipt_trx": "ট্রানজেকশন আইডি:",
+        "don_receipt_donor": "অনুদাতা:",
+        "don_receipt_phone": "মোবাইল নম্বর:",
+        "don_receipt_date": "তারিখ ও সময়:",
+        "don_receipt_anon": "নাম প্রকাশে অনিচ্ছুক (Anonymous)",
+        "don_btn_send_wa": "হোয়াটসঅ্যাপে স্লিপ পাঠান",
+        "don_btn_copy_slip": "স্লিপ কপি করুন",
+        "don_btn_new_donate": "নতুন অনুদান বা বন্ধ করুন",
         "vol_title": "কারু শিখায় ভলান্টিয়ার রেজিস্ট্রেশন",
         "vol_sub": "আমাদের ৩টি চলমান প্রকল্প ও সামাজিক উদ্যোগে যুক্ত হয়ে সমাজ পরিবর্তনের সহযাত্রী হোন।",
         "vol_lbl_name": "পূর্ণ নাম",
@@ -493,6 +538,7 @@ const translations = {
         "footer_rights": "© 2026 Karu Shikha Youth Development Society. All rights reserved.",
         "footer_privacy": "Privacy Policy",
         "footer_terms": "Terms of Use",
+        "don_badge": "Option 1 • Direct Donation Channels",
         "don_title": "Donate to Karu Shikha Welfare Fund",
         "don_sub": "Every contribution directly funds Project Your Mentor and grassroots welfare.",
         "don_lbl_amount": "Select Donation Amount (BDT)",
@@ -501,10 +547,54 @@ const translations = {
         "amt_2000": "BDT 2,000",
         "amt_5000": "BDT 5,000",
         "don_lbl_custom": "Custom Amount (BDT)",
-        "don_lbl_gateway": "Payment Method",
-        "don_ph_name": "Your Full Name",
-        "don_ph_phone": "Mobile Phone Number",
-        "don_btn_submit": "Confirm & Complete Donation",
+        "don_lbl_gateway": "Select Payment Channel",
+        "don_tab_bkash": "bKash (Send Money)",
+        "don_tab_nagad": "Nagad (Send Money)",
+        "don_tab_bank": "Bank Account",
+        "don_badge_personal": "Personal (Send Money)",
+        "don_badge_bank": "Official Bank Account",
+        "don_mfs_subtext": "Bangladesh / Active 24/7",
+        "don_lbl_bkash_no": "bKash Personal Number:",
+        "don_lbl_nagad_no": "Nagad Personal Number:",
+        "don_copy_btn": "Copy Number",
+        "don_copied_btn": "✓ Copied!",
+        "don_copy_ac": "Copy A/C No",
+        "don_copy_routing": "Copy Routing",
+        "don_bkash_inst": "Use bKash App or *247# to Send Money, then enter TrxID below.",
+        "don_nagad_inst": "Use Nagad App or *167# to Send Money, then enter TrxID below.",
+        "don_bank_name_lbl": "Account Name:",
+        "don_bank_ac_lbl": "Account Number:",
+        "don_bank_routing_lbl": "Routing Number:",
+        "don_bank_branch_lbl": "Branch:",
+        "don_bank_branch_val": "Tepakhola Branch, Faridpur",
+        "don_bank_subtext": "BEFTN / NPSB / Branch Deposit",
+        "don_bank_inst": "Accepts BEFTN, NPSB, RTGS or direct deposit from any branch.",
+        "don_lbl_anonymous": "Donate Anonymously",
+        "don_sub_anonymous": "Check to donate without name or phone number. Identity remains confidential.",
+        "don_anonymous_notice": "✓ Your identity will remain strictly confidential. Thank you for supporting Karu Shikha welfare initiatives.",
+        "don_lbl_name": "Your Full Name",
+        "don_ph_name": "e.g. Rafiqul Islam",
+        "don_lbl_phone": "Mobile Phone Number",
+        "don_ph_phone": "01XXXXXXXXX",
+        "don_lbl_trxid": "Transaction ID (TrxID) / Deposit Slip No",
+        "don_ph_trxid": "e.g. 9J38A7K9 or Bank Deposit Slip No",
+        "don_help_trxid": "Enter the TrxID received after sending money or bank deposit slip number.",
+        "don_lbl_note": "Message or Note (Optional)",
+        "don_ph_note": "Any special message or instructions...",
+        "don_btn_submit": "Confirm Donation Information",
+        "don_success_title": "Donation Details Successfully Recorded!",
+        "don_success_sub": "Your contribution has been recorded in the Karu Shikha Welfare Fund registry.",
+        "don_receipt_badge": "Official Transaction Slip",
+        "don_receipt_amt": "Donation Amount:",
+        "don_receipt_method": "Payment Channel:",
+        "don_receipt_trx": "Transaction ID:",
+        "don_receipt_donor": "Donor:",
+        "don_receipt_phone": "Mobile Phone:",
+        "don_receipt_date": "Date & Time:",
+        "don_receipt_anon": "Anonymous Donor",
+        "don_btn_send_wa": "Send Slip via WhatsApp",
+        "don_btn_copy_slip": "Copy Slip",
+        "don_btn_new_donate": "New Donation / Close",
         "vol_title": "Volunteer Registration with Karu Shikha",
         "vol_sub": "Join our 3 flagship projects and community initiatives to spark transformative change.",
         "vol_lbl_name": "Full Name",
@@ -1166,14 +1256,59 @@ window.closeCertificateModal = function() {
 };
 
 function setupModals() {
-    // Donate Modal
+    // ==========================================
+    // DONATION MODAL (Method 1: bKash, Nagad, Bank + Anonymous Option)
+    // ==========================================
     const donateModal = document.getElementById('donate-modal');
     const donateTriggers = document.querySelectorAll('.open-donate-modal');
     const closeDonateModal = document.getElementById('close-donate-modal');
+    const donateFormView = document.getElementById('donate-form-view');
+    const donateSuccessView = document.getElementById('donate-success-view');
+    const donateForm = document.getElementById('donate-form');
+    const amountButtons = document.querySelectorAll('.amount-pill');
+    const customAmountInput = document.getElementById('custom-donation-amount');
+    const channelTabs = document.querySelectorAll('#payment-channel-tabs .pay-channel-btn');
+    const channelDetailsBox = document.getElementById('channel-details-box');
+    const channelMfsDetails = document.getElementById('channel-mfs-details');
+    const channelBankDetails = document.getElementById('channel-bank-details');
+    const channelTypeBadge = document.getElementById('channel-type-badge');
+    const channelNumLabel = document.getElementById('channel-num-label');
+    const channelMfsInstruction = document.getElementById('channel-mfs-instruction');
+    const copyMfsBtn = document.getElementById('copy-mfs-btn');
+    const copyBankBtns = document.querySelectorAll('.copy-bank-field-btn');
+    const anonymousCheckbox = document.getElementById('donate-anonymous');
+    const donorContactFields = document.getElementById('donor-contact-fields');
+    const donorAnonymousNotice = document.getElementById('donor-anonymous-notice');
+    const donateNameInput = document.getElementById('donate-name');
+    const donatePhoneInput = document.getElementById('donate-phone');
+    const donateTrxInput = document.getElementById('donate-trxid');
+    const donateNoteInput = document.getElementById('donate-note');
+
+    // Receipt View Elements
+    const receiptAmountEl = document.getElementById('receipt-amount');
+    const receiptMethodEl = document.getElementById('receipt-method');
+    const receiptTrxidEl = document.getElementById('receipt-trxid');
+    const receiptDonorEl = document.getElementById('receipt-donor');
+    const receiptPhoneEl = document.getElementById('receipt-phone');
+    const receiptPhoneRow = document.getElementById('receipt-phone-row');
+    const receiptDateEl = document.getElementById('receipt-date');
+    const receiptSendWaBtn = document.getElementById('receipt-send-wa-btn');
+    const receiptCopyBtn = document.getElementById('receipt-copy-btn');
+    const receiptCloseBtn = document.getElementById('receipt-close-btn');
+
+    let currentChannel = 'bkash'; // Default active channel
+    let lastReceiptText = '';
+    let lastWaReceiptUrl = '';
+
+    const resetDonationView = () => {
+        if (donateFormView) donateFormView.classList.remove('hidden');
+        if (donateSuccessView) donateSuccessView.classList.add('hidden');
+    };
 
     donateTriggers.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
+            resetDonationView();
             if (donateModal) donateModal.classList.remove('hidden');
         });
     });
@@ -1181,32 +1316,376 @@ function setupModals() {
     if (closeDonateModal && donateModal) {
         closeDonateModal.addEventListener('click', () => {
             donateModal.classList.add('hidden');
+            resetDonationView();
         });
     }
 
-    const amountButtons = document.querySelectorAll('.amount-pill');
-    const customAmountInput = document.getElementById('custom-donation-amount');
+    // Helper: Universal clipboard copy with visual feedback
+    const copyToClipboard = (text, btnElement) => {
+        const onSuccess = () => {
+            const label = btnElement.querySelector('.copy-text') || btnElement;
+            const originalText = label.textContent;
+            label.textContent = currentLang === 'bn' ? '✓ কপি হয়েছে!' : '✓ Copied!';
+            btnElement.classList.add('bg-emerald-600', 'text-white');
+            setTimeout(() => {
+                label.textContent = originalText;
+                btnElement.classList.remove('bg-emerald-600');
+            }, 2000);
+        };
 
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess));
+        } else {
+            fallbackCopy(text, onSuccess);
+        }
+    };
+
+    const fallbackCopy = (text, callback) => {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            if (callback) callback();
+        } catch (err) {
+            console.error('Fallback copy error:', err);
+        }
+        document.body.removeChild(textarea);
+    };
+
+    // Copy handlers for MFS and Bank details
+    if (copyMfsBtn) {
+        copyMfsBtn.addEventListener('click', () => {
+            const num = copyMfsBtn.getAttribute('data-copy') || '01795023942';
+            copyToClipboard(num, copyMfsBtn);
+        });
+    }
+
+    copyBankBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const val = btn.getAttribute('data-copy');
+            if (val) copyToClipboard(val, btn);
+        });
+    });
+
+    // Preset Amount Pills selection
     amountButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            amountButtons.forEach(b => b.classList.remove('bg-orange-500', 'text-white'));
+            amountButtons.forEach(b => {
+                b.classList.remove('bg-orange-500', 'text-white');
+                b.classList.add('text-slate-300');
+            });
             btn.classList.add('bg-orange-500', 'text-white');
+            btn.classList.remove('text-slate-300');
             if (customAmountInput) {
                 customAmountInput.value = btn.getAttribute('data-amount');
             }
         });
     });
 
-    const donateForm = document.getElementById('donate-form');
+    if (customAmountInput) {
+        customAmountInput.addEventListener('input', () => {
+            const val = customAmountInput.value.trim();
+            amountButtons.forEach(btn => {
+                if (btn.getAttribute('data-amount') === val) {
+                    btn.classList.add('bg-orange-500', 'text-white');
+                    btn.classList.remove('text-slate-300');
+                } else {
+                    btn.classList.remove('bg-orange-500', 'text-white');
+                    btn.classList.add('text-slate-300');
+                }
+            });
+        });
+    }
+
+    // Payment Channel Switcher
+    const updateChannelUI = (channel) => {
+        currentChannel = channel;
+        channelTabs.forEach(tab => {
+            const tabCh = tab.getAttribute('data-channel');
+            if (tabCh === channel) {
+                if (channel === 'bkash') {
+                    tab.className = 'pay-channel-btn p-2 rounded-xl border-2 border-pink-500 bg-pink-500/15 text-pink-300 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer';
+                } else if (channel === 'nagad') {
+                    tab.className = 'pay-channel-btn p-2 rounded-xl border-2 border-orange-500 bg-orange-500/15 text-orange-300 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer';
+                } else if (channel === 'bank') {
+                    tab.className = 'pay-channel-btn p-2 rounded-xl border-2 border-sky-500 bg-sky-500/15 text-sky-300 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer';
+                }
+            } else {
+                tab.className = 'pay-channel-btn p-2 rounded-xl border border-white/10 bg-slate-950 text-slate-300 hover:border-white/25 flex flex-col items-center justify-center gap-0.5 transition-all cursor-pointer';
+            }
+        });
+
+        if (channel === 'bkash') {
+            if (channelDetailsBox) {
+                channelDetailsBox.className = 'rounded-2xl p-3 sm:p-3.5 border bg-gradient-to-b from-slate-950 to-slate-900 border-pink-500/30 transition-all';
+            }
+            if (channelMfsDetails) channelMfsDetails.classList.remove('hidden');
+            if (channelBankDetails) channelBankDetails.classList.add('hidden');
+            if (channelTypeBadge) {
+                channelTypeBadge.className = 'px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-pink-500/20 text-pink-300 border border-pink-500/30';
+                channelTypeBadge.textContent = 'Personal (Send Money)';
+            }
+            if (channelNumLabel) {
+                channelNumLabel.textContent = currentLang === 'bn' ? 'বিকাশ পার্সোনাল নম্বর:' : 'bKash Personal Number:';
+            }
+            if (channelMfsInstruction) {
+                channelMfsInstruction.textContent = currentLang === 'bn'
+                    ? "বিকাশ অ্যাপ বা *২৪৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।"
+                    : "Use bKash App or *247# to Send Money, then enter TrxID below.";
+            }
+            if (copyMfsBtn) {
+                copyMfsBtn.className = 'px-3 py-1.5 rounded-lg bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer';
+            }
+        } else if (channel === 'nagad') {
+            if (channelDetailsBox) {
+                channelDetailsBox.className = 'rounded-2xl p-3 sm:p-3.5 border bg-gradient-to-b from-slate-950 to-slate-900 border-orange-500/30 transition-all';
+            }
+            if (channelMfsDetails) channelMfsDetails.classList.remove('hidden');
+            if (channelBankDetails) channelBankDetails.classList.add('hidden');
+            if (channelTypeBadge) {
+                channelTypeBadge.className = 'px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30';
+                channelTypeBadge.textContent = 'Personal (Send Money)';
+            }
+            if (channelNumLabel) {
+                channelNumLabel.textContent = currentLang === 'bn' ? 'নগদ পার্সোনাল নম্বর:' : 'Nagad Personal Number:';
+            }
+            if (channelMfsInstruction) {
+                channelMfsInstruction.textContent = currentLang === 'bn'
+                    ? "নগদ অ্যাপ বা *১৬৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।"
+                    : "Use Nagad App or *167# to Send Money, then enter TrxID below.";
+            }
+            if (copyMfsBtn) {
+                copyMfsBtn.className = 'px-3 py-1.5 rounded-lg bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer';
+            }
+        } else if (channel === 'bank') {
+            if (channelDetailsBox) {
+                channelDetailsBox.className = 'rounded-2xl p-3 sm:p-3.5 border bg-gradient-to-b from-slate-950 to-slate-900 border-sky-500/30 transition-all';
+            }
+            if (channelMfsDetails) channelMfsDetails.classList.add('hidden');
+            if (channelBankDetails) channelBankDetails.classList.remove('hidden');
+        }
+    };
+
+    channelTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const ch = tab.getAttribute('data-channel');
+            if (ch) updateChannelUI(ch);
+        });
+    });
+
+    // Anonymous Donation Checkbox Toggle
+    if (anonymousCheckbox) {
+        anonymousCheckbox.addEventListener('change', () => {
+            if (anonymousCheckbox.checked) {
+                if (donorContactFields) donorContactFields.classList.add('hidden');
+                if (donorAnonymousNotice) donorAnonymousNotice.classList.remove('hidden');
+                if (donateNameInput) {
+                    donateNameInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/30');
+                    donateNameInput.classList.add('border-white/10');
+                }
+                if (donatePhoneInput) {
+                    donatePhoneInput.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/30');
+                    donatePhoneInput.classList.add('border-white/10');
+                }
+            } else {
+                if (donorContactFields) donorContactFields.classList.remove('hidden');
+                if (donorAnonymousNotice) donorAnonymousNotice.classList.add('hidden');
+            }
+        });
+    }
+
+    // Input error cleanup on input
+    const donationInputs = [customAmountInput, donateNameInput, donatePhoneInput, donateTrxInput];
+    donationInputs.forEach(input => {
+        if (!input) return;
+        const clear = () => {
+            input.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/30');
+            input.classList.add('border-white/10');
+        };
+        input.addEventListener('input', clear);
+        input.addEventListener('change', clear);
+    });
+
+    const markDonationError = (el, msg) => {
+        if (el) {
+            el.classList.add('border-rose-500', 'ring-2', 'ring-rose-500/30');
+            el.classList.remove('border-white/10');
+            el.focus();
+        }
+        showToast(msg);
+    };
+
+    // Donation Form Submit
     if (donateForm) {
         donateForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const amount = customAmountInput ? customAmountInput.value : '500';
-            const msg = currentLang === 'bn'
-                ? `ধন্যবাদ! কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির তহবিলে আপনার ৳${amount} অনুদানের অনুরোধ গৃহীত হয়েছে।`
-                : `Thank you! Your donation request of ৳${amount} to Karu Shikha Youth Development Society has been received.`;
-            showToast(msg);
+
+            const amountVal = parseFloat(customAmountInput?.value || '0');
+            const isAnonymous = anonymousCheckbox ? anonymousCheckbox.checked : false;
+            const name = (donateNameInput?.value || '').trim();
+            const phone = (donatePhoneInput?.value || '').trim();
+            const trxId = (donateTrxInput?.value || '').trim();
+            const note = (donateNoteInput?.value || '').trim();
+
+            // 1. Amount Validation
+            if (isNaN(amountVal) || amountVal < 10) {
+                markDonationError(customAmountInput, currentLang === 'bn' ? 'অনুগ্রহ করে সঠিক অনুদানের পরিমাণ লিখুন (কমপক্ষে ১০ টাকা)।' : 'Please enter a valid donation amount (at least BDT 10).');
+                return;
+            }
+
+            // 2. Name & Phone Validation (Only if NOT anonymous)
+            let formattedPhone = '';
+            if (!isAnonymous) {
+                if (!name) {
+                    markDonationError(donateNameInput, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার নাম লিখুন অথবা নাম প্রকাশে অনিচ্ছুক অপশনটি নির্বাচন করুন।' : 'Please enter your name or select anonymous donation.');
+                    return;
+                }
+                if (name.length < 2) {
+                    markDonationError(donateNameInput, currentLang === 'bn' ? 'নাম কমপক্ষে ২ অক্ষরের হতে হবে।' : 'Name must be at least 2 characters.');
+                    return;
+                }
+                if (!phone) {
+                    markDonationError(donatePhoneInput, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন।' : 'Please enter your mobile phone number.');
+                    return;
+                }
+                const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+                const phoneRegex = /^(\+?880|880|0)?1[3-9]\d{8}$/;
+                if (!phoneRegex.test(cleanPhone)) {
+                    markDonationError(donatePhoneInput, currentLang === 'bn' ? 'সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)' : 'Please enter a valid 11-digit mobile number.');
+                    return;
+                }
+                formattedPhone = cleanPhone;
+                if (formattedPhone.startsWith('+88')) formattedPhone = formattedPhone.substring(3);
+                else if (formattedPhone.startsWith('88')) formattedPhone = formattedPhone.substring(2);
+            }
+
+            // 3. TrxID Validation (Mandatory)
+            if (!trxId) {
+                markDonationError(donateTrxInput, currentLang === 'bn' ? 'অনুগ্রহ করে Transaction ID (TrxID) বা ব্যাংক ডিপোজিট স্লিপ নম্বর লিখুন।' : 'Please enter Transaction ID (TrxID) or bank slip number.');
+                return;
+            }
+            if (trxId.length < 4) {
+                markDonationError(donateTrxInput, currentLang === 'bn' ? 'Transaction ID কমপক্ষে ৪ অক্ষরের হতে হবে।' : 'Transaction ID must be at least 4 characters.');
+                return;
+            }
+
+            // Construct Receipt Values
+            const formattedAmount = currentLang === 'bn' ? `৳${amountVal.toLocaleString('bn-BD')}` : `BDT ${amountVal.toLocaleString('en-US')}`;
+            let channelDisplayName = '';
+            let channelAccountTarget = '';
+
+            if (currentChannel === 'bkash') {
+                channelDisplayName = currentLang === 'bn' ? 'বিকাশ পার্সোনাল (Send Money)' : 'bKash Personal (Send Money)';
+                channelAccountTarget = '01795-023942';
+            } else if (currentChannel === 'nagad') {
+                channelDisplayName = currentLang === 'bn' ? 'নগদ পার্সোনাল (Send Money)' : 'Nagad Personal (Send Money)';
+                channelAccountTarget = '01795-023942';
+            } else if (currentChannel === 'bank') {
+                channelDisplayName = currentLang === 'bn' ? 'ব্যাংক একাউন্ট ডিপোজিট' : 'Bank Account Deposit';
+                channelAccountTarget = '2032102000579 (Karu Shikha Youth Development Society)';
+            }
+
+            const donorDisplay = isAnonymous
+                ? (currentLang === 'bn' ? 'নাম প্রকাশে অনিচ্ছুক (Anonymous)' : 'Anonymous Donor')
+                : name;
+
+            const now = new Date();
+            const dateStr = now.toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const dateTimeDisplay = `${dateStr}, ${timeStr}`;
+
+            // Populate Success View
+            if (receiptAmountEl) receiptAmountEl.textContent = formattedAmount;
+            if (receiptMethodEl) receiptMethodEl.textContent = `${channelDisplayName} • ${channelAccountTarget}`;
+            if (receiptTrxidEl) receiptTrxidEl.textContent = trxId.toUpperCase();
+            if (receiptDonorEl) receiptDonorEl.textContent = donorDisplay;
+            if (receiptDateEl) receiptDateEl.textContent = dateTimeDisplay;
+
+            if (receiptPhoneRow && receiptPhoneEl) {
+                if (isAnonymous) {
+                    receiptPhoneRow.classList.add('hidden');
+                } else {
+                    receiptPhoneRow.classList.remove('hidden');
+                    receiptPhoneEl.textContent = formattedPhone;
+                }
+            }
+
+            // BMP-Safe structured message for WhatsApp and Email/Slip copy (Strictly zero surrogate pair emojis to prevent '?' corruption)
+            if (currentLang === 'bn') {
+                lastReceiptText =
+`*কারু শিখা সমাজকল্যাণ তহবিল*
+*অনুদান নিশ্চিতকরণ স্লিপ*
+----------------------------------------
+• *অনুদানের পরিমাণ:* ${formattedAmount}
+• *পেমেন্ট মাধ্যম:* ${channelDisplayName}
+• *একাউন্ট/নম্বর:* ${channelAccountTarget}
+• *ট্রানজেকশন আইডি (TrxID):* ${trxId.toUpperCase()}
+• *দাতা:* ${donorDisplay}
+${!isAnonymous ? `• *মোবাইল নম্বর:* ${formattedPhone}\n` : ''}• *তারিখ ও সময়:* ${dateTimeDisplay}
+${note ? `• *বার্তা/মন্তব্য:* ${note}\n` : ''}----------------------------------------
+• *বিবরণ:* আমি কারু শিখা সমাজকল্যাণ তহবিলে অনুদান সম্পন্ন করেছি। অনুগ্রহ করে যাচাই করে প্রাপ্তি নিশ্চিত করবেন।`;
+            } else {
+                lastReceiptText =
+`*Karu Shikha Welfare Fund*
+*Donation Confirmation Slip*
+----------------------------------------
+• *Donation Amount:* ${formattedAmount}
+• *Payment Channel:* ${channelDisplayName}
+• *Account / Number:* ${channelAccountTarget}
+• *Transaction ID (TrxID):* ${trxId.toUpperCase()}
+• *Donor:* ${donorDisplay}
+${!isAnonymous ? `• *Mobile Phone:* ${formattedPhone}\n` : ''}• *Date & Time:* ${dateTimeDisplay}
+${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------------
+• *Statement:* I have contributed to Karu Shikha Welfare Fund. Please verify and acknowledge receipt.`;
+            }
+
+            lastWaReceiptUrl = `https://wa.me/8801795023942?text=${encodeURIComponent(lastReceiptText)}`;
+
+            // Switch to Success/Receipt View
+            if (donateFormView) donateFormView.classList.add('hidden');
+            if (donateSuccessView) donateSuccessView.classList.remove('hidden');
+
+            const successMsg = currentLang === 'bn'
+                ? `ধন্যবাদ! ${formattedAmount} অনুদানের তথ্য সফলভাবে নথিভুক্ত করা হয়েছে।`
+                : `Thank you! Your donation of ${formattedAmount} has been successfully recorded.`;
+            showToast(successMsg);
+        });
+    }
+
+    // Receipt Action Handlers
+    if (receiptSendWaBtn) {
+        receiptSendWaBtn.addEventListener('click', () => {
+            if (lastWaReceiptUrl) {
+                window.open(lastWaReceiptUrl, '_blank', 'noopener,noreferrer');
+            }
+        });
+    }
+
+    if (receiptCopyBtn) {
+        receiptCopyBtn.addEventListener('click', () => {
+            if (lastReceiptText) {
+                copyToClipboard(lastReceiptText, receiptCopyBtn);
+            }
+        });
+    }
+
+    if (receiptCloseBtn) {
+        receiptCloseBtn.addEventListener('click', () => {
             if (donateModal) donateModal.classList.add('hidden');
+            if (donateForm) donateForm.reset();
+            resetDonationView();
+            updateChannelUI('bkash');
+            if (donorContactFields) donorContactFields.classList.remove('hidden');
+            if (donorAnonymousNotice) donorAnonymousNotice.classList.add('hidden');
         });
     }
 
