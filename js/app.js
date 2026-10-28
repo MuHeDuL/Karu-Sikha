@@ -898,19 +898,19 @@ function renderActivities() {
         const engId = act.id < 10 ? '0' + act.id : '' + act.id;
 
         return `
-            <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-5 border border-white/10 ${style.border} flex flex-col justify-between transition-all group">
-                <div>
-                    <div class="flex items-center justify-between mb-2.5">
-                        <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center font-bold text-[11px] sm:text-xs text-sky-400 group-hover:bg-[#0284c7] group-hover:text-white transition-colors">
+            <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-5 border border-white/10 ${style.border} flex flex-col justify-between h-full transition-all group">
+                <div class="flex-1">
+                    <div class="flex items-center justify-between mb-2.5 gap-2">
+                        <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-slate-900 border border-white/10 flex items-center justify-center font-bold text-[11px] sm:text-xs text-sky-400 group-hover:bg-[#0284c7] group-hover:text-white transition-colors shrink-0">
                             ${currentLang === 'bn' ? idLabel : engId}
                         </span>
-                        <span class="text-[10px] sm:text-[11px] font-semibold px-2 sm:px-2.5 py-0.5 rounded-full border ${style.badge}">
+                        <span class="text-[10px] sm:text-[11px] font-semibold px-2 sm:px-2.5 py-0.5 rounded-full border ${style.badge} truncate max-w-[200px]">
                             ${tagText}
                         </span>
                     </div>
                     <div class="flex items-start gap-2.5">
                         <span class="text-lg sm:text-xl shrink-0 mt-0.5 group-hover:scale-125 transition-transform">${act.icon}</span>
-                        <h4 class="text-xs sm:text-sm font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-relaxed">
+                        <h4 class="text-xs sm:text-sm font-bold text-slate-100 group-hover:text-sky-300 transition-colors leading-relaxed line-clamp-3">
                             ${titleText}
                         </h4>
                     </div>
@@ -1426,26 +1426,26 @@ function renderMembers() {
         const callLabel = `📞 ${m.phone}`;
 
         return `
-            <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-5 border-t-2 ${topBorder} flex flex-col justify-between transition-all">
-                <div>
+            <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-5 border-t-2 ${topBorder} flex flex-col justify-between h-full transition-all">
+                <div class="flex-1">
                     <div class="flex items-center justify-between mb-2.5">
                         <span class="text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${roleBadgeBg}">
                             ${role}
                         </span>
                     </div>
 
-                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-2 leading-snug">
+                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-2 leading-snug line-clamp-2 min-h-[2.4rem]">
                         ${name}
                     </h3>
 
                     <div class="space-y-1.5 text-[11px] text-slate-300 mb-3.5">
-                        ${m.father ? `<div class="truncate text-slate-400"><span class="text-slate-500 font-medium">${fatherLabel}</span> ${fatherText}</div>` : ''}
-                        <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-400">
+                        ${m.father ? `<div class="truncate text-slate-400"><span class="text-slate-500 font-medium">${fatherLabel}</span> ${fatherText}</div>` : `<div class="text-slate-700 select-none">&nbsp;</div>`}
+                        <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-slate-400">
                             <span>🎓 <span class="text-slate-300 font-semibold">${eduText}</span></span>
                             <span>💼 <span class="text-slate-300 font-semibold">${profText}</span></span>
                             ${m.age ? `<span>🎂 ${ageLabel}</span>` : ''}
                         </div>
-                        <div class="text-slate-400 line-clamp-1 mt-1">
+                        <div class="text-slate-400 line-clamp-1 mt-1 text-[11px]" title="${addrText}">
                             📍 ${addrText}
                         </div>
                     </div>

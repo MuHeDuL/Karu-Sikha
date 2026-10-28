@@ -140,16 +140,17 @@ body {
     animation: pulseGlowDual 4.5s ease-in-out infinite;
 }
 
-/* 3D Canvas Background Container Optimized for Touch & Scrolling */
+/* 3D Canvas Background Container - Positioned Non-intrusively in Background */
 #hero-canvas-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    pointer-events: auto;
-    touch-action: pan-y; /* Allows fluid vertical scrolling on mobile touchscreens */
+    z-index: 0;
+    pointer-events: none; /* Never blocks click, swipe, or scrolling of content */
+    opacity: 0.82;
+    overflow: hidden;
 }
 #hero-canvas-container canvas {
     width: 100% !important;
@@ -160,14 +161,7 @@ body {
 .hero-content {
     position: relative;
     z-index: 10;
-    pointer-events: none;
-}
-.hero-content a,
-.hero-content button,
-.hero-content input,
-.hero-content select,
-.hero-content span {
-    pointer-events: auto;
+    pointer-events: auto; /* Clean native events for all text, buttons, links */
 }
 
 /* Modal Backdrop */
@@ -175,6 +169,18 @@ body {
     background: rgba(3, 7, 18, 0.88);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    z-index: 70 !important;
+}
+
+#donate-modal, #volunteer-modal, #certificate-modal, #contact-modal, #gallery-lightbox {
+    z-index: 70 !important;
+}
+
+/* Mobile dropdown menu max height and clean scrolling */
+#mobile-menu {
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Photo Gallery Cards & Hover Image Zoom */
@@ -233,10 +239,10 @@ header .header-donate-btn:active {
 
 /* Mobile-Specific Refinements */
 @media (max-width: 640px) {
-    /* Prevent oversized text on mobile devices */
+    /* Fluid responsive typography to prevent awkward multi-line text wrapping */
     h1 {
-        font-size: 2.15rem !important;
-        line-height: 1.25 !important;
+        font-size: clamp(1.65rem, 6.8vw, 2.25rem) !important;
+        line-height: 1.22 !important;
     }
     
     /* Ensure minimum tap target sizes */
@@ -244,16 +250,20 @@ header .header-donate-btn:active {
         min-height: 38px;
     }
 
-    /* Shape selector dock scroll on small screens */
-    .shape-dock {
-        max-width: 96%;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
     /* Modals take full mobile height gracefully */
     .modal-card {
-        max-height: 94vh !important;
+        max-height: 90vh !important;
         padding: 1.25rem !important;
+    }
+}
+
+
+/* Prevent fixed header from overlaying section headings */
+section[id], header[id] {
+    scroll-margin-top: 88px;
+}
+@media (min-width: 640px) {
+    section[id], header[id] {
+        scroll-margin-top: 100px;
     }
 }
