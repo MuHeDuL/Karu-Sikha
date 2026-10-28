@@ -264,9 +264,11 @@ const translations = {
         "don_receipt_phone": "মোবাইল নম্বর:",
         "don_receipt_date": "তারিখ ও সময়:",
         "don_receipt_anon": "নাম প্রকাশে অনিচ্ছুক (Anonymous)",
-        "don_btn_send_wa": "হোয়াটসঅ্যাপে স্লিপ পাঠান",
+        "don_btn_send_wa": "হোয়াটসঅ্যাপে পাঠান",
+        "don_btn_send_mail": "ইমেইলে স্লিপ পাঠান",
         "don_btn_pdf": "পিডিএফ / রশিদ ডাউনলোড",
         "don_btn_copy_slip": "স্লিপ কপি করুন",
+        "don_receipt_pdf_tip": "💡 পরামর্শ: রশিদটি ডাউনলোড করে হোয়াটসঅ্যাপে এটাচমেন্ট (📎) হিসেবে পাঠাতে পারেন।",
         "don_btn_new_donate": "নতুন অনুদান বা বন্ধ করুন",
         "vol_title": "কারু শিখায় ভলান্টিয়ার রেজিস্ট্রেশন",
         "vol_sub": "আমাদের ৩টি চলমান প্রকল্প ও সামাজিক উদ্যোগে যুক্ত হয়ে সমাজ পরিবর্তনের সহযাত্রী হোন।",
@@ -601,9 +603,11 @@ const translations = {
         "don_receipt_phone": "Mobile Phone:",
         "don_receipt_date": "Date & Time:",
         "don_receipt_anon": "Anonymous Donor",
-        "don_btn_send_wa": "Send Slip via WhatsApp",
+        "don_btn_send_wa": "Send via WhatsApp",
+        "don_btn_send_mail": "Send Slip via Email",
         "don_btn_pdf": "Download PDF / Receipt",
         "don_btn_copy_slip": "Copy Slip",
+        "don_receipt_pdf_tip": "💡 Tip: Download the receipt slip and attach (📎) it in WhatsApp.",
         "don_btn_new_donate": "New Donation / Close",
         "vol_title": "Volunteer Registration with Karu Shikha",
         "vol_sub": "Join our 3 flagship projects and community initiatives to spark transformative change.",
@@ -1267,6 +1271,12 @@ window.closeCertificateModal = function() {
 
 function setupModals() {
     // ==========================================
+    // GOOGLE SHEETS WEBHOOK (Optional Cloud Sync)
+    // ==========================================
+    // Deploy Google Apps Script Web App in your Google Sheet and paste URL below:
+    const GOOGLE_SHEET_WEBHOOK_URL = '';
+
+    // ==========================================
     // DONATION MODAL (Method 1: bKash, Nagad, Bank + Anonymous Option)
     // ==========================================
     const donateModal = document.getElementById('donate-modal');
@@ -1303,6 +1313,7 @@ function setupModals() {
     const receiptPhoneRow = document.getElementById('receipt-phone-row');
     const receiptDateEl = document.getElementById('receipt-date');
     const receiptSendWaBtn = document.getElementById('receipt-send-wa-btn');
+    const receiptSendMailBtn = document.getElementById('receipt-send-mail-btn');
     const receiptPdfBtn = document.getElementById('receipt-pdf-btn');
     const receiptCopyBtn = document.getElementById('receipt-copy-btn');
     const receiptCloseBtn = document.getElementById('receipt-close-btn');
@@ -1642,6 +1653,32 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                 note: note
             };
 
+            // Background sync to Google Sheet (if configured)
+            if (GOOGLE_SHEET_WEBHOOK_URL) {
+                try {
+                    fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            formType: 'donation',
+                            amount: amountVal,
+                            formattedAmount: formattedAmount,
+                            channel: channelDisplayName,
+                            channelTarget: channelAccountTarget,
+                            trxId: trxId.toUpperCase(),
+                            donorName: donorDisplay,
+                            isAnonymous: isAnonymous,
+                            phone: formattedPhone || 'N/A',
+                            note: note || '',
+                            dateTime: dateTimeDisplay
+                        })
+                    }).catch(err => console.log('Google Sheets donation sync notice:', err));
+                } catch (e) {
+                    console.log('Google Sheets donation sync error:', e);
+                }
+            }
+
             // Switch to Success/Receipt View
             if (donateFormView) donateFormView.classList.add('hidden');
             if (donateSuccessView) donateSuccessView.classList.remove('hidden');
@@ -1662,10 +1699,21 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
         });
     }
 
+    if (receiptSendMailBtn) {
+        receiptSendMailBtn.addEventListener('click', () => {
+            const subject = currentLang === 'bn'
+                ? `কারু শিখা সমাজকল্যাণ তহবিল - অনুদান নিশ্চিতকরণ স্লিপ [TrxID: ${lastReceiptData.trxId || ''}]`
+                : `Karu Shikha Welfare Fund - Donation Slip [TrxID: ${lastReceiptData.trxId || ''}]`;
+            const mailtoUrl = `mailto:karushikhayds@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastReceiptText)}`;
+            window.open(mailtoUrl, '_blank');
+        });
+    }
+
     // Native Browser Print / Save as PDF generator (0 KB extra library, zero lag, 100% native Bangla rendering)
     const printReceiptVoucher = () => {
         if (!lastReceiptData.trxId) return;
         const isBn = currentLang === 'bn';
+        const logoUrl = new URL('assets/karu-shikha-logo.png', window.location.href).href;
         const iframe = document.createElement('iframe');
         iframe.style.position = 'fixed';
         iframe.style.right = '0';
@@ -1686,32 +1734,36 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
         @page { size: A4 portrait; margin: 15mm; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hind Siliguri", "Kalpurush", Arial, sans-serif; }
         body { background: #fff; color: #1e293b; padding: 25px; line-height: 1.5; }
-        .voucher { max-width: 660px; margin: 0 auto; border: 2px solid #ea580c; border-radius: 16px; padding: 26px; position: relative; background: #fff; }
-        .header { text-align: center; border-bottom: 2px dashed #cbd5e1; padding-bottom: 16px; margin-bottom: 18px; }
+        .voucher { max-width: 660px; margin: 0 auto; border: 2px solid #ea580c; border-radius: 16px; padding: 26px; position: relative; background: #fff; overflow: hidden; }
+        .watermark-logo { position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); opacity: 0.05; pointer-events: none; z-index: 0; text-align: center; }
+        .header { text-align: center; border-bottom: 2px dashed #cbd5e1; padding-bottom: 16px; margin-bottom: 18px; position: relative; z-index: 1; }
+        .org-logo { width: 62px; height: 62px; margin: 0 auto 6px; display: block; object-fit: contain; }
         .org-title { font-size: 21px; font-weight: 900; color: #0f172a; margin-bottom: 3px; }
         .org-sub { font-size: 12px; color: #64748b; margin-bottom: 5px; }
         .reg-badge { display: inline-block; background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; }
         .receipt-badge { background: #0284c7; color: #fff; font-size: 12px; font-weight: 800; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px; letter-spacing: 0.5px; }
-        .amount-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .amount-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; position: relative; z-index: 1; }
         .amount-lbl { font-size: 12px; color: #64748b; font-weight: 600; }
         .amount-val { font-size: 22px; color: #ea580c; font-weight: 900; font-family: monospace; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 18px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 18px; position: relative; z-index: 1; }
         td { padding: 9px 12px; font-size: 12.5px; border-bottom: 1px solid #f1f5f9; }
         td.label { color: #64748b; font-weight: 600; width: 38%; }
         td.value { color: #0f172a; font-weight: 700; }
-        .footer { text-align: center; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 11px; color: #94a3b8; }
-        .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-25deg); font-size: 60px; color: rgba(234, 88, 12, 0.04); font-weight: 900; pointer-events: none; white-space: nowrap; }
+        .footer { text-align: center; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 11px; color: #94a3b8; position: relative; z-index: 1; }
     </style>
 </head>
 <body>
     <div class="voucher">
-        <div class="watermark">KARU SHIKHA</div>
+        <div class="watermark-logo">
+            <img src="${logoUrl}" alt="" style="width: 270px; height: 270px; object-fit: contain;">
+        </div>
         <div class="header">
+            <img src="${logoUrl}" alt="Karu Shikha Logo" class="org-logo">
             <h1 class="org-title">${isBn ? 'কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি' : 'Karu Shikha Youth Development Society'}</h1>
             <p class="org-sub">${isBn ? 'লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।' : 'Lakshmipur Pourashava Station Market, Faridpur Sadar, Faridpur.'}</p>
             <span class="reg-badge">${isBn ? 'যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭ • স্থাপিত: ৩১ জানুয়ারি ২০১৯' : 'Govt. Reg No: YDA-97 • Estd: 31 January 2019'}</span>
         </div>
-        <div style="text-align: center;">
+        <div style="text-align: center; position: relative; z-index: 1;">
             <span class="receipt-badge">${isBn ? 'অনুদানের প্রাপ্তি স্বীকার স্লিপ' : 'OFFICIAL DONATION ACKNOWLEDGEMENT SLIP'}</span>
         </div>
         <div class="amount-box">
@@ -1993,6 +2045,31 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                 ? `ধন্যবাদ ${name}! আপনার সকল তথ্য সফলভাবে যাচাই করা হয়েছে, হোয়াটসঅ্যাপে পাঠানো হচ্ছে...`
                 : `Thank you ${name}! All details verified, opening in WhatsApp...`;
             showToast(toastMsg);
+
+            // Background sync to Google Sheet (if configured)
+            if (GOOGLE_SHEET_WEBHOOK_URL) {
+                try {
+                    fetch(GOOGLE_SHEET_WEBHOOK_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            formType: 'volunteer',
+                            name: name,
+                            phone: formattedPhone,
+                            email: email,
+                            education: education,
+                            profession: profession,
+                            blood: blood,
+                            domain: domainDisplay,
+                            address: address,
+                            dateTime: dateStr
+                        })
+                    }).catch(err => console.log('Google Sheets volunteer sync notice:', err));
+                } catch (e) {
+                    console.log('Google Sheets volunteer sync error:', e);
+                }
+            }
 
             // Open WhatsApp with pre-filled application details
             window.open(waUrl, '_blank', 'noopener,noreferrer');
