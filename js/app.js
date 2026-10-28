@@ -595,19 +595,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Modals
     setupModals();
 
-    // 6. Mobile Menu Auto-close
+    // 6. Mobile Menu & Header Scroll Handling
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+    const headerEl = document.querySelector('header');
+
+    function updateMobileMenuIcon(isOpen) {
+        if (!mobileMenuIcon) return;
+        if (isOpen) {
+            mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+        } else {
+            mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>';
+        }
+    }
+
     if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const willOpen = mobileMenu.classList.contains('hidden');
             mobileMenu.classList.toggle('hidden');
+            updateMobileMenuIcon(willOpen);
         });
 
         mobileMenu.querySelectorAll('a, button').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                updateMobileMenuIcon(false);
             });
         });
+
+        // Close when tapping anywhere outside header/menu
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                    updateMobileMenuIcon(false);
+                }
+            }
+        });
+    }
+
+    // Header scroll background elevation
+    if (headerEl) {
+        window.addEventListener('scroll', () => {
+            headerEl.classList.toggle('header-scrolled', window.scrollY > 15);
+        }, { passive: true });
     }
 
     // 7. Activities Explorer (67 Milestones)

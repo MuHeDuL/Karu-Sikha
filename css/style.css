@@ -178,7 +178,10 @@ body {
 
 /* Mobile dropdown menu max height and clean scrolling */
 #mobile-menu {
-    max-height: calc(100vh - 90px);
+    background: rgba(8, 15, 28, 0.96) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    max-height: calc(100vh - 84px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -201,6 +204,88 @@ body {
 /* Fullscreen Lightbox Modal */
 #gallery-lightbox {
     transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* ==========================================================================
+   Header Navbar Normalization, Vertical Centering & Position Stability
+   ========================================================================== */
+header {
+    pointer-events: none; /* Allows clicks to pass through transparent outer margins */
+}
+header .header-inner-wrap {
+    pointer-events: auto; /* Re-enables interaction on the navbar and dropdown */
+}
+
+/* Prevent global mobile button min-height from distorting header controls */
+header button,
+header a {
+    min-height: unset !important;
+    box-sizing: border-box !important;
+}
+
+/* Standardized, pixel-aligned height across all header controls */
+header .header-donate-btn,
+header #lang-toggle-btn,
+header #mobile-menu-btn,
+header .open-volunteer-modal,
+header a[href^="tel:"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+}
+
+/* Fixed 1:1 Square Mobile Menu Toggle */
+header #mobile-menu-btn {
+    width: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    padding: 0 !important;
+}
+
+@media (min-width: 640px) {
+    header .header-donate-btn,
+    header #lang-toggle-btn,
+    header #mobile-menu-btn,
+    header .open-volunteer-modal,
+    header a[href^="tel:"] {
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+    }
+    header #mobile-menu-btn {
+        width: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+    }
+}
+
+/* Solid frosted glass effect when header is scrolled */
+header.header-scrolled nav {
+    background: rgba(6, 13, 25, 0.94) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Ultra-compact screens (< 360px) safeguard */
+@media (max-width: 359px) {
+    header nav {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+    header .header-donate-btn {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+    header #lang-toggle-btn {
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
 }
 
 /* Fixed Header Donation Button Styling: Gradient Border & Dark Glass Fill */
