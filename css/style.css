@@ -223,14 +223,10 @@ header a {
     box-sizing: border-box !important;
 }
 
-/* Standardized, pixel-aligned height across all header controls */
+/* Standardized, pixel-aligned height across header controls */
 header .header-donate-btn,
 header #lang-toggle-btn,
-header #mobile-menu-btn,
-header .open-volunteer-modal,
-header .header-whatsapp-btn,
-header a[href*="wa.me"],
-header a[href^="tel:"] {
+header .open-volunteer-modal {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -242,44 +238,46 @@ header a[href^="tel:"] {
     line-height: 1 !important;
 }
 
-/* WhatsApp Header Action Button Hover */
-header .header-whatsapp-btn {
-    transition: all 0.25s ease !important;
-}
-header .header-whatsapp-btn:hover {
-    background-color: #25D366 !important;
-    color: #ffffff !important;
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45) !important;
-    transform: translateY(-1px);
-}
-header .header-whatsapp-btn:active {
-    transform: scale(0.97);
-}
-
-/* Fixed 1:1 Square Mobile Menu Toggle */
-header #mobile-menu-btn {
-    width: 36px !important;
-    min-width: 36px !important;
-    max-width: 36px !important;
-    padding: 0 !important;
-}
-
 @media (min-width: 640px) {
     header .header-donate-btn,
     header #lang-toggle-btn,
-    header #mobile-menu-btn,
-    header .open-volunteer-modal,
-    header .header-whatsapp-btn,
-    header a[href*="wa.me"],
-    header a[href^="tel:"] {
+    header .open-volunteer-modal {
         height: 40px !important;
         min-height: 40px !important;
         max-height: 40px !important;
     }
+}
+
+/* Mobile Menu Toggle: Visible strictly on mobile & tablet (< 1024px), NEVER on desktop */
+@media (max-width: 1023px) {
+    header #mobile-menu-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+        max-width: 36px !important;
+        min-height: 36px !important;
+        max-height: 36px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        vertical-align: middle !important;
+    }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
     header #mobile-menu-btn {
         width: 40px !important;
+        height: 40px !important;
         min-width: 40px !important;
         max-width: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+    }
+}
+@media (min-width: 1024px) {
+    header #mobile-menu-btn {
+        display: none !important;
     }
 }
 
