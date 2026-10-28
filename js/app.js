@@ -1271,10 +1271,53 @@ window.closeCertificateModal = function() {
 
 function setupModals() {
     // ==========================================
-    // GOOGLE SHEETS WEBHOOK (Optional Cloud Sync)
+    // GOOGLE SHEETS WEBHOOK (Cloud Sync & Forensics)
     // ==========================================
-    // Deploy Google Apps Script Web App in your Google Sheet and paste URL below:
-    const GOOGLE_SHEET_WEBHOOK_URL = '';
+    const GOOGLE_SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbx_5NlyG_WFZLjPwkDyxQCpo3k8uHwW7wbpzWA3sX3zpCoK53oVfCnEKkgygrbTFnq-jg/exec';
+
+    // Device, Browser, IP & Traffic Source Collector
+    const clientMeta = {
+        ip: 'N/A',
+        location: 'Bangladesh',
+        device: 'Web Client',
+        source: document.referrer ? (document.referrer.includes('facebook') ? 'Facebook' : document.referrer.includes('google') ? 'Google' : document.referrer) : 'Direct'
+    };
+
+    try {
+        const ua = navigator.userAgent || '';
+        let os = 'Unknown OS';
+        if (/Android/i.test(ua)) os = 'Android Mobile';
+        else if (/iPhone|iPad|iPod/i.test(ua)) os = 'iOS Device';
+        else if (/Windows/i.test(ua)) os = 'Windows PC';
+        else if (/Macintosh|Mac OS X/i.test(ua)) os = 'Mac';
+        else if (/Linux/i.test(ua)) os = 'Linux';
+
+        let browser = 'Browser';
+        if (/Edg/i.test(ua)) browser = 'Edge';
+        else if (/Chrome/i.test(ua) && !/Edg/i.test(ua)) browser = 'Chrome';
+        else if (/Safari/i.test(ua) && !/Chrome/i.test(ua)) browser = 'Safari';
+        else if (/Firefox/i.test(ua)) browser = 'Firefox';
+
+        clientMeta.device = `${os} (${browser})`;
+
+        // Asynchronously pre-fetch client IP and city/country in the background
+        fetch('https://ipapi.co/json/')
+            .then(r => r.json())
+            .then(d => {
+                if (d && d.ip) clientMeta.ip = d.ip;
+                if (d && (d.city || d.country_name)) {
+                    clientMeta.location = `${d.city || ''}, ${d.country_name || 'Bangladesh'}`.replace(/^, /, '');
+                }
+            })
+            .catch(() => {
+                fetch('https://api.ipify.org?format=json')
+                    .then(r => r.json())
+                    .then(d => { if (d && d.ip) clientMeta.ip = d.ip; })
+                    .catch(() => { clientMeta.ip = 'N/A'; });
+            });
+    } catch (e) {
+        console.log('Client meta notice:', e);
+    }
 
     // ==========================================
     // DONATION MODAL (Method 1: bKash, Nagad, Bank + Anonymous Option)
@@ -1671,7 +1714,12 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                             isAnonymous: isAnonymous,
                             phone: formattedPhone || 'N/A',
                             note: note || '',
-                            dateTime: dateTimeDisplay
+                            dateTime: dateTimeDisplay,
+                            ip: clientMeta.ip || 'N/A',
+                            device: clientMeta.device || 'N/A',
+                            location: clientMeta.location || 'Bangladesh',
+                            source: clientMeta.source || 'Direct',
+                            submissionId: `KS-DON-${Date.now().toString(36).toUpperCase()}-${Math.floor(100 + Math.random() * 900)}`
                         })
                     }).catch(err => console.log('Google Sheets donation sync notice:', err));
                 } catch (e) {
@@ -2063,7 +2111,12 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                             blood: blood,
                             domain: domainDisplay,
                             address: address,
-                            dateTime: dateStr
+                            dateTime: dateStr,
+                            ip: clientMeta.ip || 'N/A',
+                            device: clientMeta.device || 'N/A',
+                            location: clientMeta.location || 'Bangladesh',
+                            source: clientMeta.source || 'Direct',
+                            submissionId: `KS-VOL-${Date.now().toString(36).toUpperCase()}-${Math.floor(100 + Math.random() * 900)}`
                         })
                     }).catch(err => console.log('Google Sheets volunteer sync notice:', err));
                 } catch (e) {
