@@ -228,6 +228,8 @@ header .header-donate-btn,
 header #lang-toggle-btn,
 header #mobile-menu-btn,
 header .open-volunteer-modal,
+header .header-whatsapp-btn,
+header a[href*="wa.me"],
 header a[href^="tel:"] {
     display: inline-flex !important;
     align-items: center !important;
@@ -238,6 +240,20 @@ header a[href^="tel:"] {
     box-sizing: border-box !important;
     vertical-align: middle !important;
     line-height: 1 !important;
+}
+
+/* WhatsApp Header Action Button Hover */
+header .header-whatsapp-btn {
+    transition: all 0.25s ease !important;
+}
+header .header-whatsapp-btn:hover {
+    background-color: #25D366 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45) !important;
+    transform: translateY(-1px);
+}
+header .header-whatsapp-btn:active {
+    transform: scale(0.97);
 }
 
 /* Fixed 1:1 Square Mobile Menu Toggle */
@@ -253,6 +269,8 @@ header #mobile-menu-btn {
     header #lang-toggle-btn,
     header #mobile-menu-btn,
     header .open-volunteer-modal,
+    header .header-whatsapp-btn,
+    header a[href*="wa.me"],
     header a[href^="tel:"] {
         height: 40px !important;
         min-height: 40px !important;

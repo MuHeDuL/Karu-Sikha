@@ -19,10 +19,12 @@ const translations = {
         "nav_future": "ভবিষ্যৎ পরিকল্পনা",
         "nav_volunteer": "ভলান্টিয়ার হোন",
         "nav_volunteer_btn": "🤝 ভলান্টিয়ার আবেদন",
+        "nav_whatsapp": "হোয়াটসঅ্যাপ",
         "nav_donate": "💖 অনুদান দিন",
         "nav_donate_short": "অনুদান",
         "tip_call": "কল করুন",
         "tip_call_direct": "সরাসরি কল করুন",
+        "tip_whatsapp": "WhatsApp এ সরাসরি চ্যাট করুন",
         "tip_donate": "অনুদান প্রদান করুন",
         "tip_cert": "যুব উন্নয়ন অধিদপ্তর সরকারি নিবন্ধন সনদ দেখতে ক্লিক করুন",
         "tip_bottom_contact": "জরুরি যোগাযোগ, ফোন ও ঠিকানা",
@@ -219,6 +221,10 @@ const translations = {
         "vol_ph_name": "আপনার পুরো নাম",
         "vol_lbl_email": "ইমেইল ঠিকানা",
         "vol_lbl_phone": "ফোন নম্বর *",
+        "vol_lbl_education": "শিক্ষাগত যোগ্যতা *",
+        "vol_ph_education": "যেমন: এইচএসসি / স্নাতক / ডিপ্লোমা",
+        "vol_lbl_profession": "পেশা *",
+        "vol_ph_profession": "যেমন: শিক্ষার্থী / চাকরিজীবী / উদ্যোক্তা",
         "vol_lbl_blood": "রক্তের গ্রুপ",
         "blood_ap": "A+ (পজিটিভ)",
         "blood_an": "A- (নেগেটিভ)",
@@ -258,6 +264,9 @@ const translations = {
         "modal_c_phone_lbl": "সরাসরি ফোন কল",
         "modal_c_phone_hours": "সকাল ৯টা - রাত ৯টা",
         "modal_c_phone_btn": "কল দিন →",
+        "modal_c_wa_lbl": "হোয়াটসঅ্যাপ চ্যাট",
+        "modal_c_wa_hint": "মেসেজ দিন ও তাত্ক্ষণিক যোগাযোগ করুন",
+        "modal_c_wa_btn": "চ্যাট →",
         "modal_c_mail_lbl": "অফিসিয়াল ইমেইল",
         "modal_c_mail_hint": "যেকোনো অনুসন্ধান বা প্রস্তাব পাঠান",
         "modal_c_mail_btn": "মেইল →",
@@ -288,10 +297,12 @@ const translations = {
         "nav_future": "Future Vision",
         "nav_volunteer": "Join Volunteer",
         "nav_volunteer_btn": "🤝 Volunteer Form",
+        "nav_whatsapp": "WhatsApp",
         "nav_donate": "💖 Donate Now",
         "nav_donate_short": "Donate",
         "tip_call": "Direct Phone Call",
         "tip_call_direct": "Direct Phone Helpline",
+        "tip_whatsapp": "Direct WhatsApp Chat",
         "tip_donate": "Support & Donate Now",
         "tip_cert": "Click to View Govt. Registration Certificate",
         "tip_bottom_contact": "Quick Contact, Phone & Address",
@@ -488,6 +499,10 @@ const translations = {
         "vol_ph_name": "Your full legal name",
         "vol_lbl_email": "Email Address",
         "vol_lbl_phone": "Phone Number *",
+        "vol_lbl_education": "Educational Qualification *",
+        "vol_ph_education": "e.g. HSC / Bachelor's / Diploma",
+        "vol_lbl_profession": "Profession / Occupation *",
+        "vol_ph_profession": "e.g. Student / Service Holder / Entrepreneur",
         "vol_lbl_blood": "Blood Group",
         "blood_ap": "A+ (Positive)",
         "blood_an": "A- (Negative)",
@@ -527,6 +542,9 @@ const translations = {
         "modal_c_phone_lbl": "Direct Phone Helpline",
         "modal_c_phone_hours": "9:00 AM - 9:00 PM",
         "modal_c_phone_btn": "Call Now →",
+        "modal_c_wa_lbl": "WhatsApp Chat",
+        "modal_c_wa_hint": "Instant chat and support helpline",
+        "modal_c_wa_btn": "Chat →",
         "modal_c_mail_lbl": "Official Email Address",
         "modal_c_mail_hint": "Send inquiries or partnership proposals",
         "modal_c_mail_btn": "Email →",
@@ -1196,14 +1214,66 @@ function setupModals() {
     if (volunteerForm) {
         volunteerForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const nameInput = document.getElementById('vol-name');
-            const name = nameInput ? nameInput.value : 'Friend';
-            const msg = currentLang === 'bn'
-                ? `অভিনন্দন ${name}! কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটিতে আপনার ভলান্টিয়ার আবেদন জমা হয়েছে।`
-                : `Congratulations ${name}! Your volunteer application to Karu Shikha Youth Development Society has been submitted.`;
-            showToast(msg);
+
+            const name = (document.getElementById('vol-name')?.value || '').trim();
+            const email = (document.getElementById('vol-email')?.value || '').trim();
+            const phone = (document.getElementById('vol-phone')?.value || '').trim();
+            const education = (document.getElementById('vol-education')?.value || '').trim();
+            const profession = (document.getElementById('vol-profession')?.value || '').trim();
+            const blood = (document.getElementById('vol-blood')?.value || '').trim();
+
+            const domainEl = document.getElementById('vol-domain');
+            const domain = domainEl ? domainEl.options[domainEl.selectedIndex].text.trim() : '';
+
+            const address = (document.getElementById('vol-address')?.value || '').trim();
+
+            if (!name || !phone) {
+                showToast(currentLang === 'bn' ? 'অনুগ্রহ করে পূর্ণ নাম ও ফোন নম্বর পূরণ করুন।' : 'Please fill in your name and phone number.');
+                return;
+            }
+
+            const now = new Date();
+            const dateStr = now.toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            let waMessage = '';
+            if (currentLang === 'bn') {
+                waMessage =
+`*কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি*
+📋 *ভলান্টিয়ার রেজিস্ট্রেশন আবেদনপত্র*
+━━━━━━━━━━━━━━━━━━━━
+👤 *নাম:* ${name}
+📞 *ফোন নম্বর:* ${phone}
+${email ? `📧 *ইমেইল:* ${email}\n` : ''}${education ? `🎓 *শিক্ষাগত যোগ্যতা:* ${education}\n` : ''}${profession ? `💼 *পেশা:* ${profession}\n` : ''}${blood ? `🩸 *রক্তের গ্রুপ:* ${blood}\n` : ''}${domain ? `🎯 *আগ্রহের প্রকল্প:* ${domain}\n` : ''}${address ? `📍 *বর্তমান ঠিকানা:* ${address}\n` : ''}━━━━━━━━━━━━━━━━━━━━
+📅 *তারিখ:* ${dateStr}
+🤝 *আমি কারু শিখা যুব উন্নয়ন সোসাইটিতে ভলান্টিয়ার হিসেবে যুক্ত হতে আগ্রহী।*`;
+            } else {
+                waMessage =
+`*Karu Shikha Youth Development Society*
+📋 *Volunteer Registration Application*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+📞 *Phone Number:* ${phone}
+${email ? `📧 *Email:* ${email}\n` : ''}${education ? `🎓 *Education:* ${education}\n` : ''}${profession ? `💼 *Profession:* ${profession}\n` : ''}${blood ? `🩸 *Blood Group:* ${blood}\n` : ''}${domain ? `🎯 *Interested Project:* ${domain}\n` : ''}${address ? `📍 *Address:* ${address}\n` : ''}━━━━━━━━━━━━━━━━━━━━
+📅 *Date:* ${dateStr}
+🤝 *I am interested in joining Karu Shikha Youth Development Society as an active volunteer.*`;
+            }
+
+            const waUrl = `https://wa.me/8801795023942?text=${encodeURIComponent(waMessage)}`;
+
+            const toastMsg = currentLang === 'bn'
+                ? `ধন্যবাদ ${name}! আপনার আবেদন প্রস্তুত হয়েছে, হোয়াটসঅ্যাপে পাঠানো হচ্ছে...`
+                : `Thank you ${name}! Application ready, opening in WhatsApp...`;
+            showToast(toastMsg);
+
             if (volunteerModal) volunteerModal.classList.add('hidden');
             volunteerForm.reset();
+
+            // Open WhatsApp with pre-filled application details
+            window.open(waUrl, '_blank');
         });
     }
 

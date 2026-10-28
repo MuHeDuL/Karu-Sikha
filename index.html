@@ -80,10 +80,13 @@
 
                 <!-- Right Action Buttons (Uniform Height & Pixel-Perfect Alignment) -->
                 <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 shrink-0 flex-nowrap">
-                    <!-- Quick Call Tap (Icon on sm/md/lg/xl, Full Number on 2xl) -->
-                    <a href="tel:01795023942" class="hidden sm:inline-flex items-center justify-center gap-1.5 px-2.5 xl:px-3 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 hover:text-white hover:bg-emerald-600 text-xs font-semibold transition-all shrink-0 select-none" title="কল করুন" data-i18n-title="tip_call">
-                        <span>📞</span>
-                        <span class="hidden 2xl:inline font-mono text-[11px]">01795-023942</span>
+                    <!-- WhatsApp Direct Chat (Click takes directly to 01795-023942 on WhatsApp) -->
+                    <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="header-whatsapp-btn hidden sm:inline-flex items-center justify-center gap-1.5 px-2.5 xl:px-3 rounded-xl bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] hover:bg-[#25D366] hover:text-white text-xs font-semibold transition-all shrink-0 select-none shadow-md shadow-[#25D366]/10" title="WhatsApp এ সরাসরি চ্যাট করুন" data-i18n-title="tip_whatsapp">
+                        <svg class="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
+                        </svg>
+                        <span class="hidden 2xl:inline font-semibold" data-i18n="nav_whatsapp">WhatsApp</span>
                     </a>
 
                     <!-- Language Switcher -->
@@ -129,8 +132,11 @@
                     <button class="open-volunteer-modal flex-1 py-2.5 text-center bg-[#0284c7] hover:bg-sky-500 rounded-xl text-white font-bold text-xs" onclick="openVolunteerModal()" data-i18n="nav_volunteer_btn">
                         🤝 ভলান্টিয়ার আবেদন
                     </button>
-                    <a href="tel:01795023942" class="px-3.5 py-2.5 bg-emerald-600 rounded-xl text-white flex items-center justify-center font-bold text-xs" title="সরাসরি কল করুন" data-i18n-title="tip_call_direct">
-                        📞
+                    <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 bg-[#25D366] hover:bg-[#20ba59] rounded-xl text-white flex items-center justify-center font-bold text-xs shadow-md shadow-emerald-500/25" title="WhatsApp এ যোগাযোগ করুন" data-i18n-title="tip_whatsapp">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -1069,17 +1075,29 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_email">ইমেইল ঠিকানা</label>
-                        <input type="email" placeholder="name@example.com" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                        <input type="email" id="vol-email" placeholder="name@example.com" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_phone">ফোন নম্বর *</label>
-                        <input type="tel" required placeholder="01XXXXXXXXX" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                        <input type="tel" id="vol-phone" required placeholder="01XXXXXXXXX" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    </div>
+                </div>
+
+                <!-- 2 New Inputs: Educational Qualification & Profession -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_education">শিক্ষাগত যোগ্যতা *</label>
+                        <input type="text" id="vol-education" required placeholder="যেমন: এইচএসসি / স্নাতক / ডিপ্লোমা" data-i18n-placeholder="vol_ph_education" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_profession">পেশা *</label>
+                        <input type="text" id="vol-profession" required placeholder="যেমন: শিক্ষার্থী / চাকরিজীবী / উদ্যোক্তা" data-i18n-placeholder="vol_ph_profession" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_blood">রক্তের গ্রুপ</label>
-                    <select class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    <select id="vol-blood" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
                         <option value="A+" data-i18n="blood_ap">A+ (পজিটিভ)</option>
                         <option value="A-" data-i18n="blood_an">A- (নেগেটিভ)</option>
                         <option value="B+" data-i18n="blood_bp">B+ (পজিটিভ)</option>
@@ -1093,7 +1111,7 @@
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_domain">পছন্দের প্রকল্প / কার্যক্ষেত্র *</label>
-                    <select required class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    <select id="vol-domain" required class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
                         <option value="pym" data-i18n="vol_opt_pym">Project Your Mentor (PYM - শিশু শিক্ষা ও সুরক্ষা)</option>
                         <option value="coks" data-i18n="vol_opt_coks">Climate Olympiad (COKS - ক্লাইমেট ও বৃক্ষরোপণ)</option>
                         <option value="ewgsf" data-i18n="vol_opt_ewgsf">EWGSF প্রকল্প (নারী ক্ষমতায়ন, হ্যান্ড পেইন্ট ও মাসিক স্বাস্থ্য)</option>
@@ -1104,11 +1122,12 @@
 
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 mb-1" data-i18n="vol_lbl_addr">বর্তমান ঠিকানা / উপজেলা (ফরিদপুর)</label>
-                    <input type="text" placeholder="যেমন: লক্ষ্মীপুর / বায়তুল আমান / ফরিদপুর সদর" data-i18n-placeholder="vol_ph_addr" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    <input type="text" id="vol-address" placeholder="যেমন: লক্ষ্মীপুর / বায়তুল আমান / ফরিদপুর সদর" data-i18n-placeholder="vol_ph_addr" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
                 </div>
 
-                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all cursor-pointer" data-i18n="vol_btn_submit">
-                    আবেদন জমা দিন
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all cursor-pointer flex items-center justify-center gap-2">
+                    <span data-i18n="vol_btn_submit">আবেদন জমা দিন</span>
+                    <span>📲</span>
                 </button>
             </form>
         </div>
@@ -1205,6 +1224,24 @@
                     </div>
                     <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg shrink-0" data-i18n="modal_c_phone_btn">
                         কল দিন →
+                    </span>
+                </a>
+
+                <!-- WhatsApp Card with Direct Chat -->
+                <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-[#25D366]/40 hover:border-[#25D366]/80 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
+                        </svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="text-[10px] text-[#25D366] font-bold uppercase tracking-wider" data-i18n="modal_c_wa_lbl">হোয়াটসঅ্যাপ চ্যাট</div>
+                        <div class="text-sm font-extrabold text-white">01795-023942</div>
+                        <div class="text-[10px] text-slate-400 font-medium" data-i18n="modal_c_wa_hint">মেসেজ দিন ও তাত্ক্ষণিক যোগাযোগ করুন</div>
+                    </div>
+                    <span class="text-xs font-bold text-[#25D366] bg-[#25D366]/10 px-2.5 py-1 rounded-lg shrink-0" data-i18n="modal_c_wa_btn">
+                        চ্যাট →
                     </span>
                 </a>
 
