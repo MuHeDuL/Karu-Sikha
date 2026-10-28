@@ -17,7 +17,7 @@
 - **নিবন্ধনের তারিখ**: ২১-০১-২০২৬ খ্রি.
 - **স্থায়ী কার্যালয়**: লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর। (Lakshmipur Pourashava Station Market, Faridpur Sadar, Faridpur)
 - **গুগল ম্যাপস লোকেশন**: [Google Maps - Karu Shikha Youth Development Society](https://www.google.com/maps/place/Karu+Shikha+Youth+Development+Society/@23.6096143,89.8403826,17.76z/data=!4m6!3m5!1s0x39fe3b00184e3199:0xc87ff06ff234f1a9!8m2!3d23.609495!4d89.8416517!16s%2Fg%2F11n3pl84ls) *(GPS: 23.609495, 89.8416517)*
-- **যোগাযোগের নম্বর**: **০১৭৯৫-০২৩৯৪২ (01795-023942)**
+- **যোগাযোগের নম্বর**: **01795-023942**
 - **অফিসিয়াল ইমেইল**: **karushikhayds@gmail.com**
 - **অফিসিয়াল ফেসবুক পেজ**: [facebook.com/p/Karu-Shikha-Youth-Development-Society](https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/)
 - **মূলমন্ত্র / স্লোগান**: *"Empowering Youth, Transforming Society" • "যুবশক্তির আলোকেই টেকসই উন্নয়ন"*
