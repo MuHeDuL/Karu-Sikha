@@ -266,6 +266,63 @@ header #lang-toggle-btn {
     }
 }
 
+/* Compact desktop menu font size and padding optimization for English mode */
+@media (min-width: 1024px) {
+    header .nav-links-wrap a {
+        font-size: 11.5px !important;
+        padding: 4px 5px !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.01em;
+    }
+    header .open-volunteer-modal {
+        font-size: 11.5px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        white-space: nowrap !important;
+    }
+    header .header-donate-btn {
+        font-size: 12px !important;
+        padding-left: 11px !important;
+        padding-right: 11px !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .nav-links-wrap a {
+        font-size: 12.5px !important;
+        padding: 4px 7px !important;
+        letter-spacing: normal;
+    }
+    header .open-volunteer-modal {
+        font-size: 12px !important;
+        padding-left: 13px !important;
+        padding-right: 13px !important;
+    }
+    header .header-donate-btn {
+        font-size: 12.5px !important;
+        padding-left: 13px !important;
+        padding-right: 13px !important;
+    }
+}
+
+@media (min-width: 1440px) {
+    header .nav-links-wrap a {
+        font-size: 13.5px !important;
+        padding: 5px 10px !important;
+    }
+    header .open-volunteer-modal {
+        font-size: 13px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    header .header-donate-btn {
+        font-size: 13.5px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
 /* Mobile Menu Toggle: Visible strictly on mobile & tablet (< 1024px), NEVER on desktop */
 @media (max-width: 1023px) {
     header #mobile-menu-btn {
