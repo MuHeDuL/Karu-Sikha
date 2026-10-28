@@ -220,15 +220,18 @@ const translations = {
         "don_btn_submit": "নিশ্চিত করুন ও অনুদান সম্পন্ন করুন",
         "vol_title": "কারু শিখায় ভলান্টিয়ার রেজিস্ট্রেশন",
         "vol_sub": "আমাদের ৩টি চলমান প্রকল্প ও সামাজিক উদ্যোগে যুক্ত হয়ে সমাজ পরিবর্তনের সহযাত্রী হোন।",
-        "vol_lbl_name": "পূর্ণ নাম *",
+        "vol_lbl_name": "পূর্ণ নাম",
         "vol_ph_name": "আপনার পুরো নাম",
         "vol_lbl_email": "ইমেইল ঠিকানা",
-        "vol_lbl_phone": "ফোন নম্বর *",
-        "vol_lbl_education": "শিক্ষাগত যোগ্যতা *",
+        "vol_ph_email": "name@example.com",
+        "vol_lbl_phone": "ফোন নম্বর",
+        "vol_ph_phone": "01XXXXXXXXX",
+        "vol_lbl_education": "শিক্ষাগত যোগ্যতা",
         "vol_ph_education": "যেমন: এইচএসসি / স্নাতক / ডিপ্লোমা",
-        "vol_lbl_profession": "পেশা *",
+        "vol_lbl_profession": "পেশা",
         "vol_ph_profession": "যেমন: শিক্ষার্থী / চাকরিজীবী / উদ্যোক্তা",
         "vol_lbl_blood": "রক্তের গ্রুপ",
+        "vol_opt_select_blood": "-- রক্তের গ্রুপ নির্বাচন করুন * --",
         "blood_ap": "A+ (পজিটিভ)",
         "blood_an": "A- (নেগেটিভ)",
         "blood_bp": "B+ (পজিটিভ)",
@@ -237,7 +240,8 @@ const translations = {
         "blood_on": "O- (নেগেটিভ)",
         "blood_abp": "AB+ (পজিটিভ)",
         "blood_abn": "AB- (নেগেটিভ)",
-        "vol_lbl_domain": "পছন্দের প্রকল্প / কার্যক্ষেত্র *",
+        "vol_lbl_domain": "পছন্দের প্রকল্প / কার্যক্ষেত্র",
+        "vol_opt_select_domain": "-- পছন্দের প্রকল্প নির্বাচন করুন * --",
         "vol_opt_pym": "Project Your Mentor (PYM - শিশু শিক্ষা ও সুরক্ষা)",
         "vol_opt_coks": "Climate Olympiad (COKS - ক্লাইমেট ও বৃক্ষরোপণ)",
         "vol_opt_ewgsf": "EWGSF প্রকল্প (নারী ক্ষমতায়ন, হ্যান্ড পেইন্ট ও মাসিক স্বাস্থ্য)",
@@ -501,15 +505,18 @@ const translations = {
         "don_btn_submit": "Confirm & Complete Donation",
         "vol_title": "Volunteer Registration with Karu Shikha",
         "vol_sub": "Join our 3 flagship projects and community initiatives to spark transformative change.",
-        "vol_lbl_name": "Full Name *",
+        "vol_lbl_name": "Full Name",
         "vol_ph_name": "Your full legal name",
         "vol_lbl_email": "Email Address",
-        "vol_lbl_phone": "Phone Number *",
-        "vol_lbl_education": "Educational Qualification *",
+        "vol_ph_email": "name@example.com",
+        "vol_lbl_phone": "Phone Number",
+        "vol_ph_phone": "01XXXXXXXXX",
+        "vol_lbl_education": "Educational Qualification",
         "vol_ph_education": "e.g. HSC / Bachelor's / Diploma",
-        "vol_lbl_profession": "Profession / Occupation *",
+        "vol_lbl_profession": "Profession / Occupation",
         "vol_ph_profession": "e.g. Student / Service Holder / Entrepreneur",
         "vol_lbl_blood": "Blood Group",
+        "vol_opt_select_blood": "-- Select Blood Group * --",
         "blood_ap": "A+ (Positive)",
         "blood_an": "A- (Negative)",
         "blood_bp": "B+ (Positive)",
@@ -518,7 +525,8 @@ const translations = {
         "blood_on": "O- (Negative)",
         "blood_abp": "AB+ (Positive)",
         "blood_abn": "AB- (Negative)",
-        "vol_lbl_domain": "Preferred Initiative / Domain *",
+        "vol_lbl_domain": "Preferred Initiative / Domain",
+        "vol_opt_select_domain": "-- Select Preferred Project * --",
         "vol_opt_pym": "Project Your Mentor (PYM - Child Mentoring & Protection)",
         "vol_opt_coks": "Climate Olympiad (COKS - Climate Action & Afforestation)",
         "vol_opt_ewgsf": "EWGSF Project (Women Empowerment, Handpaint & Health)",
@@ -1218,25 +1226,115 @@ function setupModals() {
 
     const volunteerForm = document.getElementById('volunteer-form');
     if (volunteerForm) {
+        // Clear error highlighting whenever user types or selects
+        const formInputs = volunteerForm.querySelectorAll('input, select');
+        formInputs.forEach(input => {
+            const clearErr = () => {
+                input.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/30');
+                input.classList.add('border-white/10');
+            };
+            input.addEventListener('input', clearErr);
+            input.addEventListener('change', clearErr);
+        });
+
+        const markError = (el, msg) => {
+            if (el) {
+                el.classList.add('border-rose-500', 'ring-2', 'ring-rose-500/30');
+                el.classList.remove('border-white/10');
+                el.focus();
+            }
+            showToast(msg);
+        };
+
         volunteerForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const name = (document.getElementById('vol-name')?.value || '').trim();
-            const email = (document.getElementById('vol-email')?.value || '').trim();
-            const phone = (document.getElementById('vol-phone')?.value || '').trim();
-            const education = (document.getElementById('vol-education')?.value || '').trim();
-            const profession = (document.getElementById('vol-profession')?.value || '').trim();
-            const blood = (document.getElementById('vol-blood')?.value || '').trim();
-
+            const nameEl = document.getElementById('vol-name');
+            const emailEl = document.getElementById('vol-email');
+            const phoneEl = document.getElementById('vol-phone');
+            const educationEl = document.getElementById('vol-education');
+            const professionEl = document.getElementById('vol-profession');
+            const bloodEl = document.getElementById('vol-blood');
             const domainEl = document.getElementById('vol-domain');
-            const domain = domainEl ? domainEl.options[domainEl.selectedIndex].text.trim() : '';
+            const addressEl = document.getElementById('vol-address');
 
-            const address = (document.getElementById('vol-address')?.value || '').trim();
+            const name = (nameEl?.value || '').trim();
+            const email = (emailEl?.value || '').trim();
+            const phone = (phoneEl?.value || '').trim();
+            const education = (educationEl?.value || '').trim();
+            const profession = (professionEl?.value || '').trim();
+            const blood = (bloodEl?.value || '').trim();
+            const domain = (domainEl?.value || '').trim();
+            const domainText = domainEl && domainEl.selectedIndex >= 0 ? domainEl.options[domainEl.selectedIndex].text.trim() : '';
+            const address = (addressEl?.value || '').trim();
 
-            if (!name || !phone) {
-                showToast(currentLang === 'bn' ? 'অনুগ্রহ করে পূর্ণ নাম ও ফোন নম্বর পূরণ করুন।' : 'Please fill in your name and phone number.');
+            // 1. Full Name validation (Mandatory, Min 3 chars)
+            if (!name) {
+                markError(nameEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার পূর্ণ নাম লিখুন।' : 'Please enter your full name.');
                 return;
             }
+            if (name.length < 3) {
+                markError(nameEl, currentLang === 'bn' ? 'পূর্ণ নাম কমপক্ষে ৩ অক্ষরের হতে হবে।' : 'Full name must be at least 3 characters.');
+                return;
+            }
+
+            // 2. Email Address validation (Mandatory & Valid format)
+            if (!email) {
+                markError(emailEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার ইমেইল ঠিকানা লিখুন।' : 'Please enter your email address.');
+                return;
+            }
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                markError(emailEl, currentLang === 'bn' ? 'সঠিক ইমেইল ঠিকানা দিন (যেমন: name@example.com)' : 'Please enter a valid email address (e.g. name@example.com)');
+                return;
+            }
+
+            // 3. Mobile Phone Number validation (Mandatory & Valid BD format)
+            if (!phone) {
+                markError(phoneEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার মোবাইল নম্বর লিখুন।' : 'Please enter your mobile phone number.');
+                return;
+            }
+            const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+            const phoneRegex = /^(\+?880|880|0)?1[3-9]\d{8}$/;
+            if (!phoneRegex.test(cleanPhone)) {
+                markError(phoneEl, currentLang === 'bn' ? 'সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন (যেমন: 017XXXXXXXX)' : 'Please enter a valid 11-digit mobile number (e.g. 017XXXXXXXX)');
+                return;
+            }
+
+            // 4. Educational Qualification validation (Mandatory)
+            if (!education) {
+                markError(educationEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার শিক্ষাগত যোগ্যতা লিখুন।' : 'Please specify your educational qualification.');
+                return;
+            }
+
+            // 5. Profession / Occupation validation (Mandatory)
+            if (!profession) {
+                markError(professionEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার পেশা উল্লেখ করুন।' : 'Please specify your profession/occupation.');
+                return;
+            }
+
+            // 6. Blood Group validation (Mandatory)
+            if (!blood) {
+                markError(bloodEl, currentLang === 'bn' ? 'অনুগ্রহ করে রক্তের গ্রুপ নির্বাচন করুন।' : 'Please select your blood group.');
+                return;
+            }
+
+            // 7. Preferred Initiative / Domain validation (Mandatory)
+            if (!domain) {
+                markError(domainEl, currentLang === 'bn' ? 'অনুগ্রহ করে পছন্দের প্রকল্প বা কার্যক্ষেত্র নির্বাচন করুন।' : 'Please select your preferred project/domain.');
+                return;
+            }
+
+            // 8. Present Address validation (Mandatory)
+            if (!address) {
+                markError(addressEl, currentLang === 'bn' ? 'অনুগ্রহ করে আপনার বর্তমান ঠিকানা লিখুন।' : 'Please enter your current address.');
+                return;
+            }
+
+            // Normalize display phone (standard 11-digit BD format: 01XXXXXXXXX)
+            let formattedPhone = cleanPhone;
+            if (formattedPhone.startsWith('+88')) formattedPhone = formattedPhone.substring(3);
+            else if (formattedPhone.startsWith('88')) formattedPhone = formattedPhone.substring(2);
 
             const now = new Date();
             const dateStr = now.toLocaleDateString(currentLang === 'bn' ? 'bn-BD' : 'en-US', {
@@ -1252,8 +1350,14 @@ function setupModals() {
 📋 *ভলান্টিয়ার রেজিস্ট্রেশন আবেদনপত্র*
 ━━━━━━━━━━━━━━━━━━━━
 👤 *নাম:* ${name}
-📞 *ফোন নম্বর:* ${phone}
-${email ? `📧 *ইমেইল:* ${email}\n` : ''}${education ? `🎓 *শিক্ষাগত যোগ্যতা:* ${education}\n` : ''}${profession ? `💼 *পেশা:* ${profession}\n` : ''}${blood ? `🩸 *রক্তের গ্রুপ:* ${blood}\n` : ''}${domain ? `🎯 *আগ্রহের প্রকল্প:* ${domain}\n` : ''}${address ? `📍 *বর্তমান ঠিকানা:* ${address}\n` : ''}━━━━━━━━━━━━━━━━━━━━
+📞 *ফোন নম্বর:* ${formattedPhone}
+📧 *ইমেইল:* ${email}
+🎓 *শিক্ষাগত যোগ্যতা:* ${education}
+💼 *পেশা:* ${profession}
+🩸 *রক্তের গ্রুপ:* ${blood}
+🎯 *আগ্রহের প্রকল্প:* ${domainText}
+📍 *বর্তমান ঠিকানা:* ${address}
+━━━━━━━━━━━━━━━━━━━━
 📅 *তারিখ:* ${dateStr}
 🤝 *আমি কারু শিখা যুব উন্নয়ন সোসাইটিতে ভলান্টিয়ার হিসেবে যুক্ত হতে আগ্রহী।*`;
             } else {
@@ -1262,8 +1366,14 @@ ${email ? `📧 *ইমেইল:* ${email}\n` : ''}${education ? `🎓 *শি�
 📋 *Volunteer Registration Application*
 ━━━━━━━━━━━━━━━━━━━━
 👤 *Name:* ${name}
-📞 *Phone Number:* ${phone}
-${email ? `📧 *Email:* ${email}\n` : ''}${education ? `🎓 *Education:* ${education}\n` : ''}${profession ? `💼 *Profession:* ${profession}\n` : ''}${blood ? `🩸 *Blood Group:* ${blood}\n` : ''}${domain ? `🎯 *Interested Project:* ${domain}\n` : ''}${address ? `📍 *Address:* ${address}\n` : ''}━━━━━━━━━━━━━━━━━━━━
+📞 *Phone Number:* ${formattedPhone}
+📧 *Email:* ${email}
+🎓 *Education:* ${education}
+💼 *Profession:* ${profession}
+🩸 *Blood Group:* ${blood}
+🎯 *Interested Project:* ${domainText}
+📍 *Address:* ${address}
+━━━━━━━━━━━━━━━━━━━━
 📅 *Date:* ${dateStr}
 🤝 *I am interested in joining Karu Shikha Youth Development Society as an active volunteer.*`;
             }
@@ -1271,15 +1381,19 @@ ${email ? `📧 *Email:* ${email}\n` : ''}${education ? `🎓 *Education:* ${edu
             const waUrl = `https://wa.me/8801795023942?text=${encodeURIComponent(waMessage)}`;
 
             const toastMsg = currentLang === 'bn'
-                ? `ধন্যবাদ ${name}! আপনার আবেদন প্রস্তুত হয়েছে, হোয়াটসঅ্যাপে পাঠানো হচ্ছে...`
-                : `Thank you ${name}! Application ready, opening in WhatsApp...`;
+                ? `ধন্যবাদ ${name}! আপনার সকল তথ্য সফলভাবে যাচাই করা হয়েছে, হোয়াটসঅ্যাপে পাঠানো হচ্ছে...`
+                : `Thank you ${name}! All details verified, opening in WhatsApp...`;
             showToast(toastMsg);
+
+            // Open WhatsApp with pre-filled application details
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
 
             if (volunteerModal) volunteerModal.classList.add('hidden');
             volunteerForm.reset();
-
-            // Open WhatsApp with pre-filled application details
-            window.open(waUrl, '_blank');
+            formInputs.forEach(input => {
+                input.classList.remove('border-rose-500', 'ring-2', 'ring-rose-500/30');
+                input.classList.add('border-white/10');
+            });
         });
     }
 
