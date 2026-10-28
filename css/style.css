@@ -1,0 +1,259 @@
+/* Karu Shikha Youth Development Society - Production Grade CSS & National-Level Mobile Optimization
+ * Theme derived directly from the Official Karu Shikha Logo:
+ * - Karu Sky/Cerulean Blue: #0284c7 / #0ea5e9
+ * - Shikha Saffron/Amber Orange: #f97316 / #f59e0b
+ * - Dark Rich Slate Backdrop: #060d19
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+:root {
+    --logo-blue: #0284c7;
+    --logo-blue-glow: rgba(2, 132, 199, 0.4);
+    --logo-orange: #f97316;
+    --logo-amber: #f59e0b;
+    --logo-orange-glow: rgba(249, 115, 22, 0.4);
+    --bg-dark: #060d19;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-dark);
+    color: #f1f5f9;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 72px; /* Extra bottom breathing room for the mobile sticky floating bar */
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding-bottom: 0;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #060d19;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0284c7, #f97316);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+
+/* Hide scrollbar utility for horizontal scroll tabs */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Dual-Glow Glassmorphism Classes */
+.glass-panel {
+    background: rgba(10, 19, 36, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (hover: hover) {
+    .glass-panel-hover:hover {
+        transform: translateY(-4px);
+        border-color: rgba(2, 132, 199, 0.5);
+        box-shadow: 0 16px 32px -10px rgba(2, 132, 199, 0.25), 0 0 20px rgba(249, 115, 22, 0.15);
+    }
+}
+
+.glass-button {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.2s ease;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.glass-button:hover, .glass-button:active {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(2, 132, 199, 0.6);
+}
+.glass-button:active {
+    transform: scale(0.98);
+}
+
+/* Dual Brand Gradient Text & Glow */
+.text-logo-gradient {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 40%, #f97316 75%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-glow-dual {
+    text-shadow: 0 0 20px rgba(2, 132, 199, 0.4), 0 0 35px rgba(249, 115, 22, 0.3);
+}
+
+/* 3D Shape Switcher Active State */
+.shape-pill.active {
+    background: linear-gradient(135deg, #0284c7 0%, #f97316 100%);
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(2, 132, 199, 0.5), 0 0 12px rgba(249, 115, 22, 0.4);
+    border-color: transparent;
+    font-weight: 700;
+}
+
+/* Subtle Floating Animations */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlowDual {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-float {
+    animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulseGlowDual 4.5s ease-in-out infinite;
+}
+
+/* 3D Canvas Background Container Optimized for Touch & Scrolling */
+#hero-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+    touch-action: pan-y; /* Allows fluid vertical scrolling on mobile touchscreens */
+}
+#hero-canvas-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+.hero-content a,
+.hero-content button,
+.hero-content input,
+.hero-content select,
+.hero-content span {
+    pointer-events: auto;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+    background: rgba(3, 7, 18, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* Photo Gallery Cards & Hover Image Zoom */
+.gallery-card {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-card:hover {
+    border-color: rgba(2, 132, 199, 0.6);
+    box-shadow: 0 14px 28px -8px rgba(2, 132, 199, 0.3);
+}
+.gallery-card .gallery-img {
+    transition: transform 0.45s ease;
+}
+.gallery-card:hover .gallery-img {
+    transform: scale(1.06);
+}
+
+/* Fullscreen Lightbox Modal */
+#gallery-lightbox {
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* Fixed Header Donation Button Styling: Gradient Border & Dark Glass Fill */
+header .header-donate-btn {
+    border: 2px solid transparent !important;
+    background-color: rgba(10, 19, 36, 0.85) !important;
+    background-image: linear-gradient(rgba(10, 19, 36, 0.88), rgba(10, 19, 36, 0.88)), linear-gradient(135deg, #f97316 0%, #fb923c 45%, #0284c7 100%) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box, border-box !important;
+    box-shadow: 0 4px 15px -2px rgba(249, 115, 22, 0.35) !important;
+    border-radius: 0.75rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    color: #ffffff !important;
+    transition: all 0.25s ease !important;
+}
+header .header-donate-btn:hover {
+    background-color: rgba(15, 27, 51, 0.95) !important;
+    background-image: linear-gradient(rgba(15, 27, 51, 0.92), rgba(15, 27, 51, 0.92)), linear-gradient(135deg, #fb923c 0%, #f97316 45%, #38bdf8 100%) !important;
+    box-shadow: 0 6px 20px -2px rgba(249, 115, 22, 0.55) !important;
+    transform: translateY(-1px);
+}
+header .header-donate-btn:active {
+    transform: scale(0.97);
+}
+
+/* Mobile Sticky Bottom Floating Action Bar */
+.mobile-bottom-bar {
+    background: rgba(10, 19, 36, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -8px 24px -4px rgba(0, 0, 0, 0.6);
+}
+
+/* Mobile-Specific Refinements */
+@media (max-width: 640px) {
+    /* Prevent oversized text on mobile devices */
+    h1 {
+        font-size: 2.15rem !important;
+        line-height: 1.25 !important;
+    }
+    
+    /* Ensure minimum tap target sizes */
+    button, a {
+        min-height: 38px;
+    }
+
+    /* Shape selector dock scroll on small screens */
+    .shape-dock {
+        max-width: 96%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Modals take full mobile height gracefully */
+    .modal-card {
+        max-height: 94vh !important;
+        padding: 1.25rem !important;
+    }
+}

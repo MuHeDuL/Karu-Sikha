@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি | Karu Shikha Youth Development Society</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#060d19',
+                            800: '#0a1324',
+                            700: '#101d36',
+                            600: '#1b2a4a'
+                        },
+                        karu: {
+                            blue: '#0284c7',
+                            sky: '#38bdf8',
+                            orange: '#f97316',
+                            amber: '#f59e0b',
+                            crimson: '#f43f5e',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#060d19] text-slate-100 selection:bg-orange-500 selection:text-slate-950 antialiased">
+
+    <!-- Ambient Glowing Blurs (Karu Blue & Shikha Orange) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-[-8%] left-[15%] w-[500px] sm:w-[650px] h-[500px] sm:h-[650px] bg-[#0284c7]/15 rounded-full blur-[140px] animate-pulse-glow"></div>
+        <div class="absolute top-[45%] right-[-10%] w-[500px] sm:w-[650px] h-[500px] sm:h-[650px] bg-[#f97316]/15 rounded-full blur-[150px] animate-pulse-glow" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-[-10%] left-[-5%] w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-[#38bdf8]/10 rounded-full blur-[130px]"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <!-- Main Header Navbar (Fully Responsive, Zero-Overflow Guaranteed) -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 mt-2 sm:mt-3">
+            <nav class="glass-panel rounded-2xl px-2.5 sm:px-5 py-1.5 sm:py-2.5 flex items-center justify-between flex-nowrap border border-white/10 shadow-2xl backdrop-blur-xl">
+                <!-- Brand Logo (Compact & Flexible on Small Screens) -->
+                <a href="#hero" class="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
+                    <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-b from-[#0284c7] to-[#f97316] p-[1.5px] sm:p-[2px] shadow-lg shadow-sky-500/25 group-hover:scale-105 transition-transform shrink-0">
+                        <div class="w-full h-full bg-slate-950 rounded-[7px] sm:rounded-[10px] overflow-hidden flex items-center justify-center p-0.5 sm:p-1">
+                            <img src="assets/karu-shikha-logo.png" alt="Karu Shikha Logo" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="min-w-0">
+                        <div class="font-extrabold text-sm sm:text-lg tracking-tight flex items-center gap-1 leading-none sm:leading-normal">
+                            <span class="text-sky-400">কারু</span>
+                            <span class="text-orange-400">শিখা</span>
+                        </div>
+                        <div class="hidden sm:block text-[8px] sm:text-[10px] text-slate-300 font-medium tracking-wider uppercase truncate" data-i18n="brand_subtitle">
+                            ইয়ুথ ডেভেলপমেন্ট সোসাইটি
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center gap-5 xl:gap-6 text-xs sm:text-sm font-medium text-slate-300">
+                    <a href="#about" class="hover:text-sky-400 transition-colors" data-i18n="nav_about">আমাদের কথা</a>
+                    <a href="#projects" class="hover:text-orange-400 transition-colors" data-i18n="nav_projects">প্রকল্পসমূহ</a>
+                    <a href="#activities" class="hover:text-sky-400 transition-colors" data-i18n="nav_activities">কার্যক্রম (৬৭টি)</a>
+                    <a href="#committee" class="hover:text-orange-400 transition-colors">কার্যনির্বাহী পরিষদ</a>
+                    <a href="#gallery" class="hover:text-sky-400 transition-colors">গ্যালারি</a>
+                    <a href="#contact" class="hover:text-orange-400 transition-colors">যোগাযোগ</a>
+                </div>
+
+                <!-- Right Action Buttons (Properly Styled & Proportioned for Mobile) -->
+                <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0 flex-nowrap">
+                    <!-- Quick Call Tap (Shown on tablet/desktop, mobile bottom bar already has it) -->
+                    <a href="tel:01795023942" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 hover:text-white hover:bg-emerald-600 text-xs font-semibold transition-all shrink-0" title="কল করুন">
+                        <span>📞</span>
+                        <span class="hidden md:inline">০১৭৯৫-০২৩৯৪২</span>
+                    </a>
+
+                    <!-- Language Switcher -->
+                    <button id="lang-toggle-btn" class="glass-button text-[10px] sm:text-xs font-semibold px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-sky-300 hover:text-white flex items-center gap-1 cursor-pointer shrink-0">
+                        🌐 <span>EN</span>
+                    </button>
+
+                    <!-- Volunteer Modal Trigger (Desktop xl only) -->
+                    <button class="hidden xl:inline-flex open-volunteer-modal glass-button text-xs font-semibold px-4 py-2 rounded-xl text-slate-200 hover:text-white hover:border-sky-400 cursor-pointer shrink-0" data-i18n="nav_volunteer">
+                        ভলান্টিয়ার হোন
+                    </button>
+
+                    <!-- Donate Button (Gradient Border, Dark Glass Fill, Compact on Mobile) -->
+                    <button type="button" class="header-donate-btn open-donate-modal px-2.5 sm:px-4 py-1.5 sm:py-2 text-white font-extrabold text-[11px] sm:text-sm cursor-pointer shrink-0 gap-1 sm:gap-1.5" onclick="openDonationModal()" title="অনুদান প্রদান করুন">
+                        <span class="text-xs sm:text-sm leading-none">💖</span>
+                        <span class="hidden sm:inline" data-i18n="nav_donate">অনুদান দিন</span>
+                        <span class="sm:hidden">অনুদান</span>
+                    </button>
+
+                    <!-- Mobile Menu Button (Fixed Rigid Bounds, Never Crosses Header) -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-lg sm:rounded-xl bg-slate-900/80 border border-white/10 shrink-0 cursor-pointer transition-colors" aria-label="Toggle menu">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-2 glass-panel rounded-2xl p-4 border border-white/10 flex flex-col gap-2.5 text-sm shadow-2xl">
+                <a href="#about" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_about">আমাদের কথা</a>
+                <a href="#projects" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_projects">প্রকল্পসমূহ (PYM, COKS, EWGSF)</a>
+                <a href="#activities" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_activities">কার্যক্রম (৬৭টি মাইলফলক)</a>
+                <a href="#committee" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60">কার্যনির্বাহী পরিষদ</a>
+                <a href="#future" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_future">ভবিষ্যৎ পরিকল্পনা</a>
+                <a href="#gallery" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60">ফটো গ্যালারি</a>
+                <a href="#contact" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60">ঠিকানা ও যোগাযোগ</a>
+                <hr class="border-white/10 my-1">
+                <div class="flex gap-2">
+                    <button class="open-donate-modal flex-1 py-2.5 text-center bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl text-white font-bold text-xs shadow-md shadow-orange-500/25" onclick="openDonationModal()" data-i18n="nav_donate">
+                        💖 অনুদান দিন
+                    </button>
+                    <button class="open-volunteer-modal flex-1 py-2.5 text-center bg-[#0284c7] hover:bg-sky-500 rounded-xl text-white font-bold text-xs" onclick="openVolunteerModal()" data-i18n="nav_volunteer">
+                        🤝 ভলান্টিয়ার আবেদন
+                    </button>
+                    <a href="tel:01795023942" class="px-3.5 py-2.5 bg-emerald-600 rounded-xl text-white flex items-center justify-center font-bold text-xs" title="সরাসরি কল করুন">
+                        📞
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Section with Interactive 3D Karu Shikha Logo Background -->
+    <section id="hero" class="relative min-h-[92vh] sm:min-h-[94vh] flex items-center justify-center pt-24 sm:pt-28 pb-16 overflow-hidden">
+        <!-- 3D Karu Shikha Logo Particles in Background -->
+        <div id="hero-canvas-container"></div>
+
+        <!-- Foreground Content Layer -->
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center hero-content">
+            <!-- Official Founding Tag -->
+            <div class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-slate-900/80 border border-sky-500/30 text-sky-300 text-xs sm:text-sm font-semibold mb-5 sm:mb-6 backdrop-blur-md shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
+                <span data-i18n="hero_tag">প্রতিষ্ঠিত: ৩১ জানুয়ারি ২০১৯ • ফরিদপুর, বাংলাদেশ</span>
+            </div>
+
+            <!-- Hero Headline -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-4 sm:mb-6 leading-tight">
+                <span class="text-slate-100" data-i18n="hero_title_1">দক্ষতা, সমতা ও মানবিকতায়</span><br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-cyan-200 to-orange-400 text-glow-dual" data-i18n="hero_title_highlight">
+                    প্রদীপ্ত আগামীর রূপরেখা
+                </span>
+            </h1>
+
+            <!-- Official Slogan / Motto -->
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-orange-400 mb-3 sm:mb-4">
+                "Empowering Youth, Transforming Society" • যুবশক্তির আলোকেই টেকসই উন্নয়ন
+            </p>
+
+            <!-- Subtitle / Mission Statement -->
+            <p class="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-slate-300 mb-6 sm:mb-8 leading-relaxed font-normal" data-i18n="hero_desc">
+                ২০১৯ সাল থেকে যুব উন্নয়ন, নারী ক্ষমতায়ন, সুবিধাবঞ্চিত শিশু শিক্ষা, স্বাস্থ্যসেবা, পরিবেশ সংরক্ষণ এবং উদ্যোক্তা সৃষ্টিতে অবিচল এক সামাজিক আলোকযাত্রা।
+            </p>
+
+            <!-- 6 Focus Domains Badges -->
+            <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-8 sm:mb-10 text-[11px] sm:text-xs text-slate-300 font-medium max-w-4xl mx-auto">
+                <span class="px-2.5 sm:px-3 py-1 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-300">🌱 যুব উন্নয়ন</span>
+                <span class="px-2.5 sm:px-3 py-1 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-300">👩 নারী ক্ষমতায়ন</span>
+                <span class="px-2.5 sm:px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300">📚 শিশু শিক্ষা</span>
+                <span class="px-2.5 sm:px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300">🩺 স্বাস্থ্যসেবা ও রক্তদান</span>
+                <span class="px-2.5 sm:px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-300">🌍 পরিবেশ ও জলবায়ু</span>
+                <span class="px-2.5 sm:px-3 py-1 rounded-lg bg-orange-500/10 border border-orange-500/20 text-orange-300">🎨 হস্তশিল্প ও উদ্যোক্তা</span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4">
+                <a href="#projects" class="w-full sm:w-auto px-6 sm:px-7 py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
+                    <span data-i18n="hero_btn_explore">চলমান প্রকল্প ও কার্যক্রম</span>
+                    <span>↓</span>
+                </a>
+                <button class="open-volunteer-modal w-full sm:w-auto px-6 sm:px-7 py-3 rounded-xl glass-button text-white font-semibold text-xs sm:text-sm hover:border-orange-400 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer" onclick="openVolunteerModal()">
+                    <span class="text-orange-400">🤝</span>
+                    <span data-i18n="hero_btn_volunteer">আমাদের সাথে যুক্ত হোন</span>
+                </button>
+            </div>
+
+            <p class="text-[11px] text-slate-400 mt-3 font-medium pointer-events-none">
+                💡 মাউস বা টাচ দিয়ে ৩ডি লোগোর কণাগুলোর ত্রিমাত্রিক গভীরতা ও মুভমেন্ট দেখুন
+            </p>
+        </div>
+    </section>
+
+    <!-- Impact Numbers Section -->
+    <section id="impact-stats" class="relative z-10 py-10 sm:py-12 -mt-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+                <!-- Stat 1: 7+ Years (Est. 2019) -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 text-center border-t-2 border-t-[#0284c7]">
+                    <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-200 mb-1 sm:mb-2">
+                        <span class="counter-val" data-target="7">0</span>+
+                    </div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">
+                        বছরের গৌরবোজ্জ্বল পথচলা (২০১৯ থেকে)
+                    </div>
+                </div>
+
+                <!-- Stat 2: 67+ Activities & Milestones -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 text-center border-t-2 border-t-orange-400">
+                    <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-200 mb-1 sm:mb-2">
+                        <span class="counter-val" data-target="67">0</span>+
+                    </div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">
+                        বাস্তব কার্যক্রম ও স্বীকৃতি
+                    </div>
+                </div>
+
+                <!-- Stat 3: Environment & Trees -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 text-center border-t-2 border-t-emerald-400">
+                    <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200 mb-1 sm:mb-2">
+                        <span class="counter-val" data-target="12000">0</span>+
+                    </div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">
+                        বৃক্ষরোপণ ও ক্লাইমেট অ্যাকশন
+                    </div>
+                </div>
+
+                <!-- Stat 4: Women & Youth -->
+                <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-6 text-center border-t-2 border-t-rose-400">
+                    <div class="text-2xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-200 mb-1 sm:mb-2">
+                        <span class="counter-val" data-target="450">0</span>+
+                    </div>
+                    <div class="text-xs sm:text-sm text-slate-300 font-medium">
+                        নারী ও যুব উদ্যোক্তা বিকাশ
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Profile, Vision & Mission Section (From PDF Pages 2-3) -->
+    <section id="about" class="relative z-10 py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-2xl">
+                <!-- Header -->
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-8 border-b border-white/10">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-b from-[#0284c7] to-[#f97316] p-[2px] shadow-xl shadow-sky-500/25 shrink-0">
+                            <div class="w-full h-full bg-slate-900 rounded-[14px] overflow-hidden p-2 flex items-center justify-center">
+                                <img src="assets/karu-shikha-logo.png" alt="Karu Shikha Emblem" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-sky-400 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20">
+                                প্রাতিষ্ঠানিক পরিচয়
+                            </span>
+                            <h2 class="text-xl sm:text-3xl font-extrabold text-white mt-1.5">
+                                কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি
+                            </h2>
+                            <p class="text-xs text-orange-400 font-semibold mt-0.5">
+                                Karu Sikha Youth Development Society • প্রতিষ্ঠিত: ৩১/০১/২০১৯ খ্রি.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <button type="button" onclick="openCertificateModal()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 hover:border-emerald-400 text-emerald-300 hover:text-emerald-200 text-xs font-bold transition-all cursor-pointer shadow-md group" title="যুব উন্নয়ন অধিদপ্তর সরকারি নিবন্ধন সনদ দেখতে ক্লিক করুন">
+                            <span>✓ যুব উন্নয়ন অধিদপ্তর নিবন্ধিত (নং: যুউঅ-৯৭)</span>
+                            <span class="text-[10px] bg-emerald-500/25 px-2 py-0.5 rounded-full border border-emerald-500/30 text-emerald-100 font-extrabold group-hover:scale-105 transition-transform">সনদপত্র দেখুন 📜</span>
+                        </button>
+                        <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-all shadow-md">
+                            <span>📘 ফেসবুক পেজ</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                    <!-- Vision Card -->
+                    <div class="p-6 rounded-2xl bg-slate-950/70 border border-sky-500/30 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2.5 mb-3">
+                                <span class="text-2xl">👁️</span>
+                                <h3 class="text-lg font-bold text-sky-400">আমাদের ভিশন (Vision)</h3>
+                            </div>
+                            <p class="text-slate-200 text-sm sm:text-base leading-relaxed italic">
+                                "একটি সচেতন, শিক্ষিত, দক্ষ ও মানবিক যুব সমাজ গড়ে তোলা, যারা সমাজে নেতৃত্ব দেবে এবং টেকসই উন্নয়ন নিশ্চিত করবে।"
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/5 text-xs text-sky-300/80 font-medium">
+                            🎯 লক্ষ্য: যুব নেতৃত্ব ও টেকসই সামাজিক রূপান্তর
+                        </div>
+                    </div>
+
+                    <!-- Mission Card -->
+                    <div class="p-6 rounded-2xl bg-slate-950/70 border border-orange-500/30">
+                        <div class="flex items-center gap-2.5 mb-3">
+                            <span class="text-2xl">🎯</span>
+                            <h3 class="text-lg font-bold text-orange-400">আমাদের মিশন (Mission)</h3>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <span class="text-orange-400 font-bold">➢</span>
+                                <span>যুব সমাজকে সঠিক নেতৃত্ব ও জীবনদক্ষতায় গড়ে তোলা।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-orange-400 font-bold">➢</span>
+                                <span>সুবিধাবঞ্চিত শিশু ও কিশোরদের শিক্ষায় সহায়তা করা।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-orange-400 font-bold">➢</span>
+                                <span>পরিবেশ রক্ষা ও জলবায়ু পরিবর্তন মোকাবিলায় যুবকদের সম্পৃক্ত করা।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-orange-400 font-bold">➢</span>
+                                <span>যুব ও যুব নারী ক্ষমতায়ন ও উদ্যোক্তা হিসেবে গড়ে তোলা।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-orange-400 font-bold">➢</span>
+                                <span>স্বাস্থ্য সচেতনতা বৃদ্ধি ও জরুরি সহায়তা প্রদান।</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 6 Core Work Dimensions from PDF Page 3 -->
+                <div class="border-t border-white/10 pt-8">
+                    <h3 class="text-base sm:text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        <span>📌</span>
+                        <span>কারু শিখার মূল কার্যক্রম ও লক্ষ্যসমূহ:</span>
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs sm:text-sm">
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                            <div class="font-bold text-sky-400 mb-1">📖 শিক্ষা উন্নয়ন</div>
+                            <p class="text-slate-400">শিক্ষা সহায়তা, বই বিতরণ, শিক্ষার্থীদের জন্য সচেতনতামূলক কর্মসূচি।</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                            <div class="font-bold text-emerald-400 mb-1">🌿 পরিবেশ সংরক্ষণ</div>
+                            <p class="text-slate-400">বৃক্ষরোপণ, পরিচ্ছন্নতা অভিযান, জলবায়ু সচেতনতা ক্যাম্পেইন।</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                            <div class="font-bold text-rose-400 mb-1">🩺 স্বাস্থ্যসেবা ও রক্তদান</div>
+                            <p class="text-slate-400">বিনামূল্যে স্বাস্থ্য সেবা, রক্তদান কর্মসূচি, প্রাথমিক চিকিৎসা প্রশিক্ষণ।</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                            <div class="font-bold text-pink-400 mb-1">👩 নারী ও কিশোরী উন্নয়ন</div>
+                            <p class="text-slate-400">দক্ষতা উন্নয়ন প্রশিক্ষণ, ক্ষুদ্র উদ্যোক্তা তৈরি, লিঙ্গ সমতা প্রচার।</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                            <div class="font-bold text-amber-400 mb-1">🤝 সামাজিক সেবা</div>
+                            <p class="text-slate-400">দুর্যোগকালীন ত্রাণ, শীতবস্ত্র বিতরণ, দুঃস্থ ও অসহায়দের সহায়তা।</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/50 border border-white/5">
+                            <div class="font-bold text-orange-400 mb-1">🚀 যুব নেতৃত্ব ও উদ্ভাবন</div>
+                            <p class="text-slate-400">সেমিনার, কর্মশালা, প্রশিক্ষণ, সাংস্কৃতিক ও ক্রীড়া কার্যক্রম।</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Running Flagship Projects Section (PYM, COKS, EWGSF - Detailed from PDF) -->
+    <section id="projects" class="relative z-10 py-16 sm:py-20 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-orange-400 text-xs font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20">
+                    চলমান তিনটি প্রধান কাজ
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mt-4 mb-3 tracking-tight">
+                    প্রকল্প ভিত্তিক চলমান কার্যক্রম
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed">
+                    কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৩টি সিগনেচার প্রকল্প—PYM, COKS ও EWGSF।
+                </p>
+            </div>
+
+            <!-- 3 Detailed Project Cards -->
+            <div class="space-y-8 sm:space-y-12">
+                <!-- 1. Project Your Mentor (PYM) -->
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-sky-500/30 overflow-hidden relative group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                        <div class="lg:col-span-4 text-center lg:text-left">
+                            <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto lg:mx-0 rounded-2xl bg-white p-2 shadow-xl shadow-sky-500/20 mb-4 flex items-center justify-center">
+                                <img src="assets/pym-logo.png" alt="Project Your Mentor Emblem" class="w-full h-full object-contain">
+                            </div>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-sky-500/20 text-sky-300 border border-sky-500/30 mb-2">
+                                Every Child is Unique
+                            </span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                                Project Your Mentor (PYM)
+                            </h3>
+                            <p class="text-xs sm:text-sm text-sky-400 font-semibold mb-4">
+                                শিশু শিক্ষা ও শিশু সুরক্ষা বিষয়ক বিশেষ উদ্যোগ
+                            </p>
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 hidden sm:block">
+                                <img src="assets/pym-class.png" alt="PYM Class" class="w-full h-44 object-cover">
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-8 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-950/70 border border-white/10">
+                                <p class="italic text-slate-200">
+                                    "Project Your Mentor বিশ্বাস করে শিশুই ভবিষ্যৎ। তাই শিক্ষা, সুরক্ষা ও অধিকার নিশ্চিত করে আগামী প্রজন্মকে মানবিক, দক্ষ ও দায়িত্বশীল নাগরিক হিসেবে গড়ে তোলাই আমাদের মূল লক্ষ্য।"
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-1.5">
+                                        <span>🎯</span>
+                                        <span>মূল উদ্দেশ্য:</span>
+                                    </h4>
+                                    <ul class="space-y-1.5 text-slate-400 text-xs">
+                                        <li>• শিশুদের মানসম্মত প্রাথমিক ও অপ্রাতিষ্ঠানিক শিক্ষা প্রদান।</li>
+                                        <li>• প্রাতিষ্ঠানিক শিক্ষার পাশাপাশি বাস্তব জ্ঞান ও সৃজনশীলতা বিকাশ।</li>
+                                        <li>• শিশু নিরাপত্তা নিশ্চিতকরণ ও শিশু নির্যাতন প্রতিরোধে কার্যক্রম।</li>
+                                        <li>• শিশু অধিকার প্রতিষ্ঠা ও আনন্দময় শৈশব নিশ্চিত করা।</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-1.5">
+                                        <span>📌</span>
+                                        <span>প্রধান কার্যক্রম:</span>
+                                    </h4>
+                                    <ul class="space-y-1.5 text-slate-400 text-xs">
+                                        <li>• শিক্ষা সহায়তা ও সুবিধাবঞ্চিত শিশুদের শিক্ষা সামগ্রী বিতরণ।</li>
+                                        <li>• খেলাধুলা, কর্মশালা ও গল্প বলার মাধ্যমে পাঠদান।</li>
+                                        <li>• শিশু সুরক্ষা প্রশিক্ষণ ও নির্যাতন প্রতিরোধ ক্যাম্পেইন।</li>
+                                        <li>• অভিভাবকদের জন্য প্যারেন্টিং সেমিনার, পরামর্শ ও ট্রেনিং।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center gap-3">
+                                <button class="open-volunteer-modal px-5 py-2.5 rounded-xl bg-[#0284c7] hover:bg-sky-500 text-white font-bold text-xs transition-all cursor-pointer">
+                                    মেন্টর হিসেবে যুক্ত হোন
+                                </button>
+                                <button class="open-donate-modal px-5 py-2.5 rounded-xl glass-button text-xs font-semibold text-sky-300 hover:text-white cursor-pointer">
+                                    শিশুদের শিক্ষা তহবিলে অনুদান দিন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Climate Olympiad by Karu Shikha (COKS) -->
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-emerald-500/30 overflow-hidden relative group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                        <div class="lg:col-span-4 text-center lg:text-left">
+                            <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto lg:mx-0 rounded-2xl bg-white p-2 shadow-xl shadow-emerald-500/20 mb-4 flex items-center justify-center">
+                                <img src="assets/coks-logo.png" alt="Climate Olympiad Emblem" class="w-full h-full object-contain">
+                            </div>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 mb-2">
+                                Climate Smart Youth
+                            </span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                                Climate Olympiad (COKS)
+                            </h3>
+                            <p class="text-xs sm:text-sm text-emerald-400 font-semibold mb-4">
+                                Climate Smart Youth for a Sustainable Bangladesh
+                            </p>
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 hidden sm:block">
+                                <img src="assets/coks-school.png" alt="COKS School" class="w-full h-44 object-cover">
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-8 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-950/70 border border-white/10">
+                                <p class="italic text-slate-200">
+                                    "সবুজে গড়ি ভবিষ্যৎ, সচেতন হই আজ থেকেই।" — শিক্ষার্থীদের মধ্যে জলবায়ু পরিবর্তন, নবায়নযোগ্য শক্তি, কার্বন নিঃসরণ হ্রাস ও পরিবেশ সচেতনতা তৈরিতে এক যুগান্তকারী যুব আন্দোলন।
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-1.5">
+                                        <span>🎯</span>
+                                        <span>লক্ষ্য ও উদ্দেশ্য:</span>
+                                    </h4>
+                                    <ul class="space-y-1.5 text-slate-400 text-xs">
+                                        <li>• মাধ্যমিক ও উচ্চমাধ্যমিক পর্যায়ের শিক্ষার্থী।</li>
+                                        <li>• বিশ্ববিদ্যালয় শিক্ষার্থী ও পরিবেশ বিষয়ক তরুণ নেতৃত্ব।</li>
+                                        <li>• শিক্ষক ও অভিভাবক সমাজকে ক্লাইমেট সচেতন করা।</li>
+                                        <li>• সিসা দূষণ ও প্লাস্টিক দূষণ প্রতিরোধে সচেতনতা সৃষ্টি।</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-1.5">
+                                        <span>📌</span>
+                                        <span>প্রধান কার্যক্রম:</span>
+                                    </h4>
+                                    <ul class="space-y-1.5 text-slate-400 text-xs">
+                                        <li>• বার্ষিক ক্লাইমেট অলিম্পিয়াড ও মাসিক অলিম্পিয়াড আয়োজন।</li>
+                                        <li>• পরিবেশ সচেতনতামূলক ক্যাম্পেইন ও গাছ লাগানো অভিযান।</li>
+                                        <li>• Karu Shikha Climate Club গঠন ও দেশব্যাপী পরিচালনা।</li>
+                                        <li>• আর্টইভিজম অ্যান্ড এক্সিবিশন (Artivism & Exhibition)।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center gap-3">
+                                <button class="open-volunteer-modal px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all cursor-pointer">
+                                    ক্লাইমেট ক্লাবে যোগ দিন
+                                </button>
+                                <button class="open-donate-modal px-5 py-2.5 rounded-xl glass-button text-xs font-semibold text-emerald-300 hover:text-white cursor-pointer">
+                                    বৃক্ষরোপণ তহবিলে অনুদান দিন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Empowering Women, Growing Safe Future (EWGSF) -->
+                <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-orange-500/30 overflow-hidden relative group">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+                        <div class="lg:col-span-4 text-center lg:text-left">
+                            <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto lg:mx-0 rounded-2xl bg-white p-2 shadow-xl shadow-orange-500/20 mb-4 flex items-center justify-center">
+                                <img src="assets/ewgsf-logo.png" alt="EWGSF Emblem" class="w-full h-full object-contain">
+                            </div>
+                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30 mb-2">
+                                Women Empowerment
+                            </span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                                EWGSF প্রকল্প
+                            </h3>
+                            <p class="text-xs sm:text-sm text-orange-400 font-semibold mb-4">
+                                Empowering Women, Growing Safe Future
+                            </p>
+                            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 hidden sm:block">
+                                <img src="assets/handpaint-session.png" alt="Handpaint Training" class="w-full h-44 object-cover">
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-8 text-xs sm:text-sm text-slate-300 leading-relaxed space-y-4">
+                            <div class="p-4 rounded-xl bg-slate-950/70 border border-white/10">
+                                <p class="italic text-slate-200">
+                                    "নারী ক্ষমতায়নই টেকসই উন্নয়ন ও নিরাপদ ভবিষ্যতের চাবিকাঠি।" — নারীদের পরিবেশবান্ধব কর্মকাণ্ড, অর্গানিক কৃষি, স্বাস্থ্য সুরক্ষা ও অর্থনৈতিক স্বাবলম্বিতায় সম্পৃক্ত করার সমন্বিত প্ল্যাটফর্ম।
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-1.5">
+                                        <span>🎯</span>
+                                        <span>মূল লক্ষ্য:</span>
+                                    </h4>
+                                    <ul class="space-y-1.5 text-slate-400 text-xs">
+                                        <li>• অর্গানিক কৃষি ও নিরাপদ খাদ্যে নারী উদ্যোক্তা তৈরি করা।</li>
+                                        <li>• মাসিক স্বাস্থ্য সুরক্ষা ও স্যানিটারি ন্যাপকিন সহজলভ্য করা।</li>
+                                        <li>• নারীদের মানসিক স্বাস্থ্য হেল্পডেস্ক ও কাউন্সেলিং সেবা।</li>
+                                        <li>• সেলাই, হস্তশিল্প, হ্যান্ড পেইন্ট ও আইটি প্রশিক্ষণ।</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-2 text-sm flex items-center gap-1.5">
+                                        <span>📌</span>
+                                        <span>প্রধান কার্যক্রম:</span>
+                                    </h4>
+                                    <ul class="space-y-1.5 text-slate-400 text-xs">
+                                        <li>• নিরাপদ ও সাশ্রয়ী স্যানিটারি ন্যাপকিন উৎপাদন ও বিতরণ।</li>
+                                        <li>• হস্তশিল্প ও হ্যান্ড পেইন্ট পণ্য তৈরি ও উদ্যোক্তা কর্নার স্থাপন।</li>
+                                        <li>• নারী উদ্যোক্তা মেলা আয়োজন করে সরাসরি বাজার সংযোগ।</li>
+                                        <li>• স্ট্রেস ম্যানেজমেন্ট ও জীবনদক্ষতা প্রশিক্ষণ।</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="pt-2 flex flex-wrap items-center gap-3">
+                                <button class="open-volunteer-modal px-5 py-2.5 rounded-xl bg-[#f97316] hover:bg-orange-500 text-white font-bold text-xs transition-all cursor-pointer">
+                                    প্রশিক্ষণে অংশগ্রহণ করুন
+                                </button>
+                                <button class="open-donate-modal px-5 py-2.5 rounded-xl glass-button text-xs font-semibold text-orange-300 hover:text-white cursor-pointer">
+                                    নারী স্বাবলম্বিতা তহবিলে দান করুন
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 67 Core Activities Interactive Explorer -->
+    <section id="activities" class="relative z-10 py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+                <span class="text-sky-400 text-xs font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20">
+                    মাঠপর্যায়ের সমৃদ্ধ অভিজ্ঞতা
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mt-3 mb-3 tracking-tight">
+                    কারু শিখার কার্যক্রমসমূহ (৬৭টি মাইলফলক)
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed">
+                    ২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৭টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক অর্জনসমূহ এক্সপ্লোর করুন।
+                </p>
+            </div>
+
+            <!-- Search Bar & Counter -->
+            <div class="max-w-2xl mx-auto mb-6 sm:mb-8">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                        🔍
+                    </span>
+                    <input type="text" id="activity-search-input" placeholder="কার্যক্রম খুঁজুন (যেমন: ক্লাইমেট, রক্তদান, WaterAid, হ্যান্ড পেইন্ট, সমতায় তারুণ্য...)" class="w-full bg-slate-900/90 border border-white/15 rounded-2xl pl-11 sm:pl-12 pr-4 py-3 sm:py-3.5 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 shadow-xl backdrop-blur-md">
+                </div>
+                <div class="flex items-center justify-between mt-2 px-2 text-[11px] sm:text-xs text-slate-400">
+                    <span id="activities-count-badge" class="font-semibold text-sky-400">
+                        প্রদর্শিত: ৬৭টি কার্যক্রম
+                    </span>
+                    <span class="text-slate-500 hidden sm:inline">
+                        💡 কীওয়ার্ড লিখে বা ক্যাটাগরি বেছে ফিল্টার করুন
+                    </span>
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs (Horizontally scrollable on mobile) -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-3 sm:pb-0 sm:flex-wrap sm:justify-center no-scrollbar mb-8 sm:mb-10">
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-[#0284c7] text-white border border-sky-400 cursor-pointer transition-all shadow-lg shadow-sky-500/20" data-filter="all">
+                    সব কার্যক্রম (৬৭)
+                </button>
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-slate-900/60 text-slate-300 hover:text-white border border-white/10 cursor-pointer transition-all hover:border-emerald-500/40" data-filter="climate">
+                    🌍 জলবায়ু ও টেকসই কৃষি (১০)
+                </button>
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-slate-900/60 text-slate-300 hover:text-white border border-white/10 cursor-pointer transition-all hover:border-rose-500/40" data-filter="women">
+                    👩 নারী ও সমতায় তারুণ্য (১৩)
+                </button>
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-slate-900/60 text-slate-300 hover:text-white border border-white/10 cursor-pointer transition-all hover:border-sky-500/40" data-filter="children">
+                    📚 শিশু শিক্ষা ও স্বাস্থ্য (৬)
+                </button>
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-slate-900/60 text-slate-300 hover:text-white border border-white/10 cursor-pointer transition-all hover:border-orange-500/40" data-filter="craft">
+                    🎨 হস্তশিল্প ও উদ্যোক্তা (৮)
+                </button>
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-slate-900/60 text-slate-300 hover:text-white border border-white/10 cursor-pointer transition-all hover:border-purple-500/40" data-filter="humanitarian">
+                    🤝 মানবিক সেবা ও সম্প্রীতি (৯)
+                </button>
+                <button class="activity-cat-btn shrink-0 px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold bg-slate-900/60 text-slate-300 hover:text-white border border-white/10 cursor-pointer transition-all hover:border-blue-500/40" data-filter="partnership">
+                    🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২১)
+                </button>
+            </div>
+
+            <!-- Dynamic Activities Grid (Injected by JS) -->
+            <div id="activities-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-10">
+                <!-- Javascript will dynamically inject activities here -->
+            </div>
+
+            <!-- View All / Show Less Button -->
+            <div class="text-center">
+                <button id="toggle-activities-btn" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                    সবগুলো ৬৭টি কার্যক্রম দেখুন (+৫৫টি আরো) ▾
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Committee Section (Exact Details from PDF Page 14) -->
+    <section id="committee" class="relative z-10 py-16 sm:py-20 bg-slate-950/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-widest mb-3">
+                    <span>নেতৃত্ব ও সাংগঠনিক কাঠামো</span>
+                    <button type="button" onclick="openCertificateModal()" class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/30 font-semibold cursor-pointer">
+                        নিবন্ধন নং: যুউঅ-৯৭
+                    </button>
+                </div>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mt-1 mb-3 tracking-tight">
+                    সংগঠনের নেতৃত্ব ও সদস্যবৃন্দ
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed">
+                    যুব উন্নয়ন অধিদপ্তর অনুমোদিত (নিবন্ধন নং: যুউঅ-৯৭) কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির কেন্দ্রীয় কার্যনির্বাহী পরিষদ ও সাধারণ সদস্যবৃন্দের তালিকা।
+                </p>
+            </div>
+
+            <!-- Members Directory Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
+                <button type="button" class="member-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-sky-400 bg-[#0284c7] text-white shadow-lg shadow-sky-500/20 cursor-pointer" data-tab="executive">
+                    🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ (৭ জন)
+                </button>
+                <button type="button" class="member-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-tab="general">
+                    👥 সাধারণ সদস্যবৃন্দ (২৫ জন)
+                </button>
+            </div>
+
+            <!-- Members Search Bar & Count Badge -->
+            <div class="max-w-xl mx-auto mb-8 sm:mb-10">
+                <div class="relative">
+                    <input type="text" id="member-search-input" placeholder="সদস্যের নাম, পদবী, শিক্ষাগত যোগ্যতা বা পেশা দিয়ে খুঁজুন..." class="w-full bg-slate-900/90 border border-white/15 rounded-2xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-sky-400 shadow-xl pl-11">
+                    <span class="absolute left-4 top-3.5 text-slate-400 text-sm">🔍</span>
+                    <span id="members-count-badge" class="absolute right-3.5 top-3 text-[11px] font-bold text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20">
+                        ৭ জন
+                    </span>
+                </div>
+            </div>
+
+            <!-- Dynamic Members Grid (Populated from js/members-data.js) -->
+            <div id="members-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 mb-4">
+                <!-- Dynamically Populated by renderMembers() -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Field Action Photo Gallery (25 High-Res Compressed Photos from PDF) -->
+    <section id="gallery" class="relative z-10 py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+                <span class="text-emerald-400 text-xs font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20" data-i18n="gallery_tag">
+                    মাঠপর্যায়ের স্থিরচিত্র
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mt-3 mb-3 tracking-tight" data-i18n="gallery_title">
+                    আমাদের মাঠপর্যায়ের ফটো গ্যালারি
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed" data-i18n="gallery_desc">
+                    কারু শিখার শিশু শিক্ষা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ, হ্যান্ড পেইন্ট ও মাঠপর্যায়ের বাস্তব আলোকচিত্র।
+                </p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8">
+                <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-orange-400 bg-[#f97316] text-white shadow-lg shadow-orange-500/20 cursor-pointer" data-filter="all">
+                    সব ছবি (২৫)
+                </button>
+                <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="climate">
+                    🌍 জলবায়ু ও পরিবেশ (৭)
+                </button>
+                <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="children">
+                    📚 শিশু শিক্ষা ও PYM (৭)
+                </button>
+                <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="women">
+                    👩 নারী ও স্বাস্থ্য (৬)
+                </button>
+                <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="humanitarian">
+                    🤝 মানবিক ও রক্তদান (২)
+                </button>
+                <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="partnership">
+                    🌐 পার্টনারশিপ ও সভা (৩)
+                </button>
+            </div>
+
+            <!-- Dynamic Gallery Grid Container (Populated from js/gallery-data.js) -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Strategic Vision Section -->
+    <section id="future" class="relative z-10 py-16 sm:py-20 bg-slate-950/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+                <span class="text-orange-400 text-xs font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20" data-i18n="future_tag">
+                    আমাদের আগামীর রোডম্যাপ
+                </span>
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mt-3 mb-3 tracking-tight" data-i18n="future_title">
+                    ভবিষ্যৎ কর্মপরিকল্পনা ও টেকসই রূপরেখা
+                </h2>
+                <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed" data-i18n="future_desc">
+                    আমরা সরকারি-বেসরকারি প্রতিষ্ঠান ও উন্নয়ন সংস্থাগুলোর সঙ্গে অংশীদারত্ব জোরদার করে সমাজকল্যাণ কার্যক্রমকে আরও গতিশীল ও টেকসই করতে প্রতিশ্রুতিবদ্ধ।
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="glass-panel glass-panel-hover rounded-2xl p-5 sm:p-6 border-t-2 border-t-sky-400">
+                    <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl mb-3">
+                        🎓
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2" data-i18n="f1_title">শিশু শিক্ষা ও স্বাস্থ্যসেবা সম্প্রসারণ</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="f1_desc">
+                        সুবিধাবঞ্চিত শিশুদের জন্য স্থায়ী লার্নিং সেন্টার ও নিয়মিত ফ্রি হেলথ ক্যাম্প বিস্তার।
+                    </p>
+                </div>
+
+                <div class="glass-panel glass-panel-hover rounded-2xl p-5 sm:p-6 border-t-2 border-t-orange-400">
+                    <div class="w-11 h-11 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mb-3">
+                        💼
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2" data-i18n="f2_title">যুব ও নারীদের কর্মসংস্থান সৃষ্টি</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="f2_desc">
+                        হ্যান্ড পেইন্ট ও হস্তশিল্পের মাধ্যমে গ্রামীণ নারীদের উদ্যোক্তা হিসেবে গড়ে তোলা ও বাজার সংযোগ।
+                    </p>
+                </div>
+
+                <div class="glass-panel glass-panel-hover rounded-2xl p-5 sm:p-6 border-t-2 border-t-emerald-400">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl mb-3">
+                        🌾
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2" data-i18n="f3_title">জলবায়ু সহিষ্ণু কৃষি ও পরিবেশ</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="f3_desc">
+                        ক্লাইমেট রেজিলিয়েন্ট অ্যাগ্রিকালচার, নিরাপদ খাদ্য ও দূষণমুক্ত সবুজ গ্রাম বিনির্মাণ।
+                    </p>
+                </div>
+
+                <div class="glass-panel glass-panel-hover rounded-2xl p-5 sm:p-6 border-t-2 border-t-rose-400">
+                    <div class="w-11 h-11 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl mb-3">
+                        🤝
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-2" data-i18n="f4_title">সামাজিক সমতা ও অংশীদারত্ব</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" data-i18n="f4_desc">
+                        নারী-শিশুর অধিকার নিশ্চিতকরণ এবং জাতীয় ও আন্তর্জাতিক সংস্থার সাথে যৌথ প্রকল্প বাস্তবায়ন।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Contact & Office Information (From PDF Page 2) -->
+    <section id="contact" class="relative z-10 py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 lg:p-12 border border-sky-500/30">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                    
+                    <!-- Left: Contact Information & Official Registration -->
+                    <div class="lg:col-span-6">
+                        <span class="text-sky-400 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20">
+                            যোগাযোগ ও কেন্দ্রীয় কার্যালয়
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-4 tracking-tight">
+                            কারু শিখার সঙ্গে সরাসরি যোগাযোগ করুন
+                        </h2>
+                        <p class="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+                            যেকোনো যৌথ সমাজকল্যাণ উদ্যোগ, শিশু শিক্ষা সহায়তা, পরিবেশ বা রক্তদান বিষয়ক তথ্যের জন্য আমাদের সাথে সরাসরি যোগাযোগ করুন।
+                        </p>
+
+                        <div class="space-y-4 text-xs sm:text-sm">
+                            <!-- Address -->
+                            <div class="flex items-start gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-orange-500/30">
+                                <span class="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-lg shrink-0">📍</span>
+                                <div>
+                                    <div class="font-extrabold text-white">প্রতিষ্ঠানের অফিস ও কার্যালয়:</div>
+                                    <div class="text-slate-200 font-semibold text-xs sm:text-sm mt-0.5">লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।</div>
+                                    <div class="text-[11px] text-slate-400 mt-0.5">Lakshmipur Pourashava Station Market, Faridpur Sadar, Faridpur.</div>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-emerald-500/30">
+                                <span class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">📞</span>
+                                <div class="flex-1">
+                                    <div class="text-[11px] text-emerald-400 font-semibold">সরাসরি ফোন নম্বর:</div>
+                                    <a href="tel:01795023942" class="font-extrabold text-white hover:text-emerald-400 text-sm">
+                                        ০১৭৯৫-০২৩৯৪২ (01795-023942)
+                                    </a>
+                                </div>
+                                <a href="tel:01795023942" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors">
+                                    কল করুন →
+                                </a>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-sky-500/30">
+                                <span class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">✉️</span>
+                                <div class="flex-1">
+                                    <div class="text-[11px] text-sky-400 font-semibold">অফিসিয়াল ইমেইল:</div>
+                                    <a href="mailto:karushikhayds@gmail.com" class="font-bold text-sky-400 hover:underline text-xs sm:text-sm">
+                                        karushikhayds@gmail.com
+                                    </a>
+                                </div>
+                                <a href="mailto:karushikhayds@gmail.com" class="px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition-colors">
+                                    মেইল পাঠান →
+                                </a>
+                            </div>
+
+                            <!-- Registration Certificate Badge Button -->
+                            <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-950/60 border border-emerald-500/40">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">📜</span>
+                                    <div>
+                                        <div class="font-bold text-white text-xs">যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭</div>
+                                        <div class="text-[10px] text-slate-400">নিবন্ধন তারিখ: ২১-০১-২০২৬ খ্রি. (ফরম-'গ')</div>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="openCertificateModal()" class="px-3 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600 border border-emerald-500/40 text-emerald-300 hover:text-white font-bold text-xs transition-all cursor-pointer">
+                                    সনদপত্র দেখুন 📜
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Direct Action Buttons -->
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <a href="https://www.google.com/maps/place/Karu+Shikha+Youth+Development+Society/@23.6096143,89.8403826,17.76z/data=!4m6!3m5!1s0x39fe3b00184e3199:0xc87ff06ff234f1a9!8m2!3d23.609495!4d89.8416517!16s%2Fg%2F11n3pl84ls" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-900 border border-sky-400/50 hover:bg-sky-600 hover:text-white text-sky-400 font-bold text-xs flex items-center gap-2 transition-all shadow-md">
+                                <span>🗺️ গুগল ম্যাপে লোকেশন দেখুন</span>
+                                <span>↗</span>
+                            </a>
+                            <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md">
+                                <span>📘 অফিসিয়াল ফেসবুক পেজ</span>
+                                <span>↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Embedded Google Maps Interactive Viewport -->
+                    <div class="lg:col-span-6">
+                        <div class="rounded-3xl overflow-hidden border border-white/15 bg-slate-950 shadow-2xl relative">
+                            <!-- Top bar for map -->
+                            <div class="px-4 py-2.5 bg-slate-900/90 border-b border-white/10 flex items-center justify-between text-xs">
+                                <div class="flex items-center gap-2 font-bold text-white">
+                                    <span class="text-orange-400">📍</span>
+                                    <span>গুগল ম্যাপে কারু শিখা কার্যালয়</span>
+                                </div>
+                                <a href="https://www.google.com/maps/place/Karu+Shikha+Youth+Development+Society/@23.6096143,89.8403826,17.76z/data=!4m6!3m5!1s0x39fe3b00184e3199:0xc87ff06ff234f1a9!8m2!3d23.609495!4d89.8416517!16s%2Fg%2F11n3pl84ls" target="_blank" class="text-[11px] text-sky-400 hover:underline">
+                                    বড় ম্যাপে খুলুন ↗
+                                </a>
+                            </div>
+
+                            <!-- Google Maps Iframe Embed -->
+                            <iframe 
+                                src="https://maps.google.com/maps?q=23.609495,89.8416517&hl=bn&z=17&output=embed" 
+                                class="w-full h-72 sm:h-96" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Karu Shikha Google Maps Location">
+                            </iframe>
+
+                            <!-- Bottom bar for map -->
+                            <div class="px-4 py-2 bg-slate-950/95 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                                <span>লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর</span>
+                                <span class="text-emerald-400 font-semibold">জিপিএস: 23.609495, 89.8416517</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/10 bg-slate-950 py-12 pb-28 lg:pb-12 text-slate-400 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-slate-900 border border-sky-500/30 p-1 flex items-center justify-center">
+                            <img src="assets/karu-shikha-logo.png" alt="Karu Shikha" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-base sm:text-lg text-white">Karu Shikha Youth Development Society</span>
+                            <div class="text-[10px] text-orange-400 font-medium">প্রতিষ্ঠা: ৩১ জানুয়ারি ২০১৯ • বায়তুল আমান, ফরিদপুর</div>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-md mb-4" data-i18n="footer_desc">
+                        কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি ২০১৯ সালের ৩১ জানুয়ারি প্রতিষ্ঠার পর থেকে যুব উন্নয়ন, নারী ক্ষমতায়ন, শিশু শিক্ষা, স্বাস্থ্যসেবা, পরিবেশ সংরক্ষণ ও উদ্যোক্তা উন্নয়নে নিবেদিত একটি অলাভজনক সামাজিক সংস্থা।
+                    </p>
+                    <div class="text-[11px] text-slate-400 flex flex-col gap-1">
+                        <div>📍 কার্যালয়: <span class="text-slate-300 font-semibold">লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।</span></div>
+                        <div class="flex items-center gap-2">
+                            <span>📜 যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: <strong class="text-orange-400">যুউঅ-৯৭</strong></span>
+                            <button type="button" onclick="openCertificateModal()" class="text-[10px] text-emerald-400 underline hover:text-emerald-300 cursor-pointer">সনদপত্র দেখুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm uppercase tracking-wider mb-3">চলমান ৩টি প্রকল্প</h4>
+                    <ul class="space-y-2 text-slate-400 text-xs">
+                        <li><a href="#projects" class="hover:text-sky-400 transition-colors">Project Your Mentor (PYM)</a></li>
+                        <li><a href="#projects" class="hover:text-emerald-400 transition-colors">Climate Olympiad (COKS)</a></li>
+                        <li><a href="#projects" class="hover:text-orange-400 transition-colors">EWGSF প্রকল্প (নারী স্বাবলম্বিতা)</a></li>
+                        <li><a href="#activities" class="hover:text-sky-400 transition-colors">৬৭টি বাস্তব কার্যক্রম</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-xs sm:text-sm uppercase tracking-wider mb-3">জরুরি যোগাযোগ</h4>
+                    <ul class="space-y-2 text-slate-400 text-xs">
+                        <li>📞 <a href="tel:01795023942" class="hover:text-white">০১৭৯৫-০২৩৯৪২</a></li>
+                        <li>✉️ <a href="mailto:karushikhayds@gmail.com" class="hover:text-sky-400">karushikhayds@gmail.com</a></li>
+                        <li>📘 <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" class="text-blue-400 hover:underline">ফেসবুক পেজ ফলো করুন</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs gap-3">
+                <p data-i18n="footer_rights">© ২০২৬ কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি। সর্বস্বত্ব সংরক্ষিত।</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-400">গোপনীয়তা নীতি</a>
+                    <a href="#" class="hover:text-slate-400">ব্যবহারের নিয়মাবলী</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DONATION MODAL -->
+    <div id="donate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-white/15 rounded-3xl p-5 sm:p-8 max-w-md w-full shadow-2xl relative max-h-[92vh] overflow-y-auto">
+            <button id="close-donate-modal" class="absolute top-4 right-4 sm:top-5 sm:right-5 text-slate-400 hover:text-white text-2xl font-bold cursor-pointer">
+                &times;
+            </button>
+
+            <div class="text-center mb-5">
+                <div class="w-11 h-11 rounded-2xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl mx-auto mb-2.5">
+                    💖
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-white">কারু শিখা সমাজকল্যাণ তহবিলে অনুদান</h3>
+                <p class="text-xs text-slate-400 mt-1">আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।</p>
+            </div>
+
+            <form id="donate-form" class="space-y-3.5">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">অনুদানের পরিমাণ নির্বাচন করুন (টাকা)</label>
+                    <div class="grid grid-cols-4 gap-1.5 sm:gap-2">
+                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold bg-[#f97316] text-white cursor-pointer" data-amount="500">৳৫০০</button>
+                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer" data-amount="1000">৳১,০০০</button>
+                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer" data-amount="2000">৳২,০০০</button>
+                        <button type="button" class="amount-pill py-2 sm:py-2.5 rounded-xl border border-white/10 text-xs font-bold text-slate-300 hover:bg-slate-800 cursor-pointer" data-amount="5000">৳৫,০০০</button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">কাস্টম পরিমাণ (টাকা / BDT)</label>
+                    <input type="number" id="custom-donation-amount" value="500" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-sky-400">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">পেমেন্ট মাধ্যম</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="border border-white/10 rounded-xl p-2 text-center cursor-pointer flex flex-col items-center hover:border-pink-500 bg-slate-950">
+                            <input type="radio" name="paymethod" checked class="hidden">
+                            <span class="text-xs font-bold text-pink-400">bKash</span>
+                        </label>
+                        <label class="border border-white/10 rounded-xl p-2 text-center cursor-pointer flex flex-col items-center hover:border-orange-500 bg-slate-950">
+                            <input type="radio" name="paymethod" class="hidden">
+                            <span class="text-xs font-bold text-orange-500">Nagad</span>
+                        </label>
+                        <label class="border border-white/10 rounded-xl p-2 text-center cursor-pointer flex flex-col items-center hover:border-sky-500 bg-slate-950">
+                            <input type="radio" name="paymethod" class="hidden">
+                            <span class="text-xs font-bold text-sky-400">Rocket / Bank</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" placeholder="আপনার নাম" required class="bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400">
+                    <input type="tel" placeholder="মোবাইল নম্বর" required class="bg-slate-950 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-400">
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-orange-500/25 transition-all cursor-pointer">
+                    নিশ্চিত করুন ও অনুদান সম্পন্ন করুন
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- VOLUNTEER REGISTRATION MODAL -->
+    <div id="volunteer-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-white/15 rounded-3xl p-5 sm:p-8 max-w-lg w-full shadow-2xl relative max-h-[92vh] overflow-y-auto">
+            <button id="close-volunteer-modal" class="absolute top-4 right-4 sm:top-5 sm:right-5 text-slate-400 hover:text-white text-2xl font-bold cursor-pointer">
+                &times;
+            </button>
+
+            <div class="text-center mb-5">
+                <div class="w-11 h-11 rounded-2xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl mx-auto mb-2.5">
+                    🤝
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-white">কারু শিখায় ভলান্টিয়ার রেজিস্ট্রেশন</h3>
+                <p class="text-xs text-slate-400 mt-1">আমাদের ৩টি চলমান প্রকল্প ও সামাজিক উদ্যোগে যুক্ত হয়ে সমাজ পরিবর্তনের সহযাত্রী হোন।</p>
+            </div>
+
+            <form id="volunteer-form" class="space-y-3.5">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">পূর্ণ নাম *</label>
+                    <input type="text" id="vol-name" required placeholder="আপনার পুরো নাম" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">ইমেইল ঠিকানা</label>
+                        <input type="email" placeholder="name@example.com" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">ফোন নম্বর *</label>
+                        <input type="tel" required placeholder="01XXXXXXXXX" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">রক্তের গ্রুপ</label>
+                    <select class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                        <option value="A+">A+ (পজিটিভ)</option>
+                        <option value="A-">A- (নেগেটিভ)</option>
+                        <option value="B+">B+ (পজিটিভ)</option>
+                        <option value="B-">B- (নেগেটিভ)</option>
+                        <option value="O+">O+ (পজিটিভ)</option>
+                        <option value="O-">O- (নেগেটিভ)</option>
+                        <option value="AB+">AB+ (পজিটিভ)</option>
+                        <option value="AB-">AB- (নেগেটিভ)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">পছন্দের প্রকল্প / কার্যক্ষেত্র *</label>
+                    <select required class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                        <option value="pym">Project Your Mentor (PYM - শিশু শিক্ষা ও সুরক্ষা)</option>
+                        <option value="coks">Climate Olympiad (COKS - ক্লাইমেট ও বৃক্ষরোপণ)</option>
+                        <option value="ewgsf">EWGSF প্রকল্প (নারী ক্ষমতায়ন, হ্যান্ড পেইন্ট ও মাসিক স্বাস্থ্য)</option>
+                        <option value="blood">জরুরি রক্তদান ও ফ্রি মেডিকেল ক্যাম্পেইন</option>
+                        <option value="media">ডিজিটাল প্রচারণা, পডকাস্ট, রিলস ও পোস্টার ডিজাইন</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">বর্তমান ঠিকানা / উপজেলা (ফরিদপুর)</label>
+                    <input type="text" placeholder="যেমন: লক্ষ্মীপুর / বায়তুল আমান / ফরিদপুর সদর" class="w-full bg-slate-950 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-sky-400">
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all cursor-pointer">
+                    আবেদন জমা দিন
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- GOVERNMENT REGISTRATION CERTIFICATE MODAL -->
+    <div id="certificate-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-emerald-500/30 rounded-3xl p-4 sm:p-7 max-w-2xl w-full shadow-2xl relative max-h-[94vh] overflow-y-auto flex flex-col justify-between">
+            <button id="close-certificate-modal" type="button" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center text-lg font-bold cursor-pointer transition-colors z-20">
+                &times;
+            </button>
+
+            <div>
+                <!-- Header -->
+                <div class="text-center mb-4 sm:mb-5">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">
+                        ✓ গণপ্রজাতন্ত্রী বাংলাদেশ সরকার অনুমোদিত
+                    </span>
+                    <h3 class="text-lg sm:text-2xl font-black text-white">সরকারি নিবন্ধন সনদপত্র</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                        যুব উন্নয়ন অধিদপ্তর, ফরিদপুর • নিবন্ধন নম্বর: <span class="font-extrabold text-orange-400">যুউঅ-৯৭</span>
+                    </p>
+                </div>
+
+                <!-- Certificate Image Frame -->
+                <div class="relative bg-black/80 rounded-2xl overflow-hidden p-2 sm:p-3 border border-white/10 shadow-2xl mb-4 flex items-center justify-center">
+                    <img src="assets/registration-certificate.jpg" alt="গণপ্রজাতন্ত্রী বাংলাদেশ সরকার যুব উন্নয়ন অধিদপ্তর নিবন্ধন সনদ - কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি (যুউঅ-৯৭)" class="max-h-[55vh] sm:max-h-[62vh] w-auto max-w-full object-contain rounded-xl shadow-lg">
+                </div>
+
+                <!-- Certificate Key Details Card -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 p-3 rounded-2xl bg-slate-950/80 border border-white/10 text-center text-xs mb-4">
+                    <div class="p-2 rounded-xl bg-slate-900/60">
+                        <span class="text-[10px] text-slate-400 block font-semibold">নিবন্ধন নম্বর</span>
+                        <span class="text-xs sm:text-sm font-extrabold text-orange-400">যুউঅ-৯৭</span>
+                    </div>
+                    <div class="p-2 rounded-xl bg-slate-900/60">
+                        <span class="text-[10px] text-slate-400 block font-semibold">নিবন্ধন তারিখ</span>
+                        <span class="text-xs sm:text-sm font-bold text-white">২১-০১-২০২৬</span>
+                    </div>
+                    <div class="p-2 rounded-xl bg-slate-900/60">
+                        <span class="text-[10px] text-slate-400 block font-semibold">সনদপত্র ফরম</span>
+                        <span class="text-xs sm:text-sm font-bold text-sky-400">ফরম-'গ' (বিধি ৩)</span>
+                    </div>
+                    <div class="p-2 rounded-xl bg-slate-900/60">
+                        <span class="text-[10px] text-slate-400 block font-semibold">ইস্যুকারী অধিদপ্তর</span>
+                        <span class="text-xs sm:text-sm font-bold text-emerald-400">যুব উন্নয়ন অধিদপ্তর</span>
+                    </div>
+                </div>
+
+                <div class="text-[11px] text-slate-400 text-center leading-relaxed">
+                    📍 নিবন্ধিত কার্যালয়: <span class="text-slate-200 font-semibold">লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।</span><br>
+                    আইন: যুব সংগঠন (নিবন্ধন এবং পরিচালনা) আইন, ২০১৫ এর ধারা ৪ এবং বিধিমালা, ২০১৭ এর বিধি ৩(৪) অনুযায়ী প্রদত্ত।
+                </div>
+            </div>
+
+            <!-- Footer Action Buttons -->
+            <div class="flex items-center gap-2.5 mt-4 pt-3 border-t border-white/10">
+                <a href="assets/registration-certificate.jpg" target="_blank" download="Karu-Shikha-Govt-Registration-Certificate.jpg" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs text-center shadow-lg shadow-emerald-500/25 transition-all">
+                    📥 সনদপত্র ডাউনলোড / বড় করে দেখুন
+                </a>
+                <button type="button" id="certificate-modal-ok-btn" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors cursor-pointer">
+                    বন্ধ করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK CONTACT MODAL (Number, Mail, Address) -->
+    <div id="contact-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-white/15 rounded-3xl p-5 sm:p-7 max-w-md w-full shadow-2xl relative max-h-[92vh] overflow-y-auto">
+            <button id="close-contact-modal" type="button" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center text-lg font-bold cursor-pointer transition-colors">
+                &times;
+            </button>
+
+            <div class="text-center mb-5">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-sky-500/20 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-2.5 border border-emerald-500/30">
+                    📞
+                </div>
+                <h3 class="text-lg sm:text-xl font-extrabold text-white">জরুরি যোগাযোগ ও ঠিকানা</h3>
+                <p class="text-xs text-slate-400 mt-1">কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি</p>
+            </div>
+
+            <!-- Contact List Items -->
+            <div class="space-y-3">
+                <!-- Phone Card with Direct Call -->
+                <a href="tel:01795023942" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-emerald-500/30 hover:border-emerald-500/60 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                        📞
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">সরাসরি ফোন কল</div>
+                        <div class="text-sm font-extrabold text-white">০১৭৯৫-০২৩৯৪২</div>
+                        <div class="text-[10px] text-slate-400 font-medium">01795-023942 • সকাল ৯টা - রাত ৯টা</div>
+                    </div>
+                    <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg shrink-0">
+                        কল দিন →
+                    </span>
+                </a>
+
+                <!-- Email Card with Direct Mail -->
+                <a href="mailto:karushikhayds@gmail.com" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-sky-500/30 hover:border-sky-500/60 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                        ✉️
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="text-[10px] text-sky-400 font-bold uppercase tracking-wider">অফিসিয়াল ইমেইল</div>
+                        <div class="text-xs sm:text-sm font-bold text-white truncate">karushikhayds@gmail.com</div>
+                        <div class="text-[10px] text-slate-400 font-medium">যেকোনো অনুসন্ধান বা প্রস্তাব পাঠান</div>
+                    </div>
+                    <span class="text-xs font-bold text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-lg shrink-0">
+                        মেইল →
+                    </span>
+                </a>
+
+                <!-- Office Address Card with Google Maps & Certificate -->
+                <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-orange-500/30">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl shrink-0">
+                            📍
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="text-[10px] text-orange-400 font-bold uppercase tracking-wider mb-1">অফিস ও কার্যালয়ের ঠিকানা</div>
+                            <p class="text-xs text-white leading-relaxed font-extrabold mb-2">
+                                লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https://www.google.com/maps/place/Karu+Shikha+Youth+Development+Society/@23.6096143,89.8403826,17.76z/data=!4m6!3m5!1s0x39fe3b00184e3199:0xc87ff06ff234f1a9!8m2!3d23.609495!4d89.8416517!16s%2Fg%2F11n3pl84ls" target="_blank" rel="noopener noreferrer" class="text-[11px] font-bold text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-lg border border-sky-500/20 hover:bg-sky-500/20 inline-flex items-center gap-1">
+                                    <span>🗺️ গুগল ম্যাপে দেখুন</span>
+                                    <span>↗</span>
+                                </a>
+                                <button type="button" onclick="closeContactModal(); openCertificateModal();" class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/20 hover:bg-emerald-500/20 inline-flex items-center gap-1 cursor-pointer">
+                                    <span>📜 নিবন্ধন সনদ (যুউঅ-৯৭)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook Page Card -->
+                <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-blue-500/30 hover:border-blue-500/60 transition-all group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                        📘
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <div class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">অফিসিয়াল ফেসবুক পেজ</div>
+                        <div class="text-xs sm:text-sm font-bold text-white">Karu Shikha Youth Development Society</div>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-lg shrink-0">
+                        পেজ দেখুন →
+                    </span>
+                </a>
+            </div>
+
+            <button type="button" id="contact-modal-ok-btn" class="w-full mt-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors cursor-pointer">
+                বন্ধ করুন
+            </button>
+        </div>
+    </div>
+
+    <!-- Photo Gallery Lightbox Modal -->
+    <div id="gallery-lightbox" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 hidden">
+        <div class="relative max-w-4xl w-full bg-slate-900 border border-white/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+            <!-- Header bar -->
+            <div class="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-white/10 bg-slate-950/80">
+                <div class="flex items-center gap-2">
+                    <span id="lightbox-tag" class="text-xs font-bold text-sky-400 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-500/30">
+                        মাঠপর্যায়ের স্থিরচিত্র
+                    </span>
+                    <span class="text-[11px] text-slate-400 hidden sm:inline">কারু শিখা আর্কাইভ</span>
+                </div>
+                <button id="close-lightbox-btn" type="button" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg transition-colors cursor-pointer" aria-label="Close Lightbox">
+                    ✕
+                </button>
+            </div>
+            
+            <!-- Image Area -->
+            <div class="relative flex-1 bg-black/75 flex items-center justify-center overflow-hidden min-h-[260px] sm:min-h-[420px] p-2">
+                <img id="lightbox-image" src="" alt="Gallery Image" class="max-h-[62vh] w-auto max-w-full object-contain rounded-lg">
+            </div>
+
+            <!-- Footer Info Area -->
+            <div class="px-4 sm:px-6 py-3.5 sm:py-4 bg-slate-950/95 border-t border-white/10">
+                <h3 id="lightbox-title" class="text-sm sm:text-base md:text-lg font-bold text-white mb-1 leading-snug"></h3>
+                <p id="lightbox-location" class="text-xs text-slate-400"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sticky Floating Action Bar (Contact, Volunteer, Scroll-to-Top) -->
+    <aside class="mobile-bottom-bar fixed bottom-0 inset-x-0 z-40 lg:hidden px-3 py-2 border-t border-white/10 flex items-center justify-around gap-2.5" aria-label="Mobile Quick Actions">
+        <!-- 1. Contact (Opens Quick Contact Modal with Phone, Email & Address) -->
+        <button type="button" onclick="openContactModal()" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600/90 to-teal-600/90 border border-emerald-400/40 text-white shadow-md shadow-emerald-500/20 active:scale-95 transition-transform cursor-pointer" title="জরুরি যোগাযোগ, ফোন ও ঠিকানা">
+            <span class="text-base leading-none">📞</span>
+            <span class="text-xs font-bold tracking-tight">যোগাযোগ</span>
+        </button>
+
+        <!-- 2. Volunteer Application Button -->
+        <button type="button" class="open-volunteer-modal flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] border border-sky-400/40 text-white shadow-md shadow-sky-500/20 active:scale-95 transition-transform cursor-pointer" onclick="openVolunteerModal()" title="স্বেচ্ছাসেবক হিসেবে যুক্ত হোন">
+            <span class="text-base leading-none">🤝</span>
+            <span class="text-xs font-bold tracking-tight">স্বেচ্ছাসেবক</span>
+        </button>
+
+        <!-- 3. Scroll to Top Button -->
+        <a href="#hero" class="flex flex-col items-center justify-center py-2 px-3.5 rounded-xl bg-slate-800/90 border border-white/10 text-slate-300 hover:text-white active:scale-95 transition-transform shrink-0" title="পেজের শুরুতে যান">
+            <span class="text-base leading-none mb-0.5">🔝</span>
+            <span class="text-[10px] font-bold tracking-tight">শীর্ষে</span>
+        </a>
+    </aside>
+
+    <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
+    <script src="js/activities-data.js"></script>
+    <script src="js/gallery-data.js"></script>
+    <script src="js/members-data.js"></script>
+    <script src="js/logo-points.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
