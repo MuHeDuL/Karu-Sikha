@@ -79,10 +79,15 @@
                 </div>
 
                 <!-- Right Action Buttons (Uniform Height & Pixel-Perfect Alignment) -->
-                <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0 flex-nowrap">
+                <div class="flex items-center gap-1.5 sm:gap-2 xl:gap-2.5 shrink-0 flex-nowrap">
                     <!-- Language Switcher -->
                     <button id="lang-toggle-btn" class="glass-button text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 rounded-xl text-sky-300 hover:text-white flex items-center justify-center gap-1 cursor-pointer shrink-0 select-none">
                         🌐 <span>EN</span>
+                    </button>
+
+                    <!-- Volunteer Registration Button (Desktop) -->
+                    <button type="button" class="hidden lg:inline-flex open-volunteer-modal glass-button text-xs font-semibold px-3.5 xl:px-4 rounded-xl text-slate-200 hover:text-white hover:border-sky-400 cursor-pointer shrink-0 select-none" onclick="openVolunteerModal()" data-i18n="nav_volunteer">
+                        ভলান্টিয়ার হোন
                     </button>
 
                     <!-- Donate Button (Gradient Border, Dark Glass Fill, Balanced Proportions) -->

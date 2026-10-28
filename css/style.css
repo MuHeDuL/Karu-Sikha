@@ -225,8 +225,7 @@ header a {
 
 /* Standardized, pixel-aligned height across header controls */
 header .header-donate-btn,
-header #lang-toggle-btn,
-header .open-volunteer-modal {
+header #lang-toggle-btn {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -240,11 +239,30 @@ header .open-volunteer-modal {
 
 @media (min-width: 640px) {
     header .header-donate-btn,
-    header #lang-toggle-btn,
-    header .open-volunteer-modal {
+    header #lang-toggle-btn {
         height: 40px !important;
         min-height: 40px !important;
         max-height: 40px !important;
+    }
+}
+
+/* Volunteer Header Button: Visible on Desktop (>= 1024px), Hidden on Mobile/Tablet */
+@media (min-width: 1024px) {
+    header .open-volunteer-modal {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        box-sizing: border-box !important;
+        vertical-align: middle !important;
+        line-height: 1 !important;
+    }
+}
+@media (max-width: 1023px) {
+    header .open-volunteer-modal {
+        display: none !important;
     }
 }
 
