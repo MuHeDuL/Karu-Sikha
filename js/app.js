@@ -254,9 +254,9 @@ const translations = {
         "don_lbl_note": "বার্তা বা পরামর্শ (ঐচ্ছিক)",
         "don_ph_note": "কোনো বিশেষ বার্তা বা দোয়ার অনুরোধ থাকলে লিখুন...",
         "don_btn_submit": "অনুদানের তথ্য নিশ্চিত করুন",
-        "don_success_title": "অনুদানের তথ্য সফলভাবে সংরক্ষিত হয়েছে!",
-        "don_success_sub": "কারু শিখা সমাজকল্যাণ তহবিলে আপনার অনুদানের তথ্য নথিভুক্ত করা হয়েছে।",
-        "don_receipt_badge": "অফিসিয়াল ট্রানজেকশন রশিদ",
+        "don_success_title": "অনুদানের তথ্য জমা হয়েছে!",
+        "don_success_sub": "আপনার প্রদত্ত তথ্য ও ট্রানজেকশন যাচাই (Verification) সাপেক্ষে চূড়ান্ত প্রাপ্তি নিশ্চিত করা হবে।",
+        "don_receipt_badge": "প্রাথমিক দাখিল স্লিপ (যাচাইকরণ প্রক্রিয়াধীন)",
         "don_receipt_amt": "অনুদানের পরিমাণ:",
         "don_receipt_method": "পেমেন্ট মাধ্যম:",
         "don_receipt_trx": "ট্রানজেকশন আইডি:",
@@ -266,7 +266,7 @@ const translations = {
         "don_receipt_anon": "নাম প্রকাশে অনিচ্ছুক (Anonymous)",
         "don_btn_send_wa": "হোয়াটসঅ্যাপে পাঠান",
         "don_btn_send_mail": "ইমেইলে স্লিপ পাঠান",
-        "don_btn_pdf": "পিডিএফ / রশিদ ডাউনলোড",
+        "don_btn_pdf": "পিডিএফ / স্লিপ ডাউনলোড",
         "don_btn_copy_slip": "স্লিপ কপি করুন",
         "don_receipt_pdf_tip": "💡 পরামর্শ: রশিদটি ডাউনলোড করে হোয়াটসঅ্যাপে এটাচমেন্ট (📎) হিসেবে পাঠাতে পারেন।",
         "don_btn_new_donate": "নতুন অনুদান বা বন্ধ করুন",
@@ -593,9 +593,9 @@ const translations = {
         "don_lbl_note": "Message or Note (Optional)",
         "don_ph_note": "Any special message or instructions...",
         "don_btn_submit": "Confirm Donation Information",
-        "don_success_title": "Donation Details Successfully Recorded!",
-        "don_success_sub": "Your contribution has been recorded in the Karu Shikha Welfare Fund registry.",
-        "don_receipt_badge": "Official Transaction Slip",
+        "don_success_title": "Donation Details Submitted!",
+        "don_success_sub": "Your submitted details will be officially confirmed upon transaction verification.",
+        "don_receipt_badge": "Preliminary Submission Slip (Verification Pending)",
         "don_receipt_amt": "Donation Amount:",
         "don_receipt_method": "Payment Channel:",
         "don_receipt_trx": "Transaction ID:",
@@ -605,7 +605,7 @@ const translations = {
         "don_receipt_anon": "Anonymous Donor",
         "don_btn_send_wa": "Send via WhatsApp",
         "don_btn_send_mail": "Send Slip via Email",
-        "don_btn_pdf": "Download PDF / Receipt",
+        "don_btn_pdf": "Download PDF / Slip",
         "don_btn_copy_slip": "Copy Slip",
         "don_receipt_pdf_tip": "💡 Tip: Download the receipt slip and attach (📎) it in WhatsApp.",
         "don_btn_new_donate": "New Donation / Close",
@@ -1812,7 +1812,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
             <span class="reg-badge">${isBn ? 'যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭ • স্থাপিত: ৩১ জানুয়ারি ২০১৯' : 'Govt. Reg No: YDA-97 • Estd: 31 January 2019'}</span>
         </div>
         <div style="text-align: center; position: relative; z-index: 1;">
-            <span class="receipt-badge">${isBn ? 'অনুদানের প্রাপ্তি স্বীকার স্লিপ' : 'OFFICIAL DONATION ACKNOWLEDGEMENT SLIP'}</span>
+            <span class="receipt-badge" style="background: #ea580c; color: #fff; font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 12px; letter-spacing: 0.5px;">${isBn ? 'অনুদানের তথ্য দাখিল স্লিপ (যাচাইকরণ প্রক্রিয়াধীন)' : 'DONATION SUBMISSION SLIP (VERIFICATION PENDING)'}</span>
         </div>
         <div class="amount-box">
             <span class="amount-lbl">${isBn ? 'অনুদানের পরিমাণ' : 'Donation Amount'}</span>
@@ -1846,9 +1846,9 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
                 <td class="value">${lastReceiptData.note}</td>
             </tr>` : ''}
         </table>
-        <div class="footer">
-            <p>${isBn ? 'আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।' : 'Every contribution directly funds Project Your Mentor & welfare initiatives.'}</p>
-            <p style="margin-top: 3px;">${isBn ? 'এটি একটি ডিজিটাল স্বীকৃতি রসিদ • কারু শিখার সাথে থাকার জন্য ধন্যবাদ।' : 'This is a digital acknowledgment receipt • Thank you for your support.'}</p>
+        <div class="footer" style="text-align: center; border-top: 1px solid #e2e8f0; padding-top: 12px; font-size: 11px; color: #475569; position: relative; z-index: 1; line-height: 1.55;">
+            <p style="margin: 0; font-weight: 600; color: #334155;">${isBn ? 'আপনার অনুদান কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির সার্বিক উন্নয়ন ও সমাজকল্যাণমূলক কার্যক্রমে ব্যবহৃত হবে।' : 'Your donation will be utilized for Karu Shikha Youth Development Society’s development and overall social welfare initiatives.'}</p>
+            <p style="margin-top: 6px; font-weight: 500; color: #b45309; background: #fffbeb; border: 1px dashed #fde68a; padding: 6px 12px; border-radius: 6px; font-size: 10.5px; text-align: left;">${isBn ? '⚠️ দ্রষ্টব্য: এটি স্বয়ংক্রিয়ভাবে সংগৃহীত প্রাথমিক তথ্য দাখিল স্লিপ, এটি অর্থ প্রাপ্তির চূড়ান্ত রশিদ নয়। আপনার প্রেরিত ট্রানজেকশন আইডি ব্যাংক বা বিকাশ/নগদ ব্যালেন্সের সাথে যাচাই (Verification) সাপেক্ষে অনুদান নিশ্চিত করা হবে।' : '⚠️ Note: This is an auto-generated preliminary submission slip, not a finalized receipt of payment. Confirmation is subject to transaction verification with bank or mobile wallet records.'}</p>
         </div>
     </div>
 </body>
