@@ -209,7 +209,9 @@ const translations = {
         "don_badge": "উপায় ১ • সরাসরি অনুদান মাধ্যম",
         "don_title": "কারু শিখা সমাজকল্যাণ তহবিলে অনুদান",
         "don_sub": "আপনার প্রতিটি অনুদান সরাসরি Project Your Mentor ও সমাজকল্যাণে ব্যবহৃত হয়।",
-        "don_lbl_amount": "অনুদানের পরিমাণ নির্বাচন করুন (টাকা)",
+        "don_lbl_amount": "অনুদানের পরিমাণ (টাকা / BDT)",
+        "don_ph_amount": "যেমন: ৫০০ / ১০০০ / ২০০০",
+        "don_help_amount": "আপনি কত টাকা পাঠিয়েছেন তা লিখুন (কমপক্ষে ১০ টাকা)।",
         "amt_500": "৳৫০০",
         "amt_1000": "৳১,০০০",
         "amt_2000": "৳২,০০০",
@@ -230,6 +232,8 @@ const translations = {
         "don_copy_routing": "রাউটিং নং কপি",
         "don_bkash_inst": "বিকাশ অ্যাপ বা *২৪৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।",
         "don_nagad_inst": "নগদ অ্যাপ বা *১৬৭# থেকে 'Send Money' করুন এবং নিচে TrxID লিখুন।",
+        "don_bank_title_lbl": "ব্যাংকের নাম:",
+        "don_bank_title_val": "সোনালী ব্যাংক পিএলসি (Sonali Bank PLC)",
         "don_bank_name_lbl": "একাউন্টের নাম:",
         "don_bank_ac_lbl": "একাউন্ট নম্বর:",
         "don_bank_routing_lbl": "রাউটিং নম্বর:",
@@ -541,7 +545,9 @@ const translations = {
         "don_badge": "Option 1 • Direct Donation Channels",
         "don_title": "Donate to Karu Shikha Welfare Fund",
         "don_sub": "Every contribution directly funds Project Your Mentor and grassroots welfare.",
-        "don_lbl_amount": "Select Donation Amount (BDT)",
+        "don_lbl_amount": "Donation Amount (BDT)",
+        "don_ph_amount": "e.g. 500 / 1000 / 2000",
+        "don_help_amount": "Enter the amount you sent (minimum BDT 10).",
         "amt_500": "BDT 500",
         "amt_1000": "BDT 1,000",
         "amt_2000": "BDT 2,000",
@@ -562,6 +568,8 @@ const translations = {
         "don_copy_routing": "Copy Routing",
         "don_bkash_inst": "Use bKash App or *247# to Send Money, then enter TrxID below.",
         "don_nagad_inst": "Use Nagad App or *167# to Send Money, then enter TrxID below.",
+        "don_bank_title_lbl": "Bank Name:",
+        "don_bank_title_val": "Sonali Bank PLC",
         "don_bank_name_lbl": "Account Name:",
         "don_bank_ac_lbl": "Account Number:",
         "don_bank_routing_lbl": "Routing Number:",
@@ -1372,36 +1380,6 @@ function setupModals() {
         });
     });
 
-    // Preset Amount Pills selection
-    amountButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            amountButtons.forEach(b => {
-                b.classList.remove('bg-orange-500', 'text-white');
-                b.classList.add('text-slate-300');
-            });
-            btn.classList.add('bg-orange-500', 'text-white');
-            btn.classList.remove('text-slate-300');
-            if (customAmountInput) {
-                customAmountInput.value = btn.getAttribute('data-amount');
-            }
-        });
-    });
-
-    if (customAmountInput) {
-        customAmountInput.addEventListener('input', () => {
-            const val = customAmountInput.value.trim();
-            amountButtons.forEach(btn => {
-                if (btn.getAttribute('data-amount') === val) {
-                    btn.classList.add('bg-orange-500', 'text-white');
-                    btn.classList.remove('text-slate-300');
-                } else {
-                    btn.classList.remove('bg-orange-500', 'text-white');
-                    btn.classList.add('text-slate-300');
-                }
-            });
-        });
-    }
-
     // Payment Channel Switcher
     const updateChannelUI = (channel) => {
         currentChannel = channel;
@@ -1586,8 +1564,8 @@ function setupModals() {
                 channelDisplayName = currentLang === 'bn' ? 'নগদ পার্সোনাল (Send Money)' : 'Nagad Personal (Send Money)';
                 channelAccountTarget = '01795-023942';
             } else if (currentChannel === 'bank') {
-                channelDisplayName = currentLang === 'bn' ? 'ব্যাংক একাউন্ট ডিপোজিট' : 'Bank Account Deposit';
-                channelAccountTarget = '2032102000579 (Karu Shikha Youth Development Society)';
+                channelDisplayName = currentLang === 'bn' ? 'সোনালী ব্যাংক পিএলসি ডিপোজিট' : 'Sonali Bank PLC Deposit';
+                channelAccountTarget = 'A/C: 2032102000579 (Sonali Bank PLC, Karu Shikha Youth Development Society, Tepakhola Branch, Faridpur)';
             }
 
             const donorDisplay = isAnonymous
