@@ -1119,10 +1119,12 @@ function setupGalleryExplorer() {
     });
 
     const lightbox = document.getElementById('gallery-lightbox');
-    const closeBtn = document.getElementById('close-gallery-lightbox');
+    const closeBtn = document.getElementById('close-gallery-lightbox') || document.getElementById('close-lightbox-btn');
 
     if (closeBtn && lightbox) {
-        closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             lightbox.classList.add('hidden');
         });
     }
@@ -1134,6 +1136,15 @@ function setupGalleryExplorer() {
             }
         });
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const lb = document.getElementById('gallery-lightbox');
+            if (lb && !lb.classList.contains('hidden')) {
+                lb.classList.add('hidden');
+            }
+        }
+    });
 
     renderGallery();
 }
@@ -1240,6 +1251,13 @@ window.openGalleryLightbox = function(filename) {
     }
 
     lightbox.classList.remove('hidden');
+};
+
+window.closeGalleryLightbox = function() {
+    const lightbox = document.getElementById('gallery-lightbox');
+    if (lightbox) {
+        lightbox.classList.add('hidden');
+    }
 };
 
 // Global modal handlers
