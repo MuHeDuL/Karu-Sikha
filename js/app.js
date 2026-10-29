@@ -347,6 +347,8 @@ const translations = {
         "bottom_top": "শীর্ষে",
         "mem_modal_badge": "সরকারি নিবন্ধন নং: যুউঅ-৯৭ • সদস্য প্রোফাইল",
         "mem_detail_phone": "মোবাইল নম্বর:",
+        "mem_detail_email": "ব্যক্তিগত ইমেইল:",
+        "mem_detail_blood": "রক্তের গ্রুপ:",
         "mem_detail_father": "পিতার নাম:",
         "mem_detail_mother": "মাতার নাম:",
         "mem_detail_edu": "শিক্ষাগত যোগ্যতা:",
@@ -703,6 +705,8 @@ const translations = {
         "bottom_top": "Top",
         "mem_modal_badge": "Govt. Reg No: YDA-97 • Member Profile",
         "mem_detail_phone": "Mobile Number:",
+        "mem_detail_email": "Personal Email:",
+        "mem_detail_blood": "Blood Group:",
         "mem_detail_father": "Father's Name:",
         "mem_detail_mother": "Mother's Name:",
         "mem_detail_edu": "Educational Qualification:",
@@ -2553,8 +2557,14 @@ window.openMemberModal = function(id, tab) {
     const vcardBtn = document.getElementById('member-modal-vcard-btn');
 
     // Populate
+    const photoUrl = m.photo || m.avatar || m.image;
     if (avatarEl) {
-        avatarEl.textContent = (name || '').trim().charAt(0) || '👤';
+        if (photoUrl) {
+            avatarEl.innerHTML = `<img src="${photoUrl}" alt="${name}" class="w-full h-full object-cover rounded-2xl">`;
+        } else {
+            avatarEl.innerHTML = '';
+            avatarEl.textContent = (name || '').trim().charAt(0) || '👤';
+        }
     }
     if (typeBadgeEl) {
         typeBadgeEl.textContent = isExec ? (isBn ? '🏛️ কার্যনির্বাহী পরিষদ' : '🏛️ Executive Council') : (isBn ? '👥 সাধারণ পরিষদ' : '👥 General Council');
@@ -2569,6 +2579,29 @@ window.openMemberModal = function(id, tab) {
     if (phoneEl) {
         phoneEl.textContent = m.phone || 'N/A';
         phoneEl.href = `tel:${cleanDigits}`;
+    }
+
+    const emailEl = document.getElementById('member-modal-email');
+    const emailRow = document.getElementById('member-modal-email-row');
+    if (emailRow && emailEl) {
+        if (m.email && m.email.trim()) {
+            emailRow.classList.remove('hidden');
+            emailEl.textContent = m.email.trim();
+            emailEl.href = `mailto:${m.email.trim()}`;
+        } else {
+            emailRow.classList.add('hidden');
+        }
+    }
+
+    const bloodEl = document.getElementById('member-modal-blood');
+    const bloodRow = document.getElementById('member-modal-blood-row');
+    if (bloodRow && bloodEl) {
+        if (m.blood && m.blood.trim()) {
+            bloodRow.classList.remove('hidden');
+            bloodEl.textContent = m.blood.trim();
+        } else {
+            bloodRow.classList.add('hidden');
+        }
     }
 
     if (fatherRow && fatherEl) {
@@ -2634,7 +2667,46 @@ window.closeMemberModal = function() {
     if (modal) modal.classList.add('hidden');
 };
 
-window.downloadMemberVCard = function(member) {
+// Helper: Convert photo URL or image path to lightweight Base64 JPEG for vCard embedding
+async function getPhotoBase64(photoUrl) {
+    if (!photoUrl) return null;
+    if (photoUrl.startsWith('data:image')) {
+        return photoUrl.split(',')[1];
+    }
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.crossOrigin = 'Anonymous';
+        img.onload = function() {
+            try {
+                const canvas = document.createElement('canvas');
+                const maxDim = 320;
+                let w = img.width;
+                let h = img.height;
+                if (w > maxDim || h > maxDim) {
+                    if (w > h) {
+                        h = Math.round((h * maxDim) / w);
+                        w = maxDim;
+                    } else {
+                        w = Math.round((w * maxDim) / h);
+                        h = maxDim;
+                    }
+                }
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, w, h);
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+                resolve(dataUrl.split(',')[1]);
+            } catch (err) {
+                resolve(null);
+            }
+        };
+        img.onerror = () => resolve(null);
+        img.src = photoUrl;
+    });
+}
+
+window.downloadMemberVCard = async function(member) {
     const m = member || currentActiveMember;
     if (!m) return;
 
@@ -2644,26 +2716,65 @@ window.downloadMemberVCard = function(member) {
     else if (!intlPhone.startsWith('+')) intlPhone = '+880' + intlPhone;
 
     const safeName = (m.name_en || m.name).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_-]/g, '');
-    const isExec = m.is_executive || (m.role && m.role !== 'সদস্য');
-    const category = isExec ? 'Executive Council' : 'General Member';
 
-    const vCardContent = [
+    // Note fields: পিতার নাম, শিক্ষা, বর্তমান ঠিকানা, রক্তের গ্রুপ, ইত্যাদি
+    const noteItems = [
+        `• পিতার নাম: ${m.father || 'N/A'}`,
+        m.mother ? `• মাতার নাম: ${m.mother}` : null,
+        `• শিক্ষা: ${m.education || 'N/A'}`,
+        m.profession ? `• পেশা: ${m.profession}` : null,
+        `• বর্তমান ঠিকানা: ${m.address || 'ফরিদপুর'}`,
+        m.blood ? `• রক্তের গ্রুপ: ${m.blood}` : null,
+        '• যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭'
+    ].filter(Boolean);
+
+    const noteEscaped = noteItems.join('\\n');
+
+    const vCardLines = [
         'BEGIN:VCARD',
         'VERSION:3.0',
-        `FN:${m.name} (${m.role})`,
+        `FN:${m.name}`,
         `N:${m.name};;;;`,
         'ORG:কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি (Karu Shikha YDS)',
-        `TITLE:${m.role} • কারু শিখা`,
+        `TITLE:${m.role}`,
         `ROLE:${m.role}`,
-        `TEL;TYPE=CELL,VOICE,PREF:${intlPhone}`,
-        'EMAIL;TYPE=INTERNET,WORK:karushikhayds@gmail.com',
-        'ADR;TYPE=WORK:;;লক্ষ্মীপুর পৌর স্টেশন মার্কেট;ফরিদপুর সদর;ফরিদপুর;;বাংলাদেশ',
-        `NOTE:কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি (যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭)। পদবী: ${m.role} (${category})। পিতা: ${m.father || 'N/A'}। শিক্ষা: ${m.education || 'N/A'}। ঠিকানা: ${m.address || 'ফরিদপুর'}।`,
-        'URL:https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/',
-        'CATEGORIES:Karu Shikha,Youth Development,Faridpur',
-        'END:VCARD'
-    ].join('\r\n');
+        `TEL;TYPE=CELL,VOICE,PREF:${intlPhone}`
+    ];
 
+    // Personal email (only if present)
+    if (m.email && m.email.trim()) {
+        vCardLines.push(`EMAIL;TYPE=INTERNET,HOME:${m.email.trim()}`);
+    }
+
+    // Home address (member's own address)
+    if (m.address && m.address.trim()) {
+        vCardLines.push(`ADR;TYPE=HOME:;;${m.address.trim()};;;;`);
+        vCardLines.push(`LABEL;TYPE=HOME:${m.address.trim()}`);
+    }
+
+    // Work address (organization's address)
+    vCardLines.push('ADR;TYPE=WORK:;;লক্ষ্মীপুর পৌর স্টেশন মার্কেট;ফরিদপুর সদর;ফরিদপুর;;বাংলাদেশ');
+    vCardLines.push('LABEL;TYPE=WORK:লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর, বাংলাদেশ');
+
+    // Official Facebook page link
+    vCardLines.push('URL:https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/');
+
+    // Note (পিতার নাম, শিক্ষা, বর্তমান ঠিকানা, রক্তের গ্রুপ)
+    vCardLines.push(`NOTE:${noteEscaped}`);
+
+    // Profile photo (when configured)
+    const photoUrl = m.photo || m.avatar || m.image;
+    if (photoUrl) {
+        const photoBase64 = await getPhotoBase64(photoUrl);
+        if (photoBase64) {
+            vCardLines.push(`PHOTO;TYPE=JPEG;ENCODING=b:${photoBase64}`);
+        }
+    }
+
+    vCardLines.push('CATEGORIES:Karu Shikha,Youth Development,Faridpur');
+    vCardLines.push('END:VCARD');
+
+    const vCardContent = vCardLines.join('\r\n');
     const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -2675,7 +2786,7 @@ window.downloadMemberVCard = function(member) {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
 
     const msg = currentLang === 'bn' 
-        ? `📥 ${m.name}-এর ভি-কার্ড (.vcf) ডাউনলোড সম্পন্ন হয়েছে!`
-        : `📥 vCard (.vcf) downloaded for ${m.name_en || m.name}!`;
+        ? `📥 ${m.name}-এর ভি-কার্ড (.vcf) সেভ হয়েছে!`
+        : `📥 vCard (.vcf) saved for ${m.name_en || m.name}!`;
     showToast(msg);
 };
