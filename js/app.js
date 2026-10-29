@@ -2719,29 +2719,20 @@ window.downloadMemberVCard = async function(member) {
     if (intlPhone.startsWith('0')) intlPhone = '+88' + intlPhone;
     else if (!intlPhone.startsWith('+')) intlPhone = '+880' + intlPhone;
 
-    const safeName = (m.name_en || m.name).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_-]/g, '');
+    const nameEn = (m.name_en || m.name || '').trim();
+    const roleEn = (m.role_en || m.role || 'Member').trim();
+    const safeFilename = nameEn.replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_-]/g, '') || 'Member';
+    const homeAddressEn = (addressMapEn[m.address] || m.address || 'Faridpur Sadar, Faridpur, Bangladesh').replace(/[।]/g, '').trim();
 
-    // Note fields: পিতার নাম, শিক্ষা, বর্তমান ঠিকানা, রক্তের গ্রুপ, ইত্যাদি
-    const noteItems = [
-        `• পিতার নাম: ${m.father || 'N/A'}`,
-        m.mother ? `• মাতার নাম: ${m.mother}` : null,
-        `• শিক্ষা: ${m.education || 'N/A'}`,
-        m.profession ? `• পেশা: ${m.profession}` : null,
-        `• বর্তমান ঠিকানা: ${m.address || 'ফরিদপুর'}`,
-        m.blood ? `• রক্তের গ্রুপ: ${m.blood}` : null,
-        '• যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭'
-    ].filter(Boolean);
-
-    const noteEscaped = noteItems.join('\\n');
-
+    // vCard strictly in English with ONLY blood group in NOTE
     const vCardLines = [
         'BEGIN:VCARD',
         'VERSION:3.0',
-        `FN:${m.name}`,
-        `N:${m.name};;;;`,
-        'ORG:কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি (Karu Shikha YDS)',
-        `TITLE:${m.role}`,
-        `ROLE:${m.role}`,
+        `FN:${nameEn}`,
+        `N:${nameEn};;;;`,
+        'ORG:Karu Shikha Youth Development Society (Karu Shikha YDS)',
+        `TITLE:${roleEn}`,
+        `ROLE:${roleEn}`,
         `TEL;TYPE=CELL,VOICE,PREF:${intlPhone}`
     ];
 
@@ -2750,21 +2741,21 @@ window.downloadMemberVCard = async function(member) {
         vCardLines.push(`EMAIL;TYPE=INTERNET,HOME:${m.email.trim()}`);
     }
 
-    // Home address (member's own address)
-    if (m.address && m.address.trim()) {
-        vCardLines.push(`ADR;TYPE=HOME:;;${m.address.trim()};;;;`);
-        vCardLines.push(`LABEL;TYPE=HOME:${m.address.trim()}`);
+    // Home address in English
+    if (homeAddressEn) {
+        vCardLines.push(`ADR;TYPE=HOME:;;${homeAddressEn};;;;`);
+        vCardLines.push(`LABEL;TYPE=HOME:${homeAddressEn}`);
     }
 
-    // Work address (organization's address)
-    vCardLines.push('ADR;TYPE=WORK:;;লক্ষ্মীপুর পৌর স্টেশন মার্কেট;ফরিদপুর সদর;ফরিদপুর;;বাংলাদেশ');
-    vCardLines.push('LABEL;TYPE=WORK:লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর, বাংলাদেশ');
+    // Work address in English
+    vCardLines.push('ADR;TYPE=WORK:;;Lakshmipur Pourashava Station Market;Faridpur Sadar;Faridpur;;Bangladesh');
+    vCardLines.push('LABEL;TYPE=WORK:Lakshmipur Pourashava Station Market, Faridpur Sadar, Faridpur, Bangladesh');
 
-    // Official Facebook page link
+    // Official Facebook page URL
     vCardLines.push('URL:https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/');
 
-    // Note (পিতার নাম, শিক্ষা, বর্তমান ঠিকানা, রক্তের গ্রুপ)
-    vCardLines.push(`NOTE:${noteEscaped}`);
+    // Note: ONLY Blood Group as requested by user
+    vCardLines.push(`NOTE:Blood Group: ${m.blood && m.blood.trim() ? m.blood.trim() : 'N/A'}`);
 
     // Profile photo (when configured)
     const photoUrl = m.photo || m.avatar || m.image;
@@ -2783,14 +2774,14 @@ window.downloadMemberVCard = async function(member) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `${safeName}_Karu_Shikha.vcf`);
+    link.setAttribute('download', `${safeFilename}_Karu_Shikha.vcf`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
 
     const msg = currentLang === 'bn' 
-        ? `📥 ${m.name}-এর ভি-কার্ড (.vcf) সেভ হয়েছে!`
-        : `📥 vCard (.vcf) saved for ${m.name_en || m.name}!`;
+        ? `📥 ${nameEn}-এর ভি-কার্ড (.vcf) সেভ হয়েছে!`
+        : `📥 vCard (.vcf) saved for ${nameEn}!`;
     showToast(msg);
 };
