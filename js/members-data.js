@@ -117,104 +117,6 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
 window.KARU_SHIKHA_GENERAL_MEMBERS = [
   {
     "id": 1,
-    "name": "তিহানুর রহমান তিহান",
-    "name_en": "Tihanur Rahman Tihan",
-    "father": "মো. লিটন মন্ডল",
-    "mother": "রাশেদা লিটন",
-    "address": "ভাজনডাঙ্গা, বায়তুল আমান, ফরিদপুর সদর, ফরিদপুর।",
-    "education": "এইচএসসি",
-    "age": 23,
-    "profession": "শিক্ষার্থী ও উদ্যোক্তা",
-    "role": "সভাপতি",
-    "role_en": "President",
-    "phone": "01795-023942"
-  },
-  {
-    "id": 2,
-    "name": "উলফাত জাহান শান্তা",
-    "name_en": "Ulfat Jahan Shanta",
-    "father": "মো. লুৎফর রহমান",
-    "mother": "আকলিমা খাতুন",
-    "address": "রঘুনন্দনপুর, শ্রী-অঙ্গন, ফরিদপুর সদর, ফরিদপুর।",
-    "education": "এমএসএস",
-    "age": 26,
-    "profession": "গৃহিণী",
-    "role": "সহ-সভাপতি",
-    "role_en": "Vice President",
-    "phone": "01756-282422"
-  },
-  {
-    "id": 3,
-    "name": "ফাহিম হাসান",
-    "name_en": "Fahim Hasan",
-    "father": "বাদশা খান",
-    "mother": "ফরিদা বেগম",
-    "address": "বিএস ডাঙ্গী, চরভদ্রাসন, চরভদ্রাসন, ফরিদপুর।",
-    "education": "এইচএসসি",
-    "age": 23,
-    "profession": "শিক্ষার্থী",
-    "role": "সাধারণ সম্পাদক",
-    "role_en": "General Secretary",
-    "phone": "01609-050866"
-  },
-  {
-    "id": 4,
-    "name": "মেহরাব হোসেন ইমন",
-    "name_en": "Mehrab Hossain Emon",
-    "father": "মো. নিজাম শেখ",
-    "mother": "মরিয়ম বেগম",
-    "address": "আইজুদ্দীন মাতুব্বর ডাঙ্গী, বাকীগঞ্জ, কোতোয়ালী, ফরিদপুর।",
-    "education": "এইচএসসি",
-    "age": 24,
-    "profession": "ব্যবসায়ী",
-    "role": "কোষাধ্যক্ষ",
-    "role_en": "Treasurer",
-    "phone": "01874-745546"
-  },
-  {
-    "id": 5,
-    "name": "সায়েম হোসেন",
-    "name_en": "Sayem Hossain",
-    "father": "সহিদ হোসেন",
-    "mother": "রেশমা বেগম",
-    "address": "তুলা গ্রাম, তাম্বুল খানা, ফরিদপুর সদর, ফরিদপুর।",
-    "education": "স্নাতক",
-    "age": 29,
-    "profession": "ব্যবসা",
-    "role": "সাংগঠনিক সম্পাদক",
-    "role_en": "Organizing Secretary",
-    "phone": "01791-192284"
-  },
-  {
-    "id": 6,
-    "name": "শেখ তারিকুজ্জামান",
-    "name_en": "Sheikh Tarikuzzaman",
-    "father": "মো. জিহাদ হোসেন",
-    "mother": "রোকেয়া বেগম",
-    "address": "২ নং হাভেলি গোপালপুর, ফরিদপুর সদর, ফরিদপুর।",
-    "education": "এমবিবিএস",
-    "age": 30,
-    "profession": "চিকিৎসক",
-    "role": "দপ্তর সম্পাদক",
-    "role_en": "Office Secretary",
-    "phone": "01739-727334"
-  },
-  {
-    "id": 7,
-    "name": "মো. রকিবুল হাসান",
-    "name_en": "Md. Rakibul Hasan",
-    "father": "মো. জিহাদ হোসেন",
-    "mother": "রোকেয়া বেগম",
-    "address": "কমলাপুর, ফরিদপুর সদর, ফরিদপুর।",
-    "education": "স্নাতকোত্তর",
-    "age": 24,
-    "profession": "চাকরি",
-    "role": "নির্বাহী সদস্য",
-    "role_en": "Executive Member",
-    "phone": "01756-998816"
-  },
-  {
-    "id": 8,
     "name": "নুপুর রানী শীল",
     "name_en": "Nupur Rani Shill",
     "father": "গণেশ চন্দ্র শীল",
@@ -228,7 +130,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01768-253057"
   },
   {
-    "id": 9,
+    "id": 2,
     "name": "মো. রুবেল",
     "name_en": "Md. Rubel",
     "father": "শেখ কুটি",
@@ -242,7 +144,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01996-208113"
   },
   {
-    "id": 10,
+    "id": 3,
     "name": "রাম চন্দ্র মালো",
     "name_en": "Ram Chandra Malo",
     "father": "নরেন চন্দ্র মালো",
@@ -256,7 +158,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01716-673271"
   },
   {
-    "id": 11,
+    "id": 4,
     "name": "জামিলা ঘটক",
     "name_en": "Jamila Ghatak",
     "father": "মৃত সাগর ঘটক",
@@ -270,7 +172,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01742-999651"
   },
   {
-    "id": 12,
+    "id": 5,
     "name": "আবু বক্কর শেখ",
     "name_en": "Abu Bakkar Sheikh",
     "father": "মো. হামেদ শেখ",
@@ -284,7 +186,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01618-010106"
   },
   {
-    "id": 13,
+    "id": 6,
     "name": "সুরাইয়া আফনান নাবিলা",
     "name_en": "Suraiya Afnan Nabila",
     "father": "মো. আলতাফ হোসেন খান",
@@ -298,7 +200,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01611-063415"
   },
   {
-    "id": 14,
+    "id": 7,
     "name": "কাজী মোজাম্মেল",
     "name_en": "Kazi Mozammel",
     "father": "কাজী রফিকুল ইসলাম",
@@ -312,7 +214,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01791-003755"
   },
   {
-    "id": 15,
+    "id": 8,
     "name": "বিপ্লব বিশ্বাস",
     "name_en": "Biplob Biswas",
     "father": "বাবু লাল বিশ্বাস",
@@ -326,7 +228,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01704-392233"
   },
   {
-    "id": 16,
+    "id": 9,
     "name": "পূজা রানী মন্ডল",
     "name_en": "Puja Rani Mondal",
     "father": "ধীরেন্দ্রনাথ মন্ডল",
@@ -340,7 +242,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01319-952043"
   },
   {
-    "id": 17,
+    "id": 10,
     "name": "সানজিদা ইসলাম",
     "name_en": "Sanjida Islam",
     "father": "মো. আরিফ",
@@ -354,7 +256,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01949-614069"
   },
   {
-    "id": 18,
+    "id": 11,
     "name": "তামজিদ মিয়া",
     "name_en": "Tamjid Mia",
     "father": "মো. ফরহাদ",
@@ -368,7 +270,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01746-912279"
   },
   {
-    "id": 19,
+    "id": 12,
     "name": "রাজ নারায়ণ চক্রবর্তী",
     "name_en": "Raj Narayan Chakraborty",
     "father": "অশোক কুমার",
@@ -382,7 +284,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01875-864728"
   },
   {
-    "id": 20,
+    "id": 13,
     "name": "মাইশা ফেরদৌসী",
     "name_en": "Maisha Ferdousi",
     "father": "আদনান হাসান",
@@ -396,7 +298,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01313-373125"
   },
   {
-    "id": 21,
+    "id": 14,
     "name": "আসিনুর রহমান সজল",
     "name_en": "Asinur Rahman Sojol",
     "father": "আব্দুল আলিম",
@@ -410,7 +312,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01812-478136"
   },
   {
-    "id": 22,
+    "id": 15,
     "name": "বৃষ্টি আক্তার মারিয়া",
     "name_en": "Bristi Akter Maria",
     "father": "মাসুদ কাজী",
@@ -424,7 +326,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01864-509315"
   },
   {
-    "id": 23,
+    "id": 16,
     "name": "মো. নাফিজুর রহমান নীরব",
     "name_en": "Md. Nafizur Rahman Nirob",
     "father": "মো. সাইদুর",
@@ -438,7 +340,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01734-126783"
   },
   {
-    "id": 24,
+    "id": 17,
     "name": "খন্দকার ইমরান হোসেন",
     "name_en": "Khondokar Imran Hossain",
     "father": "খন্দকার বাদল হোসেন",
@@ -452,7 +354,7 @@ window.KARU_SHIKHA_GENERAL_MEMBERS = [
     "phone": "01317-792888"
   },
   {
-    "id": 25,
+    "id": 18,
     "name": "মো. রমজান খন্দকার",
     "name_en": "Md. Ramjan Khondokar",
     "father": "মৃত আমিন গোলাম খন্দকার",
