@@ -1555,20 +1555,17 @@
                 &times;
             </button>
 
-            <!-- Top Org Badge -->
+            <!-- Top Org Badge (Central vs General Member) -->
             <div class="text-center mb-4">
-                <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2" data-i18n="mem_modal_badge">
-                    সরকারি নিবন্ধন নং: যুউঅ-৯৭ • সদস্য প্রোফাইল
+                <span id="member-modal-top-badge" class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm">
+                    🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ সদস্য
                 </span>
                 
-                <!-- Avatar Circle with Initial -->
-                <div class="relative w-20 h-20 mx-auto mb-3">
-                    <div id="member-modal-avatar" class="w-full h-full rounded-2xl bg-gradient-to-tr from-sky-600 via-indigo-600 to-orange-500 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-sky-500/20 border-2 border-white/20">
+                <!-- Avatar Circle with Initial or Photo -->
+                <div class="w-20 h-20 mx-auto mb-3">
+                    <div id="member-modal-avatar" class="w-full h-full rounded-2xl bg-gradient-to-tr from-sky-600 via-indigo-600 to-orange-500 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-sky-500/20 border-2 border-white/20 overflow-hidden">
                         ত
                     </div>
-                    <span id="member-modal-type-badge" class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[9px] font-extrabold whitespace-nowrap bg-emerald-500 text-slate-950 border border-emerald-400">
-                        কার্যনির্বাহী পরিষদ
-                    </span>
                 </div>
 
                 <h3 id="member-modal-name" class="text-lg sm:text-xl font-black text-white leading-snug">

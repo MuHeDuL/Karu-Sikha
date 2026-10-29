@@ -2537,7 +2537,7 @@ window.openMemberModal = function(id, tab) {
 
     // Elements
     const avatarEl = document.getElementById('member-modal-avatar');
-    const typeBadgeEl = document.getElementById('member-modal-type-badge');
+    const topBadgeEl = document.getElementById('member-modal-top-badge');
     const nameEl = document.getElementById('member-modal-name');
     const roleEl = document.getElementById('member-modal-role');
     const phoneEl = document.getElementById('member-modal-phone');
@@ -2556,7 +2556,17 @@ window.openMemberModal = function(id, tab) {
     const waLink = document.getElementById('member-modal-wa-link');
     const vcardBtn = document.getElementById('member-modal-vcard-btn');
 
-    // Populate
+    // Populate Top Badge & Avatar
+    if (topBadgeEl) {
+        if (isExec) {
+            topBadgeEl.textContent = isBn ? '🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ সদস্য' : '🏛️ Central Executive Council Member';
+            topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
+        } else {
+            topBadgeEl.textContent = isBn ? '👥 সাধারণ পরিষদ সদস্য' : '👥 General Council Member';
+            topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
+        }
+    }
+
     const photoUrl = m.photo || m.avatar || m.image;
     if (avatarEl) {
         if (photoUrl) {
@@ -2565,12 +2575,6 @@ window.openMemberModal = function(id, tab) {
             avatarEl.innerHTML = '';
             avatarEl.textContent = (name || '').trim().charAt(0) || '👤';
         }
-    }
-    if (typeBadgeEl) {
-        typeBadgeEl.textContent = isExec ? (isBn ? '🏛️ কার্যনির্বাহী পরিষদ' : '🏛️ Executive Council') : (isBn ? '👥 সাধারণ পরিষদ' : '👥 General Council');
-        typeBadgeEl.className = isExec 
-            ? 'absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[9px] font-extrabold whitespace-nowrap bg-sky-500 text-slate-950 border border-sky-400'
-            : 'absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[9px] font-extrabold whitespace-nowrap bg-slate-800 text-slate-200 border border-white/20';
     }
     if (nameEl) nameEl.textContent = name;
     if (roleEl) roleEl.textContent = role;
