@@ -1548,6 +1548,104 @@
         </div>
     </div>
 
+    <!-- MEMBER PROFILE & VCARD MODAL -->
+    <div id="member-profile-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-white/15 rounded-3xl p-5 sm:p-7 max-w-lg w-full shadow-2xl relative max-h-[92vh] overflow-y-auto">
+            <button id="close-member-modal" type="button" onclick="closeMemberModal()" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center text-lg font-bold cursor-pointer transition-colors z-20">
+                &times;
+            </button>
+
+            <!-- Top Org Badge -->
+            <div class="text-center mb-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider mb-2" data-i18n="mem_modal_badge">
+                    সরকারি নিবন্ধন নং: যুউঅ-৯৭ • সদস্য প্রোফাইল
+                </span>
+                
+                <!-- Avatar Circle with Initial -->
+                <div class="relative w-20 h-20 mx-auto mb-3">
+                    <div id="member-modal-avatar" class="w-full h-full rounded-2xl bg-gradient-to-tr from-sky-600 via-indigo-600 to-orange-500 flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-sky-500/20 border-2 border-white/20">
+                        ত
+                    </div>
+                    <span id="member-modal-type-badge" class="absolute -bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[9px] font-extrabold whitespace-nowrap bg-emerald-500 text-slate-950 border border-emerald-400">
+                        কার্যনির্বাহী পরিষদ
+                    </span>
+                </div>
+
+                <h3 id="member-modal-name" class="text-lg sm:text-xl font-black text-white leading-snug">
+                    তিহানুর রহমান তিহান
+                </h3>
+                <p id="member-modal-role" class="text-xs sm:text-sm font-bold text-orange-400 mt-0.5">
+                    সভাপতি (President)
+                </p>
+            </div>
+
+            <!-- Details Table / Card -->
+            <div class="bg-slate-950/70 border border-white/10 rounded-2xl p-3.5 sm:p-4 text-xs space-y-2 mb-4">
+                <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_phone">মোবাইল নম্বর:</span>
+                    <a id="member-modal-phone" href="tel:" class="font-bold text-emerald-400 font-mono hover:underline">01795-023942</a>
+                </div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-2" id="member-modal-father-row">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_father">পিতার নাম:</span>
+                    <span id="member-modal-father" class="font-semibold text-slate-200">মো. লিটন মন্ডল</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-2" id="member-modal-mother-row">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_mother">মাতার নাম:</span>
+                    <span id="member-modal-mother" class="font-semibold text-slate-200">রাশেদা লিটন</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_edu">শিক্ষাগত যোগ্যতা:</span>
+                    <span id="member-modal-education" class="font-semibold text-slate-200">এইচএসসি</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_prof">পেশা:</span>
+                    <span id="member-modal-profession" class="font-semibold text-slate-200">শিক্ষার্থী ও উদ্যোক্তা</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-2" id="member-modal-age-row">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_age">বয়স:</span>
+                    <span id="member-modal-age" class="font-semibold text-slate-200">২৩ বছর</span>
+                </div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-2" id="member-modal-join-row">
+                    <span class="text-slate-400 font-medium" data-i18n="mem_detail_join">নিবন্ধন / যোগদানের তারিখ:</span>
+                    <span id="member-modal-join" class="font-semibold text-slate-200">০৪/০৬/২০২২</span>
+                </div>
+                <div class="pt-1">
+                    <span class="text-slate-400 font-medium block mb-1" data-i18n="mem_detail_addr">স্থায়ী / বর্তমান ঠিকানা:</span>
+                    <span id="member-modal-address" class="font-semibold text-slate-300 text-[11px] leading-relaxed block">ভাজনডাঙ্গা, বায়তুল আমান, ফরিদপুর সদর, ফরিদপুর।</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons: vCard Download, Direct Call, WhatsApp -->
+            <div class="space-y-2">
+                <!-- vCard Save Button (Primary Action) -->
+                <button type="button" id="member-modal-vcard-btn" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-emerald-600/25 transition-all cursor-pointer flex items-center justify-center gap-2">
+                    <span class="text-base">📥</span>
+                    <span data-i18n="mem_btn_save_vcard">মোবাইলে কন্টাক্ট সেভ করুন (Save vCard)</span>
+                </button>
+
+                <!-- Call and WhatsApp Side by Side -->
+                <div class="grid grid-cols-2 gap-2">
+                    <a id="member-modal-call-link" href="tel:" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-white/10">
+                        <span>📞</span>
+                        <span data-i18n="mem_btn_call">কল দিন</span>
+                    </a>
+                    <a id="member-modal-wa-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="py-2.5 rounded-xl bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] font-bold text-xs flex items-center justify-center gap-1.5 transition-colors border border-[#25D366]/40">
+                        <span>💬</span>
+                        <span data-i18n="mem_btn_wa">হোয়াটসঅ্যাপ</span>
+                    </a>
+                </div>
+
+                <p class="text-[10px] text-slate-400 text-center pt-1" data-i18n="mem_vcard_hint">
+                    💡 vCard ডাউনলোড হলে ফোনে ক্লিক করলেই সরাসরি নাম ও পদবী সহ সেভ হয়ে যাবে।
+                </p>
+
+                <button type="button" onclick="closeMemberModal()" class="w-full py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs border border-white/10 transition-colors cursor-pointer" data-i18n="mem_btn_close">
+                    বন্ধ করুন
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Photo Gallery Lightbox Modal -->
     <div id="gallery-lightbox" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 hidden">
         <div class="relative max-w-4xl w-full bg-slate-900 border border-white/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">

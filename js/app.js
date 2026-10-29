@@ -344,7 +344,22 @@ const translations = {
         "lb_archive": "কারু শিখা আর্কাইভ",
         "bottom_contact": "যোগাযোগ",
         "bottom_volunteer": "স্বেচ্ছাসেবক",
-        "bottom_top": "শীর্ষে"
+        "bottom_top": "শীর্ষে",
+        "mem_modal_badge": "সরকারি নিবন্ধন নং: যুউঅ-৯৭ • সদস্য প্রোফাইল",
+        "mem_detail_phone": "মোবাইল নম্বর:",
+        "mem_detail_father": "পিতার নাম:",
+        "mem_detail_mother": "মাতার নাম:",
+        "mem_detail_edu": "শিক্ষাগত যোগ্যতা:",
+        "mem_detail_prof": "পেশা:",
+        "mem_detail_age": "বয়স:",
+        "mem_detail_join": "নিবন্ধন / যোগদানের তারিখ:",
+        "mem_detail_addr": "স্থায়ী / বর্তমান ঠিকানা:",
+        "mem_btn_save_vcard": "মোবাইলে কন্টাক্ট সেভ করুন (Save vCard)",
+        "mem_btn_call": "কল দিন",
+        "mem_btn_wa": "হোয়াটসঅ্যাপ",
+        "mem_vcard_hint": "💡 vCard ডাউনলোড হলে ফোনে ক্লিক করলেই সরাসরি নাম ও পদবী সহ সেভ হয়ে যাবে।",
+        "mem_btn_close": "বন্ধ করুন",
+        "mem_btn_profile": "প্রোফাইল"
     },
     "en": {
         "doc_title": "Karu Shikha Youth Development Society | Official Web Platform",
@@ -685,7 +700,22 @@ const translations = {
         "lb_archive": "Karu Shikha Archive",
         "bottom_contact": "Contact",
         "bottom_volunteer": "Volunteer",
-        "bottom_top": "Top"
+        "bottom_top": "Top",
+        "mem_modal_badge": "Govt. Reg No: YDA-97 • Member Profile",
+        "mem_detail_phone": "Mobile Number:",
+        "mem_detail_father": "Father's Name:",
+        "mem_detail_mother": "Mother's Name:",
+        "mem_detail_edu": "Educational Qualification:",
+        "mem_detail_prof": "Profession:",
+        "mem_detail_age": "Age:",
+        "mem_detail_join": "Registration / Joining Date:",
+        "mem_detail_addr": "Permanent / Present Address:",
+        "mem_btn_save_vcard": "Save Contact to Phone (Save vCard)",
+        "mem_btn_call": "Call Now",
+        "mem_btn_wa": "WhatsApp",
+        "mem_vcard_hint": "💡 When vCard downloads, tap it on your phone to instantly add to contacts.",
+        "mem_btn_close": "Close",
+        "mem_btn_profile": "Profile"
     }
 };
 
@@ -2220,13 +2250,31 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
         });
     }
 
-    [donateModal, volunteerModal, contactModal, certModal].forEach(modal => {
+    const memberModal = document.getElementById('member-profile-modal');
+    const closeMemberBtn = document.getElementById('close-member-modal');
+    if (closeMemberBtn && memberModal) {
+        closeMemberBtn.addEventListener('click', () => {
+            memberModal.classList.add('hidden');
+        });
+    }
+
+    [donateModal, volunteerModal, contactModal, certModal, memberModal].forEach(modal => {
         if (!modal) return;
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.add('hidden');
             }
         });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            [donateModal, volunteerModal, contactModal, certModal, memberModal].forEach(modal => {
+                if (modal && !modal.classList.contains('hidden')) {
+                    modal.classList.add('hidden');
+                }
+            });
+        }
     });
 }
 
@@ -2432,8 +2480,9 @@ function renderMembers() {
                         </span>
                     </div>
 
-                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-2 leading-snug line-clamp-2 min-h-[2.4rem]">
-                        ${name}
+                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-2 leading-snug line-clamp-2 min-h-[2.4rem] cursor-pointer hover:text-sky-400 transition-colors flex items-center justify-between group" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'প্রোফাইল ও ভি-কার্ড দেখতে ক্লিক করুন' : 'Click to view profile & vCard'}">
+                        <span>${name}</span>
+                        <span class="text-xs text-sky-400 opacity-60 group-hover:opacity-100 transition-opacity">↗</span>
                     </h3>
 
                     <div class="space-y-1.5 text-[11px] text-slate-300 mb-3.5">
@@ -2449,8 +2498,12 @@ function renderMembers() {
                     </div>
                 </div>
 
-                <div class="pt-2.5 border-t border-white/5 mt-auto flex items-center justify-between gap-2">
-                    <a href="tel:${m.phone.replace(/[^0-9]/g, '')}" class="flex-1 py-1.5 sm:py-2 rounded-xl bg-slate-900 hover:bg-emerald-600/20 border border-white/10 hover:border-emerald-500/40 text-emerald-400 text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all" title="Direct Phone Call">
+                <div class="pt-2.5 border-t border-white/5 mt-auto grid grid-cols-2 gap-2">
+                    <button type="button" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" class="py-1.5 sm:py-2 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/30 text-sky-300 text-[11px] font-bold flex items-center justify-center gap-1 transition-all cursor-pointer" title="View Profile & Save vCard">
+                        <span>👤</span>
+                        <span>${currentLang === 'bn' ? 'প্রোফাইল' : 'Profile'}</span>
+                    </button>
+                    <a href="tel:${m.phone.replace(/[^0-9]/g, '')}" class="py-1.5 sm:py-2 rounded-xl bg-slate-900 hover:bg-emerald-600/20 border border-white/10 hover:border-emerald-500/40 text-emerald-400 text-[11px] font-bold flex items-center justify-center gap-1 transition-all" title="Direct Phone Call">
                         <span>${callLabel}</span>
                     </a>
                 </div>
@@ -2458,3 +2511,171 @@ function renderMembers() {
         `;
     }).join('');
 }
+
+// ==========================================
+// MEMBER PROFILE & VCARD MODAL CONTROLLER
+// ==========================================
+let currentActiveMember = null;
+
+window.openMemberModal = function(id, tab) {
+    const list = tab === 'general' ? window.KARU_SHIKHA_GENERAL_MEMBERS : window.KARU_SHIKHA_EXECUTIVE_MEMBERS;
+    const m = (list || []).find(item => item.id === id);
+    if (!m) return;
+    currentActiveMember = m;
+
+    const modal = document.getElementById('member-profile-modal');
+    if (!modal) return;
+
+    const isBn = currentLang === 'bn';
+    const name = isBn ? m.name : (m.name_en || m.name);
+    const role = isBn ? m.role : (m.role_en || m.role);
+    const isExec = tab !== 'general' && m.is_executive !== false;
+
+    // Elements
+    const avatarEl = document.getElementById('member-modal-avatar');
+    const typeBadgeEl = document.getElementById('member-modal-type-badge');
+    const nameEl = document.getElementById('member-modal-name');
+    const roleEl = document.getElementById('member-modal-role');
+    const phoneEl = document.getElementById('member-modal-phone');
+    const fatherEl = document.getElementById('member-modal-father');
+    const fatherRow = document.getElementById('member-modal-father-row');
+    const motherEl = document.getElementById('member-modal-mother');
+    const motherRow = document.getElementById('member-modal-mother-row');
+    const eduEl = document.getElementById('member-modal-education');
+    const profEl = document.getElementById('member-modal-profession');
+    const ageEl = document.getElementById('member-modal-age');
+    const ageRow = document.getElementById('member-modal-age-row');
+    const joinEl = document.getElementById('member-modal-join');
+    const joinRow = document.getElementById('member-modal-join-row');
+    const addrEl = document.getElementById('member-modal-address');
+    const callLink = document.getElementById('member-modal-call-link');
+    const waLink = document.getElementById('member-modal-wa-link');
+    const vcardBtn = document.getElementById('member-modal-vcard-btn');
+
+    // Populate
+    if (avatarEl) {
+        avatarEl.textContent = (name || '').trim().charAt(0) || '👤';
+    }
+    if (typeBadgeEl) {
+        typeBadgeEl.textContent = isExec ? (isBn ? '🏛️ কার্যনির্বাহী পরিষদ' : '🏛️ Executive Council') : (isBn ? '👥 সাধারণ পরিষদ' : '👥 General Council');
+        typeBadgeEl.className = isExec 
+            ? 'absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[9px] font-extrabold whitespace-nowrap bg-sky-500 text-slate-950 border border-sky-400'
+            : 'absolute -bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-[9px] font-extrabold whitespace-nowrap bg-slate-800 text-slate-200 border border-white/20';
+    }
+    if (nameEl) nameEl.textContent = name;
+    if (roleEl) roleEl.textContent = role;
+    
+    const cleanDigits = (m.phone || '').replace(/[^0-9]/g, '');
+    if (phoneEl) {
+        phoneEl.textContent = m.phone || 'N/A';
+        phoneEl.href = `tel:${cleanDigits}`;
+    }
+
+    if (fatherRow && fatherEl) {
+        if (m.father) {
+            fatherRow.classList.remove('hidden');
+            fatherEl.textContent = isBn ? m.father : (fatherMapEn[m.father] || m.father);
+        } else {
+            fatherRow.classList.add('hidden');
+        }
+    }
+
+    if (motherRow && motherEl) {
+        if (m.mother) {
+            motherRow.classList.remove('hidden');
+            motherEl.textContent = m.mother;
+        } else {
+            motherRow.classList.add('hidden');
+        }
+    }
+
+    if (eduEl) eduEl.textContent = isBn ? m.education : (educationMapEn[m.education] || m.education);
+    if (profEl) profEl.textContent = isBn ? m.profession : (professionMapEn[m.profession] || m.profession);
+
+    if (ageRow && ageEl) {
+        if (m.age) {
+            ageRow.classList.remove('hidden');
+            ageEl.textContent = isBn ? `${m.age} বছর` : `${m.age} years`;
+        } else {
+            ageRow.classList.add('hidden');
+        }
+    }
+
+    if (joinRow && joinEl) {
+        if (m.join_date) {
+            joinRow.classList.remove('hidden');
+            joinEl.textContent = m.join_date;
+        } else {
+            joinRow.classList.add('hidden');
+        }
+    }
+
+    if (addrEl) addrEl.textContent = isBn ? m.address : (addressMapEn[m.address] || m.address);
+
+    if (callLink) callLink.href = `tel:${cleanDigits}`;
+    if (waLink) {
+        let waNumber = cleanDigits;
+        if (waNumber.startsWith('0')) waNumber = '88' + waNumber;
+        else if (!waNumber.startsWith('88')) waNumber = '880' + waNumber;
+        waLink.href = `https://wa.me/${waNumber}?text=${encodeURIComponent(`আসসালামু আলাইকুম, ${m.name} ভাই/আপু (কারু শিখা)।`)}`;
+    }
+
+    if (vcardBtn) {
+        vcardBtn.onclick = function() {
+            window.downloadMemberVCard(m);
+        };
+    }
+
+    modal.classList.remove('hidden');
+};
+
+window.closeMemberModal = function() {
+    const modal = document.getElementById('member-profile-modal');
+    if (modal) modal.classList.add('hidden');
+};
+
+window.downloadMemberVCard = function(member) {
+    const m = member || currentActiveMember;
+    if (!m) return;
+
+    const cleanPhone = (m.phone || '').replace(/[^0-9]/g, '');
+    let intlPhone = cleanPhone;
+    if (intlPhone.startsWith('0')) intlPhone = '+88' + intlPhone;
+    else if (!intlPhone.startsWith('+')) intlPhone = '+880' + intlPhone;
+
+    const safeName = (m.name_en || m.name).replace(/\s+/g, '_').replace(/[^a-zA-Z0-9_-]/g, '');
+    const isExec = m.is_executive || (m.role && m.role !== 'সদস্য');
+    const category = isExec ? 'Executive Council' : 'General Member';
+
+    const vCardContent = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        `FN:${m.name} (${m.role})`,
+        `N:${m.name};;;;`,
+        'ORG:কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি (Karu Shikha YDS)',
+        `TITLE:${m.role} • কারু শিখা`,
+        `ROLE:${m.role}`,
+        `TEL;TYPE=CELL,VOICE,PREF:${intlPhone}`,
+        'EMAIL;TYPE=INTERNET,WORK:karushikhayds@gmail.com',
+        'ADR;TYPE=WORK:;;লক্ষ্মীপুর পৌর স্টেশন মার্কেট;ফরিদপুর সদর;ফরিদপুর;;বাংলাদেশ',
+        `NOTE:কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি (যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭)। পদবী: ${m.role} (${category})। পিতা: ${m.father || 'N/A'}। শিক্ষা: ${m.education || 'N/A'}। ঠিকানা: ${m.address || 'ফরিদপুর'}।`,
+        'URL:https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/',
+        'CATEGORIES:Karu Shikha,Youth Development,Faridpur',
+        'END:VCARD'
+    ].join('\r\n');
+
+    const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `${safeName}_Karu_Shikha.vcf`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+    const msg = currentLang === 'bn' 
+        ? `📥 ${m.name}-এর ভি-কার্ড (.vcf) ডাউনলোড সম্পন্ন হয়েছে!`
+        : `📥 vCard (.vcf) downloaded for ${m.name_en || m.name}!`;
+    showToast(msg);
+};
