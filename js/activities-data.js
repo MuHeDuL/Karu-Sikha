@@ -6,17 +6,6 @@
 window.KARU_SHIKHA_ACTIVITIES = [
     {
         id: 1,
-        title: "পদ্মা নদীভাঙন রোধে কার্যকর উদ্যোগ গ্রহণের দাবিতে ফরিদপুর-৩ সংসদ সদস্য বরাবর স্মারকলিপি প্রদান।",
-        title_en: "Submitted formal memorandum to Honorable MP of Faridpur-3 demanding effective action against Padma river erosion.",
-        category: "climate",
-        tag: "স্মারকলিপি প্রদান",
-        icon: "🌊",
-        date: "২০২৬",
-        location: "ফরিদপুর",
-        facebook_url: "https://www.facebook.com/61560289663754/posts/122228132180342988/"
-    },
-    {
-        id: 2,
         title: "এসডিসি টাওয়ারে যুবদের নিয়ে সমতা, নিরাপত্তা ও ইতিবাচক পরিবর্তনের বার্তা শীর্ষক Advocacy Dialogue অনুষ্ঠিত।",
         title_en: "Hosted Advocacy Dialogue on youth equality, safety and positive social change at SDC Tower.",
         category: "partnership",
@@ -27,7 +16,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122233503350342988/"
     },
     {
-        id: 3,
+        id: 2,
         title: "ফরিদপুরে ৬০ জন যুব ও যুব নারীকে নিয়ে ‘সমতায় তারুণ্য—Youth for Equality’ প্রকল্পের প্রশিক্ষণ অনুষ্ঠিত।",
         title_en: "Organized 'Youth for Equality' training workshop for 60 young leaders in Faridpur.",
         category: "women",
@@ -36,6 +25,17 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date: "১৫ অক্টোবর ২০২৬",
         location: "ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122232098858342988/"
+    },
+    {
+        id: 3,
+        title: "পদ্মা নদীভাঙন রোধে কার্যকর উদ্যোগ গ্রহণের দাবিতে ফরিদপুর-৩ সংসদ সদস্য বরাবর স্মারকলিপি প্রদান।",
+        title_en: "Submitted formal memorandum to Honorable MP of Faridpur-3 demanding effective action against Padma river erosion.",
+        category: "climate",
+        tag: "স্মারকলিপি প্রদান",
+        icon: "🌊",
+        date: "২০২৬",
+        location: "ফরিদপুর",
+        facebook_url: "https://www.facebook.com/61560289663754/posts/122228132180342988/"
     },
     {
         id: 4,
