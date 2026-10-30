@@ -1175,10 +1175,18 @@ function renderActivities() {
                         </h4>
                     </div>
                 </div>
-                ${(act.date || act.facebook_url) ? `
-                <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                ${(act.date || act.facebook_url || act.certificate_action) ? `
+                <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400 gap-2">
                     <span ${locTooltip ? `title="${locTooltip}" class="cursor-help"` : ''}>${act.date ? '📅 ' + formatDisplayDate(act.date, act.date_en) : ''}</span>
-                    ${act.facebook_url ? `<a href="${act.facebook_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white flex items-center gap-1 font-semibold transition-colors shrink-0" onclick="event.stopPropagation()"><span>🌐</span><span>${currentLang === 'bn' ? 'ফেসবুকে দেখুন' : 'View on FB'}</span></a>` : ''}
+                    ${act.certificate_action ? `
+                    <button type="button" class="text-emerald-300 hover:text-white flex items-center gap-1.5 font-bold transition-all bg-emerald-600/30 hover:bg-emerald-600 border border-emerald-500/40 px-2.5 py-1 rounded-lg cursor-pointer shadow-sm shadow-emerald-500/20 shrink-0" onclick="event.stopPropagation(); goToCertificateSection();" title="${currentLang === 'bn' ? 'সরকারি নিবন্ধন সনদপত্র দেখুন' : 'View Official Registration Certificate'}">
+                        <span>📜</span><span>${currentLang === 'bn' ? 'সনদ দেখুন' : 'View Certificate'}</span>
+                    </button>
+                    ` : (act.facebook_url ? `
+                    <a href="${act.facebook_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white flex items-center gap-1 font-semibold transition-colors shrink-0" onclick="event.stopPropagation()">
+                        <span>🌐</span><span>${currentLang === 'bn' ? 'ফেসবুকে দেখুন' : 'View on FB'}</span>
+                    </a>
+                    ` : '')}
                 </div>` : ''}
             </div>
         `;
@@ -1202,9 +1210,26 @@ function setupGalleryExplorer() {
             btn.classList.add('bg-[#f97316]', 'text-white', 'border-orange-400');
 
             currentGalleryFilter = btn.getAttribute('data-filter') || 'all';
+            showAllGallery = false;
             renderGallery();
         });
     });
+
+    const toggleGalleryBtn = document.getElementById('toggle-gallery-btn');
+    if (toggleGalleryBtn) {
+        toggleGalleryBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            showAllGallery = !showAllGallery;
+            renderGallery();
+            if (!showAllGallery) {
+                const galSec = document.getElementById('gallery');
+                if (galSec) {
+                    galSec.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    }
 
     const lightbox = document.getElementById('gallery-lightbox');
     const closeBtn = document.getElementById('close-gallery-lightbox') || document.getElementById('close-lightbox-btn');
