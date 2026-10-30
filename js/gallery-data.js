@@ -1,6 +1,6 @@
 /**
  * Karu Shikha Youth Development Society - Verified Event Photo Gallery Data
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৪৮টি ভেরিফায়েড ফটো গ্যালারি ডেটা
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ভেরিফায়েড ফটো গ্যালারি ডেটা
  */
 
 window.KARU_SHIKHA_GALLERY = [
@@ -678,21 +678,6 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122175345014342988/",
     "size_kb": 58.6,
     "src": "paper-seed-pen.jpg"
-  },
-  {
-    "file": "lead-1.jpg",
-    "title": "যুব উন্নয়ন অধিদপ্তরের সহযোগিতায় নারীদের ব্লক বাটিক ও হ্যান্ড পেইন্ট প্রশিক্ষণ ও বস্ত্র প্রদর্শনী",
-    "title_en": "Block Batik & Hand Paint Vocational Training and Craft Exhibition for Women Trainees",
-    "category": "craft",
-    "category_bn": "উদ্যোক্তা ও হস্তশিল্প",
-    "tag": "ব্লক বাটিক ও হ্যান্ড পেইন্ট",
-    "date": "২২ মার্চ ২০২৫",
-    "date_en": "22 March 2025",
-    "location": "উপজেলা যুব উন্নয়ন কর্মকর্তার কার্যালয়, ফরিদপুর সদর",
-    "location_en": "Faridpur Sadar Youth Development Office",
-    "facebook_url": "https://www.facebook.com/61560289663754/posts/122164723886342988/",
-    "size_kb": 156.9,
-    "src": "lead-1.jpg"
   },
   {
     "file": "hand-paint-training.jpg",

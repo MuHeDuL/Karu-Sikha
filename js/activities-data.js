@@ -517,7 +517,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🩸",
         date: "জানুয়ারি ২০২৬",
         date_en: "January 2026",
-        facebook_url: "https://www.facebook.com/share/p/1E8M7WjonK/"
+        facebook_url: "https://www.facebook.com/share/p/1E1NkqcFbk/"
     },
     {
         id: 47,
