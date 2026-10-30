@@ -2782,13 +2782,14 @@ function renderMembers() {
                     </div>
 
                     ${quoteText ? `
-                        <div class="mt-2.5 mb-3 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent border-l-2 border-amber-400 border-t border-r border-b border-white/5 cursor-pointer group/quote hover:bg-amber-500/20 hover:border-amber-300 transition-all shadow-sm" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'পুরো বাণীটি পড়তে প্রোফাইল দেখুন' : 'Click to view full quote'}">
-                            <div class="flex items-start gap-1.5">
-                                <span class="text-amber-400 font-bold text-xs font-serif leading-none mt-0.5 shrink-0 select-none">“</span>
-                                <p class="text-[11px] text-amber-200 font-medium italic leading-relaxed line-clamp-1 group-hover/quote:text-amber-100 transition-colors">
+                        <div class="mt-2.5 mb-3 p-[1px] rounded-xl bg-gradient-to-r from-[#0284c7]/70 via-[#38bdf8]/60 to-[#f97316]/70 hover:from-[#0284c7] hover:to-[#f97316] transition-all cursor-pointer group/quote shadow-sm" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'পুরো বাণীটি পড়তে প্রোফাইল দেখুন' : 'Click to view full quote'}">
+                            <div class="bg-slate-950/90 group-hover/quote:bg-slate-900/95 rounded-[11px] px-2.5 py-1.5 flex items-center gap-1.5 transition-colors">
+                                <span class="text-[9.5px] font-extrabold px-1.5 py-0.5 rounded-md bg-gradient-to-r from-sky-500/20 to-orange-500/20 border border-sky-400/30 text-sky-200 shrink-0 select-none">💬 ${currentLang === 'bn' ? 'বাণী' : 'Quote'}</span>
+                                <span class="text-orange-400 font-bold text-xs font-serif leading-none shrink-0 select-none">“</span>
+                                <p class="text-[11px] text-slate-100 font-medium italic leading-relaxed line-clamp-1 group-hover/quote:text-white transition-colors">
                                     ${quoteText}
                                 </p>
-                                <span class="text-amber-400 font-bold text-xs font-serif leading-none self-end shrink-0 select-none">”</span>
+                                <span class="text-orange-400 font-bold text-xs font-serif leading-none shrink-0 select-none">”</span>
                             </div>
                         </div>
                     ` : ''}
