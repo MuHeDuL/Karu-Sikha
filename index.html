@@ -828,8 +828,10 @@
                             <div class="p-2.5 sm:p-3 rounded-xl bg-gradient-to-r from-slate-900/90 to-slate-950/90 border border-orange-500/30 hover:border-orange-500/50 transition-all mb-3 shadow-md">
                                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
                                     <div class="flex items-center gap-2.5 min-w-0">
-                                        <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center text-base shrink-0">
-                                            📍
+                                        <span class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                                            </svg>
                                         </span>
                                         <div class="min-w-0">
                                             <div class="text-[10px] font-bold text-orange-400 uppercase tracking-wider" data-i18n="contact_addr_label">প্রতিষ্ঠানের অফিস ও কার্যালয়:</div>
@@ -850,8 +852,10 @@
                                 <!-- 1. Phone Call -->
                                 <a href="tel:01795023942" class="p-2.5 sm:p-3 rounded-xl bg-slate-900/80 hover:bg-emerald-950/40 border border-white/10 hover:border-emerald-500/50 transition-all duration-300 flex items-center justify-between group shadow-sm active:scale-[0.98]">
                                     <div class="flex items-center gap-2.5 min-w-0">
-                                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm shrink-0 group-hover:scale-105 transition-transform">
-                                            📞
+                                        <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+                                            </svg>
                                         </span>
                                         <div class="min-w-0">
                                             <div class="text-[10px] text-slate-400 font-medium truncate" data-i18n="contact_phone_label">সরাসরি ফোন নম্বর</div>
@@ -889,8 +893,10 @@
                                 <!-- 3. Official Email -->
                                 <a href="mailto:karushikhayds@gmail.com" class="p-2.5 sm:p-3 rounded-xl bg-slate-900/80 hover:bg-sky-950/40 border border-white/10 hover:border-sky-500/50 transition-all duration-300 flex items-center justify-between group shadow-sm active:scale-[0.98]">
                                     <div class="flex items-center gap-2.5 min-w-0">
-                                        <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-sm shrink-0 group-hover:scale-105 transition-transform">
-                                            ✉️
+                                        <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                            </svg>
                                         </span>
                                         <div class="min-w-0">
                                             <div class="text-[10px] text-slate-400 font-medium truncate" data-i18n="contact_email_label">অফিসিয়াল ইমেইল</div>
@@ -1003,29 +1009,45 @@
                 <div>
                     <h4 class="font-bold text-white text-xs sm:text-sm uppercase tracking-wider mb-3" data-i18n="footer_emergency">জরুরি যোগাযোগ</h4>
                     <ul class="space-y-2.5 text-slate-400 text-xs">
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-5 h-5 flex items-center justify-center shrink-0 text-emerald-400 text-sm">📞</span>
-                            <a href="tel:01795023942" class="hover:text-white transition-colors" data-i18n="footer_phone">সরাসরি কল (তিহানুর রহমান তিহান)</a>
+                        <li>
+                            <a href="tel:01795023942" class="flex items-start gap-2.5 hover:text-white transition-colors group">
+                                <span class="w-4 h-4 mt-0.5 shrink-0 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+                                    </svg>
+                                </span>
+                                <span class="leading-relaxed min-w-0" data-i18n="footer_phone">সরাসরি কল (তিহানুর রহমান তিহান)</span>
+                            </a>
                         </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-5 h-5 flex items-center justify-center shrink-0 text-[#25D366]">
-                                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52s.198-.298.298-.497c.099-.198.05-.371-.025-.52s-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074s2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413s.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/>
-                                </svg>
-                            </span>
-                            <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:underline font-medium" data-i18n="footer_wa">হোয়াটসঅ্যাপে চ্যাট করুন</a>
+                        <li>
+                            <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 text-[#25D366] hover:underline font-medium group">
+                                <span class="w-4 h-4 mt-0.5 shrink-0 flex items-center justify-center text-[#25D366] group-hover:scale-110 transition-transform">
+                                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967c-.273-.099-.471-.148-.67.15c-.197.297-.767.966-.94 1.164c-.173.199-.347.223-.644.075c-.297-.15-1.255-.463-2.39-1.475c-.883-.788-1.48-1.761-1.653-2.059c-.173-.297-.018-.458.13-.606c.134-.133.298-.347.446-.52s.198-.298.298-.497c.099-.198.05-.371-.025-.52s-.669-1.612-.916-2.207c-.242-.579-.487-.5-.669-.51a13 13 0 0 0-.57-.01c-.198 0-.52.074-.792.372c-.272.297-1.04 1.016-1.04 2.479c0 1.462 1.065 2.875 1.213 3.074s2.096 3.2 5.077 4.487c.709.306 1.262.489 1.694.625c.712.227 1.36.195 1.871.118c.571-.085 1.758-.719 2.006-1.413s.248-1.289.173-1.413c-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214l-3.741.982l.998-3.648l-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884c2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.82 11.82 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 0 0-3.48-8.413"/>
+                                    </svg>
+                                </span>
+                                <span class="leading-relaxed min-w-0" data-i18n="footer_wa">হোয়াটসঅ্যাপে চ্যাট করুন</span>
+                            </a>
                         </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-5 h-5 flex items-center justify-center shrink-0 text-sky-400 text-sm">✉️</span>
-                            <a href="mailto:karushikhayds@gmail.com" class="hover:text-sky-400 transition-colors" data-i18n="footer_email">ইমেইল পাঠান</a>
+                        <li>
+                            <a href="mailto:karushikhayds@gmail.com" class="flex items-start gap-2.5 hover:text-sky-400 transition-colors group">
+                                <span class="w-4 h-4 mt-0.5 shrink-0 flex items-center justify-center text-sky-400 group-hover:scale-110 transition-transform">
+                                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </span>
+                                <span class="leading-relaxed min-w-0" data-i18n="footer_email">ইমেইল পাঠান</span>
+                            </a>
                         </li>
-                        <li class="flex items-center gap-2.5">
-                            <span class="w-5 h-5 flex items-center justify-center shrink-0 text-blue-400">
-                                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
-                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                </svg>
-                            </span>
-                            <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline transition-colors" data-i18n="footer_fb">ফেসবুক পেজ ফলো করুন</a>
+                        <li>
+                            <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 text-blue-400 hover:underline transition-colors group">
+                                <span class="w-4 h-4 mt-0.5 shrink-0 flex items-center justify-center text-[#1877F2] group-hover:scale-110 transition-transform">
+                                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </span>
+                                <span class="leading-relaxed min-w-0" data-i18n="footer_fb">ফেসবুক পেজ ফলো করুন</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -1485,8 +1507,10 @@
             </button>
 
             <div class="text-center mb-5">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-sky-500/20 text-emerald-400 flex items-center justify-center text-2xl mx-auto mb-2.5 border border-emerald-500/30">
-                    📞
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-sky-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2.5 border border-emerald-500/30">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+                    </svg>
                 </div>
                 <h3 class="text-lg sm:text-xl font-extrabold text-white" data-i18n="modal_c_title">জরুরি যোগাযোগ ও ঠিকানা</h3>
                 <p class="text-xs text-slate-400 mt-1" data-i18n="modal_c_sub">কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি</p>
@@ -1496,8 +1520,10 @@
             <div class="space-y-3">
                 <!-- Phone Card with Direct Call -->
                 <a href="tel:01795023942" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-emerald-500/30 hover:border-emerald-500/60 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
-                        📞
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+                        </svg>
                     </div>
                     <div class="min-w-0 flex-1">
                         <div class="text-[10px] text-emerald-400 font-bold uppercase tracking-wider" data-i18n="modal_c_phone_lbl">সরাসরি ফোন কল</div>
@@ -1528,8 +1554,10 @@
 
                 <!-- Email Card with Direct Mail -->
                 <a href="mailto:karushikhayds@gmail.com" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-sky-500/30 hover:border-sky-500/60 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
-                        ✉️
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
                     </div>
                     <div class="min-w-0 flex-1">
                         <div class="text-[10px] text-sky-400 font-bold uppercase tracking-wider" data-i18n="modal_c_mail_lbl">অফিসিয়াল ইমেইল</div>
@@ -1544,8 +1572,10 @@
                 <!-- Office Address Card with Google Maps & Certificate -->
                 <div class="p-3.5 rounded-2xl bg-slate-950/70 border border-orange-500/30">
                     <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl shrink-0">
-                            📍
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center shrink-0">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                            </svg>
                         </div>
                         <div class="min-w-0 flex-1">
                             <div class="text-[10px] text-orange-400 font-bold uppercase tracking-wider mb-1" data-i18n="modal_c_addr_lbl">অফিস ও কার্যালয়ের ঠিকানা</div>
@@ -1884,9 +1914,11 @@
     <!-- Mobile Sticky Floating Action Bar (Contact, Volunteer, Scroll-to-Top) -->
     <aside class="mobile-bottom-bar fixed bottom-0 inset-x-0 z-40 lg:hidden px-3 py-2 border-t border-white/10 flex items-center justify-around gap-2.5" aria-label="Mobile Quick Actions">
         <!-- 1. Contact (Opens Quick Contact Modal with Phone, Email & Address) -->
-        <button type="button" onclick="openContactModal()" class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600/90 to-teal-600/90 border border-emerald-400/40 text-white shadow-md shadow-emerald-500/20 active:scale-95 transition-transform cursor-pointer" title="জরুরি যোগাযোগ, ফোন ও ঠিকানা" data-i18n-title="tip_bottom_contact">
-            <span class="text-base leading-none">📞</span>
-            <span class="text-xs font-bold tracking-tight" data-i18n="bottom_contact">যোগাযোগ</span>
+        <button type="button" onclick="openContactModal()" class="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600/90 to-teal-600/90 border border-emerald-400/40 text-white shadow-md shadow-emerald-500/20 active:scale-95 transition-transform cursor-pointer" title="জরুরি যোগাযোগ, ফোন ও ঠিকানা" data-i18n-title="tip_bottom_contact">
+            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.23 2.09z"/>
+            </svg>
+            <span class="text-xs font-bold tracking-tight leading-none" data-i18n="bottom_contact">যোগাযোগ</span>
         </button>
 
         <!-- 2. Volunteer Application Button -->
@@ -1908,6 +1940,6 @@
     <script src="js/members-data.js?v=20261030q"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261030q"></script>
-    <script src="js/app.js?v=20261031m"></script>
+    <script src="js/app.js?v=20261031n"></script>
 </body>
 </html>
