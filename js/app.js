@@ -2908,3 +2908,82 @@ window.goToCertificateSection = function() {
         openCertificateModal();
     }
 };
+
+// ==========================================
+// CLIENT-SIDE CONTENT & SOURCE CODE PROTECTION
+// ==========================================
+(function initSourceProtection() {
+    let lastToastTime = 0;
+    const triggerProtectionNotice = () => {
+        const now = Date.now();
+        if (now - lastToastTime > 3000) {
+            lastToastTime = now;
+            const msg = (typeof currentLang !== 'undefined' && currentLang === 'en')
+                ? '🛡️ Content & source code of Karu Shikha are protected.'
+                : '🛡️ কারু শিখা ওয়েবসাইটের কনটেন্ট ও সোর্স কোড সুরক্ষিত রাখা হয়েছে।';
+            if (typeof showToast === 'function') {
+                showToast(msg);
+            }
+        }
+    };
+
+    // 1. Disable Right Click (Context Menu) - except on inputs/textareas
+    document.addEventListener('contextmenu', function(e) {
+        const tag = e.target.tagName ? e.target.tagName.toLowerCase() : '';
+        if (tag !== 'input' && tag !== 'textarea') {
+            e.preventDefault();
+            triggerProtectionNotice();
+            return false;
+        }
+    });
+
+    // 2. Disable Keyboard Shortcuts for Inspect / View Source
+    document.addEventListener('keydown', function(e) {
+        const isMac = navigator.platform && navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        const ctrlOrCmd = isMac ? e.metaKey : e.ctrlKey;
+
+        // F12
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            triggerProtectionNotice();
+            return false;
+        }
+
+        // Ctrl + Shift + I (Inspect) / Cmd + Option + I
+        // Ctrl + Shift + J (Console) / Cmd + Option + J
+        // Ctrl + Shift + C (Inspect Element) / Cmd + Option + C
+        if (ctrlOrCmd && (e.shiftKey || (isMac && e.altKey))) {
+            const key = e.key ? e.key.toUpperCase() : '';
+            if (key === 'I' || key === 'J' || key === 'C') {
+                e.preventDefault();
+                triggerProtectionNotice();
+                return false;
+            }
+        }
+
+        // Ctrl + U (View Source) / Cmd + Option + U
+        if (ctrlOrCmd && (e.key === 'u' || e.key === 'U' || e.keyCode === 85)) {
+            e.preventDefault();
+            triggerProtectionNotice();
+            return false;
+        }
+
+        // Ctrl + S (Save Page)
+        if (ctrlOrCmd && (e.key === 's' || e.key === 'S' || e.keyCode === 83)) {
+            const tag = e.target.tagName ? e.target.tagName.toLowerCase() : '';
+            if (tag !== 'input' && tag !== 'textarea') {
+                e.preventDefault();
+                triggerProtectionNotice();
+                return false;
+            }
+        }
+    });
+
+    // 3. Prevent dragging images to desktop
+    document.addEventListener('dragstart', function(e) {
+        if (e.target && e.target.tagName && e.target.tagName.toLowerCase() === 'img') {
+            e.preventDefault();
+            return false;
+        }
+    });
+})();
