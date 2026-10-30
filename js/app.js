@@ -1179,7 +1179,7 @@ function renderActivities() {
                 <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400 gap-2">
                     <span ${locTooltip ? `title="${locTooltip}" class="cursor-help"` : ''}>${act.date ? '📅 ' + formatDisplayDate(act.date, act.date_en) : ''}</span>
                     ${act.certificate_action ? `
-                    <button type="button" class="text-emerald-300 hover:text-white flex items-center gap-1.5 font-bold transition-all bg-emerald-600/30 hover:bg-emerald-600 border border-emerald-500/40 px-2.5 py-1 rounded-lg cursor-pointer shadow-sm shadow-emerald-500/20 shrink-0" onclick="event.stopPropagation(); goToCertificateSection();" title="${currentLang === 'bn' ? 'সরকারি নিবন্ধন সনদপত্র দেখুন' : 'View Official Registration Certificate'}">
+                    <button type="button" class="text-emerald-300 hover:text-white flex items-center gap-1.5 font-bold transition-all bg-emerald-600/30 hover:bg-emerald-600 border border-emerald-500/40 px-2.5 py-1 rounded-lg cursor-pointer shadow-sm shadow-emerald-500/20 shrink-0" onclick="event.stopPropagation(); openCertificateModal();" title="${currentLang === 'bn' ? 'সরকারি নিবন্ধন সনদপত্র দেখুন' : 'View Official Registration Certificate'}">
                         <span>📜</span><span>${currentLang === 'bn' ? 'সনদ দেখুন' : 'View Certificate'}</span>
                     </button>
                     ` : (act.facebook_url ? `
@@ -2900,28 +2900,9 @@ window.downloadMemberVCard = async function(member) {
     showToast(msg);
 };
 
-// Global function to scroll to Certificate in Contact Section & open modal
+// Direct modal popup without scrolling
 window.goToCertificateSection = function() {
-    const certCard = document.getElementById('registration-certificate-card');
-    const contactSection = document.getElementById('contact');
-    
-    if (certCard) {
-        certCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        certCard.classList.add('ring-2', 'ring-emerald-400', 'ring-offset-2', 'ring-offset-slate-900');
-        setTimeout(() => {
-            certCard.classList.remove('ring-2', 'ring-emerald-400', 'ring-offset-2', 'ring-offset-slate-900');
-            if (typeof openCertificateModal === 'function') {
-                openCertificateModal();
-            }
-        }, 700);
-    } else if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(() => {
-            if (typeof openCertificateModal === 'function') {
-                openCertificateModal();
-            }
-        }, 600);
-    } else if (typeof openCertificateModal === 'function') {
+    if (typeof openCertificateModal === 'function') {
         openCertificateModal();
     }
 };
