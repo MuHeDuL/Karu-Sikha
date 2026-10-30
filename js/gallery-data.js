@@ -5,7 +5,7 @@
 
 window.KARU_SHIKHA_GALLERY = [
   {
-    "file": "advocacy-dialogue-1.jpg",
+    "file": "advocacy-dialogue-1.webp",
     "title": "এসডিসি টাওয়ারে যুবদের নিয়ে সমতা ও নিরাপত্তা বিষয়ক অ্যাডভোকেসি ডায়লগ",
     "title_en": "Advocacy Dialogue on Youth Equality & Protection at SDC Tower",
     "category": "partnership",
@@ -16,11 +16,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "এসডিসি টাওয়ার, আলীপুর, ফরিদপুর",
     "location_en": "SDC Tower, Alipur, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122233503350342988/",
-    "size_kb": 57.6,
-    "src": "advocacy-dialogue-1.jpg"
+    "size_kb": 37.7,
+    "src": "advocacy-dialogue-1.webp"
   },
   {
-    "file": "durga-puja-harmony.jpg",
+    "file": "durga-puja-harmony.webp",
     "title": "শারদীয় দুর্গাপূজার মণ্ডপ পরিদর্শন ও ধর্মীয় সম্প্রীতি বিনিময় কার্যক্রম",
     "title_en": "Visiting Durga Puja Mandaps and Inter-faith Social Harmony Exchange",
     "category": "humanitarian",
@@ -31,11 +31,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122232391646342988/",
-    "size_kb": 103.4,
-    "src": "durga-puja-harmony.jpg"
+    "size_kb": 87.2,
+    "src": "durga-puja-harmony.webp"
   },
   {
-    "file": "national-youth-volunteer-award.jpg",
+    "file": "national-youth-volunteer-award.webp",
     "title": "জেলা প্রশাসকের সম্মেলন কক্ষে ন্যাশনাল ইয়ুথ ভলান্টিয়ার অ্যাওয়ার্ড ২০২৬ ও যুব অনুদানের চেক বিতরণ অনুষ্ঠানে অংশগ্রহণ",
     "title_en": "Attending National Youth Volunteer Award 2026 & Youth Fund Grant Ceremony at DC Conference Hall",
     "category": "partnership",
@@ -46,11 +46,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "জেলা প্রশাসকের সম্মেলন কক্ষ, ফরিদপুর",
     "location_en": "DC Conference Hall, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122232271508342988/",
-    "size_kb": 737.2,
-    "src": "national-youth-volunteer-award.jpg"
+    "size_kb": 364.3,
+    "src": "national-youth-volunteer-award.webp"
   },
   {
-    "file": "youth-equality-1.jpg",
+    "file": "youth-equality-1.webp",
     "title": "৬০ জন তরুণ-তরুণীকে নিয়ে ‘সমতায় তারুণ্য—Youth for Equality’ প্রশিক্ষণ",
     "title_en": "Youth for Equality Training Workshop for 60 Young Leaders",
     "category": "women",
@@ -61,11 +61,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122232098858342988/",
-    "size_kb": 88.5,
-    "src": "youth-equality-1.jpg"
+    "size_kb": 69.1,
+    "src": "youth-equality-1.webp"
   },
   {
-    "file": "local-gov-orientation.jpg",
+    "file": "local-gov-orientation.webp",
     "title": "সমতায় তারুণ্য প্রকল্পের আওতায় স্থানীয় সরকার কর্তৃপক্ষের সঙ্গে ওরিয়েন্টেশন",
     "title_en": "Capacity Orientation with Local Government Authorities under Youth for Equality",
     "category": "partnership",
@@ -76,11 +76,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122231410400342988/",
-    "size_kb": 65.1,
-    "src": "local-gov-orientation.jpg"
+    "size_kb": 51.5,
+    "src": "local-gov-orientation.webp"
   },
   {
-    "file": "agri-entrepreneur-meet.jpg",
+    "file": "agri-entrepreneur-meet.webp",
     "title": "ফরিদপুরের ডিগ্রির চর এলাকার তরুণ কৃষি উদ্যোক্তাদের সঙ্গে মাঠপর্যায়ে মতবিনিময় সভা",
     "title_en": "Field Consultation Meeting with Young Agri-Entrepreneurs in Digrir Char, Faridpur",
     "category": "craft",
@@ -91,11 +91,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ডিগ্রির চর, ফরিদপুর",
     "location_en": "Digrir Char, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122230825370342988/",
-    "size_kb": 95.9,
-    "src": "agri-entrepreneur-meet.jpg"
+    "size_kb": 87.0,
+    "src": "agri-entrepreneur-meet.webp"
   },
   {
-    "file": "agri-deputy-director.jpg",
+    "file": "agri-deputy-director.webp",
     "title": "কৃষি অধিদপ্তরের সম্মানিত উপপরিচালক মহোদয়ের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
     "title_en": "Courtesy Meeting with Deputy Director of Department of Agricultural Extension",
     "category": "partnership",
@@ -106,11 +106,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কৃষি সম্প্রসারণ অধিদপ্তর, ফরিদপুর",
     "location_en": "DAE Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122230233080342988/",
-    "size_kb": 87.9,
-    "src": "agri-deputy-director.jpg"
+    "size_kb": 70.1,
+    "src": "agri-deputy-director.webp"
   },
   {
-    "file": "mind-game-session.jpg",
+    "file": "mind-game-session.webp",
     "title": "কারু শিখা পরিবারের সদস্যদের নিয়ে Mind Game & Refreshment Session আয়োজন",
     "title_en": "Mind Game & Mental Refreshment Session for Karu Shikha Members",
     "category": "humanitarian",
@@ -121,11 +121,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122229616496342988/",
-    "size_kb": 125.6,
-    "src": "mind-game-session.jpg"
+    "size_kb": 119.7,
+    "src": "mind-game-session.webp"
   },
   {
-    "file": "networking-training.jpg",
+    "file": "networking-training.webp",
     "title": "উন্মুক্ত পরিবেশে Communication & Networking বিষয়ক বাস্তবধর্মী আউটডোর প্রশিক্ষণ",
     "title_en": "Outdoor Practical Hands-on Training on Communication & Networking",
     "category": "partnership",
@@ -136,11 +136,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122229492752342988/",
-    "size_kb": 213.3,
-    "src": "networking-training.jpg"
+    "size_kb": 196.5,
+    "src": "networking-training.webp"
   },
   {
-    "file": "ewgsf-meetup-2026.jpg",
+    "file": "ewgsf-meetup-2026.webp",
     "title": "Empowering Women Growing Safe Future (EWGSF) প্রকল্পের ১ম অফলাইন মিটআপ",
     "title_en": "First Offline Team Meetup for EWGSF Project",
     "category": "women",
@@ -151,11 +151,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228847440342988/",
-    "size_kb": 131.1,
-    "src": "ewgsf-meetup-2026.jpg"
+    "size_kb": 108.3,
+    "src": "ewgsf-meetup-2026.webp"
   },
   {
-    "file": "climate-core-team.jpg",
+    "file": "climate-core-team.webp",
     "title": "Climate Action Programme-এর অর্গানাইজিং টিমের প্রস্তুতিমূলক সমন্বয় সভা",
     "title_en": "Climate Action Programme Organizing Team Planning & Prep Meetup",
     "category": "climate",
@@ -166,11 +166,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কারু শিখা কার্যালয়, ফরিদপুর",
     "location_en": "Karu Shikha Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228617526342988/",
-    "size_kb": 141.7,
-    "src": "climate-core-team.jpg"
+    "size_kb": 140.1,
+    "src": "climate-core-team.webp"
   },
   {
-    "file": "padma-erosion-1.jpg",
+    "file": "padma-erosion-1.webp",
     "title": "পদ্মা নদীভাঙন রোধ ও সুরক্ষার দাবিতে ফরিদপুর-৩ সংসদ সদস্য বরাবর স্মারকলিপি পেশ",
     "title_en": "Submitting Formal Memorandum to MP Demanding Protection Against Padma River Erosion",
     "category": "climate",
@@ -181,11 +181,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228132180342988/",
-    "size_kb": 147.4,
-    "src": "padma-erosion-1.jpg"
+    "size_kb": 134.0,
+    "src": "padma-erosion-1.webp"
   },
   {
-    "file": "blood-donation.jpg",
+    "file": "blood-donation.webp",
     "title": "থ্যালাসেমিয়া আক্রান্ত ৬ বছর বয়সী শিশুর জীবন বাঁচাতে কারু শিখা কোষাধ্যক্ষ মেহেরাব হোসেন ইমনের রক্তদান",
     "title_en": "Voluntary Blood Donation by Treasurer Mehrab Hossain Emon for a Child with Thalassemia",
     "category": "humanitarian",
@@ -196,11 +196,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
     "location_en": "Faridpur Diabetic Hospital",
     "facebook_url": "https://www.facebook.com/share/p/1E1NkqcFbk/",
-    "size_kb": 50.7,
-    "src": "blood-donation.jpg"
+    "size_kb": 31.3,
+    "src": "blood-donation.webp"
   },
   {
-    "file": "diabetes-secretary-visit.jpg",
+    "file": "diabetes-secretary-visit.webp",
     "title": "ফরিদপুর ডায়াবেটিস সমিতির দায়িত্বপ্রাপ্ত সদস্য সচিব ডা. এম এ জলিল স্যারের সাথে সৌজন্য সাক্ষাৎ",
     "title_en": "Courtesy Meeting with Member Secretary of Faridpur Diabetes Association Dr. M A Jalil",
     "category": "partnership",
@@ -211,11 +211,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
     "location_en": "Faridpur Diabetic Hospital",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122227047626342988/",
-    "size_kb": 93.0,
-    "src": "diabetes-secretary-visit.jpg"
+    "size_kb": 78.9,
+    "src": "diabetes-secretary-visit.webp"
   },
   {
-    "file": "ngo-coordination-meeting.jpg",
+    "file": "ngo-coordination-meeting.webp",
     "title": "জেলা প্রশাসকের কার্যালয়ে এনজিও বিষয়ক সমন্বয় সভায় কারু শিখার প্রতিনিধি দলের অংশগ্রহণ",
     "title_en": "Participating in NGO Coordination Meeting at Deputy Commissioner Office",
     "category": "partnership",
@@ -226,11 +226,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "জেলা প্রশাসকের কার্যালয়, ফরিদপুর",
     "location_en": "DC Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122225651558342988/",
-    "size_kb": 94.4,
-    "src": "ngo-coordination-meeting.jpg"
+    "size_kb": 81.5,
+    "src": "ngo-coordination-meeting.webp"
   },
   {
-    "file": "youth-day-dialogue-1.jpg",
+    "file": "youth-day-dialogue-1.webp",
     "title": "আন্তর্জাতিক যুব দিবস ২০২৬ উপলক্ষে ফরিদপুরে ‘Youth Discussion & Dialogue’",
     "title_en": "Youth Discussion & Dialogue on International Youth Day 2026",
     "category": "partnership",
@@ -241,11 +241,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122224784696342988/",
-    "size_kb": 118.0,
-    "src": "youth-day-dialogue-1.jpg"
+    "size_kb": 96.6,
+    "src": "youth-day-dialogue-1.webp"
   },
   {
-    "file": "medical-camp-children.jpg",
+    "file": "medical-camp-children.webp",
     "title": "সুবিধাবঞ্চিত শিশুদের সুস্বাস্থ্য নিশ্চিত করতে ফ্রি মেডিকেল ক্যাম্প আয়োজন",
     "title_en": "Free Medical Health Camp for Underprivileged Children",
     "category": "children",
@@ -256,11 +256,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122223309968342988/",
-    "size_kb": 91.1,
-    "src": "medical-camp-children.jpg"
+    "size_kb": 77.6,
+    "src": "medical-camp-children.webp"
   },
   {
-    "file": "gbv-leadership-1.jpg",
+    "file": "gbv-leadership-1.webp",
     "title": "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা",
     "title_en": "Discussion on Gender-Based Violence (GBV) & Leadership at Karu Shikha Office",
     "category": "women",
@@ -271,11 +271,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কারু শিখা প্রধান কার্যালয়, ফরিদপুর",
     "location_en": "Karu Shikha Central Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122221170056342988/",
-    "size_kb": 108.2,
-    "src": "gbv-leadership-1.jpg"
+    "size_kb": 100.3,
+    "src": "gbv-leadership-1.webp"
   },
   {
-    "file": "doe-award-1.jpg",
+    "file": "doe-award-1.webp",
     "title": "পরিবেশ অধিদপ্তর আয়োজিত বিশ্ব পরিবেশ দিবস উদযাপন ও পুরস্কার বিতরণী অনুষ্ঠানে অংশগ্রহণ",
     "title_en": "Participating in World Environment Day Ceremony & Award by Dept of Environment",
     "category": "climate",
@@ -286,11 +286,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কবি জসীমউদ্দীন হল, ফরিদপুর",
     "location_en": "Kobi Jasimuddin Hall, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122221145498342988/",
-    "size_kb": 109.4,
-    "src": "doe-award-1.jpg"
+    "size_kb": 94.1,
+    "src": "doe-award-1.webp"
   },
   {
-    "file": "lead-4.jpg",
+    "file": "lead-4.webp",
     "title": "সংসদ সদস্যের প্রতিনিধির কারু শিখা কার্যালয় ও উদ্যোক্তা কর্নার পরিদর্শন",
     "title_en": "Parliamentary Representative Visiting Karu Shikha Office and Entrepreneur Corner",
     "category": "partnership",
@@ -301,11 +301,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কারু শিখা প্রধান কার্যালয়, ফরিদপুর",
     "location_en": "Karu Shikha Central Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122220947936342988/",
-    "size_kb": 105.2,
-    "src": "lead-4.jpg"
+    "size_kb": 90.3,
+    "src": "lead-4.webp"
   },
   {
-    "file": "madrasa-tree-plantation-1.jpg",
+    "file": "madrasa-tree-plantation-1.webp",
     "title": "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ",
     "title_en": "Tree Plantation & Distribution with Students at Lailatul Madani Madrasa, C&B Ghat",
     "category": "climate",
@@ -316,11 +316,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "সিএন্ডবি ঘাট, ফরিদপুর",
     "location_en": "C&B Ghat, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
-    "size_kb": 91.1,
-    "src": "madrasa-tree-plantation-1.jpg"
+    "size_kb": 76.9,
+    "src": "madrasa-tree-plantation-1.webp"
   },
   {
-    "file": "volunteer-award-crest.jpg",
+    "file": "volunteer-award-crest.webp",
     "title": "নতুন প্রজন্ম মানবিক সংগঠনের ১ম প্রতিষ্ঠাবার্ষিকীতে সমাজসেবায় অবদানের স্বীকৃতিস্বরূপ সম্মাননা ক্রেস্ট গ্রহণ",
     "title_en": "Receiving Honorary Crest for Social Contribution at 1st Anniversary of Notun Projonmo",
     "category": "humanitarian",
@@ -331,11 +331,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122219442386342988/",
-    "size_kb": 66.9,
-    "src": "volunteer-award-crest.jpg"
+    "size_kb": 48.0,
+    "src": "volunteer-award-crest.webp"
   },
   {
-    "file": "handicraft-center-visit.jpg",
+    "file": "handicraft-center-visit.webp",
     "title": "আফরোজা হস্তশিল্প ও প্রশিক্ষণ কেন্দ্র পরিদর্শন এবং নারী উদ্যোক্তাদের কাজ পর্যবেক্ষণ",
     "title_en": "Visiting Afroza Handicraft & Training Center and Observing Women Entrepreneurs",
     "category": "craft",
@@ -346,11 +346,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122218611944342988/",
-    "size_kb": 80.4,
-    "src": "handicraft-center-visit.jpg"
+    "size_kb": 62.8,
+    "src": "handicraft-center-visit.webp"
   },
   {
-    "file": "tree-plantation-2026.jpg",
+    "file": "tree-plantation-2026.webp",
     "title": "বিশ্ব পরিবেশ দিবস ২০২৬ উপলক্ষে শিশু-কিশোরদের নিয়ে বৃক্ষরোপণ কর্মসূচি",
     "title_en": "Tree Plantation Program with Children on World Environment Day 2026",
     "category": "climate",
@@ -361,11 +361,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122217829064342988/",
-    "size_kb": 113.6,
-    "src": "tree-plantation-2026.jpg"
+    "size_kb": 102.3,
+    "src": "tree-plantation-2026.webp"
   },
   {
-    "file": "anniversary-youth-award.jpg",
+    "file": "anniversary-youth-award.webp",
     "title": "কারু শিখার ৩য় প্রতিষ্ঠাবার্ষিকী উদযাপন উপলক্ষে Youth Engagement & উদ্যোক্তা সম্মাননা ২০২৬",
     "title_en": "3rd Foundation Anniversary, Youth Engagement & Entrepreneurship Award 2026",
     "category": "partnership",
@@ -376,11 +376,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122217635396342988/",
-    "size_kb": 82.5,
-    "src": "anniversary-youth-award.jpg"
+    "size_kb": 69.0,
+    "src": "anniversary-youth-award.webp"
   },
   {
-    "file": "child-justice-ramisa.jpg",
+    "file": "child-justice-ramisa.webp",
     "title": "শিশুদের সার্বিক নিরাপত্তা ও শিশু রামিসা হত্যার দ্রুত ন্যায়বিচারের দাবিতে নাগরিক সংহতি",
     "title_en": "Solidarity for Child Protection and Demanding Justice for Child Ramisa",
     "category": "children",
@@ -391,11 +391,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122216493638342988/",
-    "size_kb": 126.3,
-    "src": "child-justice-ramisa.jpg"
+    "size_kb": 96.1,
+    "src": "child-justice-ramisa.webp"
   },
   {
-    "file": "ipyg-partnership-signing.jpg",
+    "file": "ipyg-partnership-signing.webp",
     "title": "আন্তর্জাতিক শান্তি সংগঠন IPYG-এর সঙ্গে কারু শিখার আনুষ্ঠানিক পার্টনারশিপ চুক্তি স্বাক্ষর",
     "title_en": "Signing Official International Partnership Agreement with IPYG",
     "category": "partnership",
@@ -406,11 +406,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122216377676342988/",
-    "size_kb": 56.7,
-    "src": "ipyg-partnership-signing.jpg"
+    "size_kb": 43.7,
+    "src": "ipyg-partnership-signing.webp"
   },
   {
-    "file": "district-council-admin.jpg",
+    "file": "district-council-admin.webp",
     "title": "জেলা পরিষদ ফরিদপুরের সম্মানিত প্রশাসক মহোদয়ের সঙ্গে সৌজন্য সাক্ষাৎ ও শুভেচ্ছা বিনিময়",
     "title_en": "Courtesy Meeting with Respected Administrator of Faridpur District Council",
     "category": "partnership",
@@ -421,11 +421,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "জেলা পরিষদ কার্যালয়, ফরিদপুর",
     "location_en": "District Council Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122215543550342988/",
-    "size_kb": 71.7,
-    "src": "district-council-admin.jpg"
+    "size_kb": 55.6,
+    "src": "district-council-admin.webp"
   },
   {
-    "file": "youth-freelancing-skill.jpg",
+    "file": "youth-freelancing-skill.webp",
     "title": "ফরিদপুরের তরুণ ও যুব নারীদের দক্ষতা উন্নয়ন এবং ফ্রিল্যান্সিং কর্মসংস্থান প্রশিক্ষণ",
     "title_en": "Skill Development and Freelancing Employment Training for Youth and Women",
     "category": "women",
@@ -436,11 +436,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122214075212342988/",
-    "size_kb": 81.8,
-    "src": "youth-freelancing-skill.jpg"
+    "size_kb": 64.9,
+    "src": "youth-freelancing-skill.webp"
   },
   {
-    "file": "earth-day-2026.jpg",
+    "file": "earth-day-2026.webp",
     "title": "World Earth Day 2026: প্লাস্টিক দূষণ প্রতিরোধ ও পরিবেশ সংরক্ষণে সচেতনতা ক্যাম্পেইন",
     "title_en": "World Earth Day 2026: Awareness Campaign Against Plastic Pollution",
     "category": "climate",
@@ -451,11 +451,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122213658326342988/",
-    "size_kb": 63.5,
-    "src": "earth-day-2026.jpg"
+    "size_kb": 40.8,
+    "src": "earth-day-2026.webp"
   },
   {
-    "file": "menstrual-mental-health.jpg",
+    "file": "menstrual-mental-health.webp",
     "title": "শিক্ষার্থীদের মাসিক স্বাস্থ্য সুরক্ষা ও মানসিক স্বাস্থ্য সচেতনতামূলক আলোচনা সভা",
     "title_en": "Awareness Session on Menstrual Health Hygiene and Mental Well-being",
     "category": "women",
@@ -466,11 +466,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122211973184342988/",
-    "size_kb": 98.8,
-    "src": "menstrual-mental-health.jpg"
+    "size_kb": 82.1,
+    "src": "menstrual-mental-health.webp"
   },
   {
-    "file": "climate-agriculture-seed.jpg",
+    "file": "climate-agriculture-seed.webp",
     "title": "রাসায়নিক সারমুক্ত জলবায়ু সহিষ্ণু কৃষির উন্নয়নে পরীক্ষামূলক উন্নত চারা উৎপাদন কার্যক্রম",
     "title_en": "Experimental Climate-Resilient Sapling Nursery for Chemical-Free Agriculture",
     "category": "climate",
@@ -481,11 +481,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122210475938342988/",
-    "size_kb": 65.9,
-    "src": "climate-agriculture-seed.jpg"
+    "size_kb": 52.5,
+    "src": "climate-agriculture-seed.webp"
   },
   {
-    "file": "mehedi-festival-2026.jpg",
+    "file": "mehedi-festival-2026.webp",
     "title": "পবিত্র ঈদ উপলক্ষে সুবিধাবঞ্চিত শিশুদের নিয়ে কারু শিখার ভালোবাসার মেহেদি উৎসব",
     "title_en": "Joyful Eid Mehedi Festival for Underprivileged Children",
     "category": "children",
@@ -496,11 +496,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122210182010342988/",
-    "size_kb": 107.2,
-    "src": "mehedi-festival-2026.jpg"
+    "size_kb": 89.9,
+    "src": "mehedi-festival-2026.webp"
   },
   {
-    "file": "eid-utsob-stall.jpg",
+    "file": "eid-utsob-stall.webp",
     "title": "উদ্যোক্তা ঐক্য ঈদ উৎসবে হস্তশিল্প পণ্য বিপণন স্টল ও প্রদর্শনী সহায়তা",
     "title_en": "Supporting Handicrafts Exhibition & Marketing Stall at Udyokta Eid Festival",
     "category": "craft",
@@ -511,11 +511,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122210122046342988/",
-    "size_kb": 88.3,
-    "src": "eid-utsob-stall.jpg"
+    "size_kb": 71.5,
+    "src": "eid-utsob-stall.webp"
   },
   {
-    "file": "iftar-distribution-2026.jpg",
+    "file": "iftar-distribution-2026.webp",
     "title": "পবিত্র রমজান উপলক্ষে এতিম শিশু ও মাদ্রাসা শিক্ষার্থীদের মাঝে পুষ্টিকর ইফতার বিতরণ",
     "title_en": "Distributing Nutritious Iftar to Orphan Children and Madrasa Students",
     "category": "humanitarian",
@@ -526,11 +526,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "সিএন্ডবি ঘাট মাদ্রাসা, ফরিদপুর",
     "location_en": "C&B Ghat Madrasa, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122208916850342988/",
-    "size_kb": 73.4,
-    "src": "iftar-distribution-2026.jpg"
+    "size_kb": 58.6,
+    "src": "iftar-distribution-2026.webp"
   },
   {
-    "file": "sign-language-rights.jpg",
+    "file": "sign-language-rights.webp",
     "title": "ইশারা ভাষা ও শ্রবণপ্রতিবন্ধী মানুষের অধিকার সুরক্ষায় অন্তর্ভুক্তিমূলক সমাজ সচেতনতা",
     "title_en": "Sign Language Advocacy and Promoting Inclusive Society for Deaf Individuals",
     "category": "humanitarian",
@@ -541,11 +541,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122206316612342988/",
-    "size_kb": 57.8,
-    "src": "sign-language-rights.jpg"
+    "size_kb": 36.9,
+    "src": "sign-language-rights.webp"
   },
   {
-    "file": "blood-test-campaign.jpg",
+    "file": "blood-test-campaign.webp",
     "title": "‘প্রোজেক্ট ইয়োর মেন্টর’ সুবিধা বঞ্চিত শিশুদের নিয়ে ফ্রি রক্তের গ্রুপ নির্ণয় ক্যাম্পেইন",
     "title_en": "Free Blood Group Testing Campaign for Underprivileged Children under PYM",
     "category": "children",
@@ -556,11 +556,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122206260380342988/",
-    "size_kb": 94.4,
-    "src": "blood-test-campaign.jpg"
+    "size_kb": 81.5,
+    "src": "blood-test-campaign.webp"
   },
   {
-    "file": "advisor-rizwana-hasan.jpg",
+    "file": "advisor-rizwana-hasan.webp",
     "title": "পরিবেশ ও জলবায়ু পরিবর্তন মন্ত্রণালয়ের মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
     "title_en": "Courtesy Meeting with Honorable Advisor Syeda Rizwana Hasan, Ministry of Environment, Forest and Climate Change",
     "category": "climate",
@@ -571,11 +571,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/",
-    "size_kb": 88.7,
-    "src": "advisor-rizwana-hasan.jpg"
+    "size_kb": 75.6,
+    "src": "advisor-rizwana-hasan.webp"
   },
   {
-    "file": "wateraid-household-survey.jpg",
+    "file": "wateraid-household-survey.webp",
     "title": "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে ৬ দিনব্যাপী কমিউনিটি হাউজহোল্ড ওয়াশ সার্ভে",
     "title_en": "6-Day Field WASH Household Survey in Collaboration with WaterAid Bangladesh",
     "category": "partnership",
@@ -586,11 +586,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর সদর",
     "location_en": "Faridpur Sadar",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122202250712342988/",
-    "size_kb": 105.6,
-    "src": "wateraid-household-survey.jpg"
+    "size_kb": 102.6,
+    "src": "wateraid-household-survey.webp"
   },
   {
-    "file": "wateraid-survey-day2.jpg",
+    "file": "wateraid-survey-day2.webp",
     "title": "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে হাউজহোল্ড ওয়াশ সার্ভে পরিচালনা (২য় দিন)",
     "title_en": "Community WASH Household Survey Fieldwork with WaterAid Bangladesh (Day 2)",
     "category": "partnership",
@@ -601,11 +601,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122201802650342988/",
-    "size_kb": 210.8,
-    "src": "wateraid-survey-day2.jpg"
+    "size_kb": 191.2,
+    "src": "wateraid-survey-day2.webp"
   },
   {
-    "file": "disability-rights-assembly.jpg",
+    "file": "disability-rights-assembly.webp",
     "title": "আন্তর্জাতিক প্রতিবন্ধী দিবস উপলক্ষে অধিকার সুরক্ষা ও অন্তর্ভুক্তিমূলক সমাজ বিনির্মাণে আলোচনা সভা",
     "title_en": "Advocacy & Discussion on Rights of Persons with Disabilities for an Inclusive Society",
     "category": "humanitarian",
@@ -616,11 +616,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/share/p/195RAZekXS/",
-    "size_kb": 177.2,
-    "src": "disability-rights-assembly.jpg"
+    "size_kb": 145.9,
+    "src": "disability-rights-assembly.webp"
   },
   {
-    "file": "digital-violence-campaign.jpg",
+    "file": "digital-violence-campaign.webp",
     "title": "নারী ও কন্যাদের প্রতি ডিজিটাল সহিংসতা প্রতিরোধে অনলাইন সচেতনতামূলক ক্যাম্পেইন",
     "title_en": "Online Awareness Campaign Preventing Digital Gender-Based Violence Against Women and Girls",
     "category": "women",
@@ -631,11 +631,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "অনলাইন ক্যাম্পেইন, ফরিদপুর",
     "location_en": "Online Campaign, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122198574170342988/",
-    "size_kb": 41.2,
-    "src": "digital-violence-campaign.jpg"
+    "size_kb": 28.5,
+    "src": "digital-violence-campaign.webp"
   },
   {
-    "file": "lead-pollution-campaign.jpg",
+    "file": "lead-pollution-campaign.webp",
     "title": "সিসামুক্ত বাংলাদেশ গড়ার প্রত্যয়ে কলেজভিত্তিক সিসা দূষণবিরোধী সচেতনতা ক্যাম্পেইন",
     "title_en": "College-based Lead Pollution Prevention & Awareness Campaign",
     "category": "climate",
@@ -646,11 +646,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122196173108342988/",
-    "size_kb": 112.0,
-    "src": "lead-pollution-campaign.jpg"
+    "size_kb": 104.3,
+    "src": "lead-pollution-campaign.webp"
   },
   {
-    "file": "courtyard-cb-ghat.jpg",
+    "file": "courtyard-cb-ghat.webp",
     "title": "পদ্মা নদীর তীরবর্তী সিঅ্যান্ডবি ঘাট এলাকায় কিশোরীদের স্বাস্থ্য ও মানসিক সুস্থতা বিষয়ক উঠান বৈঠক",
     "title_en": "Courtyard Health & Mental Hygiene Session at Padma Riverbank C&B Ghat Area",
     "category": "women",
@@ -661,11 +661,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "সিএন্ডবি ঘাট পদ্মা নদীর তীরবর্তী এলাকা, ফরিদপুর",
     "location_en": "Padma Riverbank Area, C&B Ghat, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122195040488342988/",
-    "size_kb": 150.5,
-    "src": "courtyard-cb-ghat.jpg"
+    "size_kb": 138.6,
+    "src": "courtyard-cb-ghat.webp"
   },
   {
-    "file": "courtyard-vegetable-farming.jpg",
+    "file": "courtyard-vegetable-farming.webp",
     "title": "৭ দিন মেয়াদি উঠানে সবজি চাষ প্রশিক্ষণ ও নিরাপদ পুষ্টিকর খাদ্য উৎপাদন",
     "title_en": "7-Day Practical Courtyard Vegetable Farming Training & Organic Food Production",
     "category": "climate",
@@ -676,11 +676,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122192788760342988/",
-    "size_kb": 224.2,
-    "src": "courtyard-vegetable-farming.jpg"
+    "size_kb": 126.4,
+    "src": "courtyard-vegetable-farming.webp"
   },
   {
-    "file": "climate-olympiad-2025.jpg",
+    "file": "climate-olympiad-2025.webp",
     "title": "জলবায়ু পরিবর্তনের চ্যালেঞ্জ মোকাবিলায় শিক্ষার্থীদের নিয়ে ক্লাইমেট অলিম্পিয়াড আয়োজন",
     "title_en": "Climate Olympiad for Students Addressing Environmental Challenges",
     "category": "climate",
@@ -691,11 +691,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122190610364342988/",
-    "size_kb": 119.3,
-    "src": "climate-olympiad-2025.jpg"
+    "size_kb": 107.8,
+    "src": "climate-olympiad-2025.webp"
   },
   {
-    "file": "paper-seed-pen.jpg",
+    "file": "paper-seed-pen.webp",
     "title": "পরিবেশবান্ধব ও প্লাস্টিকমুক্ত বিকল্প পণ্য উৎপাদন — পেপার সিড পেন উদ্ভাবন",
     "title_en": "Eco-Friendly Paper Seed Pen Innovation - Sustainable Alternative to Plastic",
     "category": "craft",
@@ -706,11 +706,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কারু শিখা ক্রাফট ল্যাব, ফরিদপুর",
     "location_en": "Karu Shikha Craft Lab, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122175345014342988/",
-    "size_kb": 58.6,
-    "src": "paper-seed-pen.jpg"
+    "size_kb": 39.0,
+    "src": "paper-seed-pen.webp"
   },
   {
-    "file": "hand-paint-training.jpg",
+    "file": "hand-paint-training.webp",
     "title": "যুব উন্নয়ন অধিদপ্তর ফরিদপুর সদরে নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ",
     "title_en": "7-Day Hand Paint & Fabric Art Livelihood Training at Youth Development Dept",
     "category": "craft",
@@ -721,11 +721,11 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "যুব উন্নয়ন অধিদপ্তর, ফরিদপুর",
     "location_en": "Dept of Youth Development, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122164723886342988/",
-    "size_kb": 94.3,
-    "src": "hand-paint-training.jpg"
+    "size_kb": 78.8,
+    "src": "hand-paint-training.webp"
   },
   {
-    "file": "women-6.jpg",
+    "file": "women-6.webp",
     "title": "বছরের শেষ দিনে সুবিধাবঞ্চিত শিশুদের নিয়ে পিঠা উৎসব ও শীতের উপহার বিতরণ",
     "title_en": "Year-End Pitha Festival & Winter Gift Distribution for Underprivileged Children",
     "category": "children",
@@ -736,7 +736,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/",
-    "size_kb": 65.8,
-    "src": "women-6.jpg"
+    "size_kb": 50.0,
+    "src": "women-6.webp"
   }
 ];

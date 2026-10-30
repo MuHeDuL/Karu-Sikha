@@ -1930,7 +1930,7 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
     const printReceiptVoucher = () => {
         if (!lastReceiptData.trxId) return;
         const isBn = currentLang === 'bn';
-        const logoUrl = new URL('assets/karu-shikha-logo.png', window.location.href).href;
+        const logoUrl = new URL('assets/karu-shikha-logo.webp', window.location.href).href;
         const iframe = document.createElement('iframe');
         iframe.style.position = 'fixed';
         iframe.style.right = '0';

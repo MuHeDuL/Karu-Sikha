@@ -13,3 +13,4 @@ node_modules/
 *.log
 *.tmp
 .system_generated/
+backup_original_images/
