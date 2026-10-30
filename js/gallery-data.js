@@ -1,7 +1,6 @@
 /**
- * Karu Shikha Youth Development Society - Verified Real Photo Gallery (48 Items)
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির 48টি বাস্তব কার্যক্রমের ভেরিফাইড আলোকচিত্র গ্যালারি
- * Chronologically sorted (Newest first, descending)
+ * Karu Shikha Youth Development Society - Verified Event Photo Gallery Data
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৪৮টি ভেরিফায়েড ফটো গ্যালারি ডেটা
  */
 
 window.KARU_SHIKHA_GALLERY = [
@@ -246,21 +245,6 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "registration-certificate-post.jpg"
   },
   {
-    "file": "madrasa-tree-plantation-1.jpg",
-    "title": "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ",
-    "title_en": "Tree Plantation & Distribution with Students at Lailatul Madani Madrasa, C&B Ghat",
-    "category": "climate",
-    "category_bn": "জলবায়ু ও পরিবেশ",
-    "tag": "বৃক্ষরোপণ কর্মসূচি",
-    "date": "জুলাই ২০২৬",
-    "date_en": "July 2026",
-    "location": "সিএন্ডবি ঘাট, ফরিদপুর",
-    "location_en": "C&B Ghat, Faridpur",
-    "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
-    "size_kb": 91.1,
-    "src": "madrasa-tree-plantation-1.jpg"
-  },
-  {
     "file": "gbv-leadership-1.jpg",
     "title": "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা",
     "title_en": "Discussion on Gender-Based Violence (GBV) & Leadership at Karu Shikha Office",
@@ -304,6 +288,21 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122220947936342988/",
     "size_kb": 105.2,
     "src": "lead-4.jpg"
+  },
+  {
+    "file": "madrasa-tree-plantation-1.jpg",
+    "title": "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ",
+    "title_en": "Tree Plantation & Distribution with Students at Lailatul Madani Madrasa, C&B Ghat",
+    "category": "climate",
+    "category_bn": "জলবায়ু ও পরিবেশ",
+    "tag": "বৃক্ষরোপণ কর্মসূচি",
+    "date": "জুলাই ২০২৬",
+    "date_en": "July 2026",
+    "location": "সিএন্ডবি ঘাট, ফরিদপুর",
+    "location_en": "C&B Ghat, Faridpur",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
+    "size_kb": 91.1,
+    "src": "madrasa-tree-plantation-1.jpg"
   },
   {
     "file": "volunteer-award-crest.jpg",
@@ -546,19 +545,19 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "blood-test-campaign.jpg"
   },
   {
-    "file": "lead-1.jpg",
-    "title": "জরুরি মুমূর্ষু রোগীর জীবন বাঁচাতে কারু শিখা তরুণ স্বেচ্ছাসেবীর স্বেচ্ছায় রক্তদান",
-    "title_en": "Emergency Voluntary Blood Donation by Karu Shikha Youth Volunteer",
-    "category": "humanitarian",
-    "category_bn": "মানবিক ও রক্তদান",
-    "tag": "স্বেচ্ছায় রক্তদান",
-    "date": "জানুয়ারি ২০২৬",
-    "date_en": "January 2026",
-    "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
-    "location_en": "Faridpur Diabetic Hospital",
-    "facebook_url": "https://www.facebook.com/share/p/1E8M7WjonK/",
-    "size_kb": 156.9,
-    "src": "lead-1.jpg"
+    "file": "advisor-rizwana-hasan.jpg",
+    "title": "পরিবেশ ও জলবায়ু পরিবর্তন মন্ত্রণালয়ের মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
+    "title_en": "Courtesy Meeting with Honorable Advisor Syeda Rizwana Hasan, Ministry of Environment, Forest and Climate Change",
+    "category": "partnership",
+    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
+    "tag": "উপদেষ্টা পর্ষদ ও মতবিনিময়",
+    "date": "২১ জানুয়ারি ২০২৬",
+    "date_en": "21 January 2026",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/",
+    "size_kb": 88.7,
+    "src": "advisor-rizwana-hasan.jpg"
   },
   {
     "file": "wateraid-household-survey.jpg",
@@ -681,6 +680,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "paper-seed-pen.jpg"
   },
   {
+    "file": "lead-1.jpg",
+    "title": "যুব উন্নয়ন অধিদপ্তরের সহযোগিতায় নারীদের ব্লক বাটিক ও হ্যান্ড পেইন্ট প্রশিক্ষণ ও বস্ত্র প্রদর্শনী",
+    "title_en": "Block Batik & Hand Paint Vocational Training and Craft Exhibition for Women Trainees",
+    "category": "craft",
+    "category_bn": "উদ্যোক্তা ও হস্তশিল্প",
+    "tag": "ব্লক বাটিক ও হ্যান্ড পেইন্ট",
+    "date": "২২ মার্চ ২০২৫",
+    "date_en": "22 March 2025",
+    "location": "উপজেলা যুব উন্নয়ন কর্মকর্তার কার্যালয়, ফরিদপুর সদর",
+    "location_en": "Faridpur Sadar Youth Development Office",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122164723886342988/",
+    "size_kb": 156.9,
+    "src": "lead-1.jpg"
+  },
+  {
     "file": "hand-paint-training.jpg",
     "title": "যুব উন্নয়ন অধিদপ্তর ফরিদপুর সদরে নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ",
     "title_en": "7-Day Hand Paint & Fabric Art Livelihood Training at Youth Development Dept",
@@ -709,20 +723,5 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/",
     "size_kb": 65.8,
     "src": "women-6.jpg"
-  },
-  {
-    "file": "advisor-rizwana-hasan.jpg",
-    "title": "পরিবেশ ও জলবায়ু পরিবর্তন মন্ত্রণালয়ের মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
-    "title_en": "Courtesy Meeting with Honorable Advisor Syeda Rizwana Hasan, Ministry of Environment, Forest and Climate Change",
-    "category": "partnership",
-    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
-    "tag": "উপদেষ্টা পর্ষদ ও মতবিনিময়",
-    "date": "২৬ সেপ্টেম্বর ২০২৪",
-    "date_en": "26 September 2024",
-    "location": "ঢাকা",
-    "location_en": "Dhaka",
-    "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/",
-    "size_kb": 88.7,
-    "src": "advisor-rizwana-hasan.jpg"
   }
 ];

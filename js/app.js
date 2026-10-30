@@ -153,7 +153,8 @@ const translations = {
         "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (৯)",
         "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৫)",
         "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৭)",
-        "gal_cat_humanitarian": "🤝 মানবিক ও রক্তদান (৭)",
+        "gal_cat_humanitarian": "🤝 মানবিক সেবা ও সম্প্রীতি (৬)",
+        "gal_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৬)",
         "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৫)",
         "volunteer_cta_title": "কারু শিখার আলোকযাত্রায় যুক্ত হোন",
         "volunteer_cta_desc": "২০১৯ সাল থেকে শুরু হওয়া আমাদের সামাজিক বিপ্লবে আপনার সক্রিয় অংশগ্রহণ, মেধা কিংবা সামর্থ্য দিয়ে সমাজ বিনির্মাণে ভূমিকা রাখুন।",
@@ -512,7 +513,8 @@ const translations = {
         "gal_cat_climate": "🌍 Climate & Ecology (9)",
         "gal_cat_children": "📚 Child Mentoring & PYM (5)",
         "gal_cat_women": "👩 Women & Health (7)",
-        "gal_cat_humanitarian": "🤝 Humanitarian & Blood (7)",
+        "gal_cat_humanitarian": "🤝 Humanitarian & Harmony (6)",
+        "gal_cat_craft": "🎨 Crafts & Enterprise (6)",
         "gal_cat_partnership": "🌐 Partnerships & Forum (15)",
         "volunteer_cta_title": "Become a Torchbearer of Karu Shikha",
         "volunteer_cta_desc": "Join our community journey started in 2019. Your contribution of passion, skills, or resources sparks lasting generational change.",
@@ -900,7 +902,7 @@ function applyTranslations(lang) {
             'children': '📚 শিশু শিক্ষা ও স্বাস্থ্য (৫)',
             'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৬)',
             'humanitarian': '🤝 মানবিক সেবা ও সম্প্রীতি (৯)',
-            'partnership': '🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২১)'
+            'partnership': '🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২২)'
         },
         en: {
             'all': 'All Milestones (64)',
@@ -909,7 +911,7 @@ function applyTranslations(lang) {
             'children': '📚 Child Education & Health (5)',
             'craft': '🎨 Handcraft & Enterprise (6)',
             'humanitarian': '🤝 Humanitarian & Blood (9)',
-            'partnership': '🏛️ Governance & Partnerships (21)'
+            'partnership': '🏛️ Governance & Partnerships (22)'
         }
     };
 
@@ -923,20 +925,22 @@ function applyTranslations(lang) {
     // Gallery filter pills labels
     const galleryCatMap = {
         bn: {
-            'all': 'সব ছবি (৪৪)',
+            'all': 'সব ছবি (৪৮)',
             'climate': '🌍 জলবায়ু ও পরিবেশ (৯)',
             'children': '📚 শিশু শিক্ষা ও PYM (৫)',
-            'women': '👩 নারী ও স্বাস্থ্য (৫)',
-            'humanitarian': '🤝 মানবিক ও রক্তদান (৭)',
-            'partnership': '🌐 পার্টনারশিপ ও সভা (১৩)'
+            'women': '👩 নারী ও স্বাস্থ্য (৭)',
+            'humanitarian': '🤝 মানবিক সেবা ও সম্প্রীতি (৬)',
+            'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৬)',
+            'partnership': '🌐 পার্টনারশিপ ও সভা (১৫)'
         },
         en: {
-            'all': 'All Photos (44)',
+            'all': 'All Photos (48)',
             'climate': '🌍 Climate & Ecology (9)',
             'children': '📚 Child Mentoring & PYM (5)',
-            'women': '👩 Women & Health (5)',
-            'humanitarian': '🤝 Humanitarian & Blood (7)',
-            'partnership': '🌐 Partnerships & Forum (5)'
+            'women': '👩 Women & Health (7)',
+            'humanitarian': '🤝 Humanitarian & Harmony (6)',
+            'craft': '🎨 Crafts & Enterprise (6)',
+            'partnership': '🌐 Partnerships & Forum (15)'
         }
     };
 

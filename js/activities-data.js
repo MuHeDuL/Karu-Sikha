@@ -1,7 +1,6 @@
 /**
  * Karu Shikha Youth Development Society - Comprehensive 64 Activities & Milestones
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির 64টি বাস্তব কার্যক্রম ও মাইলফলক
- * Chronologically sorted (Newest first, descending)
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৬৪টি বাস্তব কার্যক্রম ও মাইলফলক (Strict Chronological Descending)
  */
 
 window.KARU_SHIKHA_ACTIVITIES = [
@@ -487,6 +486,19 @@ window.KARU_SHIKHA_ACTIVITIES = [
     },
     {
         id: 44,
+        title: "মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়।",
+        title_en: "Courtest meeting and views exchange with Honourable Advisor Syeda Rizwana Hasan.",
+        category: "partnership",
+        tag: "উপদেষ্টা পর্ষদ",
+        icon: "👨‍⚕️",
+        date: "২১ জানুয়ারি ২০২৬",
+        date_en: "21 January 2026",
+        location: "ফরিদপুর",
+        location_en: "Faridpur",
+        facebook_url: "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/"
+    },
+    {
+        id: 45,
         title: "তীব্র শীত ও শীতজনিত স্বাস্থ্যঝুঁকি সম্পর্কে সচেতনতামূলক প্রচারণা।",
         title_en: "Public health awareness and blanket drives during severe winter cold waves.",
         category: "humanitarian",
@@ -497,7 +509,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/reel/872606782187556/"
     },
     {
-        id: 45,
+        id: 46,
         title: "জরুরি মুমূর্ষু রোগীর জীবন বাঁচাতে কারু শিখা তরুণদের রক্তদান কার্যক্রম।",
         title_en: "Lifesaving voluntary emergency blood donation drives across hospitals.",
         category: "humanitarian",
@@ -508,7 +520,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/1E8M7WjonK/"
     },
     {
-        id: 46,
+        id: 47,
         title: "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে ছয় দিনব্যাপী হাউজহোল্ড ওয়াশ সার্ভে কার্যক্রম সম্পন্ন।",
         title_en: "Completed 6-day community WASH household survey in partnership with WaterAid Bangladesh.",
         category: "partnership",
@@ -519,7 +531,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122202250712342988/"
     },
     {
-        id: 47,
+        id: 48,
         title: "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে হাউজহোল্ড ওয়াশ সার্ভে পরিচালনা (২য় দিন)।",
         title_en: "Community WASH Household Survey Fieldwork with WaterAid Bangladesh (Day 2).",
         category: "partnership",
@@ -532,7 +544,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122201802650342988/"
     },
     {
-        id: 48,
+        id: 49,
         title: "প্রতিবন্ধী ব্যক্তিদের সঙ্গে আন্তর্জাতিক প্রতিবন্ধী দিবস উপলক্ষে আলোচনা সভা।",
         title_en: "Dialogue commemorating International Day of Persons with Disabilities.",
         category: "humanitarian",
@@ -543,7 +555,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/195RAZekXS/"
     },
     {
-        id: 49,
+        id: 50,
         title: "নারী ও কন্যাদের প্রতি ডিজিটাল সহিংসতা প্রতিরোধে অনলাইন সচেতনতামূলক ক্যাম্পেইন।",
         title_en: "Online campaign defending girls and women against digital gender-based violence.",
         category: "women",
@@ -554,7 +566,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122198574170342988/"
     },
     {
-        id: 50,
+        id: 51,
         title: "সচেতনতামূলক রিল ভিডিও তৈরি ও প্রকাশ।",
         title_en: "Publishing viral short reels inspiring social change and volunteerism.",
         category: "partnership",
@@ -565,7 +577,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/reel/2014525419371010/"
     },
     {
-        id: 51,
+        id: 52,
         title: "সিসা দূষণ প্রতিরোধে সচেতনতামূলক ক্যাম্পেইন ও কলেজভিত্তিক প্রচারণা।",
         title_en: "College-level campaign against toxic lead pollution.",
         category: "climate",
@@ -576,7 +588,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122196173108342988/"
     },
     {
-        id: 52,
+        id: 53,
         title: "মাসিক স্বাস্থ্যবিধি ও মানসিক স্বাস্থ্য সচেতনতা নিয়ে উঠান বৈঠক এবং নারী ও কিশোরীদের সচেতনতামূলক কার্যক্রম।",
         title_en: "Targeted menstrual hygiene and psychological health sessions for adolescent girls.",
         category: "women",
@@ -589,7 +601,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122195040488342988/"
     },
     {
-        id: 53,
+        id: 54,
         title: "মাসিক স্বাস্থ্য, দুর্যোগকালীন স্বাস্থ্যসুরক্ষা ও জেন্ডারভিত্তিক সহিংসতা বিষয়ে অনলাইন সচেতনতামূলক প্রচারণা।",
         title_en: "Digital awareness drive on menstrual health in disasters and GBV prevention.",
         category: "women",
@@ -600,7 +612,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122195040488342988/"
     },
     {
-        id: 54,
+        id: 55,
         title: "ক্লাইমেট অলিম্পিয়াড আয়োজন।",
         title_en: "Organized Climate Olympiad for youth environmental awareness.",
         category: "climate",
@@ -611,7 +623,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122190610364342988/"
     },
     {
-        id: 55,
+        id: 56,
         title: "পরিবেশবান্ধব পণ্য উৎপাদন — পেপার সিড পেন।",
         title_en: "Eco-friendly product production — Plantable Paper Seed Pens.",
         category: "craft",
@@ -622,7 +634,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122175345014342988/"
     },
     {
-        id: 56,
+        id: 57,
         title: "হ্যান্ড পেইন্ট প্রশিক্ষণ।",
         title_en: "Vocational hand painting workshops for women & youth.",
         category: "craft",
@@ -635,18 +647,17 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122164723886342988/"
     },
     {
-        id: 57,
+        id: 58,
         title: "শিশু শিক্ষা কার্যক্রম — Project Your Mentor।",
         title_en: "Underprivileged child education initiative — Project Your Mentor.",
         category: "children",
         tag: "Project Your Mentor",
         icon: "📚",
         date: "৩১ ডিসেম্বর ২০২৪",
-        date_en: "31 December 2024",
-        facebook_url: "https://www.facebook.com/61560289663754/posts/2089138831535910/"
+        date_en: "31 December 2024"
     },
     {
-        id: 58,
+        id: 59,
         title: "পিঠা উৎসব আয়োজন।",
         title_en: "Traditional Bengali Pitha festival celebrating social harmony.",
         category: "humanitarian",
@@ -655,17 +666,6 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date: "৩১ ডিসেম্বর ২০২৪",
         date_en: "31 December 2024",
         facebook_url: "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/"
-    },
-    {
-        id: 59,
-        title: "মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়।",
-        title_en: "Courtest meeting and views exchange with Honourable Advisor Syeda Rizwana Hasan.",
-        category: "partnership",
-        tag: "উপদেষ্টা পর্ষদ",
-        icon: "👨‍⚕️",
-        date: "২৬ সেপ্টেম্বর ২০২৪",
-        date_en: "26 September 2024",
-        facebook_url: "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/"
     },
     {
         id: 60,
