@@ -813,91 +813,119 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
                     
                     <!-- Left: Contact Information & Official Registration -->
-                    <div class="lg:col-span-6">
-                        <span class="text-sky-400 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20" data-i18n="contact_tag">
-                            যোগাযোগ ও কেন্দ্রীয় কার্যালয়
-                        </span>
-                        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3 mb-4 tracking-tight" data-i18n="contact_title">
-                            কারু শিখার সঙ্গে সরাসরি যোগাযোগ করুন
-                        </h2>
-                        <p class="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed" data-i18n="contact_desc">
-                            যেকোনো যৌথ সমাজকল্যাণ উদ্যোগ, শিশু শিক্ষা সহায়তা, পরিবেশ বা রক্তদান বিষয়ক তথ্যের জন্য আমাদের সাথে সরাসরি যোগাযোগ করুন।
-                        </p>
+                    <div class="lg:col-span-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-sky-400 text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20" data-i18n="contact_tag">
+                                যোগাযোগ ও কেন্দ্রীয় কার্যালয়
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-3 mb-3 tracking-tight" data-i18n="contact_title">
+                                কারু শিখার সঙ্গে সরাসরি যোগাযোগ করুন
+                            </h2>
+                            <p class="text-slate-300 text-xs sm:text-sm mb-5 leading-relaxed" data-i18n="contact_desc">
+                                যেকোনো যৌথ সমাজকল্যাণ উদ্যোগ, শিশু শিক্ষা সহায়তা, পরিবেশ বা রক্তদান বিষয়ক তথ্যের জন্য আমাদের সাথে সরাসরি যোগাযোগ করুন।
+                            </p>
 
-                        <div class="space-y-4 text-xs sm:text-sm">
-                            <!-- Address -->
-                            <div class="flex items-start gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-orange-500/30">
-                                <span class="w-9 h-9 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-lg shrink-0">📍</span>
-                                <div>
-                                    <div class="font-extrabold text-white" data-i18n="contact_addr_label">প্রতিষ্ঠানের অফিস ও কার্যালয়:</div>
-                                    <div class="text-slate-200 font-semibold text-xs sm:text-sm mt-0.5" data-i18n="contact_addr_val">লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।</div>
-                                    <div class="text-[11px] text-slate-400 mt-0.5" data-i18n="contact_addr_sub">Lakshmipur Pourashava Station Market, Faridpur Sadar, Faridpur.</div>
-                                </div>
-                            </div>
-
-                            <!-- Phone -->
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-emerald-500/30">
-                                <span class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">📞</span>
-                                <div class="flex-1">
-                                    <div class="text-[11px] text-emerald-400 font-semibold" data-i18n="contact_phone_label">সরাসরি ফোন নম্বর:</div>
-                                    <a href="tel:01795023942" class="font-extrabold text-white hover:text-emerald-400 text-sm">
-                                        01795-023942
+                            <!-- Address Card with Integrated Map Button -->
+                            <div class="p-4 rounded-2xl bg-gradient-to-r from-slate-900/90 to-slate-950/90 border border-orange-500/30 hover:border-orange-500/50 transition-all mb-4 shadow-lg">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5">
+                                    <div class="flex items-start gap-3 min-w-0">
+                                        <span class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-xl shrink-0 mt-0.5">
+                                            📍
+                                        </span>
+                                        <div class="min-w-0">
+                                            <div class="text-[11px] font-bold text-orange-400 uppercase tracking-wider" data-i18n="contact_addr_label">প্রতিষ্ঠানের অফিস ও কার্যালয়:</div>
+                                            <div class="text-sm font-extrabold text-white mt-0.5 leading-snug" data-i18n="contact_addr_val">লক্ষ্মীপুর পৌর স্টেশন মার্কেট, ফরিদপুর সদর, ফরিদপুর।</div>
+                                            <div class="text-[11px] text-slate-400 mt-0.5" data-i18n="contact_addr_sub">ফরিদপুর সদর, ফরিদপুর — ডাকঘর: ৭৮০০</div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.google.com/maps/place/Karu+Shikha+Youth+Development+Society/@23.6096143,89.8403826,17.76z/data=!4m6!3m5!1s0x39fe3b00184e3199:0xc87ff06ff234f1a9!8m2!3d23.609495!4d89.8416517!16s%2Fg%2F11n3pl84ls" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/40 hover:border-orange-400 text-orange-300 hover:text-white text-xs font-bold inline-flex items-center justify-center gap-1.5 transition-all shadow-sm shrink-0 self-start sm:self-center cursor-pointer" title="গুগল ম্যাপে কার্যালয়ের অবস্থান দেখুন">
+                                        <span>🗺️</span>
+                                        <span data-i18n="contact_btn_map_inline">ম্যাপে দেখুন ↗</span>
                                     </a>
                                 </div>
-                                <a href="tel:01795023942" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors" data-i18n="contact_btn_call">
-                                    কল করুন →
-                                </a>
                             </div>
 
-                            <!-- WhatsApp Direct -->
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-[#25D366]/40 hover:border-[#25D366]/80 transition-all group">
-                                <span class="w-9 h-9 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform">
-                                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
-                                        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
-                                    </svg>
-                                </span>
-                                <div class="flex-1">
-                                    <div class="text-[11px] text-[#25D366] font-semibold" data-i18n="contact_wa_label">অফিসিয়াল হোয়াটসঅ্যাপ:</div>
-                                    <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="font-extrabold text-white hover:text-[#25D366] text-sm">
-                                        01795-023942
-                                    </a>
-                                </div>
-                                <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs transition-colors flex items-center gap-1 shadow-md shadow-emerald-500/20" data-i18n="contact_btn_wa">
-                                    চ্যাট করুন →
+                            <!-- 4 Optimized Direct Channels in 2x2 Interactive Grid -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                
+                                <!-- 1. Phone Call -->
+                                <a href="tel:01795023942" class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-emerald-950/40 border border-white/10 hover:border-emerald-500/50 transition-all duration-300 flex items-center justify-between group shadow-sm">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform">
+                                            📞
+                                        </span>
+                                        <div class="min-w-0">
+                                            <div class="text-[11px] text-slate-400 font-medium truncate" data-i18n="contact_phone_label">সরাসরি ফোন নম্বর</div>
+                                            <div class="text-xs sm:text-sm font-bold text-white group-hover:text-emerald-400 transition-colors truncate">
+                                                01795-023942
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-lg border border-emerald-500/20 group-hover:bg-emerald-600 group-hover:text-white transition-all shrink-0 ml-2" data-i18n="contact_btn_call">
+                                        কল করুন →
+                                    </span>
                                 </a>
-                            </div>
 
-                            <!-- Email -->
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-slate-950/60 border border-sky-500/30">
-                                <span class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0">✉️</span>
-                                <div class="flex-1">
-                                    <div class="text-[11px] text-sky-400 font-semibold" data-i18n="contact_email_label">অফিসিয়াল ইমেইল:</div>
-                                    <a href="mailto:karushikhayds@gmail.com" class="font-bold text-sky-400 hover:underline text-xs sm:text-sm">
-                                        karushikhayds@gmail.com
-                                    </a>
-                                </div>
-                                <a href="mailto:karushikhayds@gmail.com" class="px-3 py-1.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition-colors" data-i18n="contact_btn_mail">
-                                    মেইল পাঠান →
+                                <!-- 2. WhatsApp Direct -->
+                                <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-[#25D366]/15 border border-white/10 hover:border-[#25D366]/60 transition-all duration-300 flex items-center justify-between group shadow-sm">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <span class="w-10 h-10 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
+                                                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
+                                            </svg>
+                                        </span>
+                                        <div class="min-w-0">
+                                            <div class="text-[11px] text-slate-400 font-medium truncate" data-i18n="contact_wa_label">অফিসিয়াল হোয়াটসঅ্যাপ</div>
+                                            <div class="text-xs sm:text-sm font-bold text-white group-hover:text-[#25D366] transition-colors truncate">
+                                                01795-023942
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-bold text-[#25D366] bg-[#25D366]/10 px-2 py-1 rounded-lg border border-[#25D366]/30 group-hover:bg-[#25D366] group-hover:text-white transition-all shrink-0 ml-2" data-i18n="contact_btn_wa">
+                                        চ্যাট করুন →
+                                    </span>
                                 </a>
-                            </div>
-                        </div>
 
-                        <!-- Direct Action Buttons -->
-                        <div class="flex flex-wrap gap-3 mt-6">
-                            <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md shadow-emerald-500/25">
-                                <span>💬</span>
-                                <span data-i18n="contact_btn_wa_direct">হোয়াটসঅ্যাপে সরাসরি চ্যাট করুন</span>
-                                <span>↗</span>
-                            </a>
-                            <a href="https://www.google.com/maps/place/Karu+Shikha+Youth+Development+Society/@23.6096143,89.8403826,17.76z/data=!4m6!3m5!1s0x39fe3b00184e3199:0xc87ff06ff234f1a9!8m2!3d23.609495!4d89.8416517!16s%2Fg%2F11n3pl84ls" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-slate-900 border border-sky-400/50 hover:bg-sky-600 hover:text-white text-sky-400 font-bold text-xs flex items-center gap-2 transition-all shadow-md">
-                                <span data-i18n="contact_btn_map">🗺️ গুগল ম্যাপে লোকেশন দেখুন</span>
-                                <span>↗</span>
-                            </a>
-                            <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition-all shadow-md">
-                                <span data-i18n="contact_btn_fb">📘 অফিসিয়াল ফেসবুক পেজ</span>
-                                <span>↗</span>
-                            </a>
+                                <!-- 3. Official Email -->
+                                <a href="mailto:karushikhayds@gmail.com" class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-sky-950/40 border border-white/10 hover:border-sky-500/50 transition-all duration-300 flex items-center justify-between group shadow-sm">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <span class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition-transform">
+                                            ✉️
+                                        </span>
+                                        <div class="min-w-0">
+                                            <div class="text-[11px] text-slate-400 font-medium truncate" data-i18n="contact_email_label">অফিসিয়াল ইমেইল</div>
+                                            <div class="text-xs sm:text-sm font-bold text-sky-400 group-hover:underline transition-colors truncate">
+                                                karushikhayds@gmail.com
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-bold text-sky-400 bg-sky-500/10 px-2 py-1 rounded-lg border border-sky-500/20 group-hover:bg-sky-600 group-hover:text-white transition-all shrink-0 ml-2" data-i18n="contact_btn_mail">
+                                        মেইল পাঠান →
+                                    </span>
+                                </a>
+
+                                <!-- 4. Official Facebook Page -->
+                                <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-blue-950/40 border border-white/10 hover:border-blue-500/50 transition-all duration-300 flex items-center justify-between group shadow-sm">
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <span class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                            </svg>
+                                        </span>
+                                        <div class="min-w-0">
+                                            <div class="text-[11px] text-slate-400 font-medium truncate" data-i18n="contact_fb_label">অফিসিয়াল ফেসবুক পেজ</div>
+                                            <div class="text-xs sm:text-sm font-bold text-white group-hover:text-blue-400 transition-colors truncate" data-i18n="contact_fb_val">
+                                                কারু শিখা অফিসিয়াল পেজ
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="text-[11px] font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-all shrink-0 ml-2" data-i18n="contact_btn_fb_pill">
+                                        পেজে যান ↗
+                                    </span>
+                                </a>
+
+                            </div>
                         </div>
                     </div>
 
@@ -1704,6 +1732,6 @@
     <script src="js/members-data.js?v=20261030q"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261030q"></script>
-    <script src="js/app.js?v=20261030q"></script>
+    <script src="js/app.js?v=20261030r"></script>
 </body>
 </html>
