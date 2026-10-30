@@ -546,10 +546,10 @@ const translations = {
         "comm_tag": "Leadership & Organization",
         "comm_reg_badge": "Reg No: DUD-97",
         "comm_title": "Executive Committee, Advisors & Members",
-        "comm_desc": "Official Executive Committee, Advisors, Patrons, and Members directory of Karu Shikha Youth Development Society, registered under Department of Youth Development (Reg: DUD-97).",
+        "comm_desc": "Official Executive Committee, Advisors, Sponsors, and Members directory of Karu Shikha Youth Development Society, registered under Department of Youth Development (Reg: DUD-97).",
         "comm_tab_exec": "🏛️ Executive Committee (7)",
         "comm_tab_adv": "⭐ Advisory Panel",
-        "comm_tab_pat": "🤝 Patrons",
+        "comm_tab_pat": "🤝 Sponsors",
         "comm_tab_fnd": "🌱 Founding Members",
         "comm_tab_gen": "👥 General Members (30)",
         "comm_search_ph": "Search by member name, role, qualification, profession...",
@@ -2874,7 +2874,7 @@ window.openMemberModal = function(id, tab) {
             topBadgeEl.textContent = isBn ? '⭐ সম্মানিত উপদেষ্টা' : '⭐ Honorable Advisor';
             topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
         } else if (tab === 'patrons' || m.is_patron) {
-            topBadgeEl.textContent = isBn ? '🤝 সম্মানিত পৃষ্ঠপোষক' : '🤝 Distinguished Patron';
+            topBadgeEl.textContent = isBn ? '🤝 সম্মানিত পৃষ্ঠপোষক' : '🤝 Distinguished Sponsor';
             topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
         } else if (tab === 'founders' || m.is_founder) {
             topBadgeEl.textContent = isBn ? '🌱 প্রতিষ্ঠাতা সদস্য' : '🌱 Founding Member';

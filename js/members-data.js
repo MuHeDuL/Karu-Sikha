@@ -146,14 +146,14 @@ window.KARU_SHIKHA_ADVISORS = [
   }
 ];
 
-// পৃষ্ঠপোষকবৃন্দ (Patrons)
+// পৃষ্ঠপোষকবৃন্দ (Sponsors)
 window.KARU_SHIKHA_PATRONS = [
   {
     "id": 201,
     "name": "পৃষ্ঠপোষক পর্ষদ (তথ্য সংগৃহীত হচ্ছে)",
-    "name_en": "Patron Panel (Updating)",
+    "name_en": "Sponsor Panel (Updating)",
     "role": "প্রধান পৃষ্ঠপোষক",
-    "role_en": "Chief Patron",
+    "role_en": "Chief Sponsor",
     "profession": "বিশিষ্ট সমাজহিতৈষী ব্যক্তিত্ব",
     "education": "স্নাতক / স্নাতকোত্তর",
     "address": "ফরিদপুর, বাংলাদেশ",
