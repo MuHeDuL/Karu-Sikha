@@ -1149,7 +1149,7 @@ function renderActivities() {
         const tagText = currentLang === 'bn' ? act.tag : (style.tag_en || act.tag);
         const idLabel = act.id < 10 ? '০' + act.id : '' + act.id;
         const engId = act.id < 10 ? '0' + act.id : '' + act.id;
-        const locTooltip = act.location ? (currentLang === 'bn' ? `লোকেশন: ${act.location}` : `Location: ${galleryLocMapEn[act.location] || act.location}`) : '';
+        const locTooltip = act.location ? (currentLang === 'bn' ? `লোকেশন: ${act.location}` : `Location: ${act.location_en || galleryLocMapEn[act.location] || act.location}`) : '';
 
         return `
             <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-5 border border-white/10 ${style.border} flex flex-col justify-between h-full transition-all group">
