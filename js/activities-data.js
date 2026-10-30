@@ -33,7 +33,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         category: "climate",
         tag: "স্মারকলিপি প্রদান",
         icon: "🌊",
-        date: "২০২৬",
+        date: "১৩ সেপ্টেম্বর ২০২৬",
         location: "ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122228132180342988/"
     },

@@ -33,7 +33,7 @@ window.KARU_SHIKHA_GALLERY = [
     "category": "climate",
     "category_bn": "জলবায়ু ও পরিবেশ",
     "tag": "স্মারকলিপি প্রদান",
-    "date": "২০২৬",
+    "date": "১৩ সেপ্টেম্বর ২০২৬",
     "location": "ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228132180342988/",
     "size_kb": 1271.1
