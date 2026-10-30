@@ -655,6 +655,17 @@ window.KARU_SHIKHA_ACTIVITIES = [
     },
     {
         id: 60,
+        title: "বিশ্ব পরিবেশ দিবসে Mission Green Bangladesh-এর সাথে ৬৪ জেলায় একদিনে বৃক্ষরোপণ ও প্লাস্টিক দূষণ বিরোধী সচেতনতা কর্মসূচি।",
+        title_en: "Nationwide tree plantation & anti-plastic pollution awareness drive across 64 districts with Mission Green Bangladesh on World Environment Day.",
+        category: "climate",
+        tag: "বৃক্ষরোপণ ও প্লাস্টিক দূষণ রোধ",
+        icon: "🌱",
+        date: "০৫ জুন ২০২৫",
+        date_en: "05 June 2025",
+        facebook_url: "https://www.facebook.com/share/p/1KKspnxZiQ/"
+    },
+    {
+        id: 61,
         title: "পরিবেশবান্ধব পণ্য উৎপাদন — পেপার সিড পেন।",
         title_en: "Eco-friendly product production — Plantable Paper Seed Pens.",
         category: "craft",
@@ -665,7 +676,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122175345014342988/"
     },
     {
-        id: 61,
+        id: 62,
         title: "হ্যান্ড পেইন্ট প্রশিক্ষণ।",
         title_en: "Vocational hand painting workshops for women & youth.",
         category: "craft",
@@ -676,7 +687,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122164723886342988/"
     },
     {
-        id: 62,
+        id: 63,
         title: "শিশু শিক্ষা কার্যক্রম — Project Your Mentor।",
         title_en: "Underprivileged child education initiative — Project Your Mentor.",
         category: "children",
@@ -686,7 +697,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date_en: "31 December 2024"
     },
     {
-        id: 63,
+        id: 64,
         title: "পিঠা উৎসব আয়োজন।",
         title_en: "Traditional Bengali Pitha festival celebrating social harmony.",
         category: "children",
@@ -697,7 +708,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/"
     },
     {
-        id: 64,
+        id: 65,
         title: "Global Climate Strike-এ অংশগ্রহণ।",
         title_en: "Active participation in the Global Climate Strike.",
         category: "climate",
@@ -707,7 +718,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date_en: ""
     },
     {
-        id: 65,
+        id: 66,
         title: "কৃষি ও গ্রামীণ রূপান্তর, পুষ্টি, উদ্যোক্তা উন্নয়ন এবং সহনশীলতাবিষয়ক প্রশিক্ষণে সাংগঠনিক প্রতিনিধির অংশগ্রহণ।",
         title_en: "Delegate participation in national training on agri-transformation, nutrition & resilience.",
         category: "climate",
@@ -717,7 +728,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date_en: ""
     },
     {
-        id: 66,
+        id: 67,
         title: "নতুন ও পুরোনো সদস্যদের সাংগঠনিক সভা, নেতৃত্ব বিকাশ ও দলীয় সমন্বয় কার্যক্রম।",
         title_en: "Internal leadership development and team alignment summits.",
         category: "partnership",
@@ -727,7 +738,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date_en: ""
     },
     {
-        id: 67,
+        id: 68,
         title: "যুব, নারী, শিশু, পরিবেশ ও সামাজিক উন্নয়নবিষয়ক বিভিন্ন প্রতিষ্ঠানের সঙ্গে যোগাযোগ ও নেটওয়ার্কিং কার্যক্রম।",
         title_en: "Broad institutional networking with youth, gender, and environmental organizations.",
         category: "partnership",

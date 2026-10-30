@@ -710,6 +710,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "climate-olympiad-2025.webp"
   },
   {
+    "file": "world-environment-day-mission-green.webp",
+    "title": "বিশ্ব পরিবেশ দিবস ২০২৫ উপলক্ষে Mission Green Bangladesh-এর সাথে ৬৪ জেলায় একদিনে বৃক্ষরোপণ ও প্লাস্টিক দূষণ বিরোধী সচেতনতা কর্মসূচি",
+    "title_en": "World Environment Day 2025 Nationwide Tree Plantation & Anti-Plastic Awareness Drive with Mission Green Bangladesh",
+    "category": "climate",
+    "category_bn": "জলবায়ু ও পরিবেশ",
+    "tag": "বৃক্ষরোপণ ও প্লাস্টিক দূষণ রোধ",
+    "date": "০৫ জুন ২০২৫",
+    "date_en": "05 June 2025",
+    "location": "ফরিদপুর প্রেসক্লাব, ফরিদপুর",
+    "location_en": "Faridpur Press Club, Faridpur",
+    "facebook_url": "https://www.facebook.com/share/p/1KKspnxZiQ/",
+    "size_kb": 229.7,
+    "src": "world-environment-day-mission-green.webp"
+  },
+  {
     "file": "paper-seed-pen.webp",
     "title": "পরিবেশবান্ধব ও প্লাস্টিকমুক্ত বিকল্প পণ্য উৎপাদন — পেপার সিড পেন উদ্ভাবন",
     "title_en": "Eco-Friendly Paper Seed Pen Innovation - Sustainable Alternative to Plastic",
