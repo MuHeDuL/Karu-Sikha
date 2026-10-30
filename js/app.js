@@ -210,6 +210,32 @@ const translations = {
         "footer_rights": "© ২০২৬ কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি। সর্বস্বত্ব সংরক্ষিত।",
         "footer_privacy": "গোপনীয়তা নীতি",
         "footer_terms": "ব্যবহারের নিয়মাবলী",
+        "legal_badge": "নীতিমালা ও আইনি তথ্য",
+        "legal_title": "কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি",
+        "legal_reg_sub": "যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭",
+        "legal_tab_privacy": "গোপনীয়তা নীতি",
+        "legal_tab_terms": "ব্যবহারের নিয়মাবলী",
+        "legal_btn_ok": "বুঝেছি / বন্ধ করুন ✓",
+        "p1_title": "সংগঠনের পরিচিতি ও নীতিমালার পরিধি",
+        "p1_desc": "কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের যুব উন্নয়ন অধিদপ্তর কর্তৃক নিবন্ধিত (নিবন্ধন নং: যুউঅ-৯৭) একটি অলাভজনক ও অরাজনৈতিক সমাজকল্যাণমূলক যুব সংগঠন। আমাদের ওয়েবসাইটে ভিজিটকারী সকল নাগরিক ও শুভানুধ্যায়ীদের তথ্যের গোপনীয়তা রক্ষা করা আমাদের অন্যতম প্রধান দায়িত্ব।",
+        "p2_title": "তথ্য সংগ্রহ ও ব্যবহার",
+        "p2_desc": "আমরা কোনো অনুপ্রবেশকারী ট্র্যাকিং বা অযাচিত কুকিজ (Cookies) সংরক্ষণ করি না। ভিজিটররা যখন স্বেচ্ছায় আমাদের ওয়েবসাইট থেকে যোগাযোগ (যেমন: হোয়াটসঅ্যাপ, ফোন, ইমেইল) করেন কিংবা সমাজকল্যাণ তহবিলে অনুদান দেন, শুধুমাত্র তখনই প্রেরিত নাম বা তথ্য সেবার উদ্দেশ্যে সাময়িকভাবে ব্যবহৃত হয়।",
+        "p3_title": "তৃতীয় পক্ষের সাথে শেয়ার না করা",
+        "p3_desc": "কারু শিখা কোনো ব্যবহারকারীর ব্যক্তিগত তথ্য কোনো বাণিজ্যিক প্রতিষ্ঠান, বিজ্ঞাপন সংস্থা বা তৃতীয় পক্ষের কাছে বিক্রি, লিজ বা হস্তান্তর করে না। সকল তথ্য কঠোর নিরাপত্তার সাথে সংরক্ষিত থাকে।",
+        "p4_title": "শিশু সুরক্ষা ও সাইবার নিরাপত্তা",
+        "p4_desc": "আমাদের সংগঠন নারী ও শিশু অধিকার সুরক্ষায় অঙ্গীকারবদ্ধ। শিশুদের তথ্য, ছবি বা নাম প্রকাশের ক্ষেত্রে অভিভাবক ও আইনি নীতিমালার শতভাগ সম্মান প্রদর্শন করা হয়।",
+        "p5_title": "যোগাযোগ ও অধিকার",
+        "p5_desc": "গোপনীয়তা সংক্রান্ত যেকোনো প্রশ্ন বা তথ্য অপসারণের অনুরোধ জানাতে সরাসরি আমাদের অফিসিয়াল ইমেইল karushikhayds@gmail.com বা কেন্দ্রীয় কার্যালয়ে যোগাযোগ করা যাবে।",
+        "t1_title": "ওয়েবসাইট ব্যবহারের উদ্দেশ্য",
+        "t1_desc": "এই ওয়েবসাইটটি কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির উন্নয়নমূলক কার্যক্রম, হস্তশিল্প প্রশিক্ষণ, পরিবেশ ক্যাম্পেইন, শিশু শিক্ষা এবং সামাজিক উদ্যোগসমূহের স্বচ্ছতা সাধারণ মানুষের কাছে উপস্থাপনের জন্য উন্মুক্ত।",
+        "t2_title": "কপিরাইট ও মেধা সম্পদ অধিকার",
+        "t2_desc": "ওয়েবসাইটে ব্যবহৃত অফিসিয়াল লোগো, ফটো গ্যালারির ছবি, নথিপত্র এবং বিষয়বস্তু কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির মেধা সম্পদ। সংগঠনের পূর্বানুমতি ছাড়া যেকোনো বাণিজ্যিক ব্যবহার, পরিবর্তন বা অসদুপায়ে পুনঃপ্রকাশ আইনত নিষিদ্ধ।",
+        "t3_title": "স্বেচ্ছাসেবী অনুদান নীতিমালা",
+        "t3_desc": "ওয়েবসাইটের মাধ্যমে অনুদান প্রদান সম্পূর্ণ স্বেচ্ছাসেবী ও জনকল্যাণমূলক। গৃহীত অর্থ যুব দক্ষতা বৃদ্ধি, নারীর আত্মকর্মসংস্থান, বৃক্ষরোপণ এবং মানবিক সহায়তামূলক প্রকল্পের কাজে শতভাগ স্বচ্ছতার সাথে ব্যয় করা হয়।",
+        "t4_title": "বাহ্যিক লিঙ্কের ব্যবহার",
+        "t4_desc": "ওয়েবসাইটে থাকা অফিসিয়াল ফেসবুক পেজ বা গুগল ম্যাপস লিঙ্কগুলো সরাসরি সংশ্লিষ্ট প্ল্যাটফর্মে নির্দেশ করে। এসব তৃতীয় পক্ষের ওয়েবসাইটের কনটেন্ট বা কার্যকারিতা তাদের নিজস্ব নীতিমালার অধীন।",
+        "t5_title": "আইনি এখতিয়ার ও সরকারি নীতিমালা",
+        "t5_desc": "এই ব্যবহারের নিয়মাবলী গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের প্রচলিত যুব উন্নয়ন অধিদপ্তর নীতিমালা এবং ডিজিটাল নিরাপত্তা আইনের আলোকে পরিচালিত ও নিয়ন্ত্রিত।",
         "don_badge": "উপায় ১ • সরাসরি অনুদান মাধ্যম",
         "don_title": "কারু শিখা সমাজকল্যাণ তহবিলে অনুদান",
         "don_sub": "আপনার অনুদান কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির সার্বিক উন্নয়ন ও সমাজকল্যাণে ব্যবহৃত হয়।",
@@ -572,6 +598,32 @@ const translations = {
         "footer_rights": "© 2026 Karu Shikha Youth Development Society. All rights reserved.",
         "footer_privacy": "Privacy Policy",
         "footer_terms": "Terms of Use",
+        "legal_badge": "Policies & Legal Notice",
+        "legal_title": "Karu Shikha Youth Development Society",
+        "legal_reg_sub": "Govt. Reg No: YuU-97 (Youth Development Dept.)",
+        "legal_tab_privacy": "Privacy Policy",
+        "legal_tab_terms": "Terms of Use",
+        "legal_btn_ok": "Understood / Close ✓",
+        "p1_title": "Organization Identity & Scope",
+        "p1_desc": "Karu Shikha Youth Development Society is a registered non-profit and non-political youth empowerment organization registered with the Department of Youth Development (Reg: YuU-97). Protecting the privacy and dignity of all website visitors, volunteers, and stakeholders is our utmost priority.",
+        "p2_title": "Information Collection & Usage",
+        "p2_desc": "We do not track invasive user data or store tracking cookies. Information is only collected when visitors voluntarily reach out to us (via WhatsApp, phone, or email) or make a charitable contribution, used strictly for organizational support.",
+        "p3_title": "Non-Disclosure to Third Parties",
+        "p3_desc": "Karu Shikha does not sell, lease, or share any personal information with commercial advertising entities or external third parties under any circumstances.",
+        "p4_title": "Child Protection & Cyber Safety",
+        "p4_desc": "We maintain zero tolerance on the protection of children and women's rights online. Any publication of images or activities strictly honors guardian consent and ethical standards.",
+        "p5_title": "Contact & Grievance Redress",
+        "p5_desc": "For any privacy queries or data removal requests, you may contact our headquarters or email us directly at karushikhayds@gmail.com.",
+        "t1_title": "Purpose of Website Usage",
+        "t1_desc": "This platform serves as an open informational portal to showcase Karu Shikha's grassroots development projects, handicraft training, climate initiatives, and child education programs.",
+        "t2_title": "Copyright & Intellectual Property",
+        "t2_desc": "All official logos, photography, event records, and textual content are the exclusive intellectual property of Karu Shikha Youth Development Society. Unauthorized commercial reproduction or distortion is prohibited.",
+        "t3_title": "Voluntary Donations Policy",
+        "t3_desc": "All contributions made through our welfare fund channels are entirely voluntary donations utilized with full transparency for youth training, women self-reliance, and humanitarian relief.",
+        "t4_title": "External Links Notice",
+        "t4_desc": "Outbound links to Facebook, Google Maps, or WhatsApp are governed by their respective independent platforms and terms.",
+        "t5_title": "Governing Law & Legal Jurisdiction",
+        "t5_desc": "These terms of use are governed in accordance with the regulatory frameworks of the Government of the People's Republic of Bangladesh and the Department of Youth Development.",
         "don_badge": "Option 1 • Direct Donation Channels",
         "don_title": "Donate to Karu Shikha Welfare Fund",
         "don_sub": "Your contribution directly funds Karu Shikha Youth Development Society's development and social welfare initiatives.",
@@ -2378,20 +2430,23 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
         });
     }
 
-    [donateModal, volunteerModal, contactModal, certModal, memberModal].forEach(modal => {
+    const legalModal = document.getElementById('legal-modal');
+    [donateModal, volunteerModal, contactModal, certModal, memberModal, legalModal].forEach(modal => {
         if (!modal) return;
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.add('hidden');
+                document.body.style.overflow = '';
             }
         });
     });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            [donateModal, volunteerModal, contactModal, certModal, memberModal].forEach(modal => {
+            [donateModal, volunteerModal, contactModal, certModal, memberModal, legalModal].forEach(modal => {
                 if (modal && !modal.classList.contains('hidden')) {
                     modal.classList.add('hidden');
+                    document.body.style.overflow = '';
                 }
             });
         }
@@ -2900,6 +2955,45 @@ window.downloadMemberVCard = async function(member) {
         ? `📥 ${nameEn}-এর ভি-কার্ড (.vcf) সেভ হয়েছে!`
         : `📥 vCard (.vcf) saved for ${nameEn}!`;
     showToast(msg);
+};
+
+// ==========================================
+// LEGAL & POLICIES MODAL (Privacy & Terms)
+// ==========================================
+window.openLegalModal = function(tab = 'privacy') {
+    const modal = document.getElementById('legal-modal');
+    if (!modal) return;
+    switchLegalTab(tab);
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeLegalModal = function() {
+    const modal = document.getElementById('legal-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+};
+
+window.switchLegalTab = function(tab) {
+    const privacyTabBtn = document.getElementById('legal-tab-privacy');
+    const termsTabBtn = document.getElementById('legal-tab-terms');
+    const privacyContent = document.getElementById('legal-content-privacy');
+    const termsContent = document.getElementById('legal-content-terms');
+
+    if (!privacyTabBtn || !termsTabBtn || !privacyContent || !termsContent) return;
+
+    if (tab === 'terms') {
+        privacyTabBtn.className = 'flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white bg-slate-800/50 transition-all cursor-pointer flex items-center justify-center gap-1.5';
+        termsTabBtn.className = 'flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-sky-600 shadow-md shadow-sky-500/25 transition-all cursor-pointer flex items-center justify-center gap-1.5';
+        privacyContent.classList.add('hidden');
+        termsContent.classList.remove('hidden');
+    } else {
+        privacyTabBtn.className = 'flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-sky-600 shadow-md shadow-sky-500/25 transition-all cursor-pointer flex items-center justify-center gap-1.5';
+        termsTabBtn.className = 'flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white bg-slate-800/50 transition-all cursor-pointer flex items-center justify-center gap-1.5';
+        privacyContent.classList.remove('hidden');
+        termsContent.classList.add('hidden');
+    }
 };
 
 // Direct modal popup without scrolling

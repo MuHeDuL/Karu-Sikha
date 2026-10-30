@@ -1024,8 +1024,8 @@
             <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs gap-3">
                 <p data-i18n="footer_rights">© ২০২৬ কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি। সর্বস্বত্ব সংরক্ষিত।</p>
                 <div class="flex gap-4">
-                    <a href="#" class="hover:text-slate-400" data-i18n="footer_privacy">গোপনীয়তা নীতি</a>
-                    <a href="#" class="hover:text-slate-400" data-i18n="footer_terms">ব্যবহারের নিয়মাবলী</a>
+                    <button type="button" onclick="openLegalModal('privacy')" class="hover:text-slate-300 transition-colors cursor-pointer text-xs" data-i18n="footer_privacy">গোপনীয়তা নীতি</button>
+                    <button type="button" onclick="openLegalModal('terms')" class="hover:text-slate-300 transition-colors cursor-pointer text-xs" data-i18n="footer_terms">ব্যবহারের নিয়মাবলী</button>
                 </div>
             </div>
             <!-- Author Credit Line (Requested by User) -->
@@ -1675,6 +1675,148 @@
         </div>
     </div>
 
+    <!-- LEGAL & POLICIES MODAL (Privacy Policy & Terms of Use) -->
+    <div id="legal-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-900/95 border border-sky-500/30 rounded-3xl p-5 sm:p-7 max-w-2xl w-full shadow-2xl relative max-h-[92vh] flex flex-col">
+            <button id="close-legal-modal" type="button" onclick="closeLegalModal()" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center text-lg font-bold cursor-pointer transition-colors z-20">
+                &times;
+            </button>
+
+            <!-- Header -->
+            <div class="text-center mb-4 shrink-0">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-2">
+                    ⚖️ <span data-i18n="legal_badge">নীতিমালা ও আইনি তথ্য</span>
+                </span>
+                <h3 class="text-lg sm:text-xl font-black text-white" data-i18n="legal_title">
+                    কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি
+                </h3>
+                <p class="text-xs text-slate-400 mt-0.5" data-i18n="legal_reg_sub">
+                    যুব উন্নয়ন অধিদপ্তর নিবন্ধন নং: যুউঅ-৯৭
+                </p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="flex items-center gap-2 p-1 bg-slate-950/80 rounded-2xl border border-white/10 mb-4 shrink-0">
+                <button type="button" id="legal-tab-privacy" onclick="switchLegalTab('privacy')" class="flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-sky-600 shadow-md shadow-sky-500/25 transition-all cursor-pointer flex items-center justify-center gap-1.5">
+                    <span>🔒</span>
+                    <span data-i18n="legal_tab_privacy">গোপনীয়তা নীতি</span>
+                </button>
+                <button type="button" id="legal-tab-terms" onclick="switchLegalTab('terms')" class="flex-1 py-2 px-3 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white bg-slate-800/50 transition-all cursor-pointer flex items-center justify-center gap-1.5">
+                    <span>📜</span>
+                    <span data-i18n="legal_tab_terms">ব্যবহারের নিয়মাবলী</span>
+                </button>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="overflow-y-auto pr-2 custom-scrollbar text-xs sm:text-sm text-slate-300 space-y-3.5 leading-relaxed grow">
+                
+                <!-- Privacy Policy Content -->
+                <div id="legal-content-privacy" class="space-y-3.5">
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-sky-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-sky-400">১.</span> <span data-i18n="p1_title">সংগঠনের পরিচিতি ও নীতিমালার পরিধি</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="p1_desc">
+                            কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের যুব উন্নয়ন অধিদপ্তর কর্তৃক নিবন্ধিত (নিবন্ধন নং: যুউঅ-৯৭) একটি অলাভজনক ও অরাজনৈতিক সমাজকল্যাণমূলক যুব সংগঠন। আমাদের ওয়েবসাইটে ভিজিটকারী সকল নাগরিক ও শুভানুধ্যায়ীদের তথ্যের গোপনীয়তা রক্ষা করা আমাদের অন্যতম প্রধান দায়িত্ব।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-emerald-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-emerald-400">২.</span> <span data-i18n="p2_title">তথ্য সংগ্রহ ও ব্যবহার</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="p2_desc">
+                            আমরা কোনো অনুপ্রবেশকারী ট্র্যাকিং বা অযাচিত কুকিজ (Cookies) সংরক্ষণ করি না। ভিজিটররা যখন স্বেচ্ছায় আমাদের ওয়েবসাইট থেকে যোগাযোগ (যেমন: হোয়াটসঅ্যাপ, ফোন, ইমেইল) করেন কিংবা সমাজকল্যাণ তহবিলে অনুদান দেন, শুধুমাত্র তখনই প্রেরিত নাম বা তথ্য সেবার উদ্দেশ্যে সাময়িকভাবে ব্যবহৃত হয়।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-orange-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-orange-400">৩.</span> <span data-i18n="p3_title">তৃতীয় পক্ষের সাথে শেয়ার না করা</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="p3_desc">
+                            কারু শিখা কোনো ব্যবহারকারীর ব্যক্তিগত তথ্য কোনো বাণিজ্যিক প্রতিষ্ঠান, বিজ্ঞাপন সংস্থা বা তৃতীয় পক্ষের কাছে বিক্রি, লিজ বা হস্তান্তর করে না। সকল তথ্য কঠোর নিরাপত্তার সাথে সংরক্ষিত থাকে।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-indigo-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-indigo-400">৪.</span> <span data-i18n="p4_title">শিশু সুরক্ষা ও সাইবার নিরাপত্তা</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="p4_desc">
+                            আমাদের সংগঠন নারী ও শিশু অধিকার সুরক্ষায় অঙ্গীকারবদ্ধ। শিশুদের তথ্য, ছবি বা নাম প্রকাশের ক্ষেত্রে অভিভাবক ও আইনি নীতিমালার শতভাগ সম্মান প্রদর্শন করা হয়।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-teal-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-teal-400">৫.</span> <span data-i18n="p5_title">যোগাযোগ ও অধিকার</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="p5_desc">
+                            গোপনীয়তা সংক্রান্ত যেকোনো প্রশ্ন বা তথ্য অপসারণের অনুরোধ জানাতে সরাসরি আমাদের অফিসিয়াল ইমেইল <strong class="text-sky-300">karushikhayds@gmail.com</strong> বা কেন্দ্রীয় কার্যালয়ে যোগাযোগ করা যাবে।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Terms of Use Content -->
+                <div id="legal-content-terms" class="space-y-3.5 hidden">
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-sky-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-sky-400">১.</span> <span data-i18n="t1_title">ওয়েবসাইট ব্যবহারের উদ্দেশ্য</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="t1_desc">
+                            এই ওয়েবসাইটটি কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির উন্নয়নমূলক কার্যক্রম, হস্তশিল্প প্রশিক্ষণ, পরিবেশ ক্যাম্পেইন, শিশু শিক্ষা এবং সামাজিক উদ্যোগসমূহের স্বচ্ছতা সাধারণ মানুষের কাছে উপস্থাপনের জন্য উন্মুক্ত।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-amber-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-amber-400">২.</span> <span data-i18n="t2_title">কপিরাইট ও মেধা সম্পদ অধিকার</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="t2_desc">
+                            ওয়েবসাইটে ব্যবহৃত অফিসিয়াল লোগো, ফটো গ্যালারির ছবি, নথিপত্র এবং বিষয়বস্তু কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির মেধা সম্পদ। সংগঠনের পূর্বানুমতি ছাড়া যেকোনো বাণিজ্যিক ব্যবহার, পরিবর্তন বা অসদুপায়ে পুনঃপ্রকাশ আইনত নিষিদ্ধ।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-emerald-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-emerald-400">৩.</span> <span data-i18n="t3_title">স্বেচ্ছাসেবী অনুদান নীতিমালা</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="t3_desc">
+                            ওয়েবসাইটের মাধ্যমে অনুদান প্রদান সম্পূর্ণ স্বেচ্ছাসেবী ও জনকল্যাণমূলক। গৃহীত অর্থ যুব দক্ষতা বৃদ্ধি, নারীর আত্মকর্মসংস্থান, বৃক্ষরোপণ এবং মানবিক সহায়তামূলক প্রকল্পের কাজে শতভাগ স্বচ্ছতার সাথে ব্যয় করা হয়।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-blue-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-blue-400">৪.</span> <span data-i18n="t4_title">বাহ্যিক লিঙ্কের ব্যবহার</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="t4_desc">
+                            ওয়েবসাইটে থাকা অফিসিয়াল ফেসবুক পেজ বা গুগল ম্যাপস লিঙ্কগুলো সরাসরি সংশ্লিষ্ট প্ল্যাটফর্মে নির্দেশ করে। এসব তৃতীয় পক্ষের ওয়েবসাইটের কনটেন্ট বা কার্যকারিতা তাদের নিজস্ব নীতিমালার অধীন।
+                        </p>
+                    </div>
+
+                    <div class="p-3.5 rounded-2xl bg-slate-950/60 border border-purple-500/20">
+                        <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-2 mb-1">
+                            <span class="text-purple-400">৫.</span> <span data-i18n="t5_title">আইনি এখতিয়ার ও সরকারি নীতিমালা</span>
+                        </h4>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-i18n="t5_desc">
+                            এই ব্যবহারের নিয়মাবলী গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের প্রচলিত যুব উন্নয়ন অধিদপ্তর নীতিমালা এবং ডিজিটাল নিরাপত্তা আইনের আলোকে পরিচালিত ও নিয়ন্ত্রিত।
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Close Button -->
+            <div class="pt-4 border-t border-white/10 mt-3 shrink-0">
+                <button type="button" onclick="closeLegalModal()" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition-colors cursor-pointer" data-i18n="legal_btn_ok">
+                    বুঝেছি / বন্ধ করুন ✓
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Photo Gallery Lightbox Modal -->
     <div id="gallery-lightbox" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 hidden">
         <div class="relative max-w-4xl w-full bg-slate-900 border border-white/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
@@ -1739,6 +1881,6 @@
     <script src="js/members-data.js?v=20261030q"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261030q"></script>
-    <script src="js/app.js?v=20261031b"></script>
+    <script src="js/app.js?v=20261031c"></script>
 </body>
 </html>
