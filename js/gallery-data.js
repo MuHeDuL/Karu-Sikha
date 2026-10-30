@@ -1,5 +1,31 @@
 window.KARU_SHIKHA_GALLERY = [
   {
+    "file": "advocacy-dialogue-1.jpg",
+    "src": "advocacy-dialogue-1.jpg",
+    "title": "এসডিসি টাওয়ারে যুবদের নিয়ে সমতা ও নিরাপত্তা বিষয়ক অ্যাডভোকেসি ডায়লগ",
+    "title_en": "Advocacy Dialogue on Youth Equality & Protection at SDC Tower",
+    "category": "partnership",
+    "category_bn": "অ্যাডভোকেসি ও অংশীদারিত্ব",
+    "tag": "Advocacy Dialogue",
+    "date": "২৮ অক্টোবর ২০২৬",
+    "location": "এসডিসি টাওয়ার, আলীপুর, ফরিদপুর",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122233503350342988/",
+    "size_kb": 192.5
+  },
+  {
+    "file": "youth-equality-1.jpg",
+    "src": "youth-equality-1.jpg",
+    "title": "৬০ জন তরুণ-তরুণীকে নিয়ে ‘সমতায় তারুণ্য—Youth for Equality’ প্রশিক্ষণ",
+    "title_en": "Youth for Equality Training Workshop for 60 Young Leaders",
+    "category": "women",
+    "category_bn": "সমতা ও নারী ক্ষমতায়ন",
+    "tag": "সমতায় তারুণ্য",
+    "date": "১৫ অক্টোবর ২০২৬",
+    "location": "ফরিদপুর",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122232098858342988/",
+    "size_kb": 221.1
+  },
+  {
     "file": "climate-1.jpg",
     "src": "img-005.png",
     "title": "আদর্শ বালিকা বিদ্যালয়ে ক্লাইমেট অলিম্পিয়াড ২০২৬ আয়োজন",

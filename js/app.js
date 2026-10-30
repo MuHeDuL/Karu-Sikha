@@ -12,7 +12,7 @@ const translations = {
         "brand_subtitle": "ইয়ুথ ডেভেলপমেন্ট সোসাইটি",
         "nav_about": "আমাদের কথা",
         "nav_projects": "প্রকল্পসমূহ",
-        "nav_activities": "কার্যক্রম (৬৭টি)",
+        "nav_activities": "কার্যক্রম (৬৯টি)",
         "nav_committee": "কার্যনির্বাহী পরিষদ",
         "nav_gallery": "ফটো গ্যালারি",
         "nav_contact": "যোগাযোগ",
@@ -125,19 +125,19 @@ const translations = {
         "ewgsf_btn_join": "প্রশিক্ষণে অংশগ্রহণ করুন",
         "ewgsf_btn_donate": "নারী স্বাবলম্বিতা তহবিলে দান করুন",
         "activities_tag": "মাঠপর্যায়ের সমৃদ্ধ অভিজ্ঞতা",
-        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৬৭টি মাইলফলক)",
-        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৭টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
+        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৬৯টি মাইলফলক)",
+        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৯টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
         "activities_search_placeholder": "কার্যক্রম খুঁজুন (যেমন: ক্লাইমেট, রক্তদান, WaterAid, হ্যান্ড পেইন্ট, সমতায় তারুণ্য...)",
         "activities_hint": "💡 কীওয়ার্ড লিখে বা ক্যাটাগরি বেছে ফিল্টার করুন",
-        "act_cat_all": "সব কার্যক্রম (৬৭)",
+        "act_cat_all": "সব কার্যক্রম (৬৯)",
         "act_cat_climate": "🌍 জলবায়ু ও টেকসই কৃষি (১০)",
-        "act_cat_women": "👩 নারী ও সমতায় তারুণ্য (১৩)",
+        "act_cat_women": "👩 নারী ও সমতায় তারুণ্য (১৪)",
         "act_cat_children": "📚 শিশু শিক্ষা ও স্বাস্থ্য (৬)",
         "act_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৮)",
         "act_cat_humanitarian": "🤝 মানবিক সেবা ও সম্প্রীতি (৯)",
-        "act_cat_partnership": "🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২১)",
-        "activities_count_badge": "প্রদর্শিত: ৬৭টি কার্যক্রম",
-        "act_view_all_btn": "সবগুলো ৬৭টি কার্যক্রম দেখুন (+৫৫টি আরো) ▾",
+        "act_cat_partnership": "🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২২)",
+        "activities_count_badge": "প্রদর্শিত: ৬৯টি কার্যক্রম",
+        "act_view_all_btn": "সবগুলো ৬৯টি কার্যক্রম দেখুন (+৫৭টি আরো) ▾",
         "comm_tag": "নেতৃত্ব ও সাংগঠনিক কাঠামো",
         "comm_reg_badge": "নিবন্ধন নং: যুউঅ-৯৭",
         "comm_title": "কার্যনির্বাহী পরিষদ ও সম্মানিত সদস্য তালিকা",
@@ -149,12 +149,12 @@ const translations = {
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
         "gallery_title": "কারু শিখার কার্যক্রমের ফটো গ্যালারি",
         "gallery_desc": "আমাদের বিভিন্ন প্রকল্প, শিশু শিক্ষা সহায়তা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ এবং হস্তশিল্প কর্মশালার বাস্তব ছবিসমূহ।",
-        "gal_cat_all": "সব ছবি (২৫)",
+        "gal_cat_all": "সব ছবি (২৭)",
         "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (৭)",
         "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৭)",
-        "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৬)",
+        "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৭)",
         "gal_cat_humanitarian": "🤝 মানবিক ও রক্তদান (২)",
-        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (৩)",
+        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (৪)",
         "volunteer_cta_title": "কারু শিখার আলোকযাত্রায় যুক্ত হোন",
         "volunteer_cta_desc": "২০১৯ সাল থেকে শুরু হওয়া আমাদের সামাজিক বিপ্লবে আপনার সক্রিয় অংশগ্রহণ, মেধা কিংবা সামর্থ্য দিয়ে সমাজ বিনির্মাণে ভূমিকা রাখুন।",
         "btn_apply_volunteer": "ভলান্টিয়ার ফর্ম পূরণ করুন",
@@ -200,7 +200,8 @@ const translations = {
         "footer_pym": "Project Your Mentor (PYM)",
         "footer_coks": "Climate Olympiad (COKS)",
         "footer_ewgsf": "EWGSF প্রকল্প (নারী স্বাবলম্বিতা)",
-        "footer_act": "৬৭টি বাস্তব কার্যক্রম",
+        "footer_act": "৬৯টি বাস্তব কার্যক্রম",
+        "lb_btn_fb": "ফেসবুকে মূল পোস্ট দেখুন",
         "footer_emergency": "জরুরি যোগাযোগ",
         "footer_fb": "ফেসবুক পেজ ফলো করুন",
         "footer_rights": "© ২০২৬ কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি। সর্বস্বত্ব সংরক্ষিত।",
@@ -370,7 +371,7 @@ const translations = {
         "brand_subtitle": "Youth Development Society",
         "nav_about": "About Us",
         "nav_projects": "Projects",
-        "nav_activities": "Activities (67)",
+        "nav_activities": "Activities (69)",
         "nav_committee": "Leadership",
         "nav_gallery": "Photo Gallery",
         "nav_contact": "Contact Us",
@@ -483,19 +484,19 @@ const translations = {
         "ewgsf_btn_join": "Enroll in Training",
         "ewgsf_btn_donate": "Donate to Women Enterprise Fund",
         "activities_tag": "Rich Field Legacy",
-        "activities_title": "Key Activities of Karu Shikha (67 Milestones)",
-        "activities_desc": "Explore all 67 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
+        "activities_title": "Key Activities of Karu Shikha (69 Milestones)",
+        "activities_desc": "Explore all 69 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
         "activities_search_placeholder": "Search activities (e.g. Climate, Blood, WaterAid, Hand Paint, Equality...)",
         "activities_hint": "💡 Filter by keyword or choose category pill above",
-        "act_cat_all": "All Milestones (67)",
+        "act_cat_all": "All Milestones (69)",
         "act_cat_climate": "🌍 Climate & Ecology (10)",
-        "act_cat_women": "👩 Women & Equality (13)",
+        "act_cat_women": "👩 Women & Equality (14)",
         "act_cat_children": "📚 Child Education & Health (6)",
         "act_cat_craft": "🎨 Handcraft & Enterprise (8)",
         "act_cat_humanitarian": "🤝 Humanitarian & Blood (9)",
-        "act_cat_partnership": "🏛️ Governance & Partnerships (21)",
-        "activities_count_badge": "Displaying: 67 Milestones",
-        "act_view_all_btn": "View All 67 Milestones (+55 more) ▾",
+        "act_cat_partnership": "🏛️ Governance & Partnerships (22)",
+        "activities_count_badge": "Displaying: 69 Milestones",
+        "act_view_all_btn": "View All 69 Milestones (+57 more) ▾",
         "comm_tag": "Leadership & Organization",
         "comm_reg_badge": "Reg No: YuU-97",
         "comm_title": "Leadership & Members Directory",
@@ -507,12 +508,12 @@ const translations = {
         "gallery_tag": "Field Photographs",
         "gallery_title": "Official Field Photo Gallery",
         "gallery_desc": "Glimpse our on-ground grassroots journey across child mentoring, Climate Olympiad, sanitary napkin distribution, and artisan workshops.",
-        "gal_cat_all": "All Photos (25)",
+        "gal_cat_all": "All Photos (27)",
         "gal_cat_climate": "🌍 Climate & Ecology (7)",
         "gal_cat_children": "📚 Child Mentoring & PYM (7)",
-        "gal_cat_women": "👩 Women & Health (6)",
+        "gal_cat_women": "👩 Women & Health (7)",
         "gal_cat_humanitarian": "🤝 Humanitarian & Blood (2)",
-        "gal_cat_partnership": "🌐 Partnerships & Forum (3)",
+        "gal_cat_partnership": "🌐 Partnerships & Forum (4)",
         "volunteer_cta_title": "Become a Torchbearer of Karu Shikha",
         "volunteer_cta_desc": "Join our community journey started in 2019. Your contribution of passion, skills, or resources sparks lasting generational change.",
         "btn_apply_volunteer": "Submit Volunteer Application",
@@ -558,7 +559,8 @@ const translations = {
         "footer_pym": "Project Your Mentor (PYM)",
         "footer_coks": "Climate Olympiad (COKS)",
         "footer_ewgsf": "EWGSF Project (Women Self-Reliance)",
-        "footer_act": "67 Grassroots Milestones",
+        "footer_act": "69 Grassroots Milestones",
+        "lb_btn_fb": "View Original FB Post",
         "footer_emergency": "Emergency Contact",
         "footer_fb": "Follow Facebook Page",
         "footer_rights": "© 2026 Karu Shikha Youth Development Society. All rights reserved.",
@@ -1055,8 +1057,8 @@ function renderActivities() {
 
     if (countDisplay) {
         countDisplay.textContent = currentLang === 'bn' 
-            ? `প্রদর্শিত: ${filtered.length} / মোট ৬৭টি কার্যক্রম` 
-            : `Showing: ${filtered.length} of 67 Milestones`;
+            ? `প্রদর্শিত: ${filtered.length} / মোট ৬৯টি কার্যক্রম` 
+            : `Showing: ${filtered.length} of 69 Milestones`;
     }
 
     const itemsToDisplay = showAllActivities ? filtered : filtered.slice(0, INITIAL_VISIBLE_COUNT);
@@ -1071,8 +1073,8 @@ function renderActivities() {
                 toggleBtn.textContent = currentLang === 'bn' ? 'সংক্ষিপ্ত করুন ▴' : 'Show Less ▴';
             } else {
                 toggleBtn.textContent = currentLang === 'bn' 
-                    ? `সবগুলো ৬৭টি কার্যক্রম দেখুন (+${remaining}টি আরো) ▾` 
-                    : `View All 67 Milestones (+${remaining} more) ▾`;
+                    ? `সবগুলো ৬৯টি কার্যক্রম দেখুন (+${remaining}টি আরো) ▾` 
+                    : `View All 69 Milestones (+${remaining} more) ▾`;
             }
         }
     }
@@ -1126,6 +1128,11 @@ function renderActivities() {
                         </h4>
                     </div>
                 </div>
+                ${(act.date || act.facebook_url) ? `
+                <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+                    <span>${act.date ? '📅 ' + (currentLang === 'bn' ? act.date : (galleryLocMapEn[act.location] || act.date)) : ''}</span>
+                    ${act.facebook_url ? `<a href="${act.facebook_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white flex items-center gap-1 font-semibold transition-colors" onclick="event.stopPropagation()"><span>🌐</span><span>${currentLang === 'bn' ? 'ফেসবুকে দেখুন' : 'View on FB'}</span></a>` : ''}
+                </div>` : ''}
             </div>
         `;
     }).join('');
@@ -1184,6 +1191,7 @@ function setupGalleryExplorer() {
 }
 
 const galleryLocMapEn = {
+    'এসডিসি টাওয়ার, আলীপুর, ফরিদপুর': 'SDC Tower, Alipur, Faridpur',
     'কারু শিখা প্রধান কার্যালয়': 'Karu Shikha Headquarters, Faridpur',
     'সরকারি রাজেন্দ্র কলেজ, ফরিদপুর': 'Govt Rajendra College, Faridpur',
     'লার্নিং সেন্টার, ফরিদপুর': 'Karu Shikha Learning Center, Faridpur',
@@ -1261,6 +1269,8 @@ window.openGalleryLightbox = function(filename) {
     const title = document.getElementById('lightbox-title');
     const loc = document.getElementById('lightbox-location');
     const tagEl = document.getElementById('lightbox-tag');
+    const fbContainer = document.getElementById('lightbox-fb-link-container');
+    const fbLink = document.getElementById('lightbox-fb-link');
 
     if (!lightbox || !img) return;
 
@@ -1282,6 +1292,15 @@ window.openGalleryLightbox = function(filename) {
         if (title) title.textContent = titleText;
         if (loc) loc.textContent = `📍 ${locName} • ${dateText}`;
         if (tagEl) tagEl.textContent = currentLang === 'bn' ? (item.tag || 'মাঠপর্যায়ের স্থিরচিত্র') : (categoryTagMap[item.category] || 'Field Photograph');
+
+        if (fbContainer && fbLink) {
+            if (item.facebook_url) {
+                fbLink.href = item.facebook_url;
+                fbContainer.classList.remove('hidden');
+            } else {
+                fbContainer.classList.add('hidden');
+            }
+        }
     }
 
     lightbox.classList.remove('hidden');
