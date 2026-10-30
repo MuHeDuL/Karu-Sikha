@@ -1,6 +1,6 @@
 /**
  * Karu Shikha Youth Development Society - Verified Event Photo Gallery Data
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ভেরিফায়েড ফটো গ্যালারি ডেটা
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ভেরিফায়েড ফটো গ্যালারি ডেটা (Strict Chronological Descending)
  */
 
 window.KARU_SHIKHA_GALLERY = [
@@ -260,7 +260,7 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "medical-camp-children.jpg"
   },
   {
-    "file": "registration-certificate-post.jpg",
+    "file": "registration-certificate.jpg",
     "title": "যুব উন্নয়ন অধিদপ্তর থেকে কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির সরকারি নিবন্ধন সনদ অর্জন",
     "title_en": "Official Registration Certificate Award from Department of Youth Development",
     "category": "partnership",
@@ -270,9 +270,9 @@ window.KARU_SHIKHA_GALLERY = [
     "date_en": "18 July 2026",
     "location": "যুব উন্নয়ন অধিদপ্তর, ফরিদপুর",
     "location_en": "Department of Youth Development, Faridpur",
-    "facebook_url": "https://www.facebook.com/61560289663754/posts/122222185718342988/",
+    "facebook_url": "",
     "size_kb": 84.4,
-    "src": "registration-certificate-post.jpg"
+    "src": "registration-certificate.jpg"
   },
   {
     "file": "gbv-leadership-1.jpg",
@@ -578,8 +578,8 @@ window.KARU_SHIKHA_GALLERY = [
     "file": "advisor-rizwana-hasan.jpg",
     "title": "পরিবেশ ও জলবায়ু পরিবর্তন মন্ত্রণালয়ের মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
     "title_en": "Courtesy Meeting with Honorable Advisor Syeda Rizwana Hasan, Ministry of Environment, Forest and Climate Change",
-    "category": "partnership",
-    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
+    "category": "climate",
+    "category_bn": "পরিবেশ ও জলবায়ু",
     "tag": "উপদেষ্টা পর্ষদ ও মতবিনিময়",
     "date": "২১ জানুয়ারি ২০২৬",
     "date_en": "21 January 2026",
@@ -678,6 +678,21 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122195040488342988/",
     "size_kb": 150.5,
     "src": "courtyard-cb-ghat.jpg"
+  },
+  {
+    "file": "courtyard-vegetable-farming.jpg",
+    "title": "৭ দিন মেয়াদি উঠানে সবজি চাষ প্রশিক্ষণ ও নিরাপদ পুষ্টিকর খাদ্য উৎপাদন",
+    "title_en": "7-Day Practical Courtyard Vegetable Farming Training & Organic Food Production",
+    "category": "climate",
+    "category_bn": "পরিবেশ ও জলবায়ু",
+    "tag": "উঠানে সবজি চাষ",
+    "date": "০৫ অক্টোবর ২০২৫",
+    "date_en": "05 October 2025",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122192788760342988/",
+    "size_kb": 224.2,
+    "src": "courtyard-vegetable-farming.jpg"
   },
   {
     "file": "climate-olympiad-2025.jpg",
