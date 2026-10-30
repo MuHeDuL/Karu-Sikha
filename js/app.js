@@ -12,7 +12,7 @@ const translations = {
         "brand_subtitle": "ইয়ুথ ডেভেলপমেন্ট সোসাইটি",
         "nav_about": "আমাদের কথা",
         "nav_projects": "প্রকল্পসমূহ",
-        "nav_activities": "কার্যক্রম (৬৯টি)",
+        "nav_activities": "কার্যক্রম (৬৩টি)",
         "nav_committee": "কার্যনির্বাহী পরিষদ",
         "nav_gallery": "ফটো গ্যালারি",
         "nav_contact": "যোগাযোগ",
@@ -125,19 +125,19 @@ const translations = {
         "ewgsf_btn_join": "প্রশিক্ষণে অংশগ্রহণ করুন",
         "ewgsf_btn_donate": "নারী স্বাবলম্বিতা তহবিলে দান করুন",
         "activities_tag": "মাঠপর্যায়ের সমৃদ্ধ অভিজ্ঞতা",
-        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৬৯টি মাইলফলক)",
-        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৯টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
+        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৬৩টি মাইলফলক)",
+        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৩টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
         "activities_search_placeholder": "কার্যক্রম খুঁজুন (যেমন: ক্লাইমেট, রক্তদান, WaterAid, হ্যান্ড পেইন্ট, সমতায় তারুণ্য...)",
         "activities_hint": "💡 কীওয়ার্ড লিখে বা ক্যাটাগরি বেছে ফিল্টার করুন",
-        "act_cat_all": "সব কার্যক্রম (৬৯)",
+        "act_cat_all": "সব কার্যক্রম (৬৩)",
         "act_cat_climate": "🌍 জলবায়ু ও টেকসই কৃষি (১১)",
-        "act_cat_women": "👩 নারী ও সমতায় তারুণ্য (১২)",
+        "act_cat_women": "👩 নারী ও সমতায় তারুণ্য (১১)",
         "act_cat_children": "📚 শিশু শিক্ষা ও স্বাস্থ্য (৫)",
-        "act_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৮)",
+        "act_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৬)",
         "act_cat_humanitarian": "🤝 মানবিক সেবা ও সম্প্রীতি (৯)",
-        "act_cat_partnership": "🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২৪)",
-        "activities_count_badge": "প্রদর্শিত: ৬৯টি কার্যক্রম",
-        "act_view_all_btn": "সবগুলো ৬৯টি কার্যক্রম দেখুন (+৫৭টি আরো) ▾",
+        "act_cat_partnership": "🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২১)",
+        "activities_count_badge": "প্রদর্শিত: ৬৩টি কার্যক্রম",
+        "act_view_all_btn": "সবগুলো ৬৩টি কার্যক্রম দেখুন (+৫১টি আরো) ▾",
         "comm_tag": "নেতৃত্ব ও সাংগঠনিক কাঠামো",
         "comm_reg_badge": "নিবন্ধন নং: যুউঅ-৯৭",
         "comm_title": "কার্যনির্বাহী পরিষদ ও সম্মানিত সদস্য তালিকা",
@@ -149,12 +149,12 @@ const translations = {
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
         "gallery_title": "কারু শিখার কার্যক্রমের ফটো গ্যালারি",
         "gallery_desc": "আমাদের বিভিন্ন প্রকল্প, শিশু শিক্ষা সহায়তা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ এবং হস্তশিল্প কর্মশালার বাস্তব ছবিসমূহ।",
-        "gal_cat_all": "সব ছবি (৩২)",
-        "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (১০)",
-        "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৭)",
-        "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৮)",
-        "gal_cat_humanitarian": "🤝 মানবিক ও রক্তদান (২)",
-        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (৫)",
+        "gal_cat_all": "সব ছবি (৪৪)",
+        "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (৯)",
+        "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৫)",
+        "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৫)",
+        "gal_cat_humanitarian": "🤝 মানবিক ও রক্তদান (৭)",
+        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৩)",
         "volunteer_cta_title": "কারু শিখার আলোকযাত্রায় যুক্ত হোন",
         "volunteer_cta_desc": "২০১৯ সাল থেকে শুরু হওয়া আমাদের সামাজিক বিপ্লবে আপনার সক্রিয় অংশগ্রহণ, মেধা কিংবা সামর্থ্য দিয়ে সমাজ বিনির্মাণে ভূমিকা রাখুন।",
         "btn_apply_volunteer": "ভলান্টিয়ার ফর্ম পূরণ করুন",
@@ -200,7 +200,7 @@ const translations = {
         "footer_pym": "Project Your Mentor (PYM)",
         "footer_coks": "Climate Olympiad (COKS)",
         "footer_ewgsf": "EWGSF প্রকল্প (নারী স্বাবলম্বিতা)",
-        "footer_act": "৬৯টি বাস্তব কার্যক্রম",
+        "footer_act": "৬৩টি বাস্তব কার্যক্রম",
         "lb_btn_fb": "ফেসবুকে মূল পোস্ট দেখুন",
         "footer_emergency": "জরুরি যোগাযোগ",
         "footer_fb": "ফেসবুক পেজ ফলো করুন",
@@ -371,7 +371,7 @@ const translations = {
         "brand_subtitle": "Youth Development Society",
         "nav_about": "About Us",
         "nav_projects": "Projects",
-        "nav_activities": "Activities (69)",
+        "nav_activities": "Activities (63)",
         "nav_committee": "Leadership",
         "nav_gallery": "Photo Gallery",
         "nav_contact": "Contact Us",
@@ -484,19 +484,19 @@ const translations = {
         "ewgsf_btn_join": "Enroll in Training",
         "ewgsf_btn_donate": "Donate to Women Enterprise Fund",
         "activities_tag": "Rich Field Legacy",
-        "activities_title": "Key Activities of Karu Shikha (69 Milestones)",
-        "activities_desc": "Explore all 69 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
+        "activities_title": "Key Activities of Karu Shikha (63 Milestones)",
+        "activities_desc": "Explore all 63 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
         "activities_search_placeholder": "Search activities (e.g. Climate, Blood, WaterAid, Hand Paint, Equality...)",
         "activities_hint": "💡 Filter by keyword or choose category pill above",
-        "act_cat_all": "All Milestones (69)",
+        "act_cat_all": "All Milestones (63)",
         "act_cat_climate": "🌍 Climate & Ecology (11)",
-        "act_cat_women": "👩 Women & Equality (12)",
+        "act_cat_women": "👩 Women & Equality (11)",
         "act_cat_children": "📚 Child Education & Health (5)",
-        "act_cat_craft": "🎨 Handcraft & Enterprise (8)",
+        "act_cat_craft": "🎨 Handcraft & Enterprise (6)",
         "act_cat_humanitarian": "🤝 Humanitarian & Blood (9)",
-        "act_cat_partnership": "🏛️ Governance & Partnerships (24)",
-        "activities_count_badge": "Displaying: 69 Milestones",
-        "act_view_all_btn": "View All 69 Milestones (+57 more) ▾",
+        "act_cat_partnership": "🏛️ Governance & Partnerships (21)",
+        "activities_count_badge": "Displaying: 63 Milestones",
+        "act_view_all_btn": "View All 63 Milestones (+51 more) ▾",
         "comm_tag": "Leadership & Organization",
         "comm_reg_badge": "Reg No: YuU-97",
         "comm_title": "Leadership & Members Directory",
@@ -508,11 +508,11 @@ const translations = {
         "gallery_tag": "Field Photographs",
         "gallery_title": "Official Field Photo Gallery",
         "gallery_desc": "Glimpse our on-ground grassroots journey across child mentoring, Climate Olympiad, sanitary napkin distribution, and artisan workshops.",
-        "gal_cat_all": "All Photos (32)",
-        "gal_cat_climate": "🌍 Climate & Ecology (10)",
-        "gal_cat_children": "📚 Child Mentoring & PYM (7)",
-        "gal_cat_women": "👩 Women & Health (8)",
-        "gal_cat_humanitarian": "🤝 Humanitarian & Blood (2)",
+        "gal_cat_all": "All Photos (44)",
+        "gal_cat_climate": "🌍 Climate & Ecology (9)",
+        "gal_cat_children": "📚 Child Mentoring & PYM (5)",
+        "gal_cat_women": "👩 Women & Health (5)",
+        "gal_cat_humanitarian": "🤝 Humanitarian & Blood (7)",
         "gal_cat_partnership": "🌐 Partnerships & Forum (5)",
         "volunteer_cta_title": "Become a Torchbearer of Karu Shikha",
         "volunteer_cta_desc": "Join our community journey started in 2019. Your contribution of passion, skills, or resources sparks lasting generational change.",
@@ -559,7 +559,7 @@ const translations = {
         "footer_pym": "Project Your Mentor (PYM)",
         "footer_coks": "Climate Olympiad (COKS)",
         "footer_ewgsf": "EWGSF Project (Women Self-Reliance)",
-        "footer_act": "69 Grassroots Milestones",
+        "footer_act": "63 Grassroots Milestones",
         "lb_btn_fb": "View Original FB Post",
         "footer_emergency": "Emergency Contact",
         "footer_fb": "Follow Facebook Page",
@@ -894,22 +894,22 @@ function applyTranslations(lang) {
     // Activity filter pills labels
     const activityCatMap = {
         bn: {
-            'all': 'সব কার্যক্রম (৬৯)',
+            'all': 'সব কার্যক্রম (৬৩)',
             'climate': '🌍 জলবায়ু ও টেকসই কৃষি (১১)',
-            'women': '👩 নারী ও সমতায় তারুণ্য (১২)',
+            'women': '👩 নারী ও সমতায় তারুণ্য (১১)',
             'children': '📚 শিশু শিক্ষা ও স্বাস্থ্য (৫)',
-            'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৮)',
+            'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৬)',
             'humanitarian': '🤝 মানবিক সেবা ও সম্প্রীতি (৯)',
-            'partnership': '🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২৪)'
+            'partnership': '🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২১)'
         },
         en: {
-            'all': 'All Milestones (69)',
+            'all': 'All Milestones (63)',
             'climate': '🌍 Climate & Ecology (11)',
-            'women': '👩 Women & Equality (12)',
+            'women': '👩 Women & Equality (11)',
             'children': '📚 Child Education & Health (5)',
-            'craft': '🎨 Handcraft & Enterprise (8)',
+            'craft': '🎨 Handcraft & Enterprise (6)',
             'humanitarian': '🤝 Humanitarian & Blood (9)',
-            'partnership': '🏛️ Governance & Partnerships (24)'
+            'partnership': '🏛️ Governance & Partnerships (21)'
         }
     };
 
@@ -923,19 +923,19 @@ function applyTranslations(lang) {
     // Gallery filter pills labels
     const galleryCatMap = {
         bn: {
-            'all': 'সব ছবি (৩২)',
-            'climate': '🌍 জলবায়ু ও পরিবেশ (১০)',
-            'children': '📚 শিশু শিক্ষা ও PYM (৭)',
-            'women': '👩 নারী ও স্বাস্থ্য (৮)',
-            'humanitarian': '🤝 মানবিক ও রক্তদান (২)',
-            'partnership': '🌐 পার্টনারশিপ ও সভা (৫)'
+            'all': 'সব ছবি (৪৪)',
+            'climate': '🌍 জলবায়ু ও পরিবেশ (৯)',
+            'children': '📚 শিশু শিক্ষা ও PYM (৫)',
+            'women': '👩 নারী ও স্বাস্থ্য (৫)',
+            'humanitarian': '🤝 মানবিক ও রক্তদান (৭)',
+            'partnership': '🌐 পার্টনারশিপ ও সভা (১৩)'
         },
         en: {
-            'all': 'All Photos (32)',
-            'climate': '🌍 Climate & Ecology (10)',
-            'children': '📚 Child Mentoring & PYM (7)',
-            'women': '👩 Women & Health (8)',
-            'humanitarian': '🤝 Humanitarian & Blood (2)',
+            'all': 'All Photos (44)',
+            'climate': '🌍 Climate & Ecology (9)',
+            'children': '📚 Child Mentoring & PYM (5)',
+            'women': '👩 Women & Health (5)',
+            'humanitarian': '🤝 Humanitarian & Blood (7)',
             'partnership': '🌐 Partnerships & Forum (5)'
         }
     };
@@ -1097,8 +1097,8 @@ function renderActivities() {
 
     if (countDisplay) {
         countDisplay.textContent = currentLang === 'bn' 
-            ? `প্রদর্শিত: ${filtered.length} / মোট ৬৯টি কার্যক্রম` 
-            : `Showing: ${filtered.length} of 69 Milestones`;
+            ? `প্রদর্শিত: ${filtered.length} / মোট ${all.length}টি কার্যক্রম` 
+            : `Showing: ${filtered.length} of ${all.length} Milestones`;
     }
 
     const itemsToDisplay = showAllActivities ? filtered : filtered.slice(0, INITIAL_VISIBLE_COUNT);
@@ -1113,8 +1113,8 @@ function renderActivities() {
                 toggleBtn.textContent = currentLang === 'bn' ? 'সংক্ষিপ্ত করুন ▴' : 'Show Less ▴';
             } else {
                 toggleBtn.textContent = currentLang === 'bn' 
-                    ? `সবগুলো ৬৯টি কার্যক্রম দেখুন (+${remaining}টি আরো) ▾` 
-                    : `View All 69 Milestones (+${remaining} more) ▾`;
+                    ? `সবগুলো ${all.length}টি কার্যক্রম দেখুন (+${remaining}টি আরো) ▾` 
+                    : `View All ${all.length} Milestones (+${remaining} more) ▾`;
             }
         }
     }
@@ -1272,7 +1272,7 @@ function renderGallery() {
     container.innerHTML = filtered.map(item => {
         const titleText = currentLang === 'bn' ? item.title : (item.title_en || item.title);
         const tagText = currentLang === 'bn' ? item.tag : (categoryTagMap[item.category] || 'Field Action');
-        const locText = currentLang === 'bn' ? item.location : (galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
+        const locText = currentLang === 'bn' ? item.location : (item.location_en || galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
         const viewText = currentLang === 'bn' ? '🔍 বড় করে দেখুন' : '🔍 View Full';
 
         return `
@@ -1325,7 +1325,7 @@ window.openGalleryLightbox = function(filename) {
             'partnership': 'Partnerships & Forum'
         };
         const titleText = currentLang === 'bn' ? item.title : (item.title_en || item.title);
-        const locName = currentLang === 'bn' ? item.location : (galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
+        const locName = currentLang === 'bn' ? item.location : (item.location_en || galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
         const dateText = formatDisplayDate(item.date, item.date_en);
         
         img.src = `assets/gallery/${item.file}`;
