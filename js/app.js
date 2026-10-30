@@ -2664,30 +2664,6 @@ function renderMembers() {
                             ? 'কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির তৃণমূল পর্যায়ে শিশু শিক্ষা সম্প্রসারণ, জরুরি রক্তদান, ক্লাইমেট ক্যাম্পেইন, ত্রাণ বিতরণ ও প্রান্তিক জনগোষ্ঠীর ক্ষমতায়নে সার্বক্ষণিক নিবেদিত ৩০ জন সাধারণ সদস্য নিবন্ধিত রয়েছেন।'
                             : 'Karu Shikha Youth Development Society has 30 registered general members actively dedicated to grassroots child education, emergency blood donation, climate advocacy, relief distribution, and community empowerment.'}
                     </p>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 text-left">
-                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/40 transition-colors">
-                            <div class="text-2xl mb-1.5">🩸</div>
-                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'জরুরি রক্তদান' : 'Emergency Blood'}</div>
-                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'মুহূর্তেই রক্তদাতা সমন্বয়' : 'Rapid donor coordination'}</div>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-sky-500/40 transition-colors">
-                            <div class="text-2xl mb-1.5">📚</div>
-                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'শিশু শিক্ষা (PYM)' : 'Child Education (PYM)'}</div>
-                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'সুবিধাবঞ্চিতদের পাঠদান' : 'Mentoring underprivileged'}</div>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/40 transition-colors">
-                            <div class="text-2xl mb-1.5">🌍</div>
-                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'ক্লাইমেট অলিম্পিয়াড' : 'Climate Action'}</div>
-                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'বৃক্ষরোপণ ও বর্জ্য ক্যাম্প' : 'Afforestation & waste drive'}</div>
-                        </div>
-                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-orange-500/40 transition-colors">
-                            <div class="text-2xl mb-1.5">🤝</div>
-                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'মানবিক সহায়তা' : 'Relief & Aid'}</div>
-                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'শীতবস্ত্র ও জরুরি খাদ্য' : 'Winter clothing & food aid'}</div>
-                        </div>
-                    </div>
-
                     <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-3 p-3.5 rounded-2xl bg-slate-950/80 border border-white/10 text-xs text-slate-400 max-w-2xl mx-auto mb-6">
                         <span class="text-amber-400 text-sm">🔒</span>
                         <span>${currentLang === 'bn' 
