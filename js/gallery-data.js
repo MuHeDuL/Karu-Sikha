@@ -1,6 +1,6 @@
 /**
- * Karu Shikha Youth Development Society - Verified Real Photo Gallery (44 Items)
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির 44টি বাস্তব কার্যক্রমের ভেরিফাইড আলোকচিত্র গ্যালারি
+ * Karu Shikha Youth Development Society - Verified Real Photo Gallery (48 Items)
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির 48টি বাস্তব কার্যক্রমের ভেরিফাইড আলোকচিত্র গ্যালারি
  * Chronologically sorted (Newest first, descending)
  */
 
@@ -576,6 +576,36 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "wateraid-household-survey.jpg"
   },
   {
+    "file": "disability-rights-assembly.jpg",
+    "title": "আন্তর্জাতিক প্রতিবন্ধী দিবস উপলক্ষে অধিকার সুরক্ষা ও অন্তর্ভুক্তিমূলক সমাজ বিনির্মাণে আলোচনা সভা",
+    "title_en": "Advocacy & Discussion on Rights of Persons with Disabilities for an Inclusive Society",
+    "category": "humanitarian",
+    "category_bn": "মানবিক ও রক্তদান",
+    "tag": "প্রতিবন্ধী অধিকার ও অন্তর্ভুক্তি",
+    "date": "০৩ ডিসেম্বর ২০২৫",
+    "date_en": "03 December 2025",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/share/p/195RAZekXS/",
+    "size_kb": 177.2,
+    "src": "disability-rights-assembly.jpg"
+  },
+  {
+    "file": "digital-violence-campaign.jpg",
+    "title": "নারী ও কন্যাদের প্রতি ডিজিটাল সহিংসতা প্রতিরোধে অনলাইন সচেতনতামূলক ক্যাম্পেইন",
+    "title_en": "Online Awareness Campaign Preventing Digital Gender-Based Violence Against Women and Girls",
+    "category": "women",
+    "category_bn": "সমতা ও নারী ক্ষমতায়ন",
+    "tag": "ডিজিটাল সহিংসতা প্রতিরোধ",
+    "date": "২৫ নভেম্বর ২০২৫",
+    "date_en": "25 November 2025",
+    "location": "অনলাইন ক্যাম্পেইন, ফরিদপুর",
+    "location_en": "Online Campaign, Faridpur",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122198574170342988/",
+    "size_kb": 41.2,
+    "src": "digital-violence-campaign.jpg"
+  },
+  {
     "file": "lead-pollution-campaign.jpg",
     "title": "সিসামুক্ত বাংলাদেশ গড়ার প্রত্যয়ে কলেজভিত্তিক সিসা দূষণবিরোধী সচেতনতা ক্যাম্পেইন",
     "title_en": "College-based Lead Pollution Prevention & Awareness Campaign",
@@ -589,6 +619,21 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122196173108342988/",
     "size_kb": 363.7,
     "src": "lead-pollution-campaign.jpg"
+  },
+  {
+    "file": "courtyard-cb-ghat.jpg",
+    "title": "পদ্মা নদীর তীরবর্তী সিঅ্যান্ডবি ঘাট এলাকায় কিশোরীদের স্বাস্থ্য ও মানসিক সুস্থতা বিষয়ক উঠান বৈঠক",
+    "title_en": "Courtyard Health & Mental Hygiene Session at Padma Riverbank C&B Ghat Area",
+    "category": "women",
+    "category_bn": "সমতা ও নারী ক্ষমতায়ন",
+    "tag": "কিশোরী স্বাস্থ্য ও উঠান বৈঠক",
+    "date": "২৪ অক্টোবর ২০২৫",
+    "date_en": "24 October 2025",
+    "location": "সিএন্ডবি ঘাট পদ্মা নদীর তীরবর্তী এলাকা, ফরিদপুর",
+    "location_en": "Padma Riverbank Area, C&B Ghat, Faridpur",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122195040488342988/",
+    "size_kb": 150.5,
+    "src": "courtyard-cb-ghat.jpg"
   },
   {
     "file": "climate-olympiad-2025.jpg",
@@ -664,5 +709,20 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/",
     "size_kb": 140.7,
     "src": "women-6.jpg"
+  },
+  {
+    "file": "advisor-rizwana-hasan.jpg",
+    "title": "পরিবেশ ও জলবায়ু পরিবর্তন মন্ত্রণালয়ের মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
+    "title_en": "Courtesy Meeting with Honorable Advisor Syeda Rizwana Hasan, Ministry of Environment, Forest and Climate Change",
+    "category": "partnership",
+    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
+    "tag": "উপদেষ্টা পর্ষদ ও মতবিনিময়",
+    "date": "২৬ সেপ্টেম্বর ২০২৪",
+    "date_en": "26 September 2024",
+    "location": "ঢাকা",
+    "location_en": "Dhaka",
+    "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/",
+    "size_kb": 88.7,
+    "src": "advisor-rizwana-hasan.jpg"
   }
 ];
