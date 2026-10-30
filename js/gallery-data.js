@@ -260,21 +260,6 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "medical-camp-children.jpg"
   },
   {
-    "file": "registration-certificate.jpg",
-    "title": "যুব উন্নয়ন অধিদপ্তর থেকে কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির সরকারি নিবন্ধন সনদ অর্জন",
-    "title_en": "Official Registration Certificate Award from Department of Youth Development",
-    "category": "partnership",
-    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
-    "tag": "সরকারি নিবন্ধন",
-    "date": "১৮ জুলাই ২০২৬",
-    "date_en": "18 July 2026",
-    "location": "যুব উন্নয়ন অধিদপ্তর, ফরিদপুর",
-    "location_en": "Department of Youth Development, Faridpur",
-    "facebook_url": "",
-    "size_kb": 84.4,
-    "src": "registration-certificate.jpg"
-  },
-  {
     "file": "gbv-leadership-1.jpg",
     "title": "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা",
     "title_en": "Discussion on Gender-Based Violence (GBV) & Leadership at Karu Shikha Office",

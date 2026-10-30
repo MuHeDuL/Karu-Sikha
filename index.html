@@ -714,7 +714,7 @@
             <!-- Category Filter Tabs -->
             <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8">
                 <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-orange-400 bg-[#f97316] text-white shadow-lg shadow-orange-500/20 cursor-pointer" data-filter="all" data-i18n="gal_cat_all">
-                    সব ছবি (৫০)
+                    সব ছবি (৪৯)
                 </button>
                 <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="climate" data-i18n="gal_cat_climate">
                     🌍 জলবায়ু ও পরিবেশ (১১)
@@ -732,13 +732,20 @@
                     🎨 হস্তশিল্প ও উদ্যোক্তা (৫)
                 </button>
                 <button type="button" class="gallery-cat-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-filter="partnership" data-i18n="gal_cat_partnership">
-                    🌐 পার্টনারশিপ ও সভা (১৫)
+                    🌐 পার্টনারশিপ ও সভা (১৪)
                 </button>
             </div>
 
             <!-- Dynamic Gallery Grid Container (Populated from js/gallery-data.js) -->
             <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 items-stretch">
                 <!-- Populated dynamically via JS -->
+            </div>
+
+            <!-- View All / Show Less Button for Gallery -->
+            <div class="text-center mt-8 sm:mt-10">
+                <button id="toggle-gallery-btn" type="button" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#f97316] via-[#ea580c] to-[#0284c7] text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-orange-500/25 transition-all transform hover:-translate-y-0.5 cursor-pointer" data-i18n="gal_view_all_btn">
+                    সবগুলো ৪৯টি ছবি দেখুন (+৩৭টি আরো) ▾
+                </button>
             </div>
         </div>
     </section>
@@ -879,7 +886,7 @@
                             </div>
 
                             <!-- Registration Certificate Badge Button -->
-                            <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-950/60 border border-emerald-500/40">
+                            <div id="registration-certificate-card" class="flex items-center justify-between p-3 rounded-2xl bg-slate-950/60 border border-emerald-500/40 transition-all duration-300">
                                 <div class="flex items-center gap-3">
                                     <span class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg shrink-0">📜</span>
                                     <div>
@@ -1713,11 +1720,11 @@
     </aside>
 
     <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
-    <script src="js/activities-data.js?v=20261030m"></script>
-    <script src="js/gallery-data.js?v=20261030m"></script>
-    <script src="js/members-data.js?v=20261030m"></script>
-    <script src="js/logo-points.js?v=20261030m"></script>
-    <script src="js/three-scene.js?v=20261030m"></script>
-    <script src="js/app.js?v=20261030m"></script>
+    <script src="js/activities-data.js?v=20261030n"></script>
+    <script src="js/gallery-data.js?v=20261030n"></script>
+    <script src="js/members-data.js?v=20261030n"></script>
+    <script src="js/logo-points.js?v=20261030n"></script>
+    <script src="js/three-scene.js?v=20261030n"></script>
+    <script src="js/app.js?v=20261030n"></script>
 </body>
 </html>

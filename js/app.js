@@ -149,13 +149,14 @@ const translations = {
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
         "gallery_title": "কারু শিখার কার্যক্রমের ফটো গ্যালারি",
         "gallery_desc": "আমাদের বিভিন্ন প্রকল্প, শিশু শিক্ষা সহায়তা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ এবং হস্তশিল্প কর্মশালার বাস্তব ছবিসমূহ।",
-        "gal_cat_all": "সব ছবি (৫০)",
+        "gal_cat_all": "সব ছবি (৪৯)",
         "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (১১)",
         "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৫)",
         "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৭)",
         "gal_cat_humanitarian": "🤝 মানবিক সেবা ও রক্তদান (৭)",
         "gal_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৫)",
-        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৫)",
+        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৪)",
+        "gal_view_all_btn": "সবগুলো ৪৯টি ছবি দেখুন (+৩৭টি আরো) ▾",
         "volunteer_cta_title": "কারু শিখার আলোকযাত্রায় যুক্ত হোন",
         "volunteer_cta_desc": "২০১৯ সাল থেকে শুরু হওয়া আমাদের সামাজিক বিপ্লবে আপনার সক্রিয় অংশগ্রহণ, মেধা কিংবা সামর্থ্য দিয়ে সমাজ বিনির্মাণে ভূমিকা রাখুন।",
         "btn_apply_volunteer": "ভলান্টিয়ার ফর্ম পূরণ করুন",
@@ -509,13 +510,14 @@ const translations = {
         "gallery_tag": "Field Photographs",
         "gallery_title": "Official Field Photo Gallery",
         "gallery_desc": "Glimpse our on-ground grassroots journey across child mentoring, Climate Olympiad, sanitary napkin distribution, and artisan workshops.",
-        "gal_cat_all": "All Photos (50)",
+        "gal_cat_all": "All Photos (49)",
         "gal_cat_climate": "🌍 Climate & Ecology (11)",
         "gal_cat_children": "📚 Child Mentoring & PYM (5)",
         "gal_cat_women": "👩 Women & Health (7)",
         "gal_cat_humanitarian": "🤝 Humanitarian & Blood (7)",
         "gal_cat_craft": "🎨 Crafts & Enterprise (5)",
-        "gal_cat_partnership": "🌐 Partnerships & Forum (15)",
+        "gal_cat_partnership": "🌐 Partnerships & Forum (14)",
+        "gal_view_all_btn": "View All 49 Photos (+37 more) ▾",
         "volunteer_cta_title": "Become a Torchbearer of Karu Shikha",
         "volunteer_cta_desc": "Join our community journey started in 2019. Your contribution of passion, skills, or resources sparks lasting generational change.",
         "btn_apply_volunteer": "Submit Volunteer Application",
@@ -925,22 +927,22 @@ function applyTranslations(lang) {
     // Gallery filter pills labels
     const galleryCatMap = {
         bn: {
-            'all': 'সব ছবি (৫০)',
+            'all': 'সব ছবি (৪৯)',
             'climate': '🌍 জলবায়ু ও পরিবেশ (১১)',
             'children': '📚 শিশু শিক্ষা ও PYM (৫)',
             'women': '👩 নারী ও স্বাস্থ্য (৭)',
             'humanitarian': '🤝 মানবিক সেবা ও রক্তদান (৭)',
             'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৫)',
-            'partnership': '🌐 পার্টনারশিপ ও সভা (১৫)'
+            'partnership': '🌐 পার্টনারশিপ ও সভা (১৪)'
         },
         en: {
-            'all': 'All Photos (50)',
+            'all': 'All Photos (49)',
             'climate': '🌍 Climate & Ecology (11)',
             'children': '📚 Child Mentoring & PYM (5)',
             'women': '👩 Women & Health (7)',
             'humanitarian': '🤝 Humanitarian & Blood (7)',
             'craft': '🎨 Crafts & Enterprise (5)',
-            'partnership': '🌐 Partnerships & Forum (15)'
+            'partnership': '🌐 Partnerships & Forum (14)'
         }
     };
 
@@ -1256,6 +1258,9 @@ const galleryLocMapEn = {
     'ফরিদপুর ডায়াবেটিক হাসপাতাল': 'Faridpur Diabetic Hospital'
 };
 
+const INITIAL_GALLERY_COUNT = 12;
+let showAllGallery = false;
+
 function renderGallery() {
     const container = document.getElementById('gallery-grid');
     if (!container || !window.KARU_SHIKHA_GALLERY) return;
@@ -1265,15 +1270,35 @@ function renderGallery() {
         return currentGalleryFilter === 'all' || item.category === currentGalleryFilter;
     });
 
+    const toggleBtn = document.getElementById('toggle-gallery-btn');
+    if (toggleBtn) {
+        if (filtered.length <= INITIAL_GALLERY_COUNT) {
+            toggleBtn.classList.add('hidden');
+        } else {
+            toggleBtn.classList.remove('hidden');
+            const remaining = filtered.length - INITIAL_GALLERY_COUNT;
+            if (showAllGallery) {
+                toggleBtn.textContent = currentLang === 'bn' ? 'সংক্ষিপ্ত করুন ▴' : 'Show Less ▴';
+            } else {
+                toggleBtn.textContent = currentLang === 'bn' 
+                    ? `সবগুলো ${filtered.length}টি ছবি দেখুন (+${remaining}টি আরো) ▾` 
+                    : `View All ${filtered.length} Photos (+${remaining} more) ▾`;
+            }
+        }
+    }
+
+    const itemsToDisplay = showAllGallery ? filtered : filtered.slice(0, INITIAL_GALLERY_COUNT);
+
     const categoryTagMap = {
         'children': 'Child Mentoring (PYM)',
         'climate': 'Climate & Ecology',
         'women': 'Women Empowerment (EWGSF)',
         'humanitarian': 'Humanitarian & Blood',
+        'craft': 'Crafts & Enterprise',
         'partnership': 'Partnerships & Forum'
     };
 
-    container.innerHTML = filtered.map(item => {
+    container.innerHTML = itemsToDisplay.map(item => {
         const titleText = currentLang === 'bn' ? item.title : (item.title_en || item.title);
         const tagText = currentLang === 'bn' ? item.tag : (categoryTagMap[item.category] || 'Field Action');
         const locText = currentLang === 'bn' ? item.location : (item.location_en || galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
@@ -2848,4 +2873,30 @@ window.downloadMemberVCard = async function(member) {
         ? `📥 ${nameEn}-এর ভি-কার্ড (.vcf) সেভ হয়েছে!`
         : `📥 vCard (.vcf) saved for ${nameEn}!`;
     showToast(msg);
+};
+
+// Global function to scroll to Certificate in Contact Section & open modal
+window.goToCertificateSection = function() {
+    const certCard = document.getElementById('registration-certificate-card');
+    const contactSection = document.getElementById('contact');
+    
+    if (certCard) {
+        certCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        certCard.classList.add('ring-2', 'ring-emerald-400', 'ring-offset-2', 'ring-offset-slate-900');
+        setTimeout(() => {
+            certCard.classList.remove('ring-2', 'ring-emerald-400', 'ring-offset-2', 'ring-offset-slate-900');
+            if (typeof openCertificateModal === 'function') {
+                openCertificateModal();
+            }
+        }, 700);
+    } else if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+            if (typeof openCertificateModal === 'function') {
+                openCertificateModal();
+            }
+        }, 600);
+    } else if (typeof openCertificateModal === 'function') {
+        openCertificateModal();
+    }
 };
