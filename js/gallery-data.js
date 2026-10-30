@@ -321,21 +321,6 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "volunteer-award-crest.jpg"
   },
   {
-    "file": "lead-1.jpg",
-    "title": "জরুরি মুমূর্ষু রোগীর জীবন বাঁচাতে কারু শিখা তরুণ স্বেচ্ছাসেবীর স্বেচ্ছায় রক্তদান",
-    "title_en": "Emergency Voluntary Blood Donation by Karu Shikha Youth Volunteer",
-    "category": "humanitarian",
-    "category_bn": "মানবিক ও রক্তদান",
-    "tag": "স্বেচ্ছায় রক্তদান",
-    "date": "২০২৬",
-    "date_en": "2026",
-    "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
-    "location_en": "Faridpur Diabetic Hospital",
-    "facebook_url": "https://www.facebook.com/share/p/1E8M7WjonK/",
-    "size_kb": 156.9,
-    "src": "lead-1.jpg"
-  },
-  {
     "file": "handicraft-center-visit.jpg",
     "title": "আফরোজা হস্তশিল্প ও প্রশিক্ষণ কেন্দ্র পরিদর্শন এবং নারী উদ্যোক্তাদের কাজ পর্যবেক্ষণ",
     "title_en": "Visiting Afroza Handicraft & Training Center and Observing Women Entrepreneurs",
@@ -561,6 +546,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "blood-test-campaign.jpg"
   },
   {
+    "file": "lead-1.jpg",
+    "title": "জরুরি মুমূর্ষু রোগীর জীবন বাঁচাতে কারু শিখা তরুণ স্বেচ্ছাসেবীর স্বেচ্ছায় রক্তদান",
+    "title_en": "Emergency Voluntary Blood Donation by Karu Shikha Youth Volunteer",
+    "category": "humanitarian",
+    "category_bn": "মানবিক ও রক্তদান",
+    "tag": "স্বেচ্ছায় রক্তদান",
+    "date": "জানুয়ারি ২০২৬",
+    "date_en": "January 2026",
+    "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
+    "location_en": "Faridpur Diabetic Hospital",
+    "facebook_url": "https://www.facebook.com/share/p/1E8M7WjonK/",
+    "size_kb": 156.9,
+    "src": "lead-1.jpg"
+  },
+  {
     "file": "wateraid-household-survey.jpg",
     "title": "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে ৬ দিনব্যাপী কমিউনিটি হাউজহোল্ড ওয়াশ সার্ভে",
     "title_en": "6-Day Field WASH Household Survey in Collaboration with WaterAid Bangladesh",
@@ -582,8 +582,8 @@ window.KARU_SHIKHA_GALLERY = [
     "category": "partnership",
     "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
     "tag": "WaterAid ফিল্ড সার্ভে",
-    "date": "২৭ ডিসেম্বর ২০২৫",
-    "date_en": "27 December 2025",
+    "date": "২৪ ডিসেম্বর ২০২৫",
+    "date_en": "24 December 2025",
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122201802650342988/",
