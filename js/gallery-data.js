@@ -32,7 +32,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122232391646342988/",
-    "size_kb": 43.9,
+    "size_kb": 335.6,
     "src": "durga-puja-harmony.jpg"
   },
   {
@@ -62,7 +62,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122231410400342988/",
-    "size_kb": 43.9,
+    "size_kb": 152.6,
     "src": "local-gov-orientation.jpg"
   },
   {
@@ -77,7 +77,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ডিগ্রির চর, ফরিদপুর",
     "location_en": "Digrir Char, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122230825370342988/",
-    "size_kb": 43.9,
+    "size_kb": 183.1,
     "src": "agri-entrepreneur-meet.jpg"
   },
   {
@@ -92,7 +92,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কৃষি সম্প্রসারণ অধিদপ্তর, ফরিদপুর",
     "location_en": "DAE Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122230233080342988/",
-    "size_kb": 43.9,
+    "size_kb": 824.3,
     "src": "agri-deputy-director.jpg"
   },
   {
@@ -107,7 +107,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122229616496342988/",
-    "size_kb": 44.2,
+    "size_kb": 680.5,
     "src": "mind-game-session.jpg"
   },
   {
@@ -122,7 +122,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122229492752342988/",
-    "size_kb": 43.9,
+    "size_kb": 350.9,
     "src": "networking-training.jpg"
   },
   {
@@ -137,7 +137,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228847440342988/",
-    "size_kb": 43.9,
+    "size_kb": 609.7,
     "src": "ewgsf-meetup-2026.jpg"
   },
   {
@@ -152,7 +152,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কারু শিখা কার্যালয়, ফরিদপুর",
     "location_en": "Karu Shikha Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228617526342988/",
-    "size_kb": 43.9,
+    "size_kb": 366.9,
     "src": "climate-core-team.jpg"
   },
   {
@@ -182,7 +182,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
     "location_en": "Faridpur Diabetic Hospital",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122227047626342988/",
-    "size_kb": 43.9,
+    "size_kb": 815.0,
     "src": "diabetes-secretary-visit.jpg"
   },
   {
@@ -197,7 +197,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "জেলা প্রশাসকের কার্যালয়, ফরিদপুর",
     "location_en": "DC Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122225651558342988/",
-    "size_kb": 43.9,
+    "size_kb": 203.6,
     "src": "ngo-coordination-meeting.jpg"
   },
   {
@@ -317,7 +317,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122219442386342988/",
-    "size_kb": 43.9,
+    "size_kb": 432.2,
     "src": "volunteer-award-crest.jpg"
   },
   {
@@ -332,7 +332,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122218611944342988/",
-    "size_kb": 43.9,
+    "size_kb": 218.4,
     "src": "handicraft-center-visit.jpg"
   },
   {
@@ -377,7 +377,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122216493638342988/",
-    "size_kb": 43.9,
+    "size_kb": 505.4,
     "src": "child-justice-ramisa.jpg"
   },
   {
@@ -392,7 +392,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122216377676342988/",
-    "size_kb": 43.9,
+    "size_kb": 518.7,
     "src": "ipyg-partnership-signing.jpg"
   },
   {
@@ -407,7 +407,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "জেলা পরিষদ কার্যালয়, ফরিদপুর",
     "location_en": "District Council Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122215543550342988/",
-    "size_kb": 43.9,
+    "size_kb": 592.6,
     "src": "district-council-admin.jpg"
   },
   {
@@ -437,7 +437,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122213658326342988/",
-    "size_kb": 43.9,
+    "size_kb": 230.0,
     "src": "earth-day-2026.jpg"
   },
   {
@@ -467,7 +467,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122210475938342988/",
-    "size_kb": 44.2,
+    "size_kb": 751.9,
     "src": "climate-agriculture-seed.jpg"
   },
   {
@@ -482,7 +482,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122210182010342988/",
-    "size_kb": 43.9,
+    "size_kb": 938.8,
     "src": "mehedi-festival-2026.jpg"
   },
   {
@@ -497,7 +497,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122210122046342988/",
-    "size_kb": 43.9,
+    "size_kb": 287.4,
     "src": "eid-utsob-stall.jpg"
   },
   {
@@ -512,7 +512,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "সিএন্ডবি ঘাট মাদ্রাসা, ফরিদপুর",
     "location_en": "C&B Ghat Madrasa, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122208916850342988/",
-    "size_kb": 43.9,
+    "size_kb": 192.3,
     "src": "iftar-distribution-2026.jpg"
   },
   {
@@ -527,7 +527,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122206316612342988/",
-    "size_kb": 43.9,
+    "size_kb": 162.0,
     "src": "sign-language-rights.jpg"
   },
   {
@@ -542,7 +542,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122206260380342988/",
-    "size_kb": 43.9,
+    "size_kb": 973.2,
     "src": "blood-test-campaign.jpg"
   },
   {
@@ -572,7 +572,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর সদর",
     "location_en": "Faridpur Sadar",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122202250712342988/",
-    "size_kb": 43.9,
+    "size_kb": 243.4,
     "src": "wateraid-household-survey.jpg"
   },
   {
@@ -587,7 +587,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122196173108342988/",
-    "size_kb": 43.9,
+    "size_kb": 363.7,
     "src": "lead-pollution-campaign.jpg"
   },
   {
@@ -617,7 +617,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "কারু শিখা ক্রাফট ল্যাব, ফরিদপুর",
     "location_en": "Karu Shikha Craft Lab, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122175345014342988/",
-    "size_kb": 43.9,
+    "size_kb": 311.5,
     "src": "paper-seed-pen.jpg"
   },
   {
@@ -632,7 +632,7 @@ window.KARU_SHIKHA_GALLERY = [
     "location": "যুব উন্নয়ন অধিদপ্তর, ফরিদপুর",
     "location_en": "Dept of Youth Development, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122164723886342988/",
-    "size_kb": 43.9,
+    "size_kb": 235.7,
     "src": "hand-paint-training.jpg"
   },
   {
