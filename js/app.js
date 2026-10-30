@@ -12,7 +12,7 @@ const translations = {
         "brand_subtitle": "ইয়ুথ ডেভেলপমেন্ট সোসাইটি",
         "nav_about": "আমাদের কথা",
         "nav_projects": "প্রকল্পসমূহ",
-        "nav_activities": "কার্যক্রম (৬৯টি)",
+        "nav_activities": "কার্যক্রম (৭০টি)",
         "nav_committee": "কার্যনির্বাহী পরিষদ",
         "nav_gallery": "ফটো গ্যালারি",
         "nav_contact": "যোগাযোগ",
@@ -125,23 +125,23 @@ const translations = {
         "ewgsf_btn_join": "প্রশিক্ষণে অংশগ্রহণ করুন",
         "ewgsf_btn_donate": "নারী স্বাবলম্বিতা তহবিলে দান করুন",
         "activities_tag": "মাঠপর্যায়ের সমৃদ্ধ অভিজ্ঞতা",
-        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৬৯টি মাইলফলক)",
-        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৯টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
+        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৭০টি মাইলফলক)",
+        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৭০টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
         "activities_search_placeholder": "কার্যক্রম খুঁজুন (যেমন: ক্লাইমেট, রক্তদান, WaterAid, হ্যান্ড পেইন্ট, সমতায় তারুণ্য...)",
         "activities_hint": "💡 কীওয়ার্ড লিখে বা ক্যাটাগরি বেছে ফিল্টার করুন",
-        "act_cat_all": "সব কার্যক্রম (৬৯)",
-        "act_cat_climate": "🌍 জলবায়ু ও টেকসই কৃষি (১০)",
+        "act_cat_all": "সব কার্যক্রম (৭০)",
+        "act_cat_climate": "🌍 জলবায়ু ও টেকসই কৃষি (১১)",
         "act_cat_women": "👩 নারী ও সমতায় তারুণ্য (১৪)",
         "act_cat_children": "📚 শিশু শিক্ষা ও স্বাস্থ্য (৬)",
         "act_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৮)",
         "act_cat_humanitarian": "🤝 মানবিক সেবা ও সম্প্রীতি (৯)",
         "act_cat_partnership": "🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২২)",
-        "activities_count_badge": "প্রদর্শিত: ৬৯টি কার্যক্রম",
-        "act_view_all_btn": "সবগুলো ৬৯টি কার্যক্রম দেখুন (+৫৭টি আরো) ▾",
+        "activities_count_badge": "প্রদর্শিত: ৭০টি কার্যক্রম",
+        "act_view_all_btn": "সবগুলো ৭০টি কার্যক্রম দেখুন (+৫৮টি আরো) ▾",
         "comm_tag": "নেতৃত্ব ও সাংগঠনিক কাঠামো",
         "comm_reg_badge": "নিবন্ধন নং: যুউঅ-৯৭",
         "comm_title": "কার্যনির্বাহী পরিষদ ও সম্মানিত সদস্য তালিকা",
-        "comm_desc": "কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির সরকারি নিবন্ধনভুক্ত (যুব উন্নয়ন অধিদপ্তর, নিবন্ধন নং: যুউঅ-৯৭) অনুমোদিত পরিষদ ও সাধারণ সদস্যবৃন্দ।",
+        "comm_desc": "কারু শিখার ইয়ুথ ডেভেলপমেন্ট সোসাইটির সরকারি নিবন্ধনভুক্ত (যুব উন্নয়ন অধিদপ্তর, নিবন্ধন নং: যুউঅ-৯৭) অনুমোদিত পরিষদ ও সাধারণ সদস্যবৃন্দ।",
         "comm_tab_exec": "🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ (৭ জন)",
         "comm_tab_gen": "👥 সাধারণ সদস্যবৃন্দ (১৮ জন)",
         "comm_search_ph": "সদস্যের নাম, পদবী, শিক্ষাগত যোগ্যতা বা পেশা দিয়ে খুঁজুন...",
@@ -149,8 +149,8 @@ const translations = {
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
         "gallery_title": "কারু শিখার কার্যক্রমের ফটো গ্যালারি",
         "gallery_desc": "আমাদের বিভিন্ন প্রকল্প, শিশু শিক্ষা সহায়তা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ এবং হস্তশিল্প কর্মশালার বাস্তব ছবিসমূহ।",
-        "gal_cat_all": "সব ছবি (২৭)",
-        "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (৭)",
+        "gal_cat_all": "সব ছবি (২৮)",
+        "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (৮)",
         "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৭)",
         "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৭)",
         "gal_cat_humanitarian": "🤝 মানবিক ও রক্তদান (২)",
@@ -200,7 +200,7 @@ const translations = {
         "footer_pym": "Project Your Mentor (PYM)",
         "footer_coks": "Climate Olympiad (COKS)",
         "footer_ewgsf": "EWGSF প্রকল্প (নারী স্বাবলম্বিতা)",
-        "footer_act": "৬৯টি বাস্তব কার্যক্রম",
+        "footer_act": "৭০টি বাস্তব কার্যক্রম",
         "lb_btn_fb": "ফেসবুকে মূল পোস্ট দেখুন",
         "footer_emergency": "জরুরি যোগাযোগ",
         "footer_fb": "ফেসবুক পেজ ফলো করুন",
@@ -371,7 +371,7 @@ const translations = {
         "brand_subtitle": "Youth Development Society",
         "nav_about": "About Us",
         "nav_projects": "Projects",
-        "nav_activities": "Activities (69)",
+        "nav_activities": "Activities (70)",
         "nav_committee": "Leadership",
         "nav_gallery": "Photo Gallery",
         "nav_contact": "Contact Us",
@@ -484,19 +484,19 @@ const translations = {
         "ewgsf_btn_join": "Enroll in Training",
         "ewgsf_btn_donate": "Donate to Women Enterprise Fund",
         "activities_tag": "Rich Field Legacy",
-        "activities_title": "Key Activities of Karu Shikha (69 Milestones)",
-        "activities_desc": "Explore all 69 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
+        "activities_title": "Key Activities of Karu Shikha (70 Milestones)",
+        "activities_desc": "Explore all 70 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
         "activities_search_placeholder": "Search activities (e.g. Climate, Blood, WaterAid, Hand Paint, Equality...)",
         "activities_hint": "💡 Filter by keyword or choose category pill above",
-        "act_cat_all": "All Milestones (69)",
-        "act_cat_climate": "🌍 Climate & Ecology (10)",
+        "act_cat_all": "All Milestones (70)",
+        "act_cat_climate": "🌍 Climate & Ecology (11)",
         "act_cat_women": "👩 Women & Equality (14)",
         "act_cat_children": "📚 Child Education & Health (6)",
         "act_cat_craft": "🎨 Handcraft & Enterprise (8)",
         "act_cat_humanitarian": "🤝 Humanitarian & Blood (9)",
         "act_cat_partnership": "🏛️ Governance & Partnerships (22)",
-        "activities_count_badge": "Displaying: 69 Milestones",
-        "act_view_all_btn": "View All 69 Milestones (+57 more) ▾",
+        "activities_count_badge": "Displaying: 70 Milestones",
+        "act_view_all_btn": "View All 70 Milestones (+58 more) ▾",
         "comm_tag": "Leadership & Organization",
         "comm_reg_badge": "Reg No: YuU-97",
         "comm_title": "Leadership & Members Directory",
@@ -508,8 +508,8 @@ const translations = {
         "gallery_tag": "Field Photographs",
         "gallery_title": "Official Field Photo Gallery",
         "gallery_desc": "Glimpse our on-ground grassroots journey across child mentoring, Climate Olympiad, sanitary napkin distribution, and artisan workshops.",
-        "gal_cat_all": "All Photos (27)",
-        "gal_cat_climate": "🌍 Climate & Ecology (7)",
+        "gal_cat_all": "All Photos (28)",
+        "gal_cat_climate": "🌍 Climate & Ecology (8)",
         "gal_cat_children": "📚 Child Mentoring & PYM (7)",
         "gal_cat_women": "👩 Women & Health (7)",
         "gal_cat_humanitarian": "🤝 Humanitarian & Blood (2)",
@@ -559,7 +559,7 @@ const translations = {
         "footer_pym": "Project Your Mentor (PYM)",
         "footer_coks": "Climate Olympiad (COKS)",
         "footer_ewgsf": "EWGSF Project (Women Self-Reliance)",
-        "footer_act": "69 Grassroots Milestones",
+        "footer_act": "70 Grassroots Milestones",
         "lb_btn_fb": "View Original FB Post",
         "footer_emergency": "Emergency Contact",
         "footer_fb": "Follow Facebook Page",
@@ -1057,8 +1057,8 @@ function renderActivities() {
 
     if (countDisplay) {
         countDisplay.textContent = currentLang === 'bn' 
-            ? `প্রদর্শিত: ${filtered.length} / মোট ৬৯টি কার্যক্রম` 
-            : `Showing: ${filtered.length} of 69 Milestones`;
+            ? `প্রদর্শিত: ${filtered.length} / মোট ৭০টি কার্যক্রম` 
+            : `Showing: ${filtered.length} of 70 Milestones`;
     }
 
     const itemsToDisplay = showAllActivities ? filtered : filtered.slice(0, INITIAL_VISIBLE_COUNT);
@@ -1073,8 +1073,8 @@ function renderActivities() {
                 toggleBtn.textContent = currentLang === 'bn' ? 'সংক্ষিপ্ত করুন ▴' : 'Show Less ▴';
             } else {
                 toggleBtn.textContent = currentLang === 'bn' 
-                    ? `সবগুলো ৬৯টি কার্যক্রম দেখুন (+${remaining}টি আরো) ▾` 
-                    : `View All 69 Milestones (+${remaining} more) ▾`;
+                    ? `সবগুলো ৭০টি কার্যক্রম দেখুন (+${remaining}টি আরো) ▾` 
+                    : `View All 70 Milestones (+${remaining} more) ▾`;
             }
         }
     }

@@ -1,5 +1,18 @@
 window.KARU_SHIKHA_GALLERY = [
   {
+    "file": "padma-erosion-1.jpg",
+    "src": "padma-erosion-1.jpg",
+    "title": "পদ্মা নদীভাঙন রোধ ও সুরক্ষার দাবিতে ফরিদপুর-৩ সংসদ সদস্য বরাবর স্মারকলিপি পেশ",
+    "title_en": "Memorandum submitted to Honorable MP of Faridpur-3 against Padma River Erosion",
+    "category": "climate",
+    "category_bn": "জলবায়ু ও পরিবেশ",
+    "tag": "স্মারকলিপি প্রদান",
+    "date": "২০২৬",
+    "location": "ফরিদপুর",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122228132180342988/",
+    "size_kb": 1271.1
+  },
+  {
     "file": "advocacy-dialogue-1.jpg",
     "src": "advocacy-dialogue-1.jpg",
     "title": "এসডিসি টাওয়ারে যুবদের নিয়ে সমতা ও নিরাপত্তা বিষয়ক অ্যাডভোকেসি ডায়লগ",
