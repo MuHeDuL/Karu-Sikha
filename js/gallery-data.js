@@ -10,7 +10,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "২৮ অক্টোবর ২০২৬",
     "location": "এসডিসি টাওয়ার, আলীপুর, ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122233503350342988/",
-    "size_kb": 192.5
+    "size_kb": 192.5,
+    "date_en": "28 October 2026"
   },
   {
     "file": "youth-equality-1.jpg",
@@ -23,7 +24,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "১৫ অক্টোবর ২০২৬",
     "location": "ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122232098858342988/",
-    "size_kb": 221.1
+    "size_kb": 221.1,
+    "date_en": "15 October 2026"
   },
   {
     "file": "padma-erosion-1.jpg",
@@ -36,7 +38,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "১৩ সেপ্টেম্বর ২০২৬",
     "location": "ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122228132180342988/",
-    "size_kb": 1271.1
+    "size_kb": 1271.1,
+    "date_en": "13 September 2026"
   },
   {
     "file": "youth-day-dialogue-1.jpg",
@@ -49,7 +52,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "১২ আগস্ট ২০২৬",
     "location": "ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122224784696342988/",
-    "size_kb": 645.5
+    "size_kb": 645.5,
+    "date_en": "12 August 2026"
   },
   {
     "file": "madrasa-tree-plantation-1.jpg",
@@ -62,7 +66,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "জুলাই ২০২৬",
     "location": "সি এন্ড বি ঘাট, ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
-    "size_kb": 933.6
+    "size_kb": 933.6,
+    "date_en": "July 2026"
   },
   {
     "file": "gbv-leadership-1.jpg",
@@ -75,7 +80,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "০৯ জুলাই ২০২৬",
     "location": "কারু শিখা প্রধান কার্যালয়",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122221170056342988/",
-    "size_kb": 219.4
+    "size_kb": 219.4,
+    "date_en": "09 July 2026"
   },
   {
     "file": "doe-award-1.jpg",
@@ -88,7 +94,8 @@ window.KARU_SHIKHA_GALLERY = [
     "date": "০৯ জুলাই ২০২৬",
     "location": "ফরিদপুর",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122221145498342988/",
-    "size_kb": 290.8
+    "size_kb": 290.8,
+    "date_en": "09 July 2026"
   },
   {
     "file": "climate-1.jpg",
@@ -100,7 +107,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "ক্লাইমেট অলিম্পিয়াড",
     "date": "২০২৬",
     "location": "আদর্শ বালিকা বিদ্যালয়, ফরিদপুর",
-    "size_kb": 147.5
+    "size_kb": 147.5,
+    "date_en": "2026"
   },
   {
     "file": "climate-2.jpg",
@@ -112,7 +120,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "কেন্দ্রীয় টিম",
     "date": "২০২৬",
     "location": "ফরিদপুর",
-    "size_kb": 202.0
+    "size_kb": 202.0,
+    "date_en": "2026"
   },
   {
     "file": "climate-3.jpg",
@@ -124,7 +133,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "বৃক্ষরোপণ কর্মসূচি",
     "date": "২০২৬",
     "location": "সরকারি রাজেন্দ্র কলেজ, ফরিদপুর",
-    "size_kb": 106.8
+    "size_kb": 106.8,
+    "date_en": "2026"
   },
   {
     "file": "climate-4.jpg",
@@ -136,7 +146,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "প্লাস্টিক বর্জন",
     "date": "৫ জুন ২০২৪",
     "location": "ফরিদপুর প্রেস ক্লাব",
-    "size_kb": 103.1
+    "size_kb": 103.1,
+    "date_en": "5 June 2024"
   },
   {
     "file": "climate-5.jpg",
@@ -148,7 +159,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "নদীভাঙন দাবি",
     "date": "২০২৪",
     "location": "জেলা প্রশাসন কার্যালয়, ফরিদপুর",
-    "size_kb": 67.4
+    "size_kb": 67.4,
+    "date_en": "2024"
   },
   {
     "file": "climate-6.jpg",
@@ -160,7 +172,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "নাগরিক সোচ্চারতা",
     "date": "২০২৪",
     "location": "ফরিদপুর-ভাঙ্গা হাইওয়ে",
-    "size_kb": 67.9
+    "size_kb": 67.9,
+    "date_en": "2024"
   },
   {
     "file": "climate-7.jpg",
@@ -172,7 +185,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "সবুজ উপহার",
     "date": "২০২৫",
     "location": "উপজেলা কার্যালয়, ফরিদপুর",
-    "size_kb": 129.6
+    "size_kb": 129.6,
+    "date_en": "2025"
   },
   {
     "file": "child-1.jpg",
@@ -184,7 +198,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "Project Your Mentor",
     "date": "ধারাবাহিক",
     "location": "ভাজনডাঙ্গা, ফরিদপুর",
-    "size_kb": 54.7
+    "size_kb": 54.7,
+    "date_en": "Ongoing"
   },
   {
     "file": "child-2.jpg",
@@ -196,7 +211,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "সৃজনশীল অঙ্কন",
     "date": "২০২৫",
     "location": "লার্নিং সেন্টার, ফরিদপুর",
-    "size_kb": 162.2
+    "size_kb": 162.2,
+    "date_en": "2025"
   },
   {
     "file": "child-3.jpg",
@@ -208,7 +224,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "ফল উৎসব",
     "date": "১৮ আষাঢ়",
     "location": "সি এন্ড বি ঘাট, ফরিদপুর",
-    "size_kb": 81.3
+    "size_kb": 81.3,
+    "date_en": "18 Ashar"
   },
   {
     "file": "child-4.jpg",
@@ -220,7 +237,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "ঈদ উৎসব",
     "date": "ঈদ ২০২৪",
     "location": "ফরিদপুর",
-    "size_kb": 127.5
+    "size_kb": 127.5,
+    "date_en": "Eid 2024"
   },
   {
     "file": "child-5.jpg",
@@ -232,7 +250,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "জীবনদক্ষতা শিক্ষা",
     "date": "২০২৫",
     "location": "কারু শিখা পাঠশালা",
-    "size_kb": 160.8
+    "size_kb": 160.8,
+    "date_en": "2025"
   },
   {
     "file": "child-6.jpg",
@@ -244,7 +263,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "শিশুর হাসি",
     "date": "২০২৬",
     "location": "ফরিদপুর সদর",
-    "size_kb": 167.5
+    "size_kb": 167.5,
+    "date_en": "2026"
   },
   {
     "file": "child-7.jpg",
@@ -256,7 +276,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "শিক্ষা সামগ্রী বিতরণ",
     "date": "২০২৫",
     "location": "ফরিদপুর",
-    "size_kb": 113.8
+    "size_kb": 113.8,
+    "date_en": "2025"
   },
   {
     "file": "women-1.jpg",
@@ -268,7 +289,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "মাসিক স্বাস্থ্য সুরক্ষা",
     "date": "২০২৪",
     "location": "ফরিদপুর সদর",
-    "size_kb": 159.4
+    "size_kb": 159.4,
+    "date_en": "2024"
   },
   {
     "file": "women-2.jpg",
@@ -280,7 +302,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "উঠান বৈঠক",
     "date": "২০২৪",
     "location": "ভাজনডাঙ্গা, ফরিদপুর",
-    "size_kb": 114.9
+    "size_kb": 114.9,
+    "date_en": "2024"
   },
   {
     "file": "women-3.jpg",
@@ -292,7 +315,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "হ্যান্ড পেইন্ট প্রশিক্ষণ",
     "date": "২০২৪",
     "location": "উপজেলা যুব উন্নয়ন কার্যালয়",
-    "size_kb": 114.5
+    "size_kb": 114.5,
+    "date_en": "2024"
   },
   {
     "file": "women-4.jpg",
@@ -304,7 +328,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "বুটিক ও হস্তশিল্প",
     "date": "২০২৪",
     "location": "ফরিদপুর",
-    "size_kb": 175.5
+    "size_kb": 175.5,
+    "date_en": "2024"
   },
   {
     "file": "women-5.jpg",
@@ -316,7 +341,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "নারী ক্ষমতায়ন সভা",
     "date": "১১/১২/২০২৩",
     "location": "পরামানিক পাড়া প্রাথমিক বিদ্যালয়",
-    "size_kb": 104.1
+    "size_kb": 104.1,
+    "date_en": "11/12/2023"
   },
   {
     "file": "women-6.jpg",
@@ -328,7 +354,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "পিঠা উৎসব",
     "date": "২০২৪",
     "location": "শান্তি নিবাস, টেপাখোলা",
-    "size_kb": 140.7
+    "size_kb": 140.7,
+    "date_en": "2024"
   },
   {
     "file": "women-7.jpg",
@@ -340,7 +367,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "প্রতিবন্ধী অধিকার",
     "date": "২০২৪",
     "location": "ফরিদপুর",
-    "size_kb": 155.6
+    "size_kb": 155.6,
+    "date_en": "2024"
   },
   {
     "file": "lead-1.jpg",
@@ -352,7 +380,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "রক্তদান সেবা",
     "date": "২০২৫",
     "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
-    "size_kb": 156.9
+    "size_kb": 156.9,
+    "date_en": "2025"
   },
   {
     "file": "lead-2.jpg",
@@ -364,7 +393,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "WaterAid পার্টনারশিপ",
     "date": "২০২৪",
     "location": "ফরিদপুর",
-    "size_kb": 193.1
+    "size_kb": 193.1,
+    "date_en": "2024"
   },
   {
     "file": "lead-3.jpg",
@@ -376,7 +406,8 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "ফিল্ড সার্ভে",
     "date": "২০২৪",
     "location": "ফরিদপুর সদর",
-    "size_kb": 77.8
+    "size_kb": 77.8,
+    "date_en": "2024"
   },
   {
     "file": "lead-4.jpg",
@@ -388,6 +419,7 @@ window.KARU_SHIKHA_GALLERY = [
     "tag": "নেতৃত্ব পরিদর্শন",
     "date": "২০২৪",
     "location": "কারু শিখা প্রধান কার্যালয়",
-    "size_kb": 87.8
+    "size_kb": 87.8,
+    "date_en": "2024"
   }
 ];

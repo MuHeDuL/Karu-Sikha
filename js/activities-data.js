@@ -12,6 +12,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "Advocacy Dialogue",
         icon: "📢",
         date: "২৮ অক্টোবর ২০২৬",
+        date_en: "28 October 2026",
         location: "এসডিসি টাওয়ার, আলীপুর, ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122233503350342988/"
     },
@@ -23,6 +24,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "সমতায় তারুণ্য",
         icon: "⚖️",
         date: "১৫ অক্টোবর ২০২৬",
+        date_en: "15 October 2026",
         location: "ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122232098858342988/"
     },
@@ -34,6 +36,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "স্মারকলিপি প্রদান",
         icon: "🌊",
         date: "১৩ সেপ্টেম্বর ২০২৬",
+        date_en: "13 September 2026",
         location: "ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122228132180342988/"
     },
@@ -45,6 +48,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "আন্তর্জাতিক যুব দিবস",
         icon: "🗣️",
         date: "১২ আগস্ট ২০২৬",
+        date_en: "12 August 2026",
         location: "ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122224784696342988/"
     },
@@ -56,6 +60,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "বৃক্ষরোপণ কর্মসূচি",
         icon: "🌱",
         date: "জুলাই ২০২৬",
+        date_en: "July 2026",
         location: "সি এন্ড বি ঘাট, ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122223099242342988/"
     },
@@ -67,6 +72,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "GBV ও লিডারশিপ",
         icon: "🛡️",
         date: "০৯ জুলাই ২০২৬",
+        date_en: "09 July 2026",
         location: "কারু শিখা প্রধান কার্যালয়",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122221170056342988/"
     },
@@ -78,6 +84,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         tag: "বিশ্ব পরিবেশ দিবস",
         icon: "🏆",
         date: "০৯ জুলাই ২০২৬",
+        date_en: "09 July 2026",
         location: "ফরিদপুর",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122221145498342988/"
     },

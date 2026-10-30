@@ -1040,6 +1040,46 @@ function setupActivitiesExplorer() {
     renderActivities();
 }
 
+const bnToEnMonthMap = {
+    'জানুয়ারি': 'January', 'জানুয়ারি': 'January',
+    'ফেব্রুয়ারি': 'February', 'ফেব্রুয়ারি': 'February',
+    'মার্চ': 'March',
+    'এপ্রিল': 'April',
+    'মে': 'May',
+    'জুন': 'June',
+    'জুলাই': 'July',
+    'আগস্ট': 'August',
+    'সেপ্টেম্বর': 'September',
+    'অক্টোবর': 'October',
+    'নভেম্বর': 'November',
+    'ডিসেম্বর': 'December',
+    'আষাঢ়': 'Ashar', 'আষাঢ়': 'Ashar',
+    'ঈদ': 'Eid',
+    'ধারাবাহিক': 'Ongoing'
+};
+
+const bnToEnDigits = {
+    '০': '0', '১': '1', '২': '2', '৩': '3', '৪': '4',
+    '৫': '5', '৬': '6', '৭': '7', '৮': '8', '৯': '9'
+};
+
+function formatDisplayDate(dateBn, dateEn) {
+    if (currentLang === 'bn') {
+        return dateBn || '২০২৬';
+    }
+    if (dateEn) return dateEn;
+    if (!dateBn) return '2026';
+
+    let result = String(dateBn);
+    for (const [bnDigit, enDigit] of Object.entries(bnToEnDigits)) {
+        result = result.replaceAll(bnDigit, enDigit);
+    }
+    for (const [bnMonth, enMonth] of Object.entries(bnToEnMonthMap)) {
+        result = result.replaceAll(bnMonth, enMonth);
+    }
+    return result;
+}
+
 function renderActivities() {
     const container = document.getElementById('activities-grid');
     const countDisplay = document.getElementById('activities-count-badge');
@@ -1130,7 +1170,7 @@ function renderActivities() {
                 </div>
                 ${(act.date || act.facebook_url) ? `
                 <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
-                    <span>${act.date ? '📅 ' + (currentLang === 'bn' ? act.date : (galleryLocMapEn[act.location] || act.date)) : ''}</span>
+                    <span>${act.date ? '📅 ' + formatDisplayDate(act.date, act.date_en) : ''}</span>
                     ${act.facebook_url ? `<a href="${act.facebook_url}" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:text-white flex items-center gap-1 font-semibold transition-colors" onclick="event.stopPropagation()"><span>🌐</span><span>${currentLang === 'bn' ? 'ফেসবুকে দেখুন' : 'View on FB'}</span></a>` : ''}
                 </div>` : ''}
             </div>
@@ -1254,7 +1294,7 @@ function renderGallery() {
                     </div>
                     <div class="mt-3 pt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-sky-400 font-semibold">
                         <span>${viewText}</span>
-                        <span class="text-slate-500 text-[10px]">${item.date || (currentLang === 'bn' ? '২০২৬' : '2026')}</span>
+                        <span class="text-slate-500 text-[10px]">${formatDisplayDate(item.date, item.date_en)}</span>
                     </div>
                 </div>
             </div>
@@ -1285,7 +1325,7 @@ window.openGalleryLightbox = function(filename) {
         };
         const titleText = currentLang === 'bn' ? item.title : (item.title_en || item.title);
         const locName = currentLang === 'bn' ? item.location : (galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
-        const dateText = currentLang === 'bn' ? (item.date || '২০২৬') : '2026';
+        const dateText = formatDisplayDate(item.date, item.date_en);
         
         img.src = `assets/gallery/${item.file}`;
         img.alt = titleText;
