@@ -139,11 +139,14 @@ const translations = {
         "activities_count_badge": "প্রদর্শিত: ৬৭টি কার্যক্রম",
         "act_view_all_btn": "সবগুলো ৬৭টি কার্যক্রম দেখুন (+৫৫টি আরো) ▾",
         "comm_tag": "নেতৃত্ব ও সাংগঠনিক কাঠামো",
-        "comm_reg_badge": "নিবন্ধন নং: যুউঅ-৯৭",
-        "comm_title": "কার্যনির্বাহী পরিষদ ও সম্মানিত সদস্য তালিকা",
-        "comm_desc": "কারু শিখার ইয়ুথ ডেভেলপমেন্ট সোসাইটির সরকারি নিবন্ধনভুক্ত (যুব উন্নয়ন অধিদপ্তর, নিবন্ধন নং: যুউঅ-৯৭) অনুমোদিত পরিষদ ও সাধারণ সদস্যবৃন্দ।",
-        "comm_tab_exec": "🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ (৭ জন)",
-        "comm_tab_gen": "👥 সাধারণ সদস্যবৃন্দ (১৮ জন)",
+        "comm_reg_badge": "নিবন্ধন নং: DUD-97",
+        "comm_title": "কার্যনির্বাহী পরিষদ, উপদেষ্টা ও সদস্যবৃন্দ",
+        "comm_desc": "যুব উন্নয়ন অধিদপ্তর অনুমোদিত (নিবন্ধন নং: DUD-97) কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির কার্যনির্বাহী পরিষদ, উপদেষ্টা, পৃষ্ঠপোষক ও সদস্যবৃন্দের তালিকা।",
+        "comm_tab_exec": "🏛️ কার্যনির্বাহী পরিষদ (৭ জন)",
+        "comm_tab_adv": "⭐ উপদেষ্টা পরিষদ",
+        "comm_tab_pat": "🤝 পৃষ্ঠপোষকবৃন্দ",
+        "comm_tab_fnd": "🌱 প্রতিষ্ঠাতা সদস্যবৃন্দ",
+        "comm_tab_gen": "👥 সাধারণ সদস্য (৩০ জন)",
         "comm_search_ph": "সদস্যের নাম, পদবী, শিক্ষাগত যোগ্যতা বা পেশা দিয়ে খুঁজুন...",
         "member_count_init": "৭ জন",
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
@@ -542,10 +545,13 @@ const translations = {
         "act_view_all_btn": "View All 67 Milestones (+55 more) ▾",
         "comm_tag": "Leadership & Organization",
         "comm_reg_badge": "Reg No: DUD-97",
-        "comm_title": "Leadership & Members Directory",
-        "comm_desc": "Official Executive Council and General Members directory of Karu Shikha Youth Development Society, authorized by Department of Youth Development (Reg: DUD-97).",
-        "comm_tab_exec": "🏛️ Executive Council (7 Members)",
-        "comm_tab_gen": "👥 General Members (18 Members)",
+        "comm_title": "Executive Committee, Advisors & Members",
+        "comm_desc": "Official Executive Committee, Advisors, Patrons, and Members directory of Karu Shikha Youth Development Society, registered under Department of Youth Development (Reg: DUD-97).",
+        "comm_tab_exec": "🏛️ Executive Committee (7)",
+        "comm_tab_adv": "⭐ Advisory Panel",
+        "comm_tab_pat": "🤝 Patrons",
+        "comm_tab_fnd": "🌱 Founding Members",
+        "comm_tab_gen": "👥 General Members (30)",
         "comm_search_ph": "Search by member name, role, qualification, profession...",
         "member_count_init": "7 Members",
         "gallery_tag": "Field Photographs",
@@ -1040,6 +1046,12 @@ function applyTranslations(lang) {
         const tab = btn.getAttribute('data-tab');
         if (tab === 'executive') {
             btn.textContent = dict['comm_tab_exec'] || btn.textContent;
+        } else if (tab === 'advisors') {
+            btn.textContent = dict['comm_tab_adv'] || btn.textContent;
+        } else if (tab === 'patrons') {
+            btn.textContent = dict['comm_tab_pat'] || btn.textContent;
+        } else if (tab === 'founders') {
+            btn.textContent = dict['comm_tab_fnd'] || btn.textContent;
         } else if (tab === 'general') {
             btn.textContent = dict['comm_tab_gen'] || btn.textContent;
         }
@@ -2624,25 +2636,103 @@ const professionMapEn = {
 
 function renderMembers() {
     const container = document.getElementById('members-grid');
-    if (!container || !window.KARU_SHIKHA_EXECUTIVE_MEMBERS) return;
+    if (!container) return;
 
-    const list = currentMemberTab === 'executive' 
-        ? window.KARU_SHIKHA_EXECUTIVE_MEMBERS 
-        : window.KARU_SHIKHA_GENERAL_MEMBERS;
+    const countBadge = document.getElementById('members-count-badge');
+
+    // 1. Special Case: General Members (Showcase of 30 members with NO personal sensitive details)
+    if (currentMemberTab === 'general') {
+        if (countBadge) {
+            countBadge.textContent = currentLang === 'bn' ? '৩০ জন' : '30 Members';
+        }
+        container.innerHTML = `
+            <div class="col-span-full">
+                <div class="glass-panel rounded-3xl p-6 sm:p-8 lg:p-10 border border-emerald-500/30 text-center max-w-4xl mx-auto shadow-2xl bg-gradient-to-b from-slate-900/95 to-slate-950/95">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4">
+                        <span>👥</span>
+                        <span>${currentLang === 'bn' ? 'সাধারণ পরিষদ' : 'General Assembly'}</span>
+                    </div>
+                    
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-sky-400 mb-2">
+                        ${currentLang === 'bn' ? '৩০ জন' : '30 Members'}
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-extrabold text-white mb-3">
+                        ${currentLang === 'bn' ? 'নিবন্ধিত সাধারণ সদস্যবৃন্দ' : 'Registered General Members'}
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
+                        ${currentLang === 'bn' 
+                            ? 'কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির তৃণমূল পর্যায়ে শিশু শিক্ষা সম্প্রসারণ, জরুরি রক্তদান, ক্লাইমেট ক্যাম্পেইন, ত্রাণ বিতরণ ও প্রান্তিক জনগোষ্ঠীর ক্ষমতায়নে সার্বক্ষণিক নিবেদিত ৩০ জন সাধারণ সদস্য নিবন্ধিত রয়েছেন।'
+                            : 'Karu Shikha Youth Development Society has 30 registered general members actively dedicated to grassroots child education, emergency blood donation, climate advocacy, relief distribution, and community empowerment.'}
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8 text-left">
+                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/40 transition-colors">
+                            <div class="text-2xl mb-1.5">🩸</div>
+                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'জরুরি রক্তদান' : 'Emergency Blood'}</div>
+                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'মুহূর্তেই রক্তদাতা সমন্বয়' : 'Rapid donor coordination'}</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-sky-500/40 transition-colors">
+                            <div class="text-2xl mb-1.5">📚</div>
+                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'শিশু শিক্ষা (PYM)' : 'Child Education (PYM)'}</div>
+                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'সুবিধাবঞ্চিতদের পাঠদান' : 'Mentoring underprivileged'}</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-emerald-500/40 transition-colors">
+                            <div class="text-2xl mb-1.5">🌍</div>
+                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'ক্লাইমেট অলিম্পিয়াড' : 'Climate Action'}</div>
+                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'বৃক্ষরোপণ ও বর্জ্য ক্যাম্প' : 'Afforestation & waste drive'}</div>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-orange-500/40 transition-colors">
+                            <div class="text-2xl mb-1.5">🤝</div>
+                            <div class="text-xs font-bold text-white mb-0.5">${currentLang === 'bn' ? 'মানবিক সহায়তা' : 'Relief & Aid'}</div>
+                            <div class="text-[10.5px] text-slate-400">${currentLang === 'bn' ? 'শীতবস্ত্র ও জরুরি খাদ্য' : 'Winter clothing & food aid'}</div>
+                        </div>
+                    </div>
+
+                    <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-3 p-3.5 rounded-2xl bg-slate-950/80 border border-white/10 text-xs text-slate-400 max-w-2xl mx-auto mb-6">
+                        <span class="text-amber-400 text-sm">🔒</span>
+                        <span>${currentLang === 'bn' 
+                            ? 'সাংগঠনিক গঠনতন্ত্র ও সদস্যদের ব্যক্তিগত গোপনীয়তা সুরক্ষার্থে সাধারণ সদস্যদের ব্যক্তিগত ফোন ও ঠিকানার বিস্তারিত তালিকা উন্মুক্ত প্রকাশ করা হয়নি।' 
+                            : 'To safeguard personal privacy and adhere to internal bylaws, individual member contact details are kept confidential.'}</span>
+                    </div>
+
+                    <div>
+                        <button type="button" onclick="openVolunteerModal()" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-emerald-500/25 transition-all cursor-pointer inline-flex items-center gap-2">
+                            <span>🤝</span>
+                            <span>${currentLang === 'bn' ? 'সাধারণ সদস্য হিসেবে যুক্ত হতে আবেদন করুন' : 'Apply to Join as a General Member'}</span>
+                            <span>→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        return;
+    }
+
+    // 2. Active Tab Data
+    let list = [];
+    if (currentMemberTab === 'executive') {
+        list = window.KARU_SHIKHA_EXECUTIVE_MEMBERS || [];
+    } else if (currentMemberTab === 'advisors') {
+        list = window.KARU_SHIKHA_ADVISORS || [];
+    } else if (currentMemberTab === 'patrons') {
+        list = window.KARU_SHIKHA_PATRONS || [];
+    } else if (currentMemberTab === 'founders') {
+        list = window.KARU_SHIKHA_FOUNDERS || [];
+    }
 
     const filtered = list.filter(m => {
         if (!memberSearchQuery) return true;
         const q = memberSearchQuery;
-        return m.name.toLowerCase().includes(q) ||
+        return (m.name && m.name.toLowerCase().includes(q)) ||
                (m.name_en && m.name_en.toLowerCase().includes(q)) ||
-               m.role.toLowerCase().includes(q) ||
+               (m.role && m.role.toLowerCase().includes(q)) ||
                (m.role_en && m.role_en.toLowerCase().includes(q)) ||
-               m.address.toLowerCase().includes(q) ||
-               m.profession.toLowerCase().includes(q) ||
-               m.phone.includes(q);
+               (m.address && m.address.toLowerCase().includes(q)) ||
+               (m.profession && m.profession.toLowerCase().includes(q)) ||
+               (m.phone && m.phone.includes(q)) ||
+               (m.quote && m.quote.toLowerCase().includes(q));
     });
 
-    const countBadge = document.getElementById('members-count-badge');
     if (countBadge) {
         countBadge.textContent = currentLang === 'bn' 
             ? `${filtered.length} জন` 
@@ -2662,17 +2752,29 @@ function renderMembers() {
     container.innerHTML = filtered.map(m => {
         const name = currentLang === 'bn' ? m.name : (m.name_en || m.name);
         const role = currentLang === 'bn' ? m.role : (m.role_en || m.role);
-        const isExec = currentMemberTab === 'executive';
-        const roleBadgeBg = isExec ? 'bg-sky-500/20 text-sky-300 border-sky-500/30' : 'bg-slate-800 text-slate-300 border-white/10';
-        const topBorder = isExec ? 'border-t-[#0284c7]' : 'border-t-orange-500/50';
+        
+        let roleBadgeBg = 'bg-sky-500/20 text-sky-300 border-sky-500/30';
+        let topBorder = 'border-t-[#0284c7]';
+        if (currentMemberTab === 'advisors') {
+            roleBadgeBg = 'bg-amber-500/20 text-amber-300 border-amber-500/30';
+            topBorder = 'border-t-amber-500/70';
+        } else if (currentMemberTab === 'patrons') {
+            roleBadgeBg = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30';
+            topBorder = 'border-t-emerald-500/70';
+        } else if (currentMemberTab === 'founders') {
+            roleBadgeBg = 'bg-purple-500/20 text-purple-300 border-purple-500/30';
+            topBorder = 'border-t-purple-500/70';
+        }
 
-        const eduText = currentLang === 'bn' ? m.education : (educationMapEn[m.education] || m.education);
-        const profText = currentLang === 'bn' ? m.profession : (professionMapEn[m.profession] || m.profession);
+        const eduText = currentLang === 'bn' ? (m.education || 'স্নাতক') : (educationMapEn[m.education] || m.education || 'Graduate');
+        const profText = currentLang === 'bn' ? (m.profession || 'সমাজসেবক') : (professionMapEn[m.profession] || m.profession || 'Social Worker');
         const fatherText = currentLang === 'bn' ? m.father : (fatherMapEn[m.father] || m.father);
         const fatherLabel = currentLang === 'bn' ? 'পিতা:' : 'Father:';
         const ageLabel = currentLang === 'bn' ? `${m.age} বছর` : `${m.age} yrs`;
-        const addrText = currentLang === 'bn' ? m.address : (addressMapEn[m.address] || 'Faridpur Sadar, Faridpur');
-        const callLabel = `📞 ${m.phone}`;
+        const addrText = currentLang === 'bn' ? (m.address || 'ফরিদপুর, বাংলাদেশ') : (addressMapEn[m.address] || m.address || 'Faridpur, Bangladesh');
+        const phoneDigits = (m.phone || '01795023942').replace(/[^0-9]/g, '');
+        const callLabel = m.phone ? `📞 ${m.phone}` : (currentLang === 'bn' ? '📞 যোগাযোগ' : '📞 Contact');
+        const quoteText = currentLang === 'bn' ? m.quote : (m.quote_en || m.quote);
 
         return `
             <div class="glass-panel glass-panel-hover rounded-2xl p-4 sm:p-5 border-t-2 ${topBorder} flex flex-col justify-between h-full transition-all">
@@ -2681,15 +2783,16 @@ function renderMembers() {
                         <span class="text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${roleBadgeBg}">
                             ${role}
                         </span>
+                        ${m.join_date ? `<span class="text-[10px] text-slate-400 font-medium">${m.join_date}</span>` : ''}
                     </div>
 
-                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-2 leading-snug line-clamp-2 min-h-[2.4rem] cursor-pointer hover:text-sky-400 transition-colors flex items-center justify-between group" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'প্রোফাইল ও ভি-কার্ড দেখতে ক্লিক করুন' : 'Click to view profile & vCard'}">
+                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1.5 leading-snug line-clamp-2 min-h-[2.4rem] cursor-pointer hover:text-sky-400 transition-colors flex items-center justify-between group" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'প্রোফাইল দেখতে ক্লিক করুন' : 'Click to view profile'}">
                         <span>${name}</span>
                         <span class="text-xs text-sky-400 opacity-60 group-hover:opacity-100 transition-opacity">↗</span>
                     </h3>
 
-                    <div class="space-y-1.5 text-[11px] text-slate-300 mb-3.5">
-                        ${m.father ? `<div class="truncate text-slate-400"><span class="text-slate-500 font-medium">${fatherLabel}</span> ${fatherText}</div>` : `<div class="text-slate-700 select-none">&nbsp;</div>`}
+                    <div class="space-y-1.5 text-[11px] text-slate-300 mb-3">
+                        ${m.father ? `<div class="truncate text-slate-400"><span class="text-slate-500 font-medium">${fatherLabel}</span> ${fatherText}</div>` : ''}
                         <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-slate-400">
                             <span>🎓 <span class="text-slate-300 font-semibold">${eduText}</span></span>
                             <span>💼 <span class="text-slate-300 font-semibold">${profText}</span></span>
@@ -2699,14 +2802,20 @@ function renderMembers() {
                             📍 ${addrText}
                         </div>
                     </div>
+
+                    ${quoteText ? `
+                        <div class="mt-2 mb-3 p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-[11px] text-amber-200/90 italic leading-relaxed line-clamp-2 select-none" title="${quoteText}">
+                            “${quoteText}”
+                        </div>
+                    ` : ''}
                 </div>
 
                 <div class="pt-2.5 border-t border-white/5 mt-auto grid grid-cols-2 gap-2">
-                    <button type="button" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" class="py-1.5 sm:py-2 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/30 text-sky-300 text-[11px] font-bold flex items-center justify-center gap-1 transition-all cursor-pointer" title="View Profile & Save vCard">
+                    <button type="button" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" class="py-1.5 sm:py-2 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/30 text-sky-300 text-[11px] font-bold flex items-center justify-center gap-1 transition-all cursor-pointer" title="View Profile">
                         <span>👤</span>
                         <span>${currentLang === 'bn' ? 'প্রোফাইল' : 'Profile'}</span>
                     </button>
-                    <a href="tel:${m.phone.replace(/[^0-9]/g, '')}" class="py-1.5 sm:py-2 rounded-xl bg-slate-900 hover:bg-emerald-600/20 border border-white/10 hover:border-emerald-500/40 text-emerald-400 text-[11px] font-bold flex items-center justify-center gap-1 transition-all" title="Direct Phone Call">
+                    <a href="tel:${phoneDigits}" class="py-1.5 sm:py-2 rounded-xl bg-slate-900 hover:bg-emerald-600/20 border border-white/10 hover:border-emerald-500/40 text-emerald-400 text-[11px] font-bold flex items-center justify-center gap-1 transition-all" title="Direct Contact">
                         <span>${callLabel}</span>
                     </a>
                 </div>
@@ -2721,7 +2830,12 @@ function renderMembers() {
 let currentActiveMember = null;
 
 window.openMemberModal = function(id, tab) {
-    const list = tab === 'general' ? window.KARU_SHIKHA_GENERAL_MEMBERS : window.KARU_SHIKHA_EXECUTIVE_MEMBERS;
+    let list = window.KARU_SHIKHA_EXECUTIVE_MEMBERS || [];
+    if (tab === 'advisors') list = window.KARU_SHIKHA_ADVISORS || [];
+    else if (tab === 'patrons') list = window.KARU_SHIKHA_PATRONS || [];
+    else if (tab === 'founders') list = window.KARU_SHIKHA_FOUNDERS || [];
+    else if (tab === 'general') list = window.KARU_SHIKHA_GENERAL_MEMBERS || [];
+
     const m = (list || []).find(item => item.id === id);
     if (!m) return;
     currentActiveMember = m;
@@ -2732,7 +2846,6 @@ window.openMemberModal = function(id, tab) {
     const isBn = currentLang === 'bn';
     const name = isBn ? m.name : (m.name_en || m.name);
     const role = isBn ? m.role : (m.role_en || m.role);
-    const isExec = tab !== 'general' && m.is_executive !== false;
 
     // Elements
     const avatarEl = document.getElementById('member-modal-avatar');
@@ -2755,14 +2868,33 @@ window.openMemberModal = function(id, tab) {
     const waLink = document.getElementById('member-modal-wa-link');
     const vcardBtn = document.getElementById('member-modal-vcard-btn');
 
-    // Populate Top Badge & Avatar
+    // Populate Top Badge
     if (topBadgeEl) {
-        if (isExec) {
-            topBadgeEl.textContent = isBn ? '🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ সদস্য' : '🏛️ Central Executive Council Member';
-            topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
-        } else {
-            topBadgeEl.textContent = isBn ? '👥 সাধারণ পরিষদ সদস্য' : '👥 General Council Member';
+        if (tab === 'advisors' || m.is_advisor) {
+            topBadgeEl.textContent = isBn ? '⭐ সম্মানিত উপদেষ্টা' : '⭐ Honorable Advisor';
+            topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
+        } else if (tab === 'patrons' || m.is_patron) {
+            topBadgeEl.textContent = isBn ? '🤝 সম্মানিত পৃষ্ঠপোষক' : '🤝 Distinguished Patron';
             topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
+        } else if (tab === 'founders' || m.is_founder) {
+            topBadgeEl.textContent = isBn ? '🌱 প্রতিষ্ঠাতা সদস্য' : '🌱 Founding Member';
+            topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-500/15 border border-purple-500/30 text-purple-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
+        } else {
+            topBadgeEl.textContent = isBn ? '🏛️ কার্যনির্বাহী পরিষদ সদস্য' : '🏛️ Executive Committee Member';
+            topBadgeEl.className = 'inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm';
+        }
+    }
+
+    // Populate Quote Box
+    const quoteBoxEl = document.getElementById('member-modal-quote-box');
+    const quoteEl = document.getElementById('member-modal-quote');
+    const quoteText = isBn ? (m.quote || m.bani) : (m.quote_en || m.quote || m.bani);
+    if (quoteBoxEl && quoteEl) {
+        if (quoteText && quoteText.trim()) {
+            quoteBoxEl.classList.remove('hidden');
+            quoteEl.textContent = quoteText.trim();
+        } else {
+            quoteBoxEl.classList.add('hidden');
         }
     }
 

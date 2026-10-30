@@ -14,6 +14,8 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "role_en": "President",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01795-023942",
+    "quote": "তরুণদের মেধা, সৃজনশীলতা ও মানবিক মূল্যবোধই একটি সমৃদ্ধ, স্বাবলম্বী ও বৈষম্যহীন সমাজ বিনির্মাণের মূল চালিকাশক্তি।",
+    "quote_en": "Youth intellect, creativity, and humane values are the driving forces behind building a prosperous, self-reliant, and equitable society.",
     "is_executive": true
   },
   {
@@ -25,11 +27,13 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "address": "রঘুনন্দনপুর, শ্রী-অঙ্গন, ফরিদপুর সদর, ফরিদপুর।",
     "education": "এমএসএস",
     "age": 26,
-    "profession": "গৃহিণী",
+    "profession": "গৃহিণী ও সমাজকর্মী",
     "role": "সহ-সভাপতি",
     "role_en": "Vice President",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01756-282422",
+    "quote": "নারীর আর্থিক স্বাবলম্বিতা ও শিশুদের সুষ্ঠু মানসিক বিকাশই টেকসই সমাজ পরিবর্তনের ভিত্তি।",
+    "quote_en": "Women's financial self-reliance and children's sound mental growth are the cornerstone of lasting societal progress.",
     "is_executive": true
   },
   {
@@ -41,11 +45,13 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "address": "বিএস ডাঙ্গী, চরভদ্রাসন, চরভদ্রাসন, ফরিদপুর।",
     "education": "এইচএসসি",
     "age": 23,
-    "profession": "শিক্ষার্থী",
+    "profession": "শিক্ষার্থী ও সংগঠক",
     "role": "সাধারণ সম্পাদক",
     "role_en": "General Secretary",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01609-050866",
+    "quote": "ঐক্যবদ্ধ সাংগঠনিক প্রচেষ্টা ও নিঃস্বার্থ সেবাই আমাদের শক্তি—আমরা প্রতিটি প্রান্তিক মানুষের পাশে আছি।",
+    "quote_en": "United organizational effort and selfless service are our strength—we stand with every marginalized citizen.",
     "is_executive": true
   },
   {
@@ -57,11 +63,13 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "address": "আইজুদ্দীন মাতুব্বর ডাঙ্গী, বাকীগঞ্জ, কোতোয়ালী, ফরিদপুর।",
     "education": "এইচএসসি",
     "age": 24,
-    "profession": "ব্যবসায়ী",
+    "profession": "ব্যবসায়ী ও উদ্যোক্তা",
     "role": "কোষাধ্যক্ষ",
     "role_en": "Treasurer",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01874-745546",
+    "quote": "পূর্ণ সততা ও স্বচ্ছতার সঙ্গে প্রতিটি সামাজিক তহবিলের সর্বোচ্চ সদ্ব্যবহার নিশ্চিত করাই আমাদের অঙ্গীকার।",
+    "quote_en": "Ensuring the highest impact and integrity in managing every social fund is our solemn commitment.",
     "is_executive": true
   },
   {
@@ -73,11 +81,13 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "address": "তুলা গ্রাম, তাম্বুল খানা, ফরিদপুর সদর, ফরিদপুর।",
     "education": "স্নাতক",
     "age": 29,
-    "profession": "ব্যবসা",
+    "profession": "ব্যবসায়ী",
     "role": "সাংগঠনিক সম্পাদক",
     "role_en": "Organizing Secretary",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01791-192284",
+    "quote": "মাঠপর্যায়ে সুশৃঙ্খল টিমওয়ার্ক ও তরুণদের সক্রিয় অংশগ্রহণই যে কোনো মহৎ লক্ষ্য অর্জনের মূল চাবিকাঠি।",
+    "quote_en": "Disciplined grassroots teamwork and proactive youth engagement are key to achieving noble missions.",
     "is_executive": true
   },
   {
@@ -94,6 +104,8 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "role_en": "Office Secretary",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01739-727334",
+    "quote": "একটি সুস্থ জাতি গঠনে প্রত্যন্ত অঞ্চলে স্বাস্থ্য সচেতনতা ও জরুরি মানবিক সেবাকে সবার আগে পৌঁছে দেওয়া আমাদের ব্রত।",
+    "quote_en": "Reaching remote communities with health awareness and emergency humanitarian care is our foremost vow.",
     "is_executive": true
   },
   {
@@ -105,12 +117,69 @@ window.KARU_SHIKHA_EXECUTIVE_MEMBERS = [
     "address": "কমলাপুর, ফরিদপুর সদর, ফরিদপুর।",
     "education": "স্নাতকোত্তর",
     "age": 24,
-    "profession": "চাকরি",
+    "profession": "চাকরিজীবী",
     "role": "নির্বাহী সদস্য",
     "role_en": "Executive Member",
     "join_date": "০৪/০৬/২০২২",
     "phone": "01756-998816",
+    "quote": "প্রত্যেক তরুণের মধ্যে ইতিবাচক পরিবর্তনের অপার সম্ভাবনা রয়েছে—সেটিকে সেবামূলক কাজে জাগ্রত করাই আমাদের লক্ষ্য।",
+    "quote_en": "Every youth holds immense potential for good—awakening it through community service is our mission.",
     "is_executive": true
+  }
+];
+
+// উপদেষ্টা পরিষদ (Advisors Panel)
+window.KARU_SHIKHA_ADVISORS = [
+  {
+    "id": 101,
+    "name": "উপদেষ্টা পর্ষদ (তথ্য সংগৃহীত হচ্ছে)",
+    "name_en": "Advisory Panel (Updating)",
+    "role": "প্রধান উপদেষ্টা",
+    "role_en": "Chief Advisor",
+    "profession": "বিশিষ্ট শিক্ষাবিদ ও সমাজসেবক",
+    "education": "পিএইচডি / স্নাতকোত্তর",
+    "address": "ফরিদপুর, বাংলাদেশ",
+    "quote": "জ্ঞানের আলো ও মানবিক সহমর্মিতার বিস্তারই তরুণ প্রজন্মকে সমৃদ্ধ আগামীর পথে এগিয়ে নেয়।",
+    "quote_en": "The light of knowledge and spread of human empathy propel youth towards a flourishing tomorrow.",
+    "is_advisor": true,
+    "is_placeholder": true
+  }
+];
+
+// পৃষ্ঠপোষকবৃন্দ (Patrons)
+window.KARU_SHIKHA_PATRONS = [
+  {
+    "id": 201,
+    "name": "পৃষ্ঠপোষক পর্ষদ (তথ্য সংগৃহীত হচ্ছে)",
+    "name_en": "Patron Panel (Updating)",
+    "role": "প্রধান পৃষ্ঠপোষক",
+    "role_en": "Chief Patron",
+    "profession": "বিশিষ্ট সমাজহিতৈষী ব্যক্তিত্ব",
+    "education": "স্নাতক / স্নাতকোত্তর",
+    "address": "ফরিদপুর, বাংলাদেশ",
+    "quote": "সামাজিক উন্নয়ন ও প্রান্তিক মানুষের কল্যাণার্থে যুব সমাজের প্রতিটি ইতিবাচক উদ্যোগে পাশে থাকা আমাদের কর্তব্য।",
+    "quote_en": "Standing beside youth initiatives for grassroots development and community welfare is our solemn duty.",
+    "is_patron": true,
+    "is_placeholder": true
+  }
+];
+
+// প্রতিষ্ঠাতা সদস্যবৃন্দ (Founding Members)
+window.KARU_SHIKHA_FOUNDERS = [
+  {
+    "id": 301,
+    "name": "প্রতিষ্ঠাতা পর্ষদ (তথ্য সংগৃহীত হচ্ছে)",
+    "name_en": "Founding Members (Updating)",
+    "role": "প্রতিষ্ঠাতা সদস্য",
+    "role_en": "Founding Member",
+    "profession": "সামাজিক সংগঠক",
+    "education": "স্নাতক",
+    "address": "ফরিদপুর, বাংলাদেশ",
+    "join_date": "৩১/০১/২০১৯",
+    "quote": "২০১৯ সালের ৩১ জানুয়ারি যে প্রত্যয় নিয়ে কারু শিখার যাত্রা শুরু হয়েছিল, আজ তা শত তরুণের সেবামূলক অনুপ্রেরণা।",
+    "quote_en": "The resolve with which Karu Shikha began on January 31, 2019, has blossomed into an inspiration for hundreds.",
+    "is_founder": true,
+    "is_placeholder": true
   }
 ];
 

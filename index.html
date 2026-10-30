@@ -660,17 +660,26 @@
                     সংগঠনের নেতৃত্ব ও সদস্যবৃন্দ
                 </h2>
                 <p class="text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed" data-i18n="comm_desc">
-                    যুব উন্নয়ন অধিদপ্তর অনুমোদিত (নিবন্ধন নং: যুউঅ-৯৭) কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির কেন্দ্রীয় কার্যনির্বাহী পরিষদ ও সাধারণ সদস্যবৃন্দের তালিকা।
+                    যুব উন্নয়ন অধিদপ্তর অনুমোদিত (নিবন্ধন নং: DUD-97) কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির কার্যনির্বাহী পরিষদ, উপদেষ্টা, পৃষ্ঠপোষক ও সদস্যবৃন্দের তালিকা।
                 </p>
             </div>
 
             <!-- Members Directory Filter Tabs -->
-            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
-                <button type="button" class="member-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-sky-400 bg-[#0284c7] text-white shadow-lg shadow-sky-500/20 cursor-pointer" data-tab="executive" data-i18n="comm_tab_exec">
-                    🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ (৭ জন)
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-6">
+                <button type="button" class="member-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-sky-400 bg-[#0284c7] text-white shadow-lg shadow-sky-500/20 cursor-pointer" data-tab="executive" data-i18n="comm_tab_exec">
+                    🏛️ কার্যনির্বাহী পরিষদ (৭ জন)
                 </button>
-                <button type="button" class="member-tab-btn px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-tab="general" data-i18n="comm_tab_gen">
-                    👥 সাধারণ সদস্যবৃন্দ (১৮ জন)
+                <button type="button" class="member-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-tab="advisors" data-i18n="comm_tab_adv">
+                    ⭐ উপদেষ্টা পরিষদ
+                </button>
+                <button type="button" class="member-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-tab="patrons" data-i18n="comm_tab_pat">
+                    🤝 পৃষ্ঠপোষকবৃন্দ
+                </button>
+                <button type="button" class="member-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-tab="founders" data-i18n="comm_tab_fnd">
+                    🌱 প্রতিষ্ঠাতা সদস্যবৃন্দ
+                </button>
+                <button type="button" class="member-tab-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border border-white/10 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 cursor-pointer" data-tab="general" data-i18n="comm_tab_gen">
+                    👥 সাধারণ সদস্য (৩০ জন)
                 </button>
             </div>
 
@@ -1624,7 +1633,7 @@
             <!-- Top Org Badge (Central vs General Member) -->
             <div class="text-center mb-4">
                 <span id="member-modal-top-badge" class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-3 shadow-sm">
-                    🏛️ কেন্দ্রীয় কার্যনির্বাহী পরিষদ সদস্য
+                    🏛️ কার্যনির্বাহী পরিষদ সদস্য
                 </span>
                 
                 <!-- Avatar Circle with Initial or Photo -->
@@ -1640,6 +1649,13 @@
                 <p id="member-modal-role" class="text-xs sm:text-sm font-bold text-orange-400 mt-0.5">
                     সভাপতি (President)
                 </p>
+            </div>
+
+            <!-- Inspirational Quote / বাণী -->
+            <div id="member-modal-quote-box" class="p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r from-orange-500/10 via-amber-500/10 to-sky-500/10 border border-orange-500/25 mb-4 text-center hidden">
+                <span class="text-orange-400 text-lg sm:text-xl leading-none font-serif select-none">“</span>
+                <p id="member-modal-quote" class="text-xs sm:text-[13px] text-amber-200/90 italic font-medium leading-relaxed px-1 inline"></p>
+                <span class="text-orange-400 text-lg sm:text-xl leading-none font-serif select-none">”</span>
             </div>
 
             <!-- Details Table / Card -->
@@ -1937,9 +1953,9 @@
     <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
     <script src="js/activities-data.js?v=20261031j"></script>
     <script src="js/gallery-data.js?v=20261031j"></script>
-    <script src="js/members-data.js?v=20261030q"></script>
+    <script src="js/members-data.js?v=20261031a"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261030q"></script>
-    <script src="js/app.js?v=20261031n"></script>
+    <script src="js/app.js?v=20261031o"></script>
 </body>
 </html>
