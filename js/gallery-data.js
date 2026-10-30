@@ -39,6 +39,58 @@ window.KARU_SHIKHA_GALLERY = [
     "size_kb": 1271.1
   },
   {
+    "file": "youth-day-dialogue-1.jpg",
+    "src": "youth-day-dialogue-1.jpg",
+    "title": "আন্তর্জাতিক যুব দিবস ২০২৬ উপলক্ষে ফরিদপুরে ‘Youth Discussion & Dialogue’",
+    "title_en": "Youth Discussion & Dialogue in Faridpur for International Youth Day 2026",
+    "category": "partnership",
+    "category_bn": "অংশীদারত্ব ও যুব সম্মেলন",
+    "tag": "Youth Dialogue",
+    "date": "১২ আগস্ট ২০২৬",
+    "location": "ফরিদপুর",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122224784696342988/",
+    "size_kb": 645.5
+  },
+  {
+    "file": "madrasa-tree-plantation-1.jpg",
+    "src": "madrasa-tree-plantation-1.jpg",
+    "title": "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ",
+    "title_en": "Tree Plantation & Sapling Distribution at Lailatul Madani Madrasa, C&B Ghat",
+    "category": "climate",
+    "category_bn": "জলবায়ু ও পরিবেশ",
+    "tag": "বৃক্ষরোপণ কর্মসূচি",
+    "date": "জুলাই ২০২৬",
+    "location": "সি এন্ড বি ঘাট, ফরিদপুর",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
+    "size_kb": 933.6
+  },
+  {
+    "file": "gbv-leadership-1.jpg",
+    "src": "gbv-leadership-1.jpg",
+    "title": "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা",
+    "title_en": "Dialogue on Gender-Based Violence (GBV) & Youth Leadership at Karu Shikha Office",
+    "category": "women",
+    "category_bn": "সমতা ও নারী ক্ষমতায়ন",
+    "tag": "GBV ও নেতৃত্ব",
+    "date": "০৯ জুলাই ২০২৬",
+    "location": "কারু শিখা প্রধান কার্যালয়",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122221170056342988/",
+    "size_kb": 219.4
+  },
+  {
+    "file": "doe-award-1.jpg",
+    "src": "doe-award-1.jpg",
+    "title": "পরিবেশ অধিদপ্তর আয়োজিত বিশ্ব পরিবেশ দিবস উদযাপন ও পুরস্কার বিতরণী অনুষ্ঠানে অংশগ্রহণ",
+    "title_en": "Participation & Award Recognition at World Environment Day by Department of Environment",
+    "category": "climate",
+    "category_bn": "জলবায়ু ও পরিবেশ",
+    "tag": "বিশ্ব পরিবেশ দিবস",
+    "date": "০৯ জুলাই ২০২৬",
+    "location": "ফরিদপুর",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122221145498342988/",
+    "size_kb": 290.8
+  },
+  {
     "file": "climate-1.jpg",
     "src": "img-005.png",
     "title": "আদর্শ বালিকা বিদ্যালয়ে ক্লাইমেট অলিম্পিয়াড ২০২৬ আয়োজন",

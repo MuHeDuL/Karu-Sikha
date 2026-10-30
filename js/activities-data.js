@@ -1,6 +1,6 @@
 /**
- * Karu Shikha Youth Development Society - Comprehensive 70 Activities & Milestones
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৭০টি বাস্তব কার্যক্রম ও মাইলফলক
+ * Karu Shikha Youth Development Society - Comprehensive 69 Activities & Milestones
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৬৯টি বাস্তব কার্যক্রম ও মাইলফলক
  */
 
 window.KARU_SHIKHA_ACTIVITIES = [
@@ -39,6 +39,50 @@ window.KARU_SHIKHA_ACTIVITIES = [
     },
     {
         id: 4,
+        title: "আন্তর্জাতিক যুব দিবস ২০২৬ উপলক্ষে ফরিদপুরে ‘Youth Discussion & Dialogue’ অনুষ্ঠিত।",
+        title_en: "Youth Discussion & Dialogue in Faridpur for International Youth Day 2026.",
+        category: "partnership",
+        tag: "আন্তর্জাতিক যুব দিবস",
+        icon: "🗣️",
+        date: "১২ আগস্ট ২০২৬",
+        location: "ফরিদপুর",
+        facebook_url: "https://www.facebook.com/61560289663754/posts/122224784696342988/"
+    },
+    {
+        id: 5,
+        title: "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ কর্মসূচি।",
+        title_en: "Tree plantation & sapling distribution at Lailatul Madani Madrasa, C&B Ghat.",
+        category: "climate",
+        tag: "বৃক্ষরোপণ কর্মসূচি",
+        icon: "🌱",
+        date: "জুলাই ২০২৬",
+        location: "সি এন্ড বি ঘাট, ফরিদপুর",
+        facebook_url: "https://www.facebook.com/61560289663754/posts/122223099242342988/"
+    },
+    {
+        id: 6,
+        title: "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা।",
+        title_en: "Leadership dialogues on ending Gender-Based Violence (GBV) at Karu Shikha Office.",
+        category: "women",
+        tag: "GBV ও লিডারশিপ",
+        icon: "🛡️",
+        date: "০৯ জুলাই ২০২৬",
+        location: "কারু শিখা প্রধান কার্যালয়",
+        facebook_url: "https://www.facebook.com/61560289663754/posts/122221170056342988/"
+    },
+    {
+        id: 7,
+        title: "বিশ্ব পরিবেশ দিবস উপলক্ষে পরিবেশ অধিদপ্তরের আয়োজিত অনুষ্ঠান ও পুরস্কার বিতরণীতে অংশগ্রহণ।",
+        title_en: "Honored at World Environment Day summit by Department of Environment.",
+        category: "climate",
+        tag: "বিশ্ব পরিবেশ দিবস",
+        icon: "🏆",
+        date: "০৯ জুলাই ২০২৬",
+        location: "ফরিদপুর",
+        facebook_url: "https://www.facebook.com/61560289663754/posts/122221145498342988/"
+    },
+    {
+        id: 8,
         title: "ক্লাইমেট অলিম্পিয়াড আয়োজন।",
         title_en: "Organized Climate Olympiad for youth environmental awareness.",
         category: "climate",
@@ -46,7 +90,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌍"
     },
     {
-        id: 5,
+        id: 9,
         title: "মাসিক স্বাস্থ্য সুরক্ষা ও মানসিক স্বাস্থ্য সুরক্ষা বিষয়ক উঠান বৈঠক।",
         title_en: "Courtyard dialogues on menstrual hygiene & mental wellness.",
         category: "women",
@@ -54,7 +98,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌸"
     },
     {
-        id: 6,
+        id: 10,
         title: "শিশু শিক্ষা কার্যক্রম — Project Your Mentor।",
         title_en: "Underprivileged child education initiative — Project Your Mentor.",
         category: "children",
@@ -62,7 +106,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "📚"
     },
     {
-        id: 7,
+        id: 11,
         title: "হ্যান্ড পেইন্ট প্রশিক্ষণ।",
         title_en: "Vocational hand painting workshops for women & youth.",
         category: "craft",
@@ -70,7 +114,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎨"
     },
     {
-        id: 8,
+        id: 12,
         title: "শিশুদের ফ্রি মেডিকেল ক্যাম্প আয়োজন।",
         title_en: "Free healthcare & medical checkup camps for underprivileged kids.",
         category: "children",
@@ -78,7 +122,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🩺"
     },
     {
-        id: 9,
+        id: 13,
         title: "শিশুদের ব্লাড টেস্ট ক্যাম্পেইন।",
         title_en: "Free blood typing and health diagnostics for children.",
         category: "children",
@@ -86,7 +130,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🩸"
     },
     {
-        id: 10,
+        id: 14,
         title: "বৃক্ষরোপণ ও বৃক্ষ বিতরণ কর্মসূচি।",
         title_en: "Tree plantation and sapling distribution drives.",
         category: "climate",
@@ -94,7 +138,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌱"
     },
     {
-        id: 11,
+        id: 15,
         title: "শিশুদের নিয়ে মেহেদি উৎসব আয়োজন।",
         title_en: "Mehendi festival celebrating creativity and joy for children.",
         category: "children",
@@ -102,7 +146,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "✨"
     },
     {
-        id: 12,
+        id: 16,
         title: "পরিবেশবান্ধব পণ্য উৎপাদন — পেপার সিড পেন।",
         title_en: "Eco-friendly product production — Plantable Paper Seed Pens.",
         category: "craft",
@@ -110,7 +154,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "✏️"
     },
     {
-        id: 13,
+        id: 17,
         title: "পিঠা উৎসব আয়োজন।",
         title_en: "Traditional Bengali Pitha festival celebrating social harmony.",
         category: "humanitarian",
@@ -118,7 +162,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🥟"
     },
     {
-        id: 14,
+        id: 18,
         title: "যুব ও নারীদের দক্ষতা উন্নয়ন প্রশিক্ষণ।",
         title_en: "Vocational and soft skills training for youth and women.",
         category: "women",
@@ -126,7 +170,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "💼"
     },
     {
-        id: 15,
+        id: 19,
         title: "প্রতিবন্ধী ব্যক্তিদের সঙ্গে আন্তর্জাতিক প্রতিবন্ধী দিবস উপলক্ষে আলোচনা সভা।",
         title_en: "Dialogue commemorating International Day of Persons with Disabilities.",
         category: "humanitarian",
@@ -134,7 +178,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "♿"
     },
     {
-        id: 16,
+        id: 20,
         title: "সিসা দূষণ প্রতিরোধে সচেতনতামূলক ক্যাম্পেইন ও কলেজভিত্তিক প্রচারণা।",
         title_en: "College-level campaign against toxic lead pollution.",
         category: "climate",
@@ -142,7 +186,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "⚠️"
     },
     {
-        id: 17,
+        id: 21,
         title: "Global Climate Strike-এ অংশগ্রহণ।",
         title_en: "Active participation in the Global Climate Strike.",
         category: "climate",
@@ -150,7 +194,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "📢"
     },
     {
-        id: 18,
+        id: 22,
         title: "উদ্যোক্তা কর্নার স্থাপন এবং উদ্যোক্তাদের পণ্য বিপণন ও বিক্রয়ে সহযোগিতা।",
         title_en: "Entrepreneur Corner establishment & marketing assistance.",
         category: "craft",
@@ -158,7 +202,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🛍️"
     },
     {
-        id: 19,
+        id: 23,
         title: "মাসিক স্বাস্থ্যবিধি ও মানসিক স্বাস্থ্য সচেতনতা নিয়ে উঠান বৈঠক এবং নারী ও কিশোরীদের সচেতনতামূলক কার্যক্রম।",
         title_en: "Targeted menstrual hygiene and psychological health sessions for adolescent girls.",
         category: "women",
@@ -166,7 +210,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "👩"
     },
     {
-        id: 20,
+        id: 24,
         title: "WaterAid Bangladesh-এর সঙ্গে হাউজহোল্ড সার্ভে পরিচালনা।",
         title_en: "Comprehensive household survey conducted with WaterAid Bangladesh.",
         category: "partnership",
@@ -174,7 +218,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "💧"
     },
     {
-        id: 21,
+        id: 25,
         title: "ছয় দিনব্যাপী হাউজহোল্ড সার্ভে কার্যক্রম সম্পন্ন।",
         title_en: "6-day extensive WASH and community household survey.",
         category: "partnership",
@@ -182,7 +226,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "📋"
     },
     {
-        id: 22,
+        id: 26,
         title: "Communication & Networking বিষয়ক আউটডোর প্রশিক্ষণ।",
         title_en: "Outdoor masterclasses on strategic communication & networking.",
         category: "partnership",
@@ -190,15 +234,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎯"
     },
     {
-        id: 23,
-        title: "সমতায় তারুণ্য (Shomotay Tarunno – Youth for Equality) প্রকল্পের আওতায় যুব ও যুব নারীদের প্রশিক্ষণ।",
-        title_en: "Training under Shomotay Tarunno – Youth for Equality project.",
-        category: "women",
-        tag: "সমতায় তারুণ্য",
-        icon: "⚖️"
-    },
-    {
-        id: 24,
+        id: 27,
         title: "সমতায় তারুণ্য প্রকল্পের প্রথম ধাপের TOT for Youth-Led Organisations (YLOs) সম্পন্ন।",
         title_en: "Completed Phase 1 TOT for Youth-Led Organisations under Shomotay Tarunno.",
         category: "women",
@@ -206,15 +242,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎓"
     },
     {
-        id: 25,
-        title: "Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা।",
-        title_en: "Leadership dialogues on ending Gender-Based Violence (GBV).",
-        category: "women",
-        tag: "GBV ও লিডারশিপ",
-        icon: "🛡️"
-    },
-    {
-        id: 26,
+        id: 28,
         title: "Gender Media Literacy & Advocacy বিষয়ক প্রশিক্ষণ।",
         title_en: "Workshop on Gender Media Literacy & Advocacy.",
         category: "women",
@@ -222,7 +250,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "📱"
     },
     {
-        id: 27,
+        id: 29,
         title: "সমতায় তারুণ্য প্রকল্পের আওতায় স্থানীয় সরকার কর্তৃপক্ষের সঙ্গে সক্ষমতা বৃদ্ধি বিষয়ক আলোচনা সভা।",
         title_en: "Capacity-building policy dialogues with Local Government authorities.",
         category: "partnership",
@@ -230,7 +258,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏛️"
     },
     {
-        id: 28,
+        id: 30,
         title: "Empowering Women Growing Safe Future (EWGSF) প্রকল্পের প্রথম অফলাইন অর্গানাইজিং টিম মিটআপ।",
         title_en: "Inaugural offline organizing team meetup for the EWGSF project.",
         category: "women",
@@ -238,7 +266,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🤝"
     },
     {
-        id: 29,
+        id: 31,
         title: "Climate Action Programme-এর অর্গানাইজিং টিমের প্রথম মিটআপ।",
         title_en: "First organizing team summit for Climate Action Programme.",
         category: "climate",
@@ -246,7 +274,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌿"
     },
     {
-        id: 30,
+        id: 32,
         title: "Mind Game & Refreshment Session আয়োজন।",
         title_en: "Mind game, stress relief & mental wellness refreshment session.",
         category: "humanitarian",
@@ -254,7 +282,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🧠"
     },
     {
-        id: 31,
+        id: 33,
         title: "কৃষি অধিদপ্তরের উপপরিচালকের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়।",
         title_en: "Official strategic meeting with the Deputy Director of DAE.",
         category: "partnership",
@@ -262,7 +290,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌾"
     },
     {
-        id: 32,
+        id: 34,
         title: "কৃষি উদ্যোক্তাদের সঙ্গে মতবিনিময় সভা।",
         title_en: "Roundtable dialogue with regional agri-entrepreneurs.",
         category: "craft",
@@ -270,7 +298,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🚜"
     },
     {
-        id: 33,
+        id: 35,
         title: "জলবায়ু সহিষ্ণু কৃষির উন্নয়নে পরীক্ষামূলক চারা উৎপাদন কার্যক্রম।",
         title_en: "Experimental climate-resilient sapling and nursery production.",
         category: "climate",
@@ -278,7 +306,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌱"
     },
     {
-        id: 34,
+        id: 36,
         title: "কৃষি ও গ্রামীণ রূপান্তর, পুষ্টি, উদ্যোক্তা উন্নয়ন এবং সহনশীলতাবিষয়ক প্রশিক্ষণে সাংগঠনিক প্রতিনিধির অংশগ্রহণ।",
         title_en: "Delegate participation in national training on agri-transformation, nutrition & resilience.",
         category: "climate",
@@ -286,7 +314,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🥗"
     },
     {
-        id: 35,
+        id: 37,
         title: "উদ্যোক্তা ফোরাম সমাজ উন্নয়ন সংস্থার সঙ্গে যৌথ উদ্যোগ ও কার্যক্রমে সহযোগিতা।",
         title_en: "Joint collaborative initiatives with Entrepreneur Forum Social Dev Org.",
         category: "partnership",
@@ -294,7 +322,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🤝"
     },
     {
-        id: 36,
+        id: 38,
         title: "উদ্যোক্তা ঐক্য ঈদ উৎসবে সহযোগিতা।",
         title_en: "Partnership & support in Entrepreneur Unity Eid Festival.",
         category: "craft",
@@ -302,7 +330,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎉"
     },
     {
-        id: 37,
+        id: 39,
         title: "কারু শিখা উদ্যোক্তা সম্মাননা ২০২৬ আয়োজন।",
         title_en: "Hosted the prestigious Karu Shikha Entrepreneurship Awards 2026.",
         category: "craft",
@@ -310,7 +338,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏆"
     },
     {
-        id: 38,
+        id: 40,
         title: "Youth Engagement for Sustainable Development প্রোগ্রাম আয়োজন।",
         title_en: "Organized Youth Engagement for Sustainable Development summit.",
         category: "partnership",
@@ -318,7 +346,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌐"
     },
     {
-        id: 39,
+        id: 41,
         title: "ফরিদপুর ডায়াবেটিস সমিতির দায়িত্বপ্রাপ্ত সদস্য সচিবের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়।",
         title_en: "Strategic meeting with Member Secretary of Faridpur Diabetes Association.",
         category: "partnership",
@@ -326,7 +354,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏥"
     },
     {
-        id: 40,
+        id: 42,
         title: "জেলা পরিষদ ফরিদপুরের প্রশাসকের সঙ্গে সৌজন্য সাক্ষাৎ।",
         title_en: "Official courtesy meeting with District Council Administrator, Faridpur.",
         category: "partnership",
@@ -334,7 +362,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏛️"
     },
     {
-        id: 41,
+        id: 43,
         title: "কারু শিখার সমাজকল্যাণ উপদেষ্টার সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়।",
         title_en: "Consultative meeting with Social Welfare Advisor.",
         category: "partnership",
@@ -342,7 +370,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "👨‍⚕️"
     },
     {
-        id: 42,
+        id: 44,
         title: "আফরোজা হস্তশিল্প ও প্রশিক্ষণ কেন্দ্র পরিদর্শন।",
         title_en: "Official field visit to Afroza Handicrafts and Training Center.",
         category: "craft",
@@ -350,7 +378,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🧵"
     },
     {
-        id: 43,
+        id: 45,
         title: "এনজিও বিষয়ক সমন্বয় সভায় অংশগ্রহণ।",
         title_en: "Active representation in District NGO Coordination Conferences.",
         category: "partnership",
@@ -358,15 +386,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏢"
     },
     {
-        id: 44,
-        title: "আন্তর্জাতিক যুব দিবস উপলক্ষে Youth Discussion & Dialogue 2026-এ অংশগ্রহণ।",
-        title_en: "Participation in Youth Discussion & Dialogue 2026 for International Youth Day.",
-        category: "partnership",
-        tag: "আন্তর্জাতিক যুব দিবস",
-        icon: "🗣️"
-    },
-    {
-        id: 45,
+        id: 46,
         title: "National Youth Volunteer Award 2026 ও যুব তহবিলের অনুদানের চেক বিতরণ অনুষ্ঠানে অংশগ্রহণ।",
         title_en: "Honored at National Youth Volunteer Award 2026 & Youth Fund grant ceremony.",
         category: "partnership",
@@ -374,7 +394,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🥇"
     },
     {
-        id: 46,
+        id: 47,
         title: "স্বেচ্ছাসেবামূলক কাজের স্বীকৃতিস্বরূপ সম্মাননা ক্রেস্ট গ্রহণ।",
         title_en: "Received prestigious Honor Crests for exemplary community volunteerism.",
         category: "partnership",
@@ -382,7 +402,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎖️"
     },
     {
-        id: 47,
+        id: 48,
         title: "নতুন প্রজন্ম মানবিক সংগঠনের প্রথম প্রতিষ্ঠাবার্ষিকী ও স্বেচ্ছাসেবী মিলনমেলায় অংশগ্রহণ।",
         title_en: "Attended New Generation Humanitarian Org anniversary & volunteer convention.",
         category: "humanitarian",
@@ -390,7 +410,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🤝"
     },
     {
-        id: 48,
+        id: 49,
         title: "IPYG (International Peace Youth Group)-এর সঙ্গে অংশীদারত্ব চুক্তি স্বাক্ষর।",
         title_en: "Signed bilateral global partnership agreement with IPYG.",
         category: "partnership",
@@ -398,20 +418,12 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🕊️"
     },
     {
-        id: 49,
+        id: 50,
         title: "যুব উন্নয়ন অধিদপ্তর থেকে সংগঠনের নিবন্ধন সনদ অর্জন।",
         title_en: "Achieved official government registration certificate from Dept of Youth Development.",
         category: "partnership",
         tag: "সরকারি নিবন্ধন সনদ",
         icon: "📜"
-    },
-    {
-        id: 50,
-        title: "পদ্মা নদীভাঙন প্রতিরোধ ও ক্ষতিগ্রস্ত মানুষের পুনর্বাসনের দাবিতে স্মারকলিপি প্রদান।",
-        title_en: "Submitted formal memorandum demanding Padma river erosion defense & rehabilitation.",
-        category: "climate",
-        tag: "পদ্মা নদীভাঙন স্মারকলিপি",
-        icon: "🌊"
     },
     {
         id: 51,
@@ -487,14 +499,6 @@ window.KARU_SHIKHA_ACTIVITIES = [
     },
     {
         id: 60,
-        title: "বিশ্ব পরিবেশ দিবস উপলক্ষে পরিবেশ অধিদপ্তরের আয়োজিত অনুষ্ঠান ও পুরস্কার বিতরণীতে অংশগ্রহণ।",
-        title_en: "Honored at World Environment Day summit by Department of Environment.",
-        category: "climate",
-        tag: "বিশ্ব পরিবেশ দিবস",
-        icon: "🏆"
-    },
-    {
-        id: 61,
         title: "World Earth Day উপলক্ষে পরিবেশ সংরক্ষণ ও প্লাস্টিক দূষণ কমাতে অনলাইন প্রচারণা।",
         title_en: "Earth Day digital campaigns promoting plastic reduction & sustainability.",
         category: "climate",
@@ -502,7 +506,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🌏"
     },
     {
-        id: 62,
+        id: 61,
         title: "অনলাইনে বিষয়ভিত্তিক সচেতনতামূলক পোস্টার তৈরি ও প্রকাশ।",
         title_en: "Designing and publishing social advocacy infographic posters.",
         category: "partnership",
@@ -510,7 +514,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🖼️"
     },
     {
-        id: 63,
+        id: 62,
         title: "সচেতনতামূলক পডকাস্ট ভিডিও তৈরি ও প্রকাশ।",
         title_en: "Producing educational podcast episodes addressing pressing youth issues.",
         category: "partnership",
@@ -518,7 +522,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎙️"
     },
     {
-        id: 64,
+        id: 63,
         title: "সচেতনতামূলক রিল ভিডিও তৈরি ও প্রকাশ।",
         title_en: "Publishing viral short reels inspiring social change and volunteerism.",
         category: "partnership",
@@ -526,7 +530,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎬"
     },
     {
-        id: 65,
+        id: 64,
         title: "যুব ও যুব নারীদের কর্মসংস্থান, দক্ষতা উন্নয়ন এবং ফ্রিল্যান্সিং প্রশিক্ষণের সুযোগ সম্পর্কে তথ্য প্রচার।",
         title_en: "Youth freelancing, digital career and job orientation workshops.",
         category: "women",
@@ -534,7 +538,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "💻"
     },
     {
-        id: 66,
+        id: 65,
         title: "ক্ষুদ্র, ছোট ও মাঝারি উদ্যোক্তাদের উৎসাহিত করতে MSME Day উপলক্ষে শুভেচ্ছা ও সচেতনতামূলক প্রচারণা।",
         title_en: "MSME Day campaign fostering local micro, small and medium enterprises.",
         category: "craft",
@@ -542,7 +546,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏭"
     },
     {
-        id: 67,
+        id: 66,
         title: "কারু শিখার তৃতীয় প্রতিষ্ঠাবার্ষিকী উদযাপন।",
         title_en: "Celebration of Karu Shikha's 3rd Anniversary with community partners.",
         category: "partnership",
@@ -550,7 +554,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🎂"
     },
     {
-        id: 68,
+        id: 67,
         title: "নতুন ও পুরোনো সদস্যদের সাংগঠনিক সভা, নেতৃত্ব বিকাশ ও দলীয় সমন্বয় কার্যক্রম।",
         title_en: "Internal leadership development and team alignment summits.",
         category: "partnership",
@@ -558,7 +562,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "👥"
     },
     {
-        id: 69,
+        id: 68,
         title: "সংসদ সদস্যের প্রতিনিধির কারু শিখার কার্যালয় পরিদর্শন।",
         title_en: "Official office visit by Parliamentary Representative endorsing Karu Shikha.",
         category: "partnership",
@@ -566,7 +570,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "🏛️"
     },
     {
-        id: 70,
+        id: 69,
         title: "যুব, নারী, শিশু, পরিবেশ ও সামাজিক উন্নয়নবিষয়ক বিভিন্ন প্রতিষ্ঠানের সঙ্গে যোগাযোগ ও নেটওয়ার্কিং কার্যক্রম।",
         title_en: "Broad institutional networking with youth, gender, and environmental organizations.",
         category: "partnership",
