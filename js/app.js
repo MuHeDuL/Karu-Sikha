@@ -2803,9 +2803,11 @@ function renderMembers() {
                         </div>
                     </div>
 
-                    ${quoteText ? `
-                        <div class="mt-2 mb-3 p-2.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-[11px] text-amber-200/90 italic leading-relaxed line-clamp-2 select-none" title="${quoteText}">
-                            “${quoteText}”
+                                        ${quoteText ? `
+                        <div class="mt-2.5 mb-3 flex gap-1 items-start cursor-pointer group/quote" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'পুরো বাণীটি পড়তে প্রোফাইল দেখুন' : 'Click to read full quote'}">
+                            <span class="text-sky-400/50 text-sm leading-none font-serif mt-0.5 shrink-0 select-none group-hover/quote:text-sky-400 transition-colors">“</span>
+                            <p class="text-[11px] text-slate-400/80 italic leading-relaxed line-clamp-1 group-hover/quote:text-slate-300 transition-colors">${quoteText}</p>
+                            <span class="text-sky-400/50 text-sm leading-none font-serif self-end shrink-0 select-none group-hover/quote:text-sky-400 transition-colors">”</span>
                         </div>
                     ` : ''}
                 </div>
