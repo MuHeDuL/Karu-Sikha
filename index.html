@@ -869,11 +869,8 @@
                                 <!-- 2. WhatsApp Direct -->
                                 <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="p-3.5 rounded-2xl bg-slate-900/80 hover:bg-[#25D366]/15 border border-white/10 hover:border-[#25D366]/60 transition-all duration-300 flex items-center justify-between group shadow-sm">
                                     <div class="flex items-center gap-3 min-w-0">
-                                        <span class="w-10 h-10 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
-                                                <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
-                                            </svg>
+                                        <span class="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform p-1.5">
+                                            <img src="assets/whatsapp-icon.png" alt="WhatsApp" class="w-full h-full object-contain">
                                         </span>
                                         <div class="min-w-0">
                                             <div class="text-[11px] text-slate-400 font-medium truncate" data-i18n="contact_wa_label">অফিসিয়াল হোয়াটসঅ্যাপ</div>
@@ -978,7 +975,7 @@
                         </div>
                         <div>
                             <span class="font-extrabold text-base sm:text-lg text-white">Karu Shikha Youth Development Society</span>
-                            <div class="text-[10px] text-orange-400 font-medium" data-i18n="footer_founded">প্রতিষ্ঠা: ৩১ জানুয়ারি ২০১৯ • বায়তুল আমান, ফরিদপুর</div>
+                            <div class="text-[10px] text-orange-400 font-medium" data-i18n="footer_founded">প্রতিষ্ঠা: ৩১ জানুয়ারি ২০১৯ • ফরিদপুর</div>
                         </div>
                     </div>
                     <p class="text-slate-400 text-xs leading-relaxed max-w-md mb-4" data-i18n="footer_desc">
@@ -1003,10 +1000,23 @@
 
                 <div>
                     <h4 class="font-bold text-white text-xs sm:text-sm uppercase tracking-wider mb-3" data-i18n="footer_emergency">জরুরি যোগাযোগ</h4>
-                    <ul class="space-y-2 text-slate-400 text-xs">
-                        <li>📞 <a href="tel:01795023942" class="hover:text-white">01795-023942</a></li>
-                        <li>✉️ <a href="mailto:karushikhayds@gmail.com" class="hover:text-sky-400">karushikhayds@gmail.com</a></li>
-                        <li>📘 <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" class="text-blue-400 hover:underline" data-i18n="footer_fb">ফেসবুক পেজ ফলো করুন</a></li>
+                    <ul class="space-y-2.5 text-slate-400 text-xs">
+                        <li class="flex items-center gap-2">
+                            <span>📞</span>
+                            <a href="tel:01795023942" class="hover:text-white transition-colors">01795-023942</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <img src="assets/whatsapp-icon.png" alt="WhatsApp" class="w-4 h-4 object-contain inline-block rounded-sm shrink-0">
+                            <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:underline font-medium" data-i18n="footer_wa">হোয়াটসঅ্যাপে চ্যাট করুন</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>✉️</span>
+                            <a href="mailto:karushikhayds@gmail.com" class="hover:text-sky-400 transition-colors">karushikhayds@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>📘</span>
+                            <a href="https://www.facebook.com/p/Karu-Shikha-Youth-Development-Society-61560289663754/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline transition-colors" data-i18n="footer_fb">ফেসবুক পেজ ফলো করুন</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -1491,11 +1501,8 @@
 
                 <!-- WhatsApp Card with Direct Chat -->
                 <a href="https://wa.me/8801795023942" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-950/70 border border-[#25D366]/40 hover:border-[#25D366]/80 transition-all group">
-                    <div class="w-10 h-10 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.044-1.04-.087-.406-.131-1.334-.492-2.39-1.434-1.056-.942-1.503-1.89-1.647-2.295-.144-.405-.015-.624.116-.755.117-.117.26-.275.39-.42.13-.145.174-.246.26-.405.087-.159.043-.304-.022-.434-.065-.13-.58-1.398-.795-1.918-.21-.506-.423-.437-.58-.445l-.493-.008c-.174 0-.457.065-.696.326-.24.26-.913.892-.913 2.176 0 1.284.935 2.525 1.065 2.7 1.304 1.742 2.923 2.587 4.542 2.993.405.101.81.144 1.215.144.755 0 1.348-.174 1.768-.594.42-.42.507-.942.536-1.145.029-.203-.058-.319-.174-.377l-1.478-.71z"/>
-                            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.986-1.399C8.423 21.493 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.167c-1.637 0-3.167-.47-4.469-1.282l-.32-.202-3.325.932.932-3.238-.209-.333C3.766 14.73 3.333 13.4 3.333 12c0-4.78 3.887-8.667 8.667-8.667 4.78 0 8.667 3.887 8.667 8.667 0 4.78-3.887 8.667-8.667 8.667z"/>
-                        </svg>
+                    <div class="w-10 h-10 rounded-xl bg-[#25D366]/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform p-1.5">
+                        <img src="assets/whatsapp-icon.png" alt="WhatsApp" class="w-full h-full object-contain">
                     </div>
                     <div class="min-w-0 flex-1">
                         <div class="text-[10px] text-[#25D366] font-bold uppercase tracking-wider" data-i18n="modal_c_wa_lbl">হোয়াটসঅ্যাপ চ্যাট</div>
@@ -1732,6 +1739,6 @@
     <script src="js/members-data.js?v=20261030q"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261030q"></script>
-    <script src="js/app.js?v=20261030r"></script>
+    <script src="js/app.js?v=20261030s"></script>
 </body>
 </html>
