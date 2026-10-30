@@ -2661,8 +2661,8 @@ function renderMembers() {
                     </h3>
                     <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
                         ${currentLang === 'bn' 
-                            ? 'কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির তৃণমূল পর্যায়ে শিশু শিক্ষা সম্প্রসারণ, জরুরি রক্তদান, ক্লাইমেট ক্যাম্পেইন, ত্রাণ বিতরণ ও প্রান্তিক জনগোষ্ঠীর ক্ষমতায়নে সার্বক্ষণিক নিবেদিত ৩০ জন সাধারণ সদস্য নিবন্ধিত রয়েছেন।'
-                            : 'Karu Shikha Youth Development Society has 30 registered general members actively dedicated to grassroots child education, emergency blood donation, climate advocacy, relief distribution, and community empowerment.'}
+                            ? 'কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির তৃণমূল পর্যায়ের সামাজিক উন্নয়ন কার্যক্রম ও জনকল্যাণমূলক উদ্যোগে সার্বক্ষণিক নিবেদিত ৩০ জন সাধারণ সদস্য নিবন্ধিত রয়েছেন।'
+                            : 'Karu Shikha Youth Development Society has 30 registered general members actively dedicated to grassroots community development and youth initiatives.'}
                     </p>
                     <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-3 p-3.5 rounded-2xl bg-slate-950/80 border border-white/10 text-xs text-slate-400 max-w-2xl mx-auto mb-6">
                         <span class="text-amber-400 text-sm">🔒</span>
