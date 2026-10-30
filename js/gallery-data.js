@@ -605,6 +605,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "wateraid-survey-day2.webp"
   },
   {
+    "file": "wateraid-waste-survey.webp",
+    "title": "WaterAid-এর সহযোগিতায় হাউজহোল্ড ওয়াশ সার্ভে ও বর্জ্য ব্যবস্থাপনা কার্যক্রমের আনুষ্ঠানিক সূচনা",
+    "title_en": "Formal Launch of Community WASH Household Survey & Waste Management with WaterAid",
+    "category": "partnership",
+    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
+    "tag": "WaterAid ওয়াশ ও বর্জ্য ব্যবস্থাপনা",
+    "date": "২৩ ডিসেম্বর ২০২৫",
+    "date_en": "23 December 2025",
+    "location": "ফরিদপুর সদর",
+    "location_en": "Faridpur Sadar",
+    "facebook_url": "https://www.facebook.com/share/p/1CB9rVJMye/",
+    "size_kb": 114.6,
+    "src": "wateraid-waste-survey.webp"
+  },
+  {
     "file": "disability-rights-assembly.webp",
     "title": "আন্তর্জাতিক প্রতিবন্ধী দিবস উপলক্ষে অধিকার সুরক্ষা ও অন্তর্ভুক্তিমূলক সমাজ বিনির্মাণে আলোচনা সভা",
     "title_en": "Advocacy & Discussion on Rights of Persons with Disabilities for an Inclusive Society",
