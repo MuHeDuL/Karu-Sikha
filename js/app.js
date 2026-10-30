@@ -149,6 +149,7 @@ const translations = {
         "comm_tab_gen": "👥 সাধারণ সদস্য (৩০ জন)",
         "comm_search_ph": "সদস্যের নাম, পদবী, শিক্ষাগত যোগ্যতা বা পেশা দিয়ে খুঁজুন...",
         "member_count_init": "৭ জন",
+        "member_quote_label": "বাণী / মন্তব্য",
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
         "gallery_title": "কারু শিখার কার্যক্রমের ফটো গ্যালারি",
         "gallery_desc": "আমাদের বিভিন্ন প্রকল্প, শিশু শিক্ষা সহায়তা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ এবং হস্তশিল্প কর্মশালার বাস্তব ছবিসমূহ।",
@@ -554,6 +555,7 @@ const translations = {
         "comm_tab_gen": "👥 General Members (30)",
         "comm_search_ph": "Search by member name, role, qualification, profession...",
         "member_count_init": "7 Members",
+        "member_quote_label": "Inspirational Quote",
         "gallery_tag": "Field Photographs",
         "gallery_title": "Official Field Photo Gallery",
         "gallery_desc": "Glimpse our on-ground grassroots journey across child mentoring, Climate Olympiad, sanitary napkin distribution, and artisan workshops.",
@@ -2779,11 +2781,15 @@ function renderMembers() {
                         </div>
                     </div>
 
-                                        ${quoteText ? `
-                        <div class="mt-2.5 mb-3 flex gap-1 items-start cursor-pointer group/quote" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'পুরো বাণীটি পড়তে প্রোফাইল দেখুন' : 'Click to read full quote'}">
-                            <span class="text-sky-400/50 text-sm leading-none font-serif mt-0.5 shrink-0 select-none group-hover/quote:text-sky-400 transition-colors">“</span>
-                            <p class="text-[11px] text-slate-400/80 italic leading-relaxed line-clamp-1 group-hover/quote:text-slate-300 transition-colors">${quoteText}</p>
-                            <span class="text-sky-400/50 text-sm leading-none font-serif self-end shrink-0 select-none group-hover/quote:text-sky-400 transition-colors">”</span>
+                    ${quoteText ? `
+                        <div class="mt-2.5 mb-3 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-amber-500/5 to-transparent border-l-2 border-amber-400 border-t border-r border-b border-white/5 cursor-pointer group/quote hover:bg-amber-500/20 hover:border-amber-300 transition-all shadow-sm" onclick="openMemberModal(${m.id}, '${currentMemberTab}')" title="${currentLang === 'bn' ? 'পুরো বাণীটি পড়তে প্রোফাইল দেখুন' : 'Click to view full quote'}">
+                            <div class="flex items-start gap-1.5">
+                                <span class="text-amber-400 font-bold text-xs font-serif leading-none mt-0.5 shrink-0 select-none">“</span>
+                                <p class="text-[11px] text-amber-200 font-medium italic leading-relaxed line-clamp-1 group-hover/quote:text-amber-100 transition-colors">
+                                    ${quoteText}
+                                </p>
+                                <span class="text-amber-400 font-bold text-xs font-serif leading-none self-end shrink-0 select-none">”</span>
+                            </div>
                         </div>
                     ` : ''}
                 </div>
@@ -2866,11 +2872,15 @@ window.openMemberModal = function(id, tab) {
     // Populate Quote Box
     const quoteBoxEl = document.getElementById('member-modal-quote-box');
     const quoteEl = document.getElementById('member-modal-quote');
+    const quoteLabelEl = document.getElementById('member-modal-quote-label');
     const quoteText = isBn ? (m.quote || m.bani) : (m.quote_en || m.quote || m.bani);
     if (quoteBoxEl && quoteEl) {
         if (quoteText && quoteText.trim()) {
             quoteBoxEl.classList.remove('hidden');
             quoteEl.textContent = quoteText.trim();
+            if (quoteLabelEl) {
+                quoteLabelEl.textContent = isBn ? 'বাণী / মন্তব্য' : 'Inspirational Quote';
+            }
         } else {
             quoteBoxEl.classList.add('hidden');
         }
