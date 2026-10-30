@@ -170,6 +170,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "padma-erosion-1.jpg"
   },
   {
+    "file": "blood-donation.jpg",
+    "title": "থ্যালাসেমিয়া আক্রান্ত ৬ বছর বয়সী শিশুর জীবন বাঁচাতে কারু শিখা কোষাধ্যক্ষ মেহেরাব হোসেন ইমনের রক্তদান",
+    "title_en": "Voluntary Blood Donation by Treasurer Mehrab Hossain Emon for a Child with Thalassemia",
+    "category": "humanitarian",
+    "category_bn": "মানবিক ও রক্তদান",
+    "tag": "স্বেচ্ছায় রক্তদান",
+    "date": "০৯ সেপ্টেম্বর ২০২৬",
+    "date_en": "09 September 2026",
+    "location": "ফরিদপুর ডায়াবেটিক হাসপাতাল",
+    "location_en": "Faridpur Diabetic Hospital",
+    "facebook_url": "https://www.facebook.com/share/p/1E1NkqcFbk/",
+    "size_kb": 50.7,
+    "src": "blood-donation.jpg"
+  },
+  {
     "file": "diabetes-secretary-visit.jpg",
     "title": "ফরিদপুর ডায়াবেটিস সমিতির দায়িত্বপ্রাপ্ত সদস্য সচিব ডা. এম এ জলিল স্যারের সাথে সৌজন্য সাক্ষাৎ",
     "title_en": "Courtesy Meeting with Member Secretary of Faridpur Diabetes Association Dr. M A Jalil",
