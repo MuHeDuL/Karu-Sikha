@@ -35,6 +35,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "durga-puja-harmony.jpg"
   },
   {
+    "file": "national-youth-volunteer-award.jpg",
+    "title": "জেলা প্রশাসকের সম্মেলন কক্ষে ন্যাশনাল ইয়ুথ ভলান্টিয়ার অ্যাওয়ার্ড ২০২৬ ও যুব অনুদানের চেক বিতরণ অনুষ্ঠানে অংশগ্রহণ",
+    "title_en": "Attending National Youth Volunteer Award 2026 & Youth Fund Grant Ceremony at DC Conference Hall",
+    "category": "partnership",
+    "category_bn": "অংশীদারত্ব ও নেটওয়ার্কিং",
+    "tag": "National Volunteer Award",
+    "date": "১৭ অক্টোবর ২০২৬",
+    "date_en": "17 October 2026",
+    "location": "জেলা প্রশাসকের সম্মেলন কক্ষ, ফরিদপুর",
+    "location_en": "DC Conference Hall, Faridpur",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122232271508342988/",
+    "size_kb": 737.2,
+    "src": "national-youth-volunteer-award.jpg"
+  },
+  {
     "file": "youth-equality-1.jpg",
     "title": "৬০ জন তরুণ-তরুণীকে নিয়ে ‘সমতায় তারুণ্য—Youth for Equality’ প্রশিক্ষণ",
     "title_en": "Youth for Equality Training Workshop for 60 Young Leaders",

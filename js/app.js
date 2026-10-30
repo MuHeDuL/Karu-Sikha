@@ -149,13 +149,13 @@ const translations = {
         "gallery_tag": "মাঠপর্যায়ের স্থিরচিত্র",
         "gallery_title": "কারু শিখার কার্যক্রমের ফটো গ্যালারি",
         "gallery_desc": "আমাদের বিভিন্ন প্রকল্প, শিশু শিক্ষা সহায়তা, ক্লাইমেট অলিম্পিয়াড, স্যানিটারি ন্যাপকিন বিতরণ এবং হস্তশিল্প কর্মশালার বাস্তব ছবিসমূহ।",
-        "gal_cat_all": "সব ছবি (৪৮)",
+        "gal_cat_all": "সব ছবি (৪৯)",
         "gal_cat_climate": "🌍 জলবায়ু ও পরিবেশ (৯)",
         "gal_cat_children": "📚 শিশু শিক্ষা ও PYM (৫)",
         "gal_cat_women": "👩 নারী ও স্বাস্থ্য (৭)",
         "gal_cat_humanitarian": "🤝 মানবিক সেবা ও রক্তদান (৭)",
         "gal_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৫)",
-        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৫)",
+        "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৬)",
         "volunteer_cta_title": "কারু শিখার আলোকযাত্রায় যুক্ত হোন",
         "volunteer_cta_desc": "২০১৯ সাল থেকে শুরু হওয়া আমাদের সামাজিক বিপ্লবে আপনার সক্রিয় অংশগ্রহণ, মেধা কিংবা সামর্থ্য দিয়ে সমাজ বিনির্মাণে ভূমিকা রাখুন।",
         "btn_apply_volunteer": "ভলান্টিয়ার ফর্ম পূরণ করুন",
@@ -509,13 +509,13 @@ const translations = {
         "gallery_tag": "Field Photographs",
         "gallery_title": "Official Field Photo Gallery",
         "gallery_desc": "Glimpse our on-ground grassroots journey across child mentoring, Climate Olympiad, sanitary napkin distribution, and artisan workshops.",
-        "gal_cat_all": "All Photos (48)",
+        "gal_cat_all": "All Photos (49)",
         "gal_cat_climate": "🌍 Climate & Ecology (9)",
         "gal_cat_children": "📚 Child Mentoring & PYM (5)",
         "gal_cat_women": "👩 Women & Health (7)",
         "gal_cat_humanitarian": "🤝 Humanitarian & Blood (7)",
         "gal_cat_craft": "🎨 Crafts & Enterprise (5)",
-        "gal_cat_partnership": "🌐 Partnerships & Forum (15)",
+        "gal_cat_partnership": "🌐 Partnerships & Forum (16)",
         "volunteer_cta_title": "Become a Torchbearer of Karu Shikha",
         "volunteer_cta_desc": "Join our community journey started in 2019. Your contribution of passion, skills, or resources sparks lasting generational change.",
         "btn_apply_volunteer": "Submit Volunteer Application",
@@ -925,22 +925,22 @@ function applyTranslations(lang) {
     // Gallery filter pills labels
     const galleryCatMap = {
         bn: {
-            'all': 'সব ছবি (৪৮)',
+            'all': 'সব ছবি (৪৯)',
             'climate': '🌍 জলবায়ু ও পরিবেশ (৯)',
             'children': '📚 শিশু শিক্ষা ও PYM (৫)',
             'women': '👩 নারী ও স্বাস্থ্য (৭)',
             'humanitarian': '🤝 মানবিক সেবা ও রক্তদান (৭)',
             'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৫)',
-            'partnership': '🌐 পার্টনারশিপ ও সভা (১৫)'
+            'partnership': '🌐 পার্টনারশিপ ও সভা (১৬)'
         },
         en: {
-            'all': 'All Photos (48)',
+            'all': 'All Photos (49)',
             'climate': '🌍 Climate & Ecology (9)',
             'children': '📚 Child Mentoring & PYM (5)',
             'women': '👩 Women & Health (7)',
             'humanitarian': '🤝 Humanitarian & Blood (7)',
             'craft': '🎨 Crafts & Enterprise (5)',
-            'partnership': '🌐 Partnerships & Forum (15)'
+            'partnership': '🌐 Partnerships & Forum (16)'
         }
     };
 
