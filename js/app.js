@@ -917,6 +917,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Modals
     setupModals();
 
+    // 5.1 Initialize Project Showcase Engines (Slider, Crossfade, Project Albums)
+    initProjectShowcases();
+
     // 6. Mobile Menu & Header Scroll Handling
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1900,6 +1903,338 @@ window.closeCertificateModal = function() {
     const certModal = document.getElementById('certificate-modal');
     if (certModal) certModal.classList.add('hidden');
 };
+
+/* =========================================================================
+   PROJECT SHOWCASE ENGINES (Ideas 1, 2 & 3: Sliders, Albums & Lightboxes)
+   ========================================================================= */
+
+const PROJECT_ALBUMS = {
+    coks: {
+        title_bn: "Climate Olympiad (COKS) — ফটো অ্যালবাম ও কার্যক্রম",
+        title_en: "Climate Olympiad (COKS) — Photo Album & Field Events",
+        tag_bn: "ক্লাইমেট অলিম্পিয়াড",
+        tag_en: "Climate Olympiad",
+        icon: "🌍",
+        accent: "emerald",
+        events: [
+            {
+                img: "assets/gallery/climate-olympiad-2025.webp",
+                title_bn: "জলবায়ু পরিবর্তনের চ্যালেঞ্জ মোকাবিলায় শিক্ষার্থীদের নিয়ে ক্লাইমেট অলিম্পিয়াড ২০২৫ আয়োজন",
+                title_en: "Organizing Climate Olympiad 2025 for students to tackle environmental challenges",
+                tag_bn: "ক্লাইমেট অলিম্পিয়াড ২০২৫",
+                tag_en: "Climate Olympiad 2025",
+                date_bn: "১৬ সেপ্টেম্বর ২০২৫",
+                date_en: "16 September 2025",
+                url: "https://www.facebook.com/share/p/1FqCzxusY6/"
+            },
+            {
+                img: "assets/gallery/climate-core-team.webp",
+                title_bn: "সরকারি রাজেন্দ্র কলেজে অর্ধশত শিক্ষার্থীদের নিয়ে ক্লাইমেট সচেতনতা ও পরিবেশ সভা",
+                title_en: "Climate Action & Ecological Awareness Assembly at Govt. Rajendra College",
+                tag_bn: "ক্লাইমেট সেমিনার",
+                tag_en: "Climate Seminar",
+                date_bn: "১০ আগস্ট ২০২৫",
+                date_en: "10 August 2025",
+                url: "https://www.facebook.com/share/p/18qdGDauMw/"
+            },
+            {
+                img: "assets/gallery/earth-day-2026.webp",
+                title_bn: "ক্লাইমেট অলিম্পিয়াড বিজ্ঞানসম্মত সামাজিক আন্দোলন ও প্লাস্টিক দূষণ প্রতিরোধ অভিযান",
+                title_en: "Climate Olympiad Scientific Social Movement & Anti-Plastic Pollution Campaign",
+                tag_bn: "প্লাস্টিক দূষণ রোধ",
+                tag_en: "Plastic Pollution Drive",
+                date_bn: "২২ এপ্রিল ২০২৬",
+                date_en: "22 April 2026",
+                url: "https://www.facebook.com/share/p/1Sa3B4wq8p/"
+            }
+        ]
+    },
+    ewgsf: {
+        title_bn: "EWGSF প্রকল্প — নারী ক্ষমতায়ন ও হস্তশিল্প অ্যালবাম",
+        title_en: "EWGSF Project — Women Empowerment & Artisanal Album",
+        tag_bn: "EWGSF প্রকল্প",
+        tag_en: "EWGSF Project",
+        icon: "🌸",
+        accent: "orange",
+        events: [
+            {
+                img: "assets/gallery/ewgsf-meetup-2026.webp",
+                title_bn: "Empowering Women Growing Safe Future (EWGSF) প্রকল্পের প্রথম আনুষ্ঠানিক মিটআপ ও কর্মপরিকল্পনা",
+                title_en: "EWGSF First Organizing Team Summit & Strategic Roadmap",
+                tag_bn: "EWGSF ১ম মিটআপ",
+                tag_en: "EWGSF 1st Meetup",
+                date_bn: "২১ সেপ্টেম্বর ২০২৬",
+                date_en: "21 September 2026",
+                url: "https://www.facebook.com/share/p/1GPky6JNWT/"
+            },
+            {
+                img: "assets/gallery/hand-paint-training.webp",
+                title_bn: "যুব উন্নয়ন অধিদপ্তরের সহযোগিতায় নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ কর্মশালা",
+                title_en: "7-Day Artisanal Textile Hand-Painting Workshop with Dept of Youth Development",
+                tag_bn: "হ্যান্ড পেইন্ট প্রশিক্ষণ",
+                tag_en: "Hand-Paint Training",
+                date_bn: "২২ মার্চ ২০২৫",
+                date_en: "22 March 2025",
+                url: "https://www.facebook.com/61560289663754/posts/122164723886342988/"
+            },
+            {
+                img: "assets/gallery/menstrual-mental-health.webp",
+                title_bn: "মাসিক স্বাস্থ্য সুরক্ষা ও কিশোরীদের মানসিক স্বাস্থ্য সচেতনতা নিয়ে উঠান বৈঠক",
+                title_en: "Courtyard Dialogue on Menstrual Dignity and Adolescent Mental Health",
+                tag_bn: "স্বাস্থ্য ও মানসিক সুরক্ষা",
+                tag_en: "Health & Mental Hygiene",
+                date_bn: "২৪ অক্টোবর ২০২৫",
+                date_en: "24 October 2025",
+                url: "https://www.facebook.com/61560289663754/posts/122195040488342988/"
+            }
+        ]
+    },
+    pym: {
+        title_bn: "Project Your Mentor (PYM) — শিশু শিক্ষা ও সুরক্ষা অ্যালবাম",
+        title_en: "Project Your Mentor (PYM) — Child Education & Welfare Album",
+        tag_bn: "Project Your Mentor",
+        tag_en: "Project Your Mentor",
+        icon: "🧒",
+        accent: "sky",
+        events: [
+            {
+                img: "assets/gallery/blood-test-campaign.webp",
+                title_bn: "‘প্রোজেক্ট ইয়োর মেন্টর’-এর আওতাভুক্ত শিশুদের নিয়ে ব্লাড টেস্ট ও প্রাথমিক স্বাস্থ্য ক্যাম্পেইন",
+                title_en: "Blood Testing & Preventive Healthcare Campaign for PYM Children",
+                tag_bn: "ব্লাড টেস্ট ক্যাম্পেইন",
+                tag_en: "Blood Test Campaign",
+                date_bn: "০৬ ফেব্রুয়ারি ২০২৬",
+                date_en: "06 February 2026",
+                url: "https://www.facebook.com/share/p/14vaJbCq9yF/"
+            },
+            {
+                img: "assets/gallery/medical-camp-children.webp",
+                title_bn: "সুবিধাবঞ্চিত শিশুদের সুস্বাস্থ্য নিশ্চিত করতে ফ্রি মেডিকেল ক্যাম্প ও ওষুধ বিতরণ",
+                title_en: "Free Pediatric Medical Consultation & Medicine Distribution Camp",
+                tag_bn: "ফ্রি মেডিকেল ক্যাম্প",
+                tag_en: "Medical Camp",
+                date_bn: "২৬ জুলাই ২০২৬",
+                date_en: "26 July 2026",
+                url: "https://www.facebook.com/share/p/1DcoiHiQtu/"
+            },
+            {
+                img: "assets/gallery/women-6.webp",
+                title_bn: "বছরের শেষ দিনে সুবিধাবঞ্চিত শিশুদের নিয়ে পিঠা উৎসব, বই-খাতা ও শীতবস্ত্র বিতরণ",
+                title_en: "Year-End Pitha Celebration, Educational Stationery & Warm Winter Gift Drive",
+                tag_bn: "পিঠা উৎসব ও উপহার",
+                tag_en: "Pitha & Winter Gifts",
+                date_bn: "৩১ ডিসেম্বর ২০২৪",
+                date_en: "31 December 2024",
+                url: "https://www.facebook.com/share/p/1ErKE71hLn/"
+            },
+            {
+                img: "assets/pym-class.webp",
+                title_bn: "Project Your Mentor শিশুদের প্রাথমিক ও নৈতিক শিক্ষা পাঠদান সেশন",
+                title_en: "Project Your Mentor Primary Holistic & Value-based Learning Sessions",
+                tag_bn: "প্রাথমিক পাঠদান",
+                tag_en: "Primary Schooling",
+                date_bn: "নভেম্বর ২০২৪",
+                date_en: "November 2024",
+                url: "https://www.facebook.com/share/p/1CFgfHAkw3/"
+            }
+        ]
+    }
+};
+
+let currentPymIndex = 0;
+let pymSliderTimer = null;
+let ewgsfCrossfadeTimer = null;
+let currentEwgsfIndex = 0;
+
+function updatePymSlide(idx) {
+    const slides = document.querySelectorAll('.pym-slide');
+    const dotsContainer = document.getElementById('pym-slider-dots');
+    if (!slides.length) return;
+
+    currentPymIndex = (idx + slides.length) % slides.length;
+
+    slides.forEach((slide, i) => {
+        if (i === currentPymIndex) {
+            slide.classList.remove('opacity-0', 'pointer-events-none');
+            slide.classList.add('opacity-100', 'z-10');
+        } else {
+            slide.classList.remove('opacity-100', 'z-10');
+            slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+        }
+    });
+
+    if (dotsContainer) {
+        const dots = dotsContainer.children;
+        for (let i = 0; i < dots.length; i++) {
+            if (i === currentPymIndex) {
+                dots[i].className = 'w-3 h-1.5 rounded-full bg-sky-400 transition-all';
+            } else {
+                dots[i].className = 'w-1.5 h-1.5 rounded-full bg-white/40 transition-all';
+            }
+        }
+    }
+}
+
+window.nextPymSlide = function(e) {
+    if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+    updatePymSlide(currentPymIndex + 1);
+    restartPymTimer();
+};
+
+window.prevPymSlide = function(e) {
+    if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
+    updatePymSlide(currentPymIndex - 1);
+    restartPymTimer();
+};
+
+function restartPymTimer() {
+    clearInterval(pymSliderTimer);
+    pymSliderTimer = setInterval(() => {
+        updatePymSlide(currentPymIndex + 1);
+    }, 4500);
+}
+
+function initEwgsfCrossfade() {
+    const images = document.querySelectorAll('.ewgsf-crossfade-img');
+    const badge = document.getElementById('ewgsf-crossfade-badge');
+    const title = document.getElementById('ewgsf-crossfade-title');
+    if (!images.length) return;
+
+    const titles = [
+        "EWGSF প্রজেক্টের প্রথম আনুষ্ঠানিক মিটআপ",
+        "নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ",
+        "মাসিক স্বাস্থ্য সুরক্ষা ও মানসিক সচেতনতা উঠান বৈঠক"
+    ];
+
+    clearInterval(ewgsfCrossfadeTimer);
+    ewgsfCrossfadeTimer = setInterval(() => {
+        currentEwgsfIndex = (currentEwgsfIndex + 1) % images.length;
+        images.forEach((img, i) => {
+            if (i === currentEwgsfIndex) {
+                img.classList.remove('opacity-0', 'z-0');
+                img.classList.add('opacity-100', 'z-10');
+            } else {
+                img.classList.remove('opacity-100', 'z-10');
+                img.classList.add('opacity-0', 'z-0');
+            }
+        });
+        if (badge) badge.textContent = `ইভেন্ট ${currentEwgsfIndex + 1}/${images.length}`;
+        if (title) title.textContent = titles[currentEwgsfIndex];
+    }, 4200);
+}
+
+window.openProjectAlbum = function(projKey) {
+    const data = PROJECT_ALBUMS[projKey];
+    if (!data) return;
+
+    const modal = document.getElementById('project-album-modal');
+    const titleEl = document.getElementById('album-modal-title');
+    const subEl = document.getElementById('album-modal-sub');
+    const iconEl = document.getElementById('album-modal-icon');
+    const gridEl = document.getElementById('album-modal-grid');
+
+    if (!modal) return;
+
+    const isBn = (typeof currentLang !== 'undefined' ? currentLang : 'bn') === 'bn';
+
+    if (iconEl) iconEl.textContent = data.icon || '📸';
+    if (titleEl) titleEl.textContent = isBn ? data.title_bn : data.title_en;
+    if (subEl) subEl.textContent = isBn ? `মোট ${data.events.length}টি ভেরিফায়েড ইভেন্ট ও অফিশিয়াল ফেসবুক পোস্টের রেকর্ড` : `Total ${data.events.length} verified milestones with direct Facebook post records`;
+
+    if (gridEl) {
+        gridEl.innerHTML = data.events.map((ev, idx) => {
+            const evTitle = isBn ? ev.title_bn : ev.title_en;
+            const evTag = isBn ? ev.tag_bn : ev.tag_en;
+            const evDate = isBn ? ev.date_bn : ev.date_en;
+            const viewFb = isBn ? "ফেসবুকে পোস্টটি দেখুন ↗" : "View on Facebook ↗";
+
+            return `
+                <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-${data.accent}-500/40 transition-all flex flex-col group/card bg-slate-950/60 shadow-lg">
+                    <div class="relative w-full h-44 overflow-hidden bg-slate-900">
+                        <img src="${ev.img}" alt="${evTitle}" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                        <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-[10px] font-bold text-white border border-white/15">
+                            #${idx + 1} • ${evTag}
+                        </span>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <span class="text-[11px] text-slate-400 flex items-center gap-1 mb-1">
+                                <span>📅</span> <span>${evDate}</span>
+                            </span>
+                            <h4 class="text-xs sm:text-sm font-bold text-white line-clamp-2 leading-snug">
+                                ${evTitle}
+                            </h4>
+                        </div>
+                        <a href="${ev.url}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-xl bg-slate-900/90 hover:bg-${data.accent}-600 border border-white/15 hover:border-${data.accent}-400 text-xs font-semibold text-white transition-all text-center flex items-center justify-center gap-1.5 shadow">
+                            <span>${viewFb}</span>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeProjectAlbumModal = function() {
+    const modal = document.getElementById('project-album-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+};
+
+function initProjectShowcases() {
+    // 1. PYM Slider touch swipe handling on mobile
+    const pymSlider = document.getElementById('pym-slider');
+    if (pymSlider) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        pymSlider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(pymSliderTimer);
+        }, { passive: true });
+
+        pymSlider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 40) {
+                window.nextPymSlide();
+            } else if (touchEndX - touchStartX > 40) {
+                window.prevPymSlide();
+            }
+            restartPymTimer();
+        }, { passive: true });
+
+        pymSlider.addEventListener('mouseenter', () => clearInterval(pymSliderTimer));
+        pymSlider.addEventListener('mouseleave', () => restartPymTimer());
+
+        restartPymTimer();
+    }
+
+    // 2. EWGSF Crossfade
+    const ewgsfContainer = document.getElementById('ewgsf-crossfade');
+    if (ewgsfContainer) {
+        ewgsfContainer.addEventListener('mouseenter', () => clearInterval(ewgsfCrossfadeTimer));
+        ewgsfContainer.addEventListener('mouseleave', () => initEwgsfCrossfade());
+        initEwgsfCrossfade();
+    }
+
+    // 3. Project Album Modal backdrop click & ESC key
+    const albumModal = document.getElementById('project-album-modal');
+    if (albumModal) {
+        albumModal.addEventListener('click', (e) => {
+            if (e.target === albumModal) window.closeProjectAlbumModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !albumModal.classList.contains('hidden')) {
+                window.closeProjectAlbumModal();
+            }
+        });
+    }
+}
 
 function setupModals() {
     // ==========================================
