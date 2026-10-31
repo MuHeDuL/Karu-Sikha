@@ -2189,6 +2189,16 @@ const PROJECT_ALBUMS = {
                 url: "https://www.facebook.com/share/p/14vaJbCq9yF/"
             },
             {
+                img: "assets/gallery/pym-group-learning.webp",
+                title_bn: "Project Your Mentor–এর ব্যতিক্রমী হোম ভিজিট ও দলগত লার্নিং সেশন",
+                title_en: "Surprise Student Home Visit & Interactive Group Learning under PYM",
+                tag_bn: "ব্যতিক্রমী পাঠদান",
+                tag_en: "Group Learning",
+                date_bn: "৩০ জানুয়ারি ২০২৬",
+                date_en: "30 January 2026",
+                url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
+            },
+            {
                 img: "assets/gallery/pym-education-future-generation.webp",
                 title_bn: "Project Your Mentor: শিশুশিক্ষা, আগামী প্রজন্ম গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং",
                 title_en: "Child Education, Future Generation Empowerment & Holistic Mentorship",
@@ -2197,16 +2207,6 @@ const PROJECT_ALBUMS = {
                 date_bn: "১০ জানুয়ারি ২০২৬",
                 date_en: "10 January 2026",
                 url: "https://www.facebook.com/share/p/1ErKE71hLn/"
-            },
-            {
-                img: "assets/gallery/pym-group-learning.webp",
-                title_bn: "Project Your Mentor–এর ব্যতিক্রমী হোম ভিজিট ও দলগত লার্নিং সেশন",
-                title_en: "Surprise Student Home Visit & Interactive Group Learning under PYM",
-                tag_bn: "ব্যতিক্রমী পাঠদান",
-                tag_en: "Group Learning",
-                date_bn: "৩০ জানুয়ারি ২০২৫",
-                date_en: "30 January 2025",
-                url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
             },
             {
                 img: "assets/gallery/pym-joyful-learning.webp",

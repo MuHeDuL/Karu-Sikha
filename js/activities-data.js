@@ -479,6 +479,17 @@ window.KARU_SHIKHA_ACTIVITIES = [
     },
     {
         id: 44,
+        title: "Project Your Mentor–এর ব্যতিক্রমী হোম ভিজিট ও দলগত লার্নিং সেশন।",
+        title_en: "Surprise student home visit & interactive group learning session under PYM.",
+        category: "children",
+        tag: "Project Your Mentor",
+        icon: "🏡",
+        date: "৩০ জানুয়ারি ২০২৬",
+        date_en: "30 January 2026",
+        facebook_url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
+    },
+    {
+        id: 45,
         title: "অনলাইনে বিষয়ভিত্তিক সচেতনতামূলক পোস্টার তৈরি ও প্রকাশ।",
         title_en: "Designing and publishing social advocacy infographic posters.",
         category: "partnership",
@@ -489,7 +500,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/reel/869099655744457/"
     },
     {
-        id: 45,
+        id: 46,
         title: "সাইবার বুলিং ও সামাজিক বুলিং প্রতিরোধে সচেতনতামূলক প্রচারণা।",
         title_en: "Community campaigns countering cyberbullying and peer victimization.",
         category: "women",
@@ -500,7 +511,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/reel/869099655744457/"
     },
     {
-        id: 46,
+        id: 47,
         title: "মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়।",
         title_en: "Courtest meeting and views exchange with Honourable Advisor Syeda Rizwana Hasan.",
         category: "climate",
@@ -511,7 +522,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/tihan.ahmed.9081/posts/2409498649499925/"
     },
     {
-        id: 47,
+        id: 48,
         title: "যুব উন্নয়ন অধিদপ্তর থেকে সংগঠনের নিবন্ধন সনদ অর্জন।",
         title_en: "Achieved official government registration certificate from Dept of Youth Development.",
         category: "partnership",
@@ -521,7 +532,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date_en: "21 January 2026"
     },
     {
-        id: 48,
+        id: 49,
         title: "Project Your Mentor: শিশুশিক্ষা সহায়তা, মূল্যবোধ গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং।",
         title_en: "Child education support, ethical values and volunteer mentorship drive under PYM.",
         category: "children",
@@ -532,7 +543,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/1ErKE71hLn/"
     },
     {
-        id: 49,
+        id: 50,
         title: "তীব্র শীত ও শীতজনিত স্বাস্থ্যঝুঁকি সম্পর্কে সচেতনতামূলক প্রচারণা।",
         title_en: "Public health awareness and blanket drives during severe winter cold waves.",
         category: "humanitarian",
@@ -543,7 +554,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/reel/872606782187556/"
     },
     {
-        id: 50,
+        id: 51,
         title: "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে ছয় দিনব্যাপী হাউজহোল্ড ওয়াশ সার্ভে কার্যক্রম সম্পন্ন।",
         title_en: "Completed 6-day community WASH household survey in partnership with WaterAid Bangladesh.",
         category: "partnership",
@@ -554,7 +565,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122202250712342988/"
     },
     {
-        id: 51,
+        id: 52,
         title: "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে হাউজহোল্ড ওয়াশ সার্ভে পরিচালনা (২য় দিন)।",
         title_en: "Community WASH Household Survey Fieldwork with WaterAid Bangladesh (Day 2).",
         category: "partnership",
@@ -565,7 +576,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122201802650342988/"
     },
     {
-        id: 52,
+        id: 53,
         title: "WaterAid Bangladesh-এর সহযোগিতায় কমিউনিটি হাউজহোল্ড ওয়াশ সার্ভে ও বর্জ্য ব্যবস্থাপনা কার্যক্রমের আনুষ্ঠানিক সূচনা।",
         title_en: "Formal commencement of community WASH household survey and waste management fieldwork with WaterAid Bangladesh.",
         category: "partnership",
@@ -576,7 +587,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/1CB9rVJMye/"
     },
     {
-        id: 53,
+        id: 54,
         title: "প্রতিবন্ধী ব্যক্তিদের সঙ্গে আন্তর্জাতিক প্রতিবন্ধী দিবস উপলক্ষে আলোচনা সভা।",
         title_en: "Dialogue commemorating International Day of Persons with Disabilities.",
         category: "humanitarian",
@@ -587,7 +598,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/195RAZekXS/"
     },
     {
-        id: 54,
+        id: 55,
         title: "নারী ও কন্যাদের প্রতি ডিজিটাল সহিংসতা প্রতিরোধে অনলাইন সচেতনতামূলক ক্যাম্পেইন।",
         title_en: "Online campaign defending girls and women against digital gender-based violence.",
         category: "women",
@@ -598,7 +609,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122198574170342988/"
     },
     {
-        id: 55,
+        id: 56,
         title: "সচেতনতামূলক রিল ভিডিও তৈরি ও প্রকাশ।",
         title_en: "Publishing viral short reels inspiring social change and volunteerism.",
         category: "partnership",
@@ -609,7 +620,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/reel/2014525419371010/"
     },
     {
-        id: 56,
+        id: 57,
         title: "সিসা দূষণ প্রতিরোধে সচেতনতামূলক ক্যাম্পেইন ও কলেজভিত্তিক প্রচারণা।",
         title_en: "College-level campaign against toxic lead pollution.",
         category: "climate",
@@ -620,7 +631,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122196173108342988/"
     },
     {
-        id: 57,
+        id: 58,
         title: "মাসিক স্বাস্থ্যবিধি ও মানসিক স্বাস্থ্য সচেতনতা নিয়ে উঠান বৈঠক এবং নারী ও কিশোরীদের সচেতনতামূলক কার্যক্রম।",
         title_en: "Targeted menstrual hygiene and psychological health sessions for adolescent girls.",
         category: "women",
@@ -631,7 +642,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122195040488342988/"
     },
     {
-        id: 58,
+        id: 59,
         title: "মাসিক স্বাস্থ্য, দুর্যোগকালীন স্বাস্থ্যসুরক্ষা ও জেন্ডারভিত্তিক সহিংসতা বিষয়ে অনলাইন সচেতনতামূলক প্রচারণা।",
         title_en: "Digital awareness drive on menstrual health in disasters and GBV prevention.",
         category: "women",
@@ -642,7 +653,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122195040488342988/"
     },
     {
-        id: 59,
+        id: 60,
         title: "৭ দিন মেয়াদি উঠানে সবজি চাষ প্রশিক্ষণ।",
         title_en: "7-day practical courtyard vegetable farming training & organic nutrition drive.",
         category: "climate",
@@ -653,7 +664,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122192788760342988/"
     },
     {
-        id: 60,
+        id: 61,
         title: "ক্লাইমেট অলিম্পিয়াড আয়োজন।",
         title_en: "Organized Climate Olympiad for youth environmental awareness.",
         category: "climate",
@@ -664,7 +675,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122190610364342988/"
     },
     {
-        id: 61,
+        id: 62,
         title: "বিশ্ব পরিবেশ দিবসে Mission Green Bangladesh-এর সাথে ৬৪ জেলায় একদিনে বৃক্ষরোপণ ও প্লাস্টিক দূষণ বিরোধী সচেতনতা কর্মসূচি।",
         title_en: "Nationwide tree plantation & anti-plastic pollution awareness drive across 64 districts with Mission Green Bangladesh on World Environment Day.",
         category: "climate",
@@ -675,7 +686,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/1KKspnxZiQ/"
     },
     {
-        id: 62,
+        id: 63,
         title: "পরিবেশবান্ধব পণ্য উৎপাদন — পেপার সিড পেন।",
         title_en: "Eco-friendly product production — Plantable Paper Seed Pens.",
         category: "craft",
@@ -686,7 +697,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/61560289663754/posts/122175345014342988/"
     },
     {
-        id: 63,
+        id: 64,
         title: "হ্যান্ড পেইন্ট প্রশিক্ষণ।",
         title_en: "Vocational hand painting workshops for women & youth.",
         category: "craft",
@@ -695,17 +706,6 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date: "২২ মার্চ ২০২৫",
         date_en: "22 March 2025",
         facebook_url: "https://www.facebook.com/61560289663754/posts/122164723886342988/"
-    },
-    {
-        id: 64,
-        title: "Project Your Mentor–এর ব্যতিক্রমী হোম ভিজিট ও দলগত লার্নিং সেশন।",
-        title_en: "Surprise student home visit & interactive group learning session under PYM.",
-        category: "children",
-        tag: "Project Your Mentor",
-        icon: "🏡",
-        date: "৩০ জানুয়ারি ২০২৫",
-        date_en: "30 January 2025",
-        facebook_url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
     },
     {
         id: 65,

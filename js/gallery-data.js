@@ -1,8 +1,3 @@
-/**
- * Karu Shikha Youth Development Society - Verified Event Photo Gallery Data
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ভেরিফায়েড ফটো গ্যালারি ডেটা (Strict Chronological Descending)
- */
-
 window.KARU_SHIKHA_GALLERY = [
   {
     "file": "advocacy-dialogue-1.webp",
@@ -560,6 +555,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "blood-test-campaign.webp"
   },
   {
+    "file": "pym-group-learning.webp",
+    "title": "Project Your Mentor–এর ভিন্নধর্মী হোম-ভিজিট ও ইন্টার‌অ্যাকটিভ দলগত শিক্ষা সেশন",
+    "title_en": "Interactive Group Learning & Student Home Visit Session under Project Your Mentor",
+    "category": "children",
+    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
+    "tag": "Project Your Mentor",
+    "date": "৩০ জানুয়ারি ২০২৬",
+    "date_en": "30 January 2026",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/share/p/1QM5CM5Aun/",
+    "size_kb": 566.3,
+    "src": "pym-group-learning.webp"
+  },
+  {
     "file": "advisor-rizwana-hasan.webp",
     "title": "পরিবেশ ও জলবায়ু পরিবর্তন মন্ত্রণালয়ের মাননীয় উপদেষ্টা সৈয়দা রিজওয়ানা হাসানের সঙ্গে সৌজন্য সাক্ষাৎ ও মতবিনিময়",
     "title_en": "Courtesy Meeting with Honorable Advisor Syeda Rizwana Hasan, Ministry of Environment, Forest and Climate Change",
@@ -768,21 +778,6 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122164723886342988/",
     "size_kb": 78.8,
     "src": "hand-paint-training.webp"
-  },
-  {
-    "file": "pym-group-learning.webp",
-    "title": "Project Your Mentor–এর ভিন্নধর্মী হোম-ভিজিট ও ইন্টার‌অ্যাকটিভ দলগত শিক্ষা সেশন",
-    "title_en": "Interactive Group Learning & Student Home Visit Session under Project Your Mentor",
-    "category": "children",
-    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
-    "tag": "Project Your Mentor",
-    "date": "৩০ জানুয়ারি ২০২৫",
-    "date_en": "30 January 2025",
-    "location": "ফরিদপুর",
-    "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/share/p/1QM5CM5Aun/",
-    "size_kb": 566.3,
-    "src": "pym-group-learning.webp"
   },
   {
     "file": "pym-joyful-learning.webp",
