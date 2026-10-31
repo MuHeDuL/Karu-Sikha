@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="কারু শিখা">
     <title data-i18n="doc_title">কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি | Karu Shikha Youth Development Society</title>
 
     <!-- Favicon & Brand Icons -->
@@ -55,10 +52,8 @@
             }
         }
     </script>
-    <!-- Three.js CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20261031f">
+    <link rel="stylesheet" href="css/style.css?v=20261031g">
 </head>
 <body class="bg-[#060d19] text-slate-100 selection:bg-orange-500 selection:text-slate-950 antialiased">
 
@@ -162,7 +157,7 @@
     <!-- Main Hero Section with Interactive 3D Karu Shikha Logo Background -->
     <section id="hero" class="relative min-h-[90vh] sm:min-h-[94vh] flex items-center justify-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <!-- 3D Karu Shikha Logo Particles in Background -->
-        <div id="hero-canvas-container"></div>
+        <div id="hero-canvas-container" class="absolute inset-0 w-full h-full pointer-events-none overflow-hidden z-0"></div>
 
         <!-- Foreground Content Layer -->
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center hero-content">
@@ -2563,13 +2558,16 @@
         </a>
     </aside>
 
+    <!-- Three.js CDN (Loaded non-blocking at bottom for instant FCP load) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
     <script src="js/activities-data.js?v=20261031u"></script>
     <script src="js/gallery-data.js?v=20261031u"></script>
     <script src="js/reels-data.js?v=20261031e"></script>
     <script src="js/members-data.js?v=20261031p"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
-    <script src="js/three-scene.js?v=20261031r"></script>
-    <script src="js/app.js?v=20261031ao"></script>
+    <script src="js/three-scene.js?v=20261031s"></script>
+    <script src="js/app.js?v=20261031ap"></script>
 </body>
 </html>

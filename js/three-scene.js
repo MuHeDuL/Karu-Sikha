@@ -33,17 +33,11 @@ class KaruShikhaHero3D {
         this.raycaster = new THREE.Raycaster();
         this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
-        // iPhone / Mobile battery & GPU performance optimization state
-        this.isIntersecting = true;
-        this.isTabVisible = !document.hidden;
-        this.isLoopActive = false;
-
         this.init();
         this.createShapes();
         this.createParticles();
         this.setupEvents();
-        this.setupVisibilityObserver();
-        this.startLoop();
+        this.animate();
     }
 
     init() {
@@ -59,13 +53,15 @@ class KaruShikhaHero3D {
         const zForWidth = 20.0 / Math.max(0.44, aspect);
         this.camera.position.set(0, 0, Math.max(zForHeight, zForWidth));
 
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
         this.renderer = new THREE.WebGLRenderer({
             alpha: true,
             antialias: true,
-            powerPreference: 'high-performance'
+            powerPreference: 'high-performance',
+            precision: 'mediump'
         });
         this.renderer.setSize(width, height);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        this.renderer.setPixelRatio(isIOS ? Math.min(window.devicePixelRatio, 1.5) : Math.min(window.devicePixelRatio, 2));
         this.container.appendChild(this.renderer.domElement);
     }
 
@@ -313,7 +309,6 @@ class KaruShikhaHero3D {
 
         this.currentShape = shapeName;
         this.morphProgress = 0.0;
-        this.startLoop();
     }
 
     setupEvents() {
@@ -339,49 +334,29 @@ class KaruShikhaHero3D {
             handlePointer(e.clientX, e.clientY);
         });
 
+        window.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length > 0) {
+                handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
         window.addEventListener('touchmove', (e) => {
-            if (e.touches.length > 0) {
+            if (e.touches && e.touches.length > 0) {
                 handlePointer(e.touches[0].clientX, e.touches[0].clientY);
             }
         }, { passive: true });
 
         window.addEventListener('touchend', () => {
             this.targetMouse.set(-999, -999);
-        });
+        }, { passive: true });
+
+        window.addEventListener('touchcancel', () => {
+            this.targetMouse.set(-999, -999);
+        }, { passive: true });
 
         window.addEventListener('pointerleave', () => {
             this.targetMouse.set(-999, -999);
         });
-    }
-
-    setupVisibilityObserver() {
-        if ('IntersectionObserver' in window && this.container) {
-            this.intersectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const wasIntersecting = this.isIntersecting;
-                    this.isIntersecting = entry.isIntersecting;
-                    if (!wasIntersecting && this.isIntersecting) {
-                        this.startLoop();
-                    }
-                });
-            }, { threshold: 0.02 });
-            this.intersectionObserver.observe(this.container);
-        }
-
-        document.addEventListener('visibilitychange', () => {
-            const wasVisible = this.isTabVisible;
-            this.isTabVisible = !document.hidden;
-            if (!wasVisible && this.isTabVisible) {
-                this.startLoop();
-            }
-        }, { passive: true });
-    }
-
-    startLoop() {
-        if (!this.isLoopActive && this.isIntersecting && this.isTabVisible) {
-            this.isLoopActive = true;
-            this.animate();
-        }
     }
 
     onResize() {
@@ -396,16 +371,12 @@ class KaruShikhaHero3D {
         this.camera.position.z = Math.max(zForHeight, zForWidth);
         this.camera.updateProjectionMatrix();
 
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
         this.renderer.setSize(width, height);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        this.renderer.setPixelRatio(isIOS ? Math.min(window.devicePixelRatio, 1.5) : Math.min(window.devicePixelRatio, 2));
     }
 
     animate() {
-        if (!this.isIntersecting || !this.isTabVisible) {
-            this.isLoopActive = false;
-            return; // Completely pause Three.js loop when scrolled out of view on iPhone
-        }
-
         requestAnimationFrame(() => this.animate());
 
         const time = performance.now() * 0.001;
@@ -445,12 +416,11 @@ class KaruShikhaHero3D {
             this.currentColors[i3 + 1] = THREE.MathUtils.lerp(this.sourceColors[i3 + 1], this.targetColors[i3 + 1], ease);
             this.currentColors[i3 + 2] = THREE.MathUtils.lerp(this.sourceColors[i3 + 2], this.targetColors[i3 + 2], ease);
 
-            // Shape-specific organic dynamic animation
+            // Shape-specific organic dynamic animation (Continuous 3D movement & breathing)
             if (this.currentShape === 'logo') {
-                // Subtle 3D floating & gentle breath
-                const floatMotion = Math.sin(time * 1.5 + targetY * 0.2) * 0.08;
+                const floatMotion = Math.sin(time * 1.8 + targetY * 0.25) * 0.18;
                 targetY += floatMotion;
-                targetZ += Math.cos(time * 1.2 + targetX * 0.2) * 0.06;
+                targetZ += Math.cos(time * 1.4 + targetX * 0.25) * 0.14;
             } else if (this.currentShape === 'shikha') {
                 const flicker = Math.sin(time * 5.0 + targetY * 1.2 + i * 0.05) * 0.16;
                 const wind = Math.cos(time * 2.2 + targetY * 0.8) * 0.14 * (targetY + 8) / 16;
@@ -497,23 +467,28 @@ class KaruShikhaHero3D {
         colAttr.needsUpdate = true;
 
         if (this.currentShape === 'logo') {
-            // Elegant subtle 3D parallax tilt reacting to cursor
+            // Elegant continuous 3D floating & tilt reacting to cursor or natural ambient wave
             if (this.mouse.x > -2 && this.mouse.x < 2) {
                 this.points.rotation.y = this.mouse.x * 0.28;
                 this.points.rotation.x = -this.mouse.y * 0.22;
             } else {
-                this.points.rotation.y = Math.sin(time * 0.6) * 0.12;
-                this.points.rotation.x = Math.cos(time * 0.5) * 0.08;
+                this.points.rotation.y = Math.sin(time * 0.75) * 0.18;
+                this.points.rotation.x = Math.cos(time * 0.55) * 0.10;
             }
+            // Continuous organic vertical floating wave
+            this.points.position.y = Math.sin(time * 1.2) * 0.28;
         } else if (this.currentShape === 'shikha') {
             this.points.rotation.y = Math.sin(time * 0.4) * 0.15;
             this.points.rotation.x = Math.cos(time * 0.3) * 0.06;
+            this.points.position.y = 0;
         } else if (this.currentShape === 'hands') {
             this.points.rotation.y = Math.sin(time * 0.3) * 0.15;
             this.points.rotation.x = Math.sin(time * 0.2) * 0.08;
+            this.points.position.y = 0;
         } else {
             this.points.rotation.y = Math.sin(time * 0.4) * 0.18;
             this.points.rotation.x = Math.cos(time * 0.3) * 0.08;
+            this.points.position.y = 0;
         }
 
         if (this.mouse.x > -2 && this.mouse.x < 2) {
@@ -532,5 +507,10 @@ class KaruShikhaHero3D {
 }
 
 window.initInteractiveHero3D = function(containerId) {
-    return new KaruShikhaHero3D(containerId);
+    try {
+        return new KaruShikhaHero3D(containerId);
+    } catch (err) {
+        console.warn("KaruShikhaHero3D initialization safely intercepted:", err);
+        return null;
+    }
 };

@@ -881,8 +881,12 @@ let currentGalleryFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize 3D Hero
-    if (typeof initInteractiveHero3D === 'function') {
-        hero3DInstance = initInteractiveHero3D('hero-canvas-container');
+    try {
+        if (typeof initInteractiveHero3D === 'function') {
+            hero3DInstance = initInteractiveHero3D('hero-canvas-container');
+        }
+    } catch (err) {
+        console.warn('3D Hero safely caught:', err);
     }
 
     // 2. 3D Shape Switcher

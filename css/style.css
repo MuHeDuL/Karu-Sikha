@@ -501,8 +501,12 @@ button, input, select, textarea {
     appearance: none;
 }
 
-a, button, input, select, textarea, [role="button"], .cursor-pointer, .shape-pill, .gallery-card, .activity-card {
+a, button, input, select, textarea, [role="button"], .shape-pill {
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.cursor-pointer, .gallery-card, .activity-card, .reel-card {
     -webkit-tap-highlight-color: transparent;
 }
 
