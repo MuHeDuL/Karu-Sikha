@@ -27,9 +27,11 @@ class KaruShikhaHero3D {
         this.morphProgress = 1.0;
         this.morphSpeed = 0.045;
         
-        // Mouse interaction state
+        // Mouse & Touch interaction state (Instant zero-delay mobile response)
         this.mouse = new THREE.Vector2(-999, -999);
         this.targetMouse = new THREE.Vector2(-999, -999);
+        this.isTouchActive = false;
+        this.touchReleaseTime = 0;
         this.raycaster = new THREE.Raycaster();
         this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
@@ -311,10 +313,19 @@ class KaruShikhaHero3D {
         this.morphProgress = 0.0;
     }
 
+    endTouch() {
+        if (this.isTouchActive) {
+            this.isTouchActive = false;
+            this.touchReleaseTime = performance.now();
+        } else {
+            this.targetMouse.set(-999, -999);
+        }
+    }
+
     setupEvents() {
         window.addEventListener('resize', () => this.onResize());
 
-        const handlePointer = (clientX, clientY) => {
+        const handlePointer = (clientX, clientY, isStarting = false) => {
             const rect = this.container.getBoundingClientRect();
             if (
                 clientX >= rect.left &&
@@ -324,38 +335,59 @@ class KaruShikhaHero3D {
             ) {
                 const mouseX = ((clientX - rect.left) / rect.width) * 2 - 1;
                 const mouseY = -((clientY - rect.top) / rect.height) * 2 + 1;
+
+                // Instant zero-delay touch initialization (eliminates the 75-frame lerp delay from -999)
+                if (isStarting || this.mouse.x < -2 || this.mouse.x > 2) {
+                    this.mouse.set(mouseX, mouseY);
+                }
                 this.targetMouse.set(mouseX, mouseY);
+                this.isTouchActive = true;
+                this.touchReleaseTime = 0;
             } else {
-                this.targetMouse.set(-999, -999);
+                this.endTouch();
             }
         };
 
-        window.addEventListener('pointermove', (e) => {
-            handlePointer(e.clientX, e.clientY);
-        });
+        // Pointer Events (Unified mouse & touchscreen)
+        window.addEventListener('pointerdown', (e) => {
+            handlePointer(e.clientX, e.clientY, true);
+        }, { passive: true });
 
+        window.addEventListener('pointermove', (e) => {
+            handlePointer(e.clientX, e.clientY, false);
+        }, { passive: true });
+
+        window.addEventListener('pointerup', () => {
+            this.endTouch();
+        }, { passive: true });
+
+        window.addEventListener('pointercancel', () => {
+            this.endTouch();
+        }, { passive: true });
+
+        // Native Touch Events for Mobile & iOS Safari
         window.addEventListener('touchstart', (e) => {
             if (e.touches && e.touches.length > 0) {
-                handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+                handlePointer(e.touches[0].clientX, e.touches[0].clientY, true);
             }
         }, { passive: true });
 
         window.addEventListener('touchmove', (e) => {
             if (e.touches && e.touches.length > 0) {
-                handlePointer(e.touches[0].clientX, e.touches[0].clientY);
+                handlePointer(e.touches[0].clientX, e.touches[0].clientY, false);
             }
         }, { passive: true });
 
         window.addEventListener('touchend', () => {
-            this.targetMouse.set(-999, -999);
+            this.endTouch();
         }, { passive: true });
 
         window.addEventListener('touchcancel', () => {
-            this.targetMouse.set(-999, -999);
+            this.endTouch();
         }, { passive: true });
 
         window.addEventListener('pointerleave', () => {
-            this.targetMouse.set(-999, -999);
+            this.endTouch();
         });
     }
 
@@ -380,10 +412,34 @@ class KaruShikhaHero3D {
         requestAnimationFrame(() => this.animate());
 
         const time = performance.now() * 0.001;
-        this.mouse.lerp(this.targetMouse, 0.08);
+
+        // Snappy responsive tracking when finger is dragging, smooth gentle recovery on release
+        const lerpSpeed = this.isTouchActive ? 0.22 : 0.08;
+        if (this.targetMouse.x > -2 && this.targetMouse.x < 2) {
+            this.mouse.lerp(this.targetMouse, lerpSpeed);
+        } else if (this.touchReleaseTime === 0) {
+            this.mouse.lerp(this.targetMouse, 0.08);
+        }
+
+        // Smooth decaying release force for elastic snap back
+        let currentTouchMultiplier = 0.0;
+        if (this.isTouchActive) {
+            currentTouchMultiplier = 1.0;
+        } else if (this.touchReleaseTime > 0) {
+            const elapsed = (performance.now() - this.touchReleaseTime) * 0.001;
+            if (elapsed < 0.45) {
+                currentTouchMultiplier = Math.max(0, 1.0 - elapsed / 0.45);
+            } else {
+                currentTouchMultiplier = 0.0;
+                this.touchReleaseTime = 0;
+                this.targetMouse.set(-999, -999);
+                this.mouse.set(-999, -999);
+            }
+        }
 
         let worldMouse = new THREE.Vector3(-999, -999, 0);
-        if (this.mouse.x > -2 && this.mouse.x < 2) {
+        const hasValidMouse = (this.mouse.x > -2 && this.mouse.x < 2);
+        if (hasValidMouse && (this.isTouchActive || currentTouchMultiplier > 0.01)) {
             this.raycaster.setFromCamera(this.mouse, this.camera);
             this.raycaster.ray.intersectPlane(this.plane, worldMouse);
         }
@@ -399,9 +455,12 @@ class KaruShikhaHero3D {
         const posAttr = this.geometry.attributes.position;
         const colAttr = this.geometry.attributes.color;
 
-        const mouseRadius = 4.8;
+        // Enhanced mobile touch radius & force for satisfying, lush interaction on narrow screens
+        const isMobile = window.innerWidth < 768;
+        const mouseRadius = isMobile ? 7.6 : 5.0;
         const mouseRadiusSq = mouseRadius * mouseRadius;
-        const mouseForce = 0.55;
+        const baseMouseForce = isMobile ? 0.85 : 0.60;
+        const mouseForce = baseMouseForce * (this.isTouchActive ? 1.0 : currentTouchMultiplier);
         const springDamping = 0.88;
         const returnSpeed = 0.08;
 
@@ -442,7 +501,7 @@ class KaruShikhaHero3D {
             const dz = pz - worldMouse.z;
             const distSq = dx * dx + dy * dy + dz * dz;
 
-            if (distSq < mouseRadiusSq && distSq > 0.001) {
+            if (distSq < mouseRadiusSq && distSq > 0.001 && mouseForce > 0.01) {
                 const dist = Math.sqrt(distSq);
                 const force = (1 - dist / mouseRadius) * mouseForce;
                 this.velocities[i3] += (dx / dist) * force;
@@ -467,15 +526,15 @@ class KaruShikhaHero3D {
         colAttr.needsUpdate = true;
 
         if (this.currentShape === 'logo') {
-            // Elegant continuous 3D floating & tilt reacting to cursor or natural ambient wave
-            if (this.mouse.x > -2 && this.mouse.x < 2) {
-                this.points.rotation.y = this.mouse.x * 0.28;
-                this.points.rotation.x = -this.mouse.y * 0.22;
-            } else {
-                this.points.rotation.y = Math.sin(time * 0.75) * 0.18;
-                this.points.rotation.x = Math.cos(time * 0.55) * 0.10;
+            // Elegant continuous 3D floating & tilt reacting to touch or ambient wave
+            let targetRotY = Math.sin(time * 0.75) * 0.18;
+            let targetRotX = Math.cos(time * 0.55) * 0.10;
+            if (hasValidMouse) {
+                targetRotY = this.mouse.x * 0.32;
+                targetRotX = -this.mouse.y * 0.24;
             }
-            // Continuous organic vertical floating wave
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.10;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.10;
             this.points.position.y = Math.sin(time * 1.2) * 0.28;
         } else if (this.currentShape === 'shikha') {
             this.points.rotation.y = Math.sin(time * 0.4) * 0.15;
@@ -491,11 +550,15 @@ class KaruShikhaHero3D {
             this.points.position.y = 0;
         }
 
-        if (this.mouse.x > -2 && this.mouse.x < 2) {
-            this.camera.position.x += (this.mouse.x * 3.5 - this.camera.position.x) * 0.04;
-            this.camera.position.y += (this.mouse.y * 2.5 - this.camera.position.y) * 0.04;
-            this.camera.lookAt(0, 0, 0);
+        let targetCamX = 0;
+        let targetCamY = 0;
+        if (hasValidMouse) {
+            targetCamX = this.mouse.x * 3.5;
+            targetCamY = this.mouse.y * 2.5;
         }
+        this.camera.position.x += (targetCamX - this.camera.position.x) * 0.05;
+        this.camera.position.y += (targetCamY - this.camera.position.y) * 0.05;
+        this.camera.lookAt(0, 0, 0);
 
         if (this.dust) {
             this.dust.rotation.y = time * 0.02;
