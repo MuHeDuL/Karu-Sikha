@@ -31,7 +31,10 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    padding-bottom: 72px; /* Extra bottom breathing room for the mobile sticky floating bar */
+    padding-bottom: calc(78px + env(safe-area-inset-bottom, 16px)); /* iPhone safe-area padding for bottom bar */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 @media (min-width: 1024px) {
@@ -474,16 +477,90 @@ header .header-donate-btn:hover img {
     padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
 }
 
-/* iOS Safari Tap & Button Optimization */
+/* ==========================================================================
+   Comprehensive iPhone / iOS Safari A-to-Z Optimization Suite
+   ========================================================================== */
+
+/* 1. Prevent iOS Safari Auto-Zoom on Form Input Focus (Strict 16px font-size rule) */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search"],
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* 2. Instant Tap Response & Elimination of 300ms Delay + Ugly Grey Flash */
 button, input, select, textarea {
     -webkit-appearance: none;
-    -webkit-tap-highlight-color: transparent;
+    -moz-appearance: none;
+    appearance: none;
 }
-a, button {
+
+a, button, input, select, textarea, [role="button"], .cursor-pointer, .shape-pill, .gallery-card, .activity-card {
+    touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Mobile-Specific Refinements */
+/* 3. iOS Momentum & Smooth Inertial Scrolling */
+#mobile-menu,
+#reels-slider-track,
+#album-modal-grid,
+.modal-card,
+.modal-backdrop,
+.overflow-y-auto,
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* 4. Reels Horizontal Slider: Prevent iOS Back/Forward History Swipe Gesture */
+#reels-slider-track {
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y;
+    scroll-snap-type: x mandatory;
+}
+
+/* 5. iOS Background Body Scroll Lock during Active Modals */
+html.modal-active,
+body.modal-active {
+    overflow: hidden !important;
+    height: 100% !important;
+    overscroll-behavior: none !important;
+}
+
+.modal-active .modal-card,
+.modal-active .overflow-y-auto,
+.modal-active .overflow-x-auto {
+    touch-action: pan-y !important;
+}
+
+/* 6. iPhone Safe Area & Dynamic Viewport Height (dvh) for Modals */
+.modal-backdrop {
+    padding-top: max(12px, env(safe-area-inset-top, 12px));
+    padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+    padding-left: max(12px, env(safe-area-inset-left, 12px));
+    padding-right: max(12px, env(safe-area-inset-right, 12px));
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.modal-card {
+    max-height: 90vh !important;
+    max-height: calc(100dvh - env(safe-area-inset-top, 20px) - env(safe-area-inset-bottom, 20px) - 24px) !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+#reel-modal-card.modal-card {
+    padding: 0 !important;
+}
+
+/* 7. Mobile-Specific Refinements */
 @media (max-width: 640px) {
     /* Fluid responsive typography to prevent awkward multi-line text wrapping */
     h1 {
@@ -496,10 +573,7 @@ a, button {
         min-height: 38px;
     }
 
-    /* Modals take full mobile height gracefully with modern dynamic dvh */
-    .modal-card {
-        max-height: 90vh !important;
-        max-height: calc(100dvh - 36px) !important;
+    .modal-card:not(#reel-modal-card) {
         padding: 1.25rem !important;
     }
 }
@@ -514,7 +588,7 @@ section[id], header[id] {
     }
 }
 
-/* Project Slider Hover Zoom Motion (Smooth Ken-Burns Effect) & iOS Safari WebKit Clipping */
+/* Project Slider Hover Zoom Motion & iOS Safari WebKit Clipping */
 #pym-slider, #coks-slider, #ewgsf-slider, #yep-slider {
     touch-action: pan-y;
     -webkit-mask-image: -webkit-radial-gradient(white, black);

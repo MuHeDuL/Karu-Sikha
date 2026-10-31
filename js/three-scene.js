@@ -33,11 +33,17 @@ class KaruShikhaHero3D {
         this.raycaster = new THREE.Raycaster();
         this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
+        // iPhone / Mobile battery & GPU performance optimization state
+        this.isIntersecting = true;
+        this.isTabVisible = !document.hidden;
+        this.isLoopActive = false;
+
         this.init();
         this.createShapes();
         this.createParticles();
         this.setupEvents();
-        this.animate();
+        this.setupVisibilityObserver();
+        this.startLoop();
     }
 
     init() {
@@ -307,6 +313,7 @@ class KaruShikhaHero3D {
 
         this.currentShape = shapeName;
         this.morphProgress = 0.0;
+        this.startLoop();
     }
 
     setupEvents() {
@@ -347,6 +354,36 @@ class KaruShikhaHero3D {
         });
     }
 
+    setupVisibilityObserver() {
+        if ('IntersectionObserver' in window && this.container) {
+            this.intersectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const wasIntersecting = this.isIntersecting;
+                    this.isIntersecting = entry.isIntersecting;
+                    if (!wasIntersecting && this.isIntersecting) {
+                        this.startLoop();
+                    }
+                });
+            }, { threshold: 0.02 });
+            this.intersectionObserver.observe(this.container);
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            const wasVisible = this.isTabVisible;
+            this.isTabVisible = !document.hidden;
+            if (!wasVisible && this.isTabVisible) {
+                this.startLoop();
+            }
+        }, { passive: true });
+    }
+
+    startLoop() {
+        if (!this.isLoopActive && this.isIntersecting && this.isTabVisible) {
+            this.isLoopActive = true;
+            this.animate();
+        }
+    }
+
     onResize() {
         const width = this.container.clientWidth || window.innerWidth;
         const height = this.container.clientHeight || window.innerHeight;
@@ -364,6 +401,11 @@ class KaruShikhaHero3D {
     }
 
     animate() {
+        if (!this.isIntersecting || !this.isTabVisible) {
+            this.isLoopActive = false;
+            return; // Completely pause Three.js loop when scrolled out of view on iPhone
+        }
+
         requestAnimationFrame(() => this.animate());
 
         const time = performance.now() * 0.001;

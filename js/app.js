@@ -980,8 +980,60 @@ document.addEventListener('DOMContentLoaded', () => {
     // 9. Members Directory (7 Executive + 25 General Members)
     setupMembersExplorer();
 
+    // 10. Universal iOS / iPhone Modal Body Scroll Lock Engine
+    setupIosModalScrollLock();
+
     applyTranslations(currentLang);
 });
+
+// Universal iOS / iPhone Modal Body Scroll Lock (Eliminates background rubber-banding)
+function setupIosModalScrollLock() {
+    const modalIds = [
+        'donate-modal',
+        'volunteer-modal',
+        'certificate-modal',
+        'contact-modal',
+        'member-profile-modal',
+        'reel-modal',
+        'project-album-modal',
+        'legal-modal',
+        'gallery-lightbox'
+    ];
+
+    const checkModals = () => {
+        let isAnyModalOpen = false;
+        for (const id of modalIds) {
+            const el = document.getElementById(id);
+            if (el && !el.classList.contains('hidden') && el.style.display !== 'none') {
+                isAnyModalOpen = true;
+                break;
+            }
+        }
+        if (isAnyModalOpen) {
+            document.body.classList.add('modal-active');
+            document.documentElement.classList.add('modal-active');
+        } else {
+            document.body.classList.remove('modal-active');
+            document.documentElement.classList.remove('modal-active');
+        }
+    };
+
+    if ('MutationObserver' in window) {
+        const observer = new MutationObserver(checkModals);
+        modalIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                observer.observe(el, { attributes: true, attributeFilter: ['class', 'style'] });
+            }
+        });
+    }
+
+    // Safety fallback on user click & escape key
+    window.addEventListener('click', () => setTimeout(checkModals, 100), { passive: true });
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setTimeout(checkModals, 100);
+    }, { passive: true });
+}
 
 function applyTranslations(lang) {
     const dict = translations[lang];
@@ -1487,7 +1539,7 @@ function renderGallery() {
         return `
             <div class="gallery-card glass-panel rounded-2xl overflow-hidden border border-white/10 cursor-pointer group flex flex-col justify-between" onclick="openGalleryLightbox('${item.file}')">
                 <div class="relative overflow-hidden aspect-[4/3] bg-slate-950">
-                    <img src="assets/gallery/${item.file}" alt="${titleText}" loading="lazy" class="gallery-img w-full h-full object-cover">
+                    <img src="assets/gallery/${item.file}" alt="${titleText}" loading="lazy" decoding="async" class="gallery-img w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
                     <span class="absolute top-2.5 left-2.5 text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-md text-orange-400 border border-orange-500/30">
                         ${tagText}
@@ -1686,7 +1738,7 @@ function renderReels() {
             <div class="reel-card shrink-0 w-[230px] sm:w-[260px] aspect-[9/16] rounded-3xl overflow-hidden relative border border-white/10 hover:border-sky-400/60 transition-all transform hover:-translate-y-1.5 shadow-xl group cursor-pointer snap-start bg-slate-900 select-none flex flex-col justify-between" onclick="openReelModal('${r.id}')" title="${title}">
                 <!-- Background Image / Thumbnail -->
                 <div class="absolute inset-0 z-0 overflow-hidden bg-slate-950">
-                    <img src="${r.thumbnail}" alt="${title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <img src="${r.thumbnail}" alt="${title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="hidden absolute inset-0 bg-gradient-to-tr from-slate-950 via-sky-950 to-slate-900 flex flex-col items-center justify-center p-4 text-center">
                         <span class="text-4xl mb-2">🎬</span>
                         <span class="text-xs font-bold text-sky-300">${tag}</span>
@@ -2221,7 +2273,7 @@ window.openProjectAlbum = function(projKey) {
             return `
                 <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-${data.accent}-500/40 transition-all flex flex-col group/card bg-slate-950/60 shadow-lg">
                     <div class="relative w-full h-44 overflow-hidden bg-slate-900">
-                        <img src="${ev.img}" alt="${evTitle}" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
+                        <img src="${ev.img}" alt="${evTitle}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-[10px] font-bold text-white border border-white/15">
                             #${idx + 1} • ${evTag}
                         </span>
@@ -2301,6 +2353,11 @@ function initProjectShowcases() {
                 if (isSwiping) {
                     setTimeout(() => { isSwiping = false; }, 350);
                 }
+            }, { passive: true });
+
+            sliderEl.addEventListener('touchcancel', () => {
+                isSwiping = false;
+                restartProjectSliderTimer(key);
             }, { passive: true });
 
             // Suppress accidental modal opening on iPhone/Safari when user was just swiping
@@ -3688,7 +3745,7 @@ window.openMemberModal = function(id, tab) {
     const photoUrl = m.photo || m.avatar || m.image;
     if (avatarEl) {
         if (photoUrl) {
-            avatarEl.innerHTML = `<img src="${photoUrl}" alt="${name}" class="w-full h-full object-cover rounded-2xl">`;
+            avatarEl.innerHTML = `<img src="${photoUrl}" alt="${name}" decoding="async" class="w-full h-full object-cover rounded-2xl">`;
         } else {
             avatarEl.innerHTML = '';
             avatarEl.textContent = (name || '').trim().charAt(0) || '👤';
