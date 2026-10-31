@@ -1905,7 +1905,7 @@ window.closeCertificateModal = function() {
 };
 
 /* =========================================================================
-   PROJECT SHOWCASE ENGINES (Ideas 1, 2 & 3: Sliders, Albums & Lightboxes)
+   PROJECT SHOWCASE ENGINES (Unified Interactive Sliders & Lightbox Albums)
    ========================================================================= */
 
 const PROJECT_ALBUMS = {
@@ -2038,23 +2038,77 @@ const PROJECT_ALBUMS = {
                 url: "https://www.facebook.com/share/p/1CFgfHAkw3/"
             }
         ]
+    },
+    yep: {
+        title_bn: "Youth Engagement Program (YEP) — যুব নেতৃত্ব ও টেকসই উন্নয়ন অ্যালবাম",
+        title_en: "Youth Engagement Program (YEP) — Youth Leadership & SDGs Album",
+        tag_bn: "Youth Engagement Program",
+        tag_en: "Youth Engagement Program",
+        icon: "🌟",
+        accent: "indigo",
+        events: [
+            {
+                img: "assets/gallery/anniversary-youth-award.webp",
+                title_bn: "কারু শিখার ৩য় প্রতিষ্ঠাবার্ষিকী উদযাপন উপলক্ষে Youth Engagement & উদ্যোক্তা সম্মাননা ২০২৬",
+                title_en: "3rd Foundation Anniversary, Youth Engagement & Entrepreneurship Award 2026",
+                tag_bn: "প্রতিষ্ঠাবার্ষিকী ও সম্মাননা",
+                tag_en: "Anniversary & Award",
+                date_bn: "০৪ জুন ২০২৬",
+                date_en: "04 June 2026",
+                url: "https://www.facebook.com/61560289663754/posts/122217635396342988/"
+            },
+            {
+                img: "assets/gallery/youth-equality-1.webp",
+                title_bn: "প্ল্যান ইন্টারন্যাশনাল ও জাগো ফাউন্ডেশনের সাথে ৬০ জন তরুণ-তরুণী নিয়ে ‘সমতায় তারুণ্য’ কর্মশালা",
+                title_en: "'Youth for Equality' Capacity Building Workshop with Plan International & JAAGO",
+                tag_bn: "সমতায় তারুণ্য",
+                tag_en: "Youth for Equality",
+                date_bn: "১৬ অক্টোবর ২০২৬",
+                date_en: "16 October 2026",
+                url: "https://www.facebook.com/61560289663754/posts/122232098858342988/"
+            },
+            {
+                img: "assets/gallery/ipyg-partnership-signing.webp",
+                title_bn: "আন্তর্জাতিক যুব শান্তি সংস্থা IPYG (International Peace Youth Group)-এর সঙ্গে দ্বিপাক্ষিক চুক্তি",
+                title_en: "Bilateral Global Peace Partnership Signing with International Peace Youth Group (IPYG)",
+                tag_bn: "IPYG পার্টনারশিপ",
+                tag_en: "IPYG Partnership",
+                date_bn: "২২ মে ২০২৬",
+                date_en: "22 May 2026",
+                url: "https://www.facebook.com/61560289663754/posts/122216377676342988/"
+            },
+            {
+                img: "assets/gallery/youth-freelancing-skill.webp",
+                title_bn: "যুব ও যুব নারীদের কর্মসংস্থান, দক্ষতা উন্নয়ন ও ডিজিটাল ফ্রিল্যান্সিং প্রশিক্ষণ",
+                title_en: "Youth & Women Livelihoods, Freelancing & Digital Literacy Empowerment",
+                tag_bn: "আইটি ও ফ্রিল্যান্সিং",
+                tag_en: "IT & Freelancing",
+                date_bn: "২৭ এপ্রিল ২০২৬",
+                date_en: "27 April 2026",
+                url: "https://www.facebook.com/61560289663754/posts/122214075212342988/"
+            }
+        ]
     }
 };
 
-let currentPymIndex = 0;
-let pymSliderTimer = null;
-let ewgsfCrossfadeTimer = null;
-let currentEwgsfIndex = 0;
+const PROJECT_SLIDER_INDEX = {
+    pym: 0,
+    coks: 0,
+    ewgsf: 0,
+    yep: 0
+};
+const PROJECT_SLIDER_TIMERS = {};
 
-function updatePymSlide(idx) {
-    const slides = document.querySelectorAll('.pym-slide');
-    const dotsContainer = document.getElementById('pym-slider-dots');
+function updateProjectSlide(projKey, idx) {
+    const slides = document.querySelectorAll(`.${projKey}-slide`);
+    const dotsContainer = document.getElementById(`${projKey}-slider-dots`);
     if (!slides.length) return;
 
-    currentPymIndex = (idx + slides.length) % slides.length;
+    PROJECT_SLIDER_INDEX[projKey] = (idx + slides.length) % slides.length;
+    const cur = PROJECT_SLIDER_INDEX[projKey];
 
     slides.forEach((slide, i) => {
-        if (i === currentPymIndex) {
+        if (i === cur) {
             slide.classList.remove('opacity-0', 'pointer-events-none');
             slide.classList.add('opacity-100', 'z-10');
         } else {
@@ -2065,9 +2119,10 @@ function updatePymSlide(idx) {
 
     if (dotsContainer) {
         const dots = dotsContainer.children;
+        const activeColor = projKey === 'pym' ? 'bg-sky-400' : projKey === 'coks' ? 'bg-emerald-400' : projKey === 'ewgsf' ? 'bg-orange-400' : 'bg-indigo-400';
         for (let i = 0; i < dots.length; i++) {
-            if (i === currentPymIndex) {
-                dots[i].className = 'w-3 h-1.5 rounded-full bg-sky-400 transition-all';
+            if (i === cur) {
+                dots[i].className = `w-3 h-1.5 rounded-full ${activeColor} transition-all`;
             } else {
                 dots[i].className = 'w-1.5 h-1.5 rounded-full bg-white/40 transition-all';
             }
@@ -2075,52 +2130,27 @@ function updatePymSlide(idx) {
     }
 }
 
-window.nextPymSlide = function(e) {
+window.nextProjectSlide = function(projKey, e) {
     if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
-    updatePymSlide(currentPymIndex + 1);
-    restartPymTimer();
+    updateProjectSlide(projKey, (PROJECT_SLIDER_INDEX[projKey] || 0) + 1);
+    restartProjectSliderTimer(projKey);
 };
 
-window.prevPymSlide = function(e) {
+window.prevProjectSlide = function(projKey, e) {
     if (e && typeof e.stopPropagation === 'function') e.stopPropagation();
-    updatePymSlide(currentPymIndex - 1);
-    restartPymTimer();
+    updateProjectSlide(projKey, (PROJECT_SLIDER_INDEX[projKey] || 0) - 1);
+    restartProjectSliderTimer(projKey);
 };
 
-function restartPymTimer() {
-    clearInterval(pymSliderTimer);
-    pymSliderTimer = setInterval(() => {
-        updatePymSlide(currentPymIndex + 1);
+// Aliases for PYM
+window.nextPymSlide = (e) => window.nextProjectSlide('pym', e);
+window.prevPymSlide = (e) => window.prevProjectSlide('pym', e);
+
+function restartProjectSliderTimer(projKey) {
+    clearInterval(PROJECT_SLIDER_TIMERS[projKey]);
+    PROJECT_SLIDER_TIMERS[projKey] = setInterval(() => {
+        window.nextProjectSlide(projKey);
     }, 4500);
-}
-
-function initEwgsfCrossfade() {
-    const images = document.querySelectorAll('.ewgsf-crossfade-img');
-    const badge = document.getElementById('ewgsf-crossfade-badge');
-    const title = document.getElementById('ewgsf-crossfade-title');
-    if (!images.length) return;
-
-    const titles = [
-        "EWGSF প্রজেক্টের প্রথম আনুষ্ঠানিক মিটআপ",
-        "নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ",
-        "মাসিক স্বাস্থ্য সুরক্ষা ও মানসিক সচেতনতা উঠান বৈঠক"
-    ];
-
-    clearInterval(ewgsfCrossfadeTimer);
-    ewgsfCrossfadeTimer = setInterval(() => {
-        currentEwgsfIndex = (currentEwgsfIndex + 1) % images.length;
-        images.forEach((img, i) => {
-            if (i === currentEwgsfIndex) {
-                img.classList.remove('opacity-0', 'z-0');
-                img.classList.add('opacity-100', 'z-10');
-            } else {
-                img.classList.remove('opacity-100', 'z-10');
-                img.classList.add('opacity-0', 'z-0');
-            }
-        });
-        if (badge) badge.textContent = `ইভেন্ট ${currentEwgsfIndex + 1}/${images.length}`;
-        if (title) title.textContent = titles[currentEwgsfIndex];
-    }, 4200);
 }
 
 window.openProjectAlbum = function(projKey) {
@@ -2187,42 +2217,36 @@ window.closeProjectAlbumModal = function() {
 };
 
 function initProjectShowcases() {
-    // 1. PYM Slider touch swipe handling on mobile
-    const pymSlider = document.getElementById('pym-slider');
-    if (pymSlider) {
-        let touchStartX = 0;
-        let touchEndX = 0;
+    // Touch swipe & Auto-advance handling for all 4 project sliders
+    ['pym', 'coks', 'ewgsf', 'yep'].forEach(key => {
+        const sliderEl = document.getElementById(`${key}-slider`);
+        if (sliderEl) {
+            let touchStartX = 0;
+            let touchEndX = 0;
 
-        pymSlider.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            clearInterval(pymSliderTimer);
-        }, { passive: true });
+            sliderEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                clearInterval(PROJECT_SLIDER_TIMERS[key]);
+            }, { passive: true });
 
-        pymSlider.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 40) {
-                window.nextPymSlide();
-            } else if (touchEndX - touchStartX > 40) {
-                window.prevPymSlide();
-            }
-            restartPymTimer();
-        }, { passive: true });
+            sliderEl.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 40) {
+                    window.nextProjectSlide(key);
+                } else if (touchEndX - touchStartX > 40) {
+                    window.prevProjectSlide(key);
+                }
+                restartProjectSliderTimer(key);
+            }, { passive: true });
 
-        pymSlider.addEventListener('mouseenter', () => clearInterval(pymSliderTimer));
-        pymSlider.addEventListener('mouseleave', () => restartPymTimer());
+            sliderEl.addEventListener('mouseenter', () => clearInterval(PROJECT_SLIDER_TIMERS[key]));
+            sliderEl.addEventListener('mouseleave', () => restartProjectSliderTimer(key));
 
-        restartPymTimer();
-    }
+            restartProjectSliderTimer(key);
+        }
+    });
 
-    // 2. EWGSF Crossfade
-    const ewgsfContainer = document.getElementById('ewgsf-crossfade');
-    if (ewgsfContainer) {
-        ewgsfContainer.addEventListener('mouseenter', () => clearInterval(ewgsfCrossfadeTimer));
-        ewgsfContainer.addEventListener('mouseleave', () => initEwgsfCrossfade());
-        initEwgsfCrossfade();
-    }
-
-    // 3. Project Album Modal backdrop click & ESC key
+    // Project Album Modal backdrop click & ESC key
     const albumModal = document.getElementById('project-album-modal');
     if (albumModal) {
         albumModal.addEventListener('click', (e) => {
