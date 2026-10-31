@@ -1928,7 +1928,7 @@ const PROJECT_ALBUMS = {
                 url: "https://www.facebook.com/share/p/1FqCzxusY6/"
             },
             {
-                img: "assets/gallery/climate-core-team.webp",
+                img: "assets/gallery/rajendra-college-climate.webp",
                 title_bn: "সরকারি রাজেন্দ্র কলেজে অর্ধশত শিক্ষার্থীদের নিয়ে ক্লাইমেট সচেতনতা ও পরিবেশ সভা",
                 title_en: "Climate Action & Ecological Awareness Assembly at Govt. Rajendra College",
                 tag_bn: "ক্লাইমেট সেমিনার",
