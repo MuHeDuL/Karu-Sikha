@@ -1449,24 +1449,54 @@ function setupGalleryExplorer() {
         closeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            lightbox.classList.add('hidden');
+            window.closeGalleryLightbox();
         });
     }
 
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
-                lightbox.classList.add('hidden');
+                window.closeGalleryLightbox();
             }
         });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        lightbox.addEventListener('touchstart', (e) => {
+            if (e.touches && e.touches.length > 0) {
+                touchStartX = e.touches[0].screenX;
+            }
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+            if (e.changedTouches && e.changedTouches.length > 0) {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchEndX - touchStartX;
+                if (Math.abs(diff) > 45) {
+                    if (diff > 0) {
+                        window.navigateGalleryLightbox(-1);
+                    } else {
+                        window.navigateGalleryLightbox(1);
+                    }
+                }
+            }
+        }, { passive: true });
     }
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const lb = document.getElementById('gallery-lightbox');
-            if (lb && !lb.classList.contains('hidden')) {
-                lb.classList.add('hidden');
-            }
+        const lb = document.getElementById('gallery-lightbox');
+        if (!lb || lb.classList.contains('hidden')) return;
+
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            window.navigateGalleryLightbox(-1);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            window.navigateGalleryLightbox(1);
+        } else if (e.key === 'Escape') {
+            e.preventDefault();
+            window.closeGalleryLightbox();
         }
     });
 
@@ -1568,36 +1598,64 @@ function renderGallery() {
     }).join('');
 }
 
-// Global hook for lightbox
+// Global state and hooks for lightbox navigation
+let currentLightboxIndex = 0;
+let currentLightboxList = [];
+
+function getActiveGalleryList(targetFile) {
+    const all = window.KARU_SHIKHA_GALLERY || [];
+    if (!currentGalleryFilter || currentGalleryFilter === 'all') {
+        return all;
+    }
+    const filtered = all.filter(item => item.category === currentGalleryFilter);
+    if (targetFile && !filtered.some(item => item.file === targetFile)) {
+        return all;
+    }
+    return filtered.length > 0 ? filtered : all;
+}
+
 window.openGalleryLightbox = function(filename) {
     const lightbox = document.getElementById('gallery-lightbox');
     const img = document.getElementById('lightbox-image') || document.getElementById('lightbox-img');
     const title = document.getElementById('lightbox-title');
     const loc = document.getElementById('lightbox-location');
     const tagEl = document.getElementById('lightbox-tag');
+    const counterEl = document.getElementById('lightbox-counter');
     const fbContainer = document.getElementById('lightbox-fb-link-container');
     const fbLink = document.getElementById('lightbox-fb-link');
 
     if (!lightbox || !img) return;
 
-    const item = window.KARU_SHIKHA_GALLERY.find(g => g.file === filename);
+    currentLightboxList = getActiveGalleryList(filename);
+    const foundIdx = currentLightboxList.findIndex(g => g.file === filename);
+    currentLightboxIndex = foundIdx !== -1 ? foundIdx : 0;
+
+    const item = currentLightboxList[currentLightboxIndex] || (window.KARU_SHIKHA_GALLERY && window.KARU_SHIKHA_GALLERY[0]);
     if (item) {
         const categoryTagMap = {
             'children': 'Child Mentoring (PYM)',
             'climate': 'Climate & Ecology',
             'women': 'Women Empowerment (EWGSF)',
             'humanitarian': 'Humanitarian & Blood',
+            'craft': 'Crafts & Enterprise',
             'partnership': 'Partnerships & Forum'
         };
         const titleText = currentLang === 'bn' ? item.title : (item.title_en || item.title);
         const locName = currentLang === 'bn' ? item.location : (item.location_en || galleryLocMapEn[item.location] || 'Faridpur, Bangladesh');
-        const dateText = formatDisplayDate(item.date, item.date_en);
+        const dateText = typeof formatDisplayDate === 'function' ? formatDisplayDate(item.date, item.date_en) : (currentLang === 'bn' ? item.date : (item.date_en || item.date));
         
         img.src = `assets/gallery/${item.file}`;
         img.alt = titleText;
         if (title) title.textContent = titleText;
         if (loc) loc.textContent = `📍 ${locName} • ${dateText}`;
         if (tagEl) tagEl.textContent = currentLang === 'bn' ? (item.tag || 'মাঠপর্যায়ের স্থিরচিত্র') : (categoryTagMap[item.category] || 'Field Photograph');
+
+        if (counterEl) {
+            const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+            const curStr = currentLang === 'bn' ? String(currentLightboxIndex + 1).replace(/[0-9]/g, d => bnDigits[d]) : String(currentLightboxIndex + 1);
+            const totalStr = currentLang === 'bn' ? String(currentLightboxList.length).replace(/[0-9]/g, d => bnDigits[d]) : String(currentLightboxList.length);
+            counterEl.textContent = `${curStr} / ${totalStr}`;
+        }
 
         if (fbContainer && fbLink) {
             if (item.facebook_url) {
@@ -1610,12 +1668,30 @@ window.openGalleryLightbox = function(filename) {
     }
 
     lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+};
+
+window.navigateGalleryLightbox = function(direction, event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    if (!currentLightboxList || currentLightboxList.length === 0) {
+        currentLightboxList = getActiveGalleryList();
+    }
+    if (currentLightboxList.length <= 1) return;
+
+    currentLightboxIndex = (currentLightboxIndex + direction + currentLightboxList.length) % currentLightboxList.length;
+    const nextItem = currentLightboxList[currentLightboxIndex];
+    if (nextItem) {
+        window.openGalleryLightbox(nextItem.file);
+    }
 };
 
 window.closeGalleryLightbox = function() {
     const lightbox = document.getElementById('gallery-lightbox');
     if (lightbox) {
         lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
     }
 };
 
@@ -2074,24 +2150,24 @@ const PROJECT_ALBUMS = {
                 url: "https://www.facebook.com/share/p/14vaJbCq9yF/"
             },
             {
+                img: "assets/gallery/pym-education-future-generation.webp",
+                title_bn: "Project Your Mentor: শিশুশিক্ষা, আগামী প্রজন্ম গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং",
+                title_en: "Child Education, Future Generation Empowerment & Holistic Mentorship",
+                tag_bn: "ভবিষ্যৎ প্রজন্ম",
+                tag_en: "Future Generation",
+                date_bn: "১০ জানুয়ারি ২০২৬",
+                date_en: "10 January 2026",
+                url: "https://www.facebook.com/share/p/1ErKE71hLn/"
+            },
+            {
                 img: "assets/gallery/pym-group-learning.webp",
                 title_bn: "Project Your Mentor–এর ব্যতিক্রমী হোম ভিজিট ও দলগত লার্নিং সেশন",
                 title_en: "Surprise Student Home Visit & Interactive Group Learning under PYM",
                 tag_bn: "ব্যতিক্রমী পাঠদান",
                 tag_en: "Group Learning",
-                date_bn: "১৫ মার্চ ২০২৫",
-                date_en: "15 March 2025",
+                date_bn: "৩০ জানুয়ারি ২০২৫",
+                date_en: "30 January 2025",
                 url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
-            },
-            {
-                img: "assets/gallery/pym-confident-leadership.webp",
-                title_bn: "শিশুদের হাত ধরে গড়ে উঠুক আগামীর আত্মবিশ্বাসী নেতৃত্ব ও ইন্টার‌অ্যাকটিভ মানসিক বিকাশ",
-                title_en: "Fostering Future Confident Child Leadership & Interactive Mentorship",
-                tag_bn: "আত্মবিশ্বাসী নেতৃত্ব",
-                tag_en: "Child Leadership",
-                date_bn: "১০ ফেব্রুয়ারি ২০২৫",
-                date_en: "10 February 2025",
-                url: "https://www.facebook.com/share/p/1Ge8mkHWzi/"
             },
             {
                 img: "assets/gallery/pym-joyful-learning.webp",
@@ -2099,19 +2175,19 @@ const PROJECT_ALBUMS = {
                 title_en: "Joyful, Safe & Inclusive Experiential Learning for Children Aged 5-15",
                 tag_bn: "আনন্দময় পাঠদান",
                 tag_en: "Joyful Learning",
-                date_bn: "১৮ জানুয়ারি ২০২৫",
-                date_en: "18 January 2025",
+                date_bn: "০৯ জানুয়ারি ২০২৫",
+                date_en: "09 January 2025",
                 url: "https://www.facebook.com/share/p/19cQEkdUew/"
             },
             {
-                img: "assets/gallery/pym-education-future-generation.webp",
-                title_bn: "Project Your Mentor: শিশুশিক্ষা, আগামী প্রজন্ম গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং",
-                title_en: "Child Education, Future Generation Empowerment & Holistic Mentorship",
-                tag_bn: "ভবিষ্যৎ প্রজন্ম",
-                tag_en: "Future Generation",
-                date_bn: "০৪ ডিসেম্বর ২০২৪",
-                date_en: "04 December 2024",
-                url: "https://www.facebook.com/share/p/1ErKE71hLn/"
+                img: "assets/gallery/pym-confident-leadership.webp",
+                title_bn: "শিশুদের হাত ধরে গড়ে উঠুক আগামীর আত্মবিশ্বাসী নেতৃত্ব ও ইন্টার‌অ্যাকটিভ মানসিক বিকাশ",
+                title_en: "Fostering Future Confident Child Leadership & Interactive Mentorship",
+                tag_bn: "আত্মবিশ্বাসী নেতৃত্ব",
+                tag_en: "Child Leadership",
+                date_bn: "০২ জানুয়ারি ২০২৫",
+                date_en: "02 January 2025",
+                url: "https://www.facebook.com/share/p/1Ge8mkHWzi/"
             },
             {
                 img: "assets/gallery/pym-social-mental-skills.webp",
@@ -2119,8 +2195,8 @@ const PROJECT_ALBUMS = {
                 title_en: "Social-Emotional Awareness & Practical Life Skills Workshop for Children",
                 tag_bn: "দক্ষতা ও সচেতনতা",
                 tag_en: "Social Skills",
-                date_bn: "২০ নভেম্বর ২০২৪",
-                date_en: "20 November 2024",
+                date_bn: "২৯ এপ্রিল ২০২৪",
+                date_en: "29 April 2024",
                 url: "https://www.facebook.com/share/p/1CFgfHAkw3/"
             },
             {
@@ -2129,8 +2205,8 @@ const PROJECT_ALBUMS = {
                 title_en: "Nurturing Curiosity & Guiding Life Dreams of Marginalized Children",
                 tag_bn: "মেন্টরিং গাইডলাইন",
                 tag_en: "Mentoring Guidance",
-                date_bn: "১৫ অক্টোবর ২০২৪",
-                date_en: "15 October 2024",
+                date_bn: "২১ নভেম্বর ২০২৩",
+                date_en: "21 November 2023",
                 url: "https://www.facebook.com/share/p/1CNBQiGRNi/"
             }
         ]

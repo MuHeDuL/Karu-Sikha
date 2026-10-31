@@ -522,6 +522,17 @@ window.KARU_SHIKHA_ACTIVITIES = [
     },
     {
         id: 48,
+        title: "Project Your Mentor: শিশুশিক্ষা সহায়তা, মূল্যবোধ গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং।",
+        title_en: "Child education support, ethical values and volunteer mentorship drive under PYM.",
+        category: "children",
+        tag: "Project Your Mentor",
+        icon: "📚",
+        date: "১০ জানুয়ারি ২০২৬",
+        date_en: "10 January 2026",
+        facebook_url: "https://www.facebook.com/share/p/1ErKE71hLn/"
+    },
+    {
+        id: 49,
         title: "তীব্র শীত ও শীতজনিত স্বাস্থ্যঝুঁকি সম্পর্কে সচেতনতামূলক প্রচারণা।",
         title_en: "Public health awareness and blanket drives during severe winter cold waves.",
         category: "humanitarian",
@@ -530,17 +541,6 @@ window.KARU_SHIKHA_ACTIVITIES = [
         date: "০৮ জানুয়ারি ২০২৬",
         date_en: "08 January 2026",
         facebook_url: "https://www.facebook.com/reel/872606782187556/"
-    },
-    {
-        id: 49,
-        title: "Project Your Mentor: শিশুশিক্ষা সহায়তা, মূল্যবোধ গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং।",
-        title_en: "Child education support, ethical values and volunteer mentorship drive under PYM.",
-        category: "children",
-        tag: "Project Your Mentor",
-        icon: "📚",
-        date: "০৪ জানুয়ারি ২০২৬",
-        date_en: "04 January 2026",
-        facebook_url: "https://www.facebook.com/share/p/1ErKE71hLn/"
     },
     {
         id: 50,
@@ -703,8 +703,8 @@ window.KARU_SHIKHA_ACTIVITIES = [
         category: "children",
         tag: "Project Your Mentor",
         icon: "🏡",
-        date: "১৫ মার্চ ২০২৫",
-        date_en: "15 March 2025",
+        date: "৩০ জানুয়ারি ২০২৫",
+        date_en: "30 January 2025",
         facebook_url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
     },
     {
@@ -714,8 +714,8 @@ window.KARU_SHIKHA_ACTIVITIES = [
         category: "children",
         tag: "Project Your Mentor",
         icon: "🎨",
-        date: "১০ ফেব্রুয়ারি ২০২৫",
-        date_en: "10 February 2025",
+        date: "০৯ জানুয়ারি ২০২৫",
+        date_en: "09 January 2025",
         facebook_url: "https://www.facebook.com/share/p/19cQEkdUew/"
     },
     {
@@ -725,8 +725,8 @@ window.KARU_SHIKHA_ACTIVITIES = [
         category: "children",
         tag: "Project Your Mentor",
         icon: "🌱",
-        date: "১৮ জানুয়ারি ২০২৫",
-        date_en: "18 January 2025",
+        date: "০২ জানুয়ারি ২০২৫",
+        date_en: "02 January 2025",
         facebook_url: "https://www.facebook.com/share/p/1Ge8mkHWzi/"
     },
     {
@@ -747,8 +747,8 @@ window.KARU_SHIKHA_ACTIVITIES = [
         category: "children",
         tag: "Project Your Mentor",
         icon: "🧠",
-        date: "২০ নভেম্বর ২০২৪",
-        date_en: "20 November 2024",
+        date: "২৯ এপ্রিল ২০২৪",
+        date_en: "29 April 2024",
         facebook_url: "https://www.facebook.com/share/p/1CFgfHAkw3/"
     },
     {
@@ -758,8 +758,8 @@ window.KARU_SHIKHA_ACTIVITIES = [
         category: "children",
         tag: "Project Your Mentor",
         icon: "✨",
-        date: "১৫ অক্টোবর ২০২৪",
-        date_en: "15 October 2024",
+        date: "২১ নভেম্বর ২০২৩",
+        date_en: "21 November 2023",
         facebook_url: "https://www.facebook.com/share/p/1CNBQiGRNi/"
     },
     {
