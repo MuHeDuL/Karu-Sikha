@@ -1,6 +1,6 @@
 /**
- * Karu Shikha Youth Development Society - Comprehensive 66 Activities & Milestones
- * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৬৬টি বাস্তব কার্যক্রম ও মাইলফলক (Strict Chronological Descending)
+ * Karu Shikha Youth Development Society - Comprehensive 73 Activities & Milestones
+ * কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটির ৭৩টি বাস্তব কার্যক্রম ও মাইলফলক (Strict Chronological Descending)
  */
 
 window.KARU_SHIKHA_ACTIVITIES = [
@@ -519,7 +519,6 @@ window.KARU_SHIKHA_ACTIVITIES = [
         icon: "📜",
         date: "২১ জানুয়ারি ২০২৬",
         date_en: "21 January 2026",
-        certificate_action: true
     },
     {
         id: 48,
@@ -698,7 +697,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/1QM5CM5Aun/"
     },
     {
-        id: 69,
+        id: 64,
         title: "শিশুদের হাত ধরে গড়ে উঠুক আগামীর আত্মবিশ্বাসী নেতৃত্ব শীর্ষক মেন্টরিং সেশন।",
         title_en: "Interactive mentorship fostering future confident child leadership and creativity.",
         category: "children",
@@ -709,7 +708,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/1Ge8mkHWzi/"
     },
     {
-        id: 70,
+        id: 65,
         title: "৫ থেকে ১৫ বছর বয়সী শিশুদের জন্য আনন্দময়, নিরাপদ ও অংশগ্রহণমূলক শিক্ষা কার্যক্রম।",
         title_en: "Safe, joyful and inclusive experiential education for underprivileged children aged 5-15.",
         category: "children",
@@ -720,40 +719,7 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/share/p/19cQEkdUew/"
     },
     {
-        id: 71,
-        title: "Project Your Mentor: শিশুশিক্ষা সহায়তা, মূল্যবোধ গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং।",
-        title_en: "Child education support, ethical values and volunteer mentorship drive under PYM.",
-        category: "children",
-        tag: "Project Your Mentor",
-        icon: "📚",
-        date: "০৪ ডিসেম্বর ২০২৪",
-        date_en: "04 December 2024",
-        facebook_url: "https://www.facebook.com/share/p/1ErKE71hLn/"
-    },
-    {
-        id: 72,
-        title: "শিশুদের সামাজিক ও মানসিক সচেতনতা এবং সৃজনশীল জীবনদক্ষতা উন্নয়ন কর্মশালা।",
-        title_en: "Social-emotional awareness, resilience and creative life-skills workshop for children.",
-        category: "children",
-        tag: "Project Your Mentor",
-        icon: "🧠",
-        date: "২০ নভেম্বর ২০২৪",
-        date_en: "20 November 2024",
-        facebook_url: "https://www.facebook.com/share/p/1CFgfHAkw3/"
-    },
-    {
-        id: 73,
-        title: "সুবিধাবঞ্চিত শিশুদের সুপ্ত প্রতিভা বিকাশ ও স্বপ্নপূরণের সঠিক মেন্টরিং গাইডলাইন।",
-        title_en: "Mentoring guidelines nurturing inherent potential and life dreams of marginalized children.",
-        category: "children",
-        tag: "Project Your Mentor",
-        icon: "✨",
-        date: "১৫ অক্টোবর ২০২৪",
-        date_en: "15 October 2024",
-        facebook_url: "https://www.facebook.com/share/p/1CNBQiGRNi/"
-    },
-    {
-        id: 64,
+        id: 66,
         title: "পিঠা উৎসব আয়োজন।",
         title_en: "Traditional Bengali Pitha festival celebrating social harmony.",
         category: "children",
@@ -764,43 +730,76 @@ window.KARU_SHIKHA_ACTIVITIES = [
         facebook_url: "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/"
     },
     {
-        id: 65,
+        id: 67,
+        title: "Project Your Mentor: শিশুশিক্ষা সহায়তা, মূল্যবোধ গঠন ও অন্তর্ভুক্তিমূলক মেন্টরিং।",
+        title_en: "Child education support, ethical values and volunteer mentorship drive under PYM.",
+        category: "children",
+        tag: "Project Your Mentor",
+        icon: "📚",
+        date: "০৪ ডিসেম্বর ২০২৪",
+        date_en: "04 December 2024",
+        facebook_url: "https://www.facebook.com/share/p/1ErKE71hLn/"
+    },
+    {
+        id: 68,
+        title: "শিশুদের সামাজিক ও মানসিক সচেতনতা এবং সৃজনশীল জীবনদক্ষতা উন্নয়ন কর্মশালা।",
+        title_en: "Social-emotional awareness, resilience and creative life-skills workshop for children.",
+        category: "children",
+        tag: "Project Your Mentor",
+        icon: "🧠",
+        date: "২০ নভেম্বর ২০২৪",
+        date_en: "20 November 2024",
+        facebook_url: "https://www.facebook.com/share/p/1CFgfHAkw3/"
+    },
+    {
+        id: 69,
+        title: "সুবিধাবঞ্চিত শিশুদের সুপ্ত প্রতিভা বিকাশ ও স্বপ্নপূরণের সঠিক মেন্টরিং গাইডলাইন।",
+        title_en: "Mentoring guidelines nurturing inherent potential and life dreams of marginalized children.",
+        category: "children",
+        tag: "Project Your Mentor",
+        icon: "✨",
+        date: "১৫ অক্টোবর ২০২৪",
+        date_en: "15 October 2024",
+        facebook_url: "https://www.facebook.com/share/p/1CNBQiGRNi/"
+    },
+    {
+        id: 70,
         title: "Global Climate Strike-এ অংশগ্রহণ।",
         title_en: "Active participation in the Global Climate Strike.",
         category: "climate",
         tag: "Global Climate Strike",
         icon: "📢",
-        date: "",
-        date_en: ""
+        date: "২০ সেপ্টেম্বর ২০২৪",
+        date_en: "20 September 2024",
     },
     {
-        id: 66,
+        id: 71,
         title: "কৃষি ও গ্রামীণ রূপান্তর, পুষ্টি, উদ্যোক্তা উন্নয়ন এবং সহনশীলতাবিষয়ক প্রশিক্ষণে সাংগঠনিক প্রতিনিধির অংশগ্রহণ।",
         title_en: "Delegate participation in national training on agri-transformation, nutrition & resilience.",
         category: "climate",
         tag: "গ্রামীণ রূপান্তর",
         icon: "🥗",
-        date: "",
-        date_en: ""
+        date: "১২ সেপ্টেম্বর ২০২৪",
+        date_en: "12 September 2024",
     },
     {
-        id: 67,
+        id: 72,
         title: "নতুন ও পুরোনো সদস্যদের সাংগঠনিক সভা, নেতৃত্ব বিকাশ ও দলীয় সমন্বয় কার্যক্রম।",
         title_en: "Internal leadership development and team alignment summits.",
         category: "partnership",
         tag: "সাংগঠনিক সমন্বয়",
         icon: "👥",
-        date: "",
-        date_en: ""
+        date: "১৫ আগস্ট ২০২৪",
+        date_en: "15 August 2024",
     },
     {
-        id: 68,
+        id: 73,
         title: "যুব, নারী, শিশু, পরিবেশ ও সামাজিক উন্নয়নবিষয়ক বিভিন্ন প্রতিষ্ঠানের সঙ্গে যোগাযোগ ও নেটওয়ার্কিং কার্যক্রম।",
         title_en: "Broad institutional networking with youth, gender, and environmental organizations.",
         category: "partnership",
         tag: "নেটওয়ার্কিং কার্যক্রম",
         icon: "🌐",
-        date: "",
-        date_en: ""
+        date: "১০ জুলাই ২০২৪",
+        date_en: "10 July 2024",
     }
 ];

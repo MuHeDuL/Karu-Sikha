@@ -260,6 +260,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "medical-camp-children.webp"
   },
   {
+    "file": "pym-healthcare-checkup.webp",
+    "title": "Project Your Mentor শিশুদের সুস্বাস্থ্য রক্ষায় ফ্রি হেলথ চেকআপ ও পুষ্টি পরামর্শ ক্যাম্প",
+    "title_en": "Free Pediatric Health Checkup & Nutrition Counseling for PYM Children",
+    "category": "children",
+    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
+    "tag": "Project Your Mentor",
+    "date": "২৬ জুলাই ২০২৬",
+    "date_en": "26 July 2026",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/share/p/1DcoiHiQtu/",
+    "size_kb": 397.4,
+    "src": "pym-healthcare-checkup.webp"
+  },
+  {
     "file": "gbv-leadership-1.webp",
     "title": "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা",
     "title_en": "Discussion on Gender-Based Violence (GBV) & Leadership at Karu Shikha Office",
@@ -755,36 +770,6 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "hand-paint-training.webp"
   },
   {
-    "file": "women-6.webp",
-    "title": "বছরের শেষ দিনে সুবিধাবঞ্চিত শিশুদের নিয়ে পিঠা উৎসব ও শীতের উপহার বিতরণ",
-    "title_en": "Year-End Pitha Festival & Winter Gift Distribution for Underprivileged Children",
-    "category": "children",
-    "category_bn": "শিশু শিক্ষা ও অধিকার",
-    "tag": "পিঠা উৎসব ও উপহার বিতরণ",
-    "date": "৩১ ডিসেম্বর ২০২৪",
-    "date_en": "31 December 2024",
-    "location": "ফরিদপুর",
-    "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/",
-    "size_kb": 50.0,
-    "src": "women-6.webp"
-  },
-  {
-    "file": "pym-healthcare-checkup.webp",
-    "title": "Project Your Mentor শিশুদের সুস্বাস্থ্য রক্ষায় ফ্রি হেলথ চেকআপ ও পুষ্টি পরামর্শ ক্যাম্প",
-    "title_en": "Free Pediatric Health Checkup & Nutrition Counseling for PYM Children",
-    "category": "children",
-    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
-    "tag": "Project Your Mentor",
-    "date": "২৬ জুলাই ২০২৬",
-    "date_en": "26 July 2026",
-    "location": "ফরিদপুর",
-    "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/share/p/1DcoiHiQtu/",
-    "size_kb": 397.4,
-    "src": "pym-healthcare-checkup.webp"
-  },
-  {
     "file": "pym-group-learning.webp",
     "title": "Project Your Mentor–এর ভিন্নধর্মী হোম-ভিজিট ও ইন্টার‌অ্যাকটিভ দলগত শিক্ষা সেশন",
     "title_en": "Interactive Group Learning & Student Home Visit Session under Project Your Mentor",
@@ -828,6 +813,21 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/share/p/19cQEkdUew/",
     "size_kb": 230.1,
     "src": "pym-joyful-learning.webp"
+  },
+  {
+    "file": "women-6.webp",
+    "title": "বছরের শেষ দিনে সুবিধাবঞ্চিত শিশুদের নিয়ে পিঠা উৎসব ও শীতের উপহার বিতরণ",
+    "title_en": "Year-End Pitha Festival & Winter Gift Distribution for Underprivileged Children",
+    "category": "children",
+    "category_bn": "শিশু শিক্ষা ও অধিকার",
+    "tag": "পিঠা উৎসব ও উপহার বিতরণ",
+    "date": "৩১ ডিসেম্বর ২০২৪",
+    "date_en": "31 December 2024",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/",
+    "size_kb": 50.0,
+    "src": "women-6.webp"
   },
   {
     "file": "pym-education-future-generation.webp",

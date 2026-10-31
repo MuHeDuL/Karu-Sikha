@@ -12,7 +12,7 @@ const translations = {
         "brand_subtitle": "ইয়ুথ ডেভেলপমেন্ট সোসাইটি",
         "nav_about": "আমাদের কথা",
         "nav_projects": "প্রকল্পসমূহ",
-        "nav_activities": "কার্যক্রম (৬৮টি)",
+        "nav_activities": "কার্যক্রম (৭৩টি)",
         "nav_committee": "কার্যনির্বাহী পরিষদ",
         "nav_gallery": "ফটো গ্যালারি",
         "nav_contact": "যোগাযোগ",
@@ -141,19 +141,19 @@ const translations = {
         "yep_btn_join": "যুব নেটওয়ার্কে যুক্ত হোন",
         "yep_btn_donate": "যুব নেতৃত্ব তহবিলে অনুদান দিন",
         "activities_tag": "মাঠপর্যায়ের সমৃদ্ধ অভিজ্ঞতা",
-        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৬৮টি মাইলফলক)",
-        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৬৮টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
+        "activities_title": "কারু শিখার কার্যক্রমসমূহ (৭৩টি মাইলফলক)",
+        "activities_desc": "২০১৯ সাল থেকে শুরু করে আমাদের অর্জিত ৭৩টি সুনির্দিষ্ট বাস্তব কার্যক্রম, যৌথ পার্টনারশিপ, ক্যাম্পেইন ও সামাজিক মাইলফলক একনজরে দেখুন।",
         "activities_search_placeholder": "কার্যক্রম খুঁজুন (যেমন: ক্লাইমেট, রক্তদান, WaterAid, হ্যান্ড পেইন্ট, সমতায় তারুণ্য...)",
         "activities_hint": "💡 কীওয়ার্ড লিখে বা ক্যাটাগরি বেছে ফিল্টার করুন",
-        "act_cat_all": "সব কার্যক্রম (৬৮)",
+        "act_cat_all": "সব কার্যক্রম (৭৩)",
         "act_cat_climate": "🌍 জলবায়ু ও টেকসই কৃষি (১৪)",
         "act_cat_women": "👩 নারী ও সমতায় তারুণ্য (১২)",
-        "act_cat_children": "📚 শিশু শিক্ষা ও স্বাস্থ্য (৬)",
+        "act_cat_children": "📚 শিশু শিক্ষা ও স্বাস্থ্য (১১)",
         "act_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৬)",
         "act_cat_humanitarian": "🤝 মানবিক সেবা ও সম্প্রীতি (৮)",
         "act_cat_partnership": "🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২২)",
-        "activities_count_badge": "প্রদর্শিত: ৬৮টি কার্যক্রম",
-        "act_view_all_btn": "সবগুলো ৬৮টি কার্যক্রম দেখুন (+৫৬টি আরো) ▾",
+        "activities_count_badge": "প্রদর্শিত: ৭৩টি কার্যক্রম",
+        "act_view_all_btn": "সবগুলো ৭৩টি কার্যক্রম দেখুন (+৬১টি আরো) ▾",
         "comm_tag": "নেতৃত্ব ও সাংগঠনিক কাঠামো",
         "comm_reg_badge": "নিবন্ধন নং: DUD-97",
         "comm_title": "কার্যনির্বাহী পরিষদ, উপদেষ্টা ও সদস্যবৃন্দ",
@@ -442,7 +442,7 @@ const translations = {
         "brand_subtitle": "Youth Development Society",
         "nav_about": "About Us",
         "nav_projects": "Projects",
-        "nav_activities": "Activities (68)",
+        "nav_activities": "Activities (73)",
         "nav_committee": "Leadership",
         "nav_gallery": "Photo Gallery",
         "nav_contact": "Contact Us",
@@ -571,19 +571,19 @@ const translations = {
         "yep_btn_join": "Join Youth Network",
         "yep_btn_donate": "Support Youth Leadership Fund",
         "activities_tag": "Rich Field Legacy",
-        "activities_title": "Key Activities of Karu Shikha (68 Milestones)",
-        "activities_desc": "Explore all 68 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
+        "activities_title": "Key Activities of Karu Shikha (73 Milestones)",
+        "activities_desc": "Explore all 73 on-ground grassroots initiatives, institutional partnerships, campaigns, and community milestones realized since 2019.",
         "activities_search_placeholder": "Search activities (e.g. Climate, Blood, WaterAid, Hand Paint, Equality...)",
         "activities_hint": "💡 Filter by keyword or choose category pill above",
-        "act_cat_all": "All Milestones (68)",
+        "act_cat_all": "All Milestones (73)",
         "act_cat_climate": "🌍 Climate & Ecology (14)",
         "act_cat_women": "👩 Women & Equality (12)",
-        "act_cat_children": "📚 Child Education & Health (6)",
+        "act_cat_children": "📚 Child Education & Health (11)",
         "act_cat_craft": "🎨 Handcraft & Enterprise (6)",
         "act_cat_humanitarian": "🤝 Humanitarian & Blood (8)",
         "act_cat_partnership": "🏛️ Governance & Partnerships (22)",
-        "activities_count_badge": "Displaying: 68 Milestones",
-        "act_view_all_btn": "View All 68 Milestones (+56 more) ▾",
+        "activities_count_badge": "Displaying: 73 Milestones",
+        "act_view_all_btn": "View All 73 Milestones (+61 more) ▾",
         "comm_tag": "Leadership & Organization",
         "comm_reg_badge": "Reg No: DUD-97",
         "comm_title": "Executive Committee, Advisors & Members",
@@ -1094,19 +1094,19 @@ function applyTranslations(lang) {
     // Activity filter pills labels
     const activityCatMap = {
         bn: {
-            'all': 'সব কার্যক্রম (৬৮)',
+            'all': 'সব কার্যক্রম (৭৩)',
             'climate': '🌍 জলবায়ু ও টেকসই কৃষি (১৪)',
             'women': '👩 নারী ও সমতায় তারুণ্য (১২)',
-            'children': '📚 শিশু শিক্ষা ও স্বাস্থ্য (৬)',
+            'children': '📚 শিশু শিক্ষা ও স্বাস্থ্য (১১)',
             'craft': '🎨 হস্তশিল্প ও উদ্যোক্তা (৬)',
             'humanitarian': '🤝 মানবিক সেবা ও সম্প্রীতি (৮)',
             'partnership': '🏛️ অংশীদারত্ব ও নেটওয়ার্কিং (২২)'
         },
         en: {
-            'all': 'All Milestones (68)',
+            'all': 'All Milestones (73)',
             'climate': '🌍 Climate & Ecology (14)',
             'women': '👩 Women & Equality (12)',
-            'children': '📚 Child Education & Health (6)',
+            'children': '📚 Child Education & Health (11)',
             'craft': '🎨 Handcraft & Enterprise (6)',
             'humanitarian': '🤝 Humanitarian & Blood (8)',
             'partnership': '🏛️ Governance & Partnerships (22)'
@@ -1970,6 +1970,16 @@ const PROJECT_ALBUMS = {
         accent: "emerald",
         events: [
             {
+                img: "assets/gallery/earth-day-2026.webp",
+                title_bn: "ক্লাইমেট অলিম্পিয়াড বিজ্ঞানসম্মত সামাজিক আন্দোলন ও প্লাস্টিক দূষণ প্রতিরোধ অভিযান",
+                title_en: "Climate Olympiad Scientific Social Movement & Anti-Plastic Pollution Campaign",
+                tag_bn: "প্লাস্টিক দূষণ রোধ",
+                tag_en: "Plastic Pollution Drive",
+                date_bn: "২২ এপ্রিল ২০২৬",
+                date_en: "22 April 2026",
+                url: "https://www.facebook.com/share/p/1Sa3B4wq8p/"
+            },
+            {
                 img: "assets/gallery/climate-olympiad-2025.webp",
                 title_bn: "জলবায়ু পরিবর্তনের চ্যালেঞ্জ মোকাবিলায় শিক্ষার্থীদের নিয়ে ক্লাইমেট অলিম্পিয়াড ২০২৫ আয়োজন",
                 title_en: "Organizing Climate Olympiad 2025 for students to tackle environmental challenges",
@@ -1988,16 +1998,6 @@ const PROJECT_ALBUMS = {
                 date_bn: "১০ আগস্ট ২০২৫",
                 date_en: "10 August 2025",
                 url: "https://www.facebook.com/share/p/18qdGDauMw/"
-            },
-            {
-                img: "assets/gallery/earth-day-2026.webp",
-                title_bn: "ক্লাইমেট অলিম্পিয়াড বিজ্ঞানসম্মত সামাজিক আন্দোলন ও প্লাস্টিক দূষণ প্রতিরোধ অভিযান",
-                title_en: "Climate Olympiad Scientific Social Movement & Anti-Plastic Pollution Campaign",
-                tag_bn: "প্লাস্টিক দূষণ রোধ",
-                tag_en: "Plastic Pollution Drive",
-                date_bn: "২২ এপ্রিল ২০২৬",
-                date_en: "22 April 2026",
-                url: "https://www.facebook.com/share/p/1Sa3B4wq8p/"
             }
         ]
     },
@@ -2020,16 +2020,6 @@ const PROJECT_ALBUMS = {
                 url: "https://www.facebook.com/share/p/1GPky6JNWT/"
             },
             {
-                img: "assets/gallery/hand-paint-training.webp",
-                title_bn: "যুব উন্নয়ন অধিদপ্তরের সহযোগিতায় নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ কর্মশালা",
-                title_en: "7-Day Artisanal Textile Hand-Painting Workshop with Dept of Youth Development",
-                tag_bn: "হ্যান্ড পেইন্ট প্রশিক্ষণ",
-                tag_en: "Hand-Paint Training",
-                date_bn: "২২ মার্চ ২০২৫",
-                date_en: "22 March 2025",
-                url: "https://www.facebook.com/61560289663754/posts/122164723886342988/"
-            },
-            {
                 img: "assets/gallery/menstrual-mental-health.webp",
                 title_bn: "মাসিক স্বাস্থ্য সুরক্ষা ও কিশোরীদের মানসিক স্বাস্থ্য সচেতনতা নিয়ে উঠান বৈঠক",
                 title_en: "Courtyard Dialogue on Menstrual Dignity and Adolescent Mental Health",
@@ -2038,6 +2028,16 @@ const PROJECT_ALBUMS = {
                 date_bn: "২৪ অক্টোবর ২০২৫",
                 date_en: "24 October 2025",
                 url: "https://www.facebook.com/61560289663754/posts/122195040488342988/"
+            },
+            {
+                img: "assets/gallery/hand-paint-training.webp",
+                title_bn: "যুব উন্নয়ন অধিদপ্তরের সহযোগিতায় নারীদের ৭ দিনব্যাপী হস্তশিল্প ও হ্যান্ড পেইন্ট প্রশিক্ষণ কর্মশালা",
+                title_en: "7-Day Artisanal Textile Hand-Painting Workshop with Dept of Youth Development",
+                tag_bn: "হ্যান্ড পেইন্ট প্রশিক্ষণ",
+                tag_en: "Hand-Paint Training",
+                date_bn: "২২ মার্চ ২০২৫",
+                date_en: "22 March 2025",
+                url: "https://www.facebook.com/61560289663754/posts/122164723886342988/"
             }
         ]
     },
@@ -2049,6 +2049,16 @@ const PROJECT_ALBUMS = {
         icon: "🧒",
         accent: "sky",
         events: [
+            {
+                img: "assets/gallery/pym-healthcare-checkup.webp",
+                title_bn: "সুবিধাবঞ্চিত শিশুদের সুস্বাস্থ্য ও সুন্দর ভবিষ্যৎ নিশ্চিত করতে ফ্রি মেডিকেল ক্যাম্প",
+                title_en: "Free Pediatric Health Consultation, Checkup & Medicine Camp",
+                tag_bn: "ফ্রি মেডিকেল ক্যাম্প",
+                tag_en: "Medical Camp",
+                date_bn: "২৬ জুলাই ২০২৬",
+                date_en: "26 July 2026",
+                url: "https://www.facebook.com/share/p/1DcoiHiQtu/"
+            },
             {
                 img: "assets/gallery/blood-test-campaign.webp",
                 title_bn: "‘প্রোজেক্ট ইয়োর মেন্টর’-এর আওতাভুক্ত শিশুদের নিয়ে ব্লাড টেস্ট ও প্রাথমিক স্বাস্থ্য ক্যাম্পেইন",
@@ -2118,16 +2128,6 @@ const PROJECT_ALBUMS = {
                 date_bn: "১৫ অক্টোবর ২০২৪",
                 date_en: "15 October 2024",
                 url: "https://www.facebook.com/share/p/1CNBQiGRNi/"
-            },
-            {
-                img: "assets/gallery/pym-healthcare-checkup.webp",
-                title_bn: "সুবিধাবঞ্চিত শিশুদের সুস্বাস্থ্য ও সুন্দর ভবিষ্যৎ নিশ্চিত করতে ফ্রি মেডিকেল ক্যাম্প",
-                title_en: "Free Pediatric Health Consultation, Checkup & Medicine Camp",
-                tag_bn: "ফ্রি মেডিকেল ক্যাম্প",
-                tag_en: "Medical Camp",
-                date_bn: "২৬ জুলাই ২০২৬",
-                date_en: "26 July 2026",
-                url: "https://www.facebook.com/share/p/1DcoiHiQtu/"
             }
         ]
     },
@@ -2140,16 +2140,6 @@ const PROJECT_ALBUMS = {
         accent: "indigo",
         events: [
             {
-                img: "assets/gallery/anniversary-youth-award.webp",
-                title_bn: "কারু শিখার ৩য় প্রতিষ্ঠাবার্ষিকী উদযাপন উপলক্ষে Youth Engagement & উদ্যোক্তা সম্মাননা ২০২৬",
-                title_en: "3rd Foundation Anniversary, Youth Engagement & Entrepreneurship Award 2026",
-                tag_bn: "প্রতিষ্ঠাবার্ষিকী ও সম্মাননা",
-                tag_en: "Anniversary & Award",
-                date_bn: "০৪ জুন ২০২৬",
-                date_en: "04 June 2026",
-                url: "https://www.facebook.com/61560289663754/posts/122217635396342988/"
-            },
-            {
                 img: "assets/gallery/youth-equality-1.webp",
                 title_bn: "প্ল্যান ইন্টারন্যাশনাল ও জাগো ফাউন্ডেশনের সাথে ৬০ জন তরুণ-তরুণী নিয়ে ‘সমতায় তারুণ্য’ কর্মশালা",
                 title_en: "'Youth for Equality' Capacity Building Workshop with Plan International & JAAGO",
@@ -2158,6 +2148,16 @@ const PROJECT_ALBUMS = {
                 date_bn: "১৬ অক্টোবর ২০২৬",
                 date_en: "16 October 2026",
                 url: "https://www.facebook.com/61560289663754/posts/122232098858342988/"
+            },
+            {
+                img: "assets/gallery/anniversary-youth-award.webp",
+                title_bn: "কারু শিখার ৩য় প্রতিষ্ঠাবার্ষিকী উদযাপন উপলক্ষে Youth Engagement & উদ্যোক্তা সম্মাননা ২০২৬",
+                title_en: "3rd Foundation Anniversary, Youth Engagement & Entrepreneurship Award 2026",
+                tag_bn: "প্রতিষ্ঠাবার্ষিকী ও সম্মাননা",
+                tag_en: "Anniversary & Award",
+                date_bn: "০৪ জুন ২০২৬",
+                date_en: "04 June 2026",
+                url: "https://www.facebook.com/61560289663754/posts/122217635396342988/"
             },
             {
                 img: "assets/gallery/ipyg-partnership-signing.webp",
