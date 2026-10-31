@@ -142,7 +142,8 @@ window.KARU_SHIKHA_REELS = [
         tag_en: "Just Energy",
         date: "সেপ্টেম্বর ২০২৫",
         date_en: "September 2025",
-        facebook_url: "https://www.facebook.com/reel/1037866038280727/"
+        facebook_url: "https://www.facebook.com/reel/1037866038280727/",
+        embed_restricted: true
     },
     {
         id: "1496070128095416",
@@ -170,7 +171,8 @@ window.KARU_SHIKHA_REELS = [
         tag_en: "Child Happiness",
         date: "জুন ২০২৫",
         date_en: "June 2025",
-        facebook_url: "https://www.facebook.com/reel/691746930193330/"
+        facebook_url: "https://www.facebook.com/reel/691746930193330/",
+        embed_restricted: true
     },
     {
         id: "1168078694717026",
@@ -198,6 +200,7 @@ window.KARU_SHIKHA_REELS = [
         tag_en: "Economic Freedom",
         date: "ফেব্রুয়ারি ২০২৫",
         date_en: "February 2025",
-        facebook_url: "https://www.facebook.com/reel/1012405944088040/"
+        facebook_url: "https://www.facebook.com/reel/1012405944088040/",
+        embed_restricted: true
     }
 ];

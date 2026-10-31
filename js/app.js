@@ -1753,15 +1753,67 @@ window.openReelModal = function(id) {
     if (container) {
         container.style.width = `${vWidth}px`;
         container.style.height = `${vHeight}px`;
-        container.innerHTML = `
-            <iframe src="https://www.facebook.com/plugins/video.php?height=${vHeight}&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=${vWidth}" 
-                width="${vWidth}" height="${vHeight}" 
-                style="border:none;overflow:hidden;width:${vWidth}px;height:${vHeight}px;display:block;" 
-                scrolling="no" frameborder="0" allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                title="${title}">
-            </iframe>
-        `;
+
+        if (reel.embed_restricted) {
+            const isBn = currentLang === 'bn';
+            const alertBadge = isBn ? 'মিউজিক কপিরাইট নীতি' : 'Music Copyright Policy';
+            const alertDesc = isBn 
+                ? 'এই রিলটিতে ব্যবহৃত ব্যাকগ্রাউন্ড মিউজিক বা অডিওর কারণে ফেসবুকের কপিরাইট নীতি অনুযায়ী এটি সরাসরি বাইরের ওয়েবসাইটে এম্বেড করা সীমিত। তবে ফেসবুক অ্যাপ বা ওয়েবসাইটে এটি সম্পূর্ণ সচল ও দেখার জন্য উন্মুক্ত!'
+                : 'Due to Facebook music copyright restrictions, this reel cannot be embedded directly on third-party websites. However, it is fully accessible to watch on Facebook!';
+            const ctaBtn = isBn ? 'সরাসরি ফেসবুকে রিলটি দেখুন ↗' : 'Watch Directly on Facebook ↗';
+            const closeBtn = isBn ? 'ফিরে যান' : 'Close';
+
+            container.innerHTML = `
+                <div class="relative w-full h-full flex flex-col items-center justify-between p-5 sm:p-6 text-center bg-slate-950 overflow-hidden select-none">
+                    <!-- Background blurred thumbnail -->
+                    <div class="absolute inset-0 bg-cover bg-center filter blur-md opacity-35 scale-110 pointer-events-none" style="background-image: url('${reel.thumbnail}');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950 pointer-events-none"></div>
+
+                    <!-- Top Warning Badge -->
+                    <div class="relative z-10 flex flex-col items-center mt-2">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-300 flex items-center justify-center text-2xl sm:text-3xl shadow-lg mb-2.5">
+                            🎵
+                        </div>
+                        <span class="inline-block px-3 py-1 rounded-full text-[11px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                            ${alertBadge}
+                        </span>
+                    </div>
+
+                    <!-- Middle Content -->
+                    <div class="relative z-10 space-y-2 max-w-[280px]">
+                        <h4 class="text-white font-bold text-xs sm:text-sm leading-snug line-clamp-2">
+                            ${title}
+                        </h4>
+                        <p class="text-[11px] sm:text-xs text-slate-300 leading-relaxed">
+                            ${alertDesc}
+                        </p>
+                    </div>
+
+                    <!-- Bottom Buttons -->
+                    <div class="relative z-10 w-full space-y-2 mb-1">
+                        <a href="${reel.facebook_url}" target="_blank" rel="noopener noreferrer" 
+                           class="w-full flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] text-white text-xs font-bold shadow-xl shadow-sky-500/30 hover:opacity-95 transition-all">
+                            <span>📱</span>
+                            <span>${ctaBtn}</span>
+                        </a>
+                        <button type="button" onclick="closeReelModal()" 
+                                class="w-full py-1.5 text-[11px] text-slate-400 hover:text-white transition-colors">
+                            ${closeBtn}
+                        </button>
+                    </div>
+                </div>
+            `;
+        } else {
+            container.innerHTML = `
+                <iframe src="https://www.facebook.com/plugins/video.php?height=${vHeight}&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=${vWidth}" 
+                    width="${vWidth}" height="${vHeight}" 
+                    style="border:none;overflow:hidden;width:${vWidth}px;height:${vHeight}px;display:block;" 
+                    scrolling="no" frameborder="0" allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    title="${title}">
+                </iframe>
+            `;
+        }
     }
 
     if (modal) {
