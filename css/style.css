@@ -502,3 +502,12 @@ section[id], header[id] {
         scroll-margin-top: 100px;
     }
 }
+
+/* Project Slider Hover Zoom Motion (Smooth Ken-Burns Effect) */
+.group\/slider img {
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    will-change: transform;
+}
+.group\/slider:hover img {
+    transform: scale(1.06) !important;
+}
