@@ -35,6 +35,11 @@ class KaruShikhaHero3D {
         this.raycaster = new THREE.Raycaster();
         this.plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
 
+        // Mobile Device Orientation / Gyroscope Tilt Detection
+        this.tilt = new THREE.Vector2(0, 0);
+        this.targetTilt = new THREE.Vector2(0, 0);
+        this.isTiltActive = false;
+
         this.init();
         this.createShapes();
         this.createParticles();
@@ -389,6 +394,53 @@ class KaruShikhaHero3D {
         window.addEventListener('pointerleave', () => {
             this.endTouch();
         });
+
+        // -------------------------------------------------------------
+        // Mobile Gyroscope & Accelerometer Tilt Detection (DeviceOrientation)
+        // -------------------------------------------------------------
+        const handleOrientation = (e) => {
+            if (e.gamma === null || e.beta === null) return;
+
+            // gamma: left-to-right tilt in degrees [-90, 90]
+            // Clamped to [-35, 35] for comfortable natural hand holding range
+            const gamma = Math.max(-35, Math.min(35, e.gamma || 0));
+
+            // beta: front-to-back tilt in degrees [-180, 180]
+            // Natural portrait reading angle is ~45 degrees upright
+            const restingBeta = 45;
+            const betaDiff = (e.beta || restingBeta) - restingBeta;
+            const clampedBeta = Math.max(-30, Math.min(30, betaDiff));
+
+            this.targetTilt.x = gamma / 35; // Range: [-1, 1]
+            this.targetTilt.y = clampedBeta / 30; // Range: [-1, 1]
+            this.isTiltActive = true;
+        };
+
+        // Android, Chrome, Firefox, Samsung Internet - activate immediately without prompt
+        if (typeof window !== 'undefined' && 'DeviceOrientationEvent' in window) {
+            if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
+                window.addEventListener('deviceorientation', handleOrientation, { passive: true });
+            }
+        }
+
+        // iOS Safari (iOS 13+) requires user gesture to grant orientation permission
+        let gyroPermissionRequested = false;
+        const requestIosGyro = () => {
+            if (gyroPermissionRequested) return;
+            gyroPermissionRequested = true;
+            if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(state => {
+                        if (state === 'granted') {
+                            window.addEventListener('deviceorientation', handleOrientation, { passive: true });
+                        }
+                    })
+                    .catch(() => {});
+            }
+        };
+
+        window.addEventListener('touchstart', requestIosGyro, { passive: true, once: true });
+        window.addEventListener('pointerdown', requestIosGyro, { passive: true, once: true });
     }
 
     onResize() {
@@ -525,44 +577,88 @@ class KaruShikhaHero3D {
         posAttr.needsUpdate = true;
         colAttr.needsUpdate = true;
 
+        // Smoothly interpolate device tilt from mobile gyroscope
+        if (this.isTiltActive) {
+            this.tilt.lerp(this.targetTilt, 0.08);
+        }
+
+        // Active interaction calculation: Touch/Mouse + Mobile Gyro Tilt
+        let activeInteractX = 0;
+        let activeInteractY = 0;
+        let hasActiveInteraction = false;
+
+        if (hasValidMouse && this.isTouchActive) {
+            // Direct finger touch has immediate priority
+            activeInteractX = this.mouse.x;
+            activeInteractY = this.mouse.y;
+            hasActiveInteraction = true;
+        } else if (this.isTiltActive && (Math.abs(this.tilt.x) > 0.01 || Math.abs(this.tilt.y) > 0.01)) {
+            // Phone tilt gives smooth, continuous 3D gyro perspective
+            activeInteractX = this.tilt.x;
+            activeInteractY = this.tilt.y;
+            hasActiveInteraction = true;
+        } else if (hasValidMouse) {
+            activeInteractX = this.mouse.x;
+            activeInteractY = this.mouse.y;
+            hasActiveInteraction = true;
+        }
+
         if (this.currentShape === 'logo') {
-            // Elegant continuous 3D floating & tilt reacting to touch or ambient wave
-            let targetRotY = Math.sin(time * 0.75) * 0.18;
-            let targetRotX = Math.cos(time * 0.55) * 0.10;
-            if (hasValidMouse) {
-                targetRotY = this.mouse.x * 0.32;
-                targetRotX = -this.mouse.y * 0.24;
+            // Elegant continuous 3D floating & tilt reacting to phone tilt, touch or ambient wave
+            let targetRotY = Math.sin(time * 0.75) * 0.16;
+            let targetRotX = Math.cos(time * 0.55) * 0.08;
+            if (hasActiveInteraction) {
+                targetRotY += activeInteractX * 0.45;
+                targetRotX -= activeInteractY * 0.35;
             }
             this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.10;
             this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.10;
             this.points.position.y = Math.sin(time * 1.2) * 0.28;
         } else if (this.currentShape === 'shikha') {
-            this.points.rotation.y = Math.sin(time * 0.4) * 0.15;
-            this.points.rotation.x = Math.cos(time * 0.3) * 0.06;
+            let targetRotY = Math.sin(time * 0.4) * 0.15;
+            let targetRotX = Math.cos(time * 0.3) * 0.06;
+            if (hasActiveInteraction) {
+                targetRotY += activeInteractX * 0.28;
+                targetRotX -= activeInteractY * 0.20;
+            }
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.08;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.08;
             this.points.position.y = 0;
         } else if (this.currentShape === 'hands') {
-            this.points.rotation.y = Math.sin(time * 0.3) * 0.15;
-            this.points.rotation.x = Math.sin(time * 0.2) * 0.08;
+            let targetRotY = Math.sin(time * 0.3) * 0.15;
+            let targetRotX = Math.sin(time * 0.2) * 0.08;
+            if (hasActiveInteraction) {
+                targetRotY += activeInteractX * 0.28;
+                targetRotX -= activeInteractY * 0.20;
+            }
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.08;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.08;
             this.points.position.y = 0;
         } else {
-            this.points.rotation.y = Math.sin(time * 0.4) * 0.18;
-            this.points.rotation.x = Math.cos(time * 0.3) * 0.08;
+            let targetRotY = Math.sin(time * 0.4) * 0.18;
+            let targetRotX = Math.cos(time * 0.3) * 0.08;
+            if (hasActiveInteraction) {
+                targetRotY += activeInteractX * 0.32;
+                targetRotX -= activeInteractY * 0.24;
+            }
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.08;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.08;
             this.points.position.y = 0;
         }
 
         let targetCamX = 0;
         let targetCamY = 0;
-        if (hasValidMouse) {
-            targetCamX = this.mouse.x * 3.5;
-            targetCamY = this.mouse.y * 2.5;
+        if (hasActiveInteraction) {
+            targetCamX = activeInteractX * 3.6;
+            targetCamY = activeInteractY * 2.6;
         }
-        this.camera.position.x += (targetCamX - this.camera.position.x) * 0.05;
-        this.camera.position.y += (targetCamY - this.camera.position.y) * 0.05;
+        this.camera.position.x += (targetCamX - this.camera.position.x) * 0.06;
+        this.camera.position.y += (targetCamY - this.camera.position.y) * 0.06;
         this.camera.lookAt(0, 0, 0);
 
         if (this.dust) {
-            this.dust.rotation.y = time * 0.02;
-            this.dust.rotation.x = time * 0.015;
+            this.dust.rotation.y = time * 0.02 + (hasActiveInteraction ? activeInteractX * 0.12 : 0);
+            this.dust.rotation.x = time * 0.015 - (hasActiveInteraction ? activeInteractY * 0.10 : 0);
         }
 
         this.renderer.render(this.scene, this.camera);
