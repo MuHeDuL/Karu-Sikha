@@ -530,11 +530,9 @@ a, button, input, select, textarea, [role="button"], .shape-pill {
     scroll-snap-type: x mandatory;
 }
 
-/* 5. iOS Background Body Scroll Lock during Active Modals */
-html.modal-active,
+/* 5. Background Body Scroll Lock during Active Modals (Preserves scroll position) */
 body.modal-active {
     overflow: hidden !important;
-    height: 100% !important;
     overscroll-behavior: none !important;
 }
 

@@ -990,7 +990,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTranslations(currentLang);
 });
 
-// Universal iOS / iPhone Modal Body Scroll Lock (Eliminates background rubber-banding)
+// Universal Modal Body Scroll Lock & Scroll Position Preserver
 function setupIosModalScrollLock() {
     const modalIds = [
         'donate-modal',
@@ -1004,6 +1004,9 @@ function setupIosModalScrollLock() {
         'gallery-lightbox'
     ];
 
+    let savedModalScrollY = 0;
+    let isModalScrollLocked = false;
+
     const checkModals = () => {
         let isAnyModalOpen = false;
         for (const id of modalIds) {
@@ -1013,12 +1016,35 @@ function setupIosModalScrollLock() {
                 break;
             }
         }
+
         if (isAnyModalOpen) {
+            if (!isModalScrollLocked) {
+                // Record the exact page scroll position right before the modal takes focus
+                savedModalScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+                isModalScrollLocked = true;
+            }
             document.body.classList.add('modal-active');
-            document.documentElement.classList.add('modal-active');
         } else {
-            document.body.classList.remove('modal-active');
-            document.documentElement.classList.remove('modal-active');
+            if (isModalScrollLocked) {
+                document.body.classList.remove('modal-active');
+                document.documentElement.classList.remove('modal-active');
+                isModalScrollLocked = false;
+
+                // Ensure the user stays at the EXACT position they were on the page
+                const targetY = savedModalScrollY;
+                const htmlEl = document.documentElement;
+                const originalBehavior = htmlEl.style.scrollBehavior;
+                htmlEl.style.scrollBehavior = 'auto'; // Disable smooth scrolling to prevent visible jumping
+                window.scrollTo(0, targetY);
+
+                // Re-check on next frame in case mobile browser deferred layout calculation
+                requestAnimationFrame(() => {
+                    window.scrollTo(0, targetY);
+                    requestAnimationFrame(() => {
+                        htmlEl.style.scrollBehavior = originalBehavior;
+                    });
+                });
+            }
         }
     };
 
@@ -1033,9 +1059,9 @@ function setupIosModalScrollLock() {
     }
 
     // Safety fallback on user click & escape key
-    window.addEventListener('click', () => setTimeout(checkModals, 100), { passive: true });
+    window.addEventListener('click', () => setTimeout(checkModals, 50), { passive: true });
     window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') setTimeout(checkModals, 100);
+        if (e.key === 'Escape') setTimeout(checkModals, 50);
     }, { passive: true });
 }
 
@@ -1668,12 +1694,12 @@ window.openGalleryLightbox = function(filename) {
     }
 
     lightbox.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
 };
 
 window.navigateGalleryLightbox = function(direction, event) {
     if (event) {
-        event.stopPropagation();
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
     }
     if (!currentLightboxList || currentLightboxList.length === 0) {
         currentLightboxList = getActiveGalleryList();
@@ -1687,11 +1713,14 @@ window.navigateGalleryLightbox = function(direction, event) {
     }
 };
 
-window.closeGalleryLightbox = function() {
+window.closeGalleryLightbox = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const lightbox = document.getElementById('gallery-lightbox');
     if (lightbox) {
         lightbox.classList.add('hidden');
-        document.body.style.overflow = '';
     }
 };
 
@@ -1987,11 +2016,14 @@ window.openReelModal = function(id) {
 
     if (modal) {
         modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
     }
 };
 
-window.closeReelModal = function() {
+window.closeReelModal = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const modal = document.getElementById('reel-modal');
     const container = document.getElementById('reel-modal-iframe-container');
     if (container) {
@@ -2001,7 +2033,6 @@ window.closeReelModal = function() {
     }
     if (modal) {
         modal.classList.add('hidden');
-        document.body.style.overflow = '';
     }
 };
 
@@ -2021,7 +2052,11 @@ window.openContactModal = function() {
     if (contactModal) contactModal.classList.remove('hidden');
 };
 
-window.closeContactModal = function() {
+window.closeContactModal = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const contactModal = document.getElementById('contact-modal');
     if (contactModal) contactModal.classList.add('hidden');
 };
@@ -2031,7 +2066,11 @@ window.openCertificateModal = function() {
     if (certModal) certModal.classList.remove('hidden');
 };
 
-window.closeCertificateModal = function() {
+window.closeCertificateModal = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const certModal = document.getElementById('certificate-modal');
     if (certModal) certModal.classList.add('hidden');
 };
@@ -2401,14 +2440,16 @@ window.openProjectAlbum = function(projKey) {
     }
 
     modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
 };
 
-window.closeProjectAlbumModal = function() {
+window.closeProjectAlbumModal = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const modal = document.getElementById('project-album-modal');
     if (modal) {
         modal.classList.add('hidden');
-        document.body.style.overflow = '';
     }
 };
 
@@ -3437,7 +3478,6 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.add('hidden');
-                document.body.style.overflow = '';
             }
         });
     });
@@ -3447,7 +3487,6 @@ ${note ? `• *Message/Note:* ${note}\n` : ''}----------------------------------
             [donateModal, volunteerModal, contactModal, certModal, memberModal, legalModal].forEach(modal => {
                 if (modal && !modal.classList.contains('hidden')) {
                     modal.classList.add('hidden');
-                    document.body.style.overflow = '';
                 }
             });
         }
@@ -3945,7 +3984,11 @@ window.openMemberModal = function(id, tab) {
     modal.classList.remove('hidden');
 };
 
-window.closeMemberModal = function() {
+window.closeMemberModal = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const modal = document.getElementById('member-profile-modal');
     if (modal) modal.classList.add('hidden');
 };
@@ -4073,14 +4116,16 @@ window.openLegalModal = function(tab = 'privacy') {
     if (!modal) return;
     switchLegalTab(tab);
     modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
 };
 
-window.closeLegalModal = function() {
+window.closeLegalModal = function(event) {
+    if (event) {
+        if (event.preventDefault) event.preventDefault();
+        if (event.stopPropagation) event.stopPropagation();
+    }
     const modal = document.getElementById('legal-modal');
     if (!modal) return;
     modal.classList.add('hidden');
-    document.body.style.overflow = '';
 };
 
 window.switchLegalTab = function(tab) {
