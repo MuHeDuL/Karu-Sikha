@@ -63,6 +63,7 @@ body {
 .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Dual-Glow Glassmorphism Classes */
@@ -463,13 +464,23 @@ header .header-donate-btn:hover img {
     transform: scale(1.1) rotate(-3deg);
 }
 
-/* Mobile Sticky Bottom Floating Action Bar */
+/* Mobile Sticky Bottom Floating Action Bar with iOS Safe Area */
 .mobile-bottom-bar {
-    background: rgba(10, 19, 36, 0.92);
+    background: rgba(10, 19, 36, 0.94);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 -8px 24px -4px rgba(0, 0, 0, 0.6);
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
+}
+
+/* iOS Safari Tap & Button Optimization */
+button, input, select, textarea {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+a, button {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Mobile-Specific Refinements */
@@ -485,13 +496,13 @@ header .header-donate-btn:hover img {
         min-height: 38px;
     }
 
-    /* Modals take full mobile height gracefully */
+    /* Modals take full mobile height gracefully with modern dynamic dvh */
     .modal-card {
         max-height: 90vh !important;
+        max-height: calc(100dvh - 36px) !important;
         padding: 1.25rem !important;
     }
 }
-
 
 /* Prevent fixed header from overlaying section headings */
 section[id], header[id] {
@@ -503,7 +514,15 @@ section[id], header[id] {
     }
 }
 
-/* Project Slider Hover Zoom Motion (Smooth Ken-Burns Effect) */
+/* Project Slider Hover Zoom Motion (Smooth Ken-Burns Effect) & iOS Safari WebKit Clipping */
+#pym-slider, #coks-slider, #ewgsf-slider, #yep-slider {
+    touch-action: pan-y;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    isolation: isolate;
+}
+
 .group\/slider img {
     transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
     will-change: transform;

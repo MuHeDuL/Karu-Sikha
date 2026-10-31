@@ -2262,22 +2262,55 @@ function initProjectShowcases() {
         const sliderEl = document.getElementById(`${key}-slider`);
         if (sliderEl) {
             let touchStartX = 0;
-            let touchEndX = 0;
+            let touchStartY = 0;
+            let isSwiping = false;
 
             sliderEl.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
+                if (e.changedTouches && e.changedTouches[0]) {
+                    touchStartX = e.changedTouches[0].clientX;
+                    touchStartY = e.changedTouches[0].clientY;
+                    isSwiping = false;
+                }
                 clearInterval(PROJECT_SLIDER_TIMERS[key]);
             }, { passive: true });
 
+            sliderEl.addEventListener('touchmove', (e) => {
+                if (e.changedTouches && e.changedTouches[0]) {
+                    const diffX = Math.abs(e.changedTouches[0].clientX - touchStartX);
+                    const diffY = Math.abs(e.changedTouches[0].clientY - touchStartY);
+                    if (diffX > 10 && diffX > diffY) {
+                        isSwiping = true;
+                    }
+                }
+            }, { passive: true });
+
             sliderEl.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 40) {
-                    window.nextProjectSlide(key);
-                } else if (touchEndX - touchStartX > 40) {
-                    window.prevProjectSlide(key);
+                if (e.changedTouches && e.changedTouches[0]) {
+                    const touchEndX = e.changedTouches[0].clientX;
+                    const diffX = touchStartX - touchEndX;
+                    if (Math.abs(diffX) > 35) {
+                        isSwiping = true;
+                        if (diffX > 0) {
+                            window.nextProjectSlide(key);
+                        } else {
+                            window.prevProjectSlide(key);
+                        }
+                    }
                 }
                 restartProjectSliderTimer(key);
+                if (isSwiping) {
+                    setTimeout(() => { isSwiping = false; }, 350);
+                }
             }, { passive: true });
+
+            // Suppress accidental modal opening on iPhone/Safari when user was just swiping
+            sliderEl.addEventListener('click', (e) => {
+                if (isSwiping) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                }
+            }, true);
 
             sliderEl.addEventListener('mouseenter', () => clearInterval(PROJECT_SLIDER_TIMERS[key]));
             sliderEl.addEventListener('mouseleave', () => restartProjectSliderTimer(key));
