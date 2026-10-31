@@ -1719,12 +1719,13 @@ window.openReelModal = function(id) {
 
     if (container) {
         container.innerHTML = `
-            <div class="relative w-full flex items-center justify-center p-2 bg-black min-h-[460px] sm:min-h-[490px]">
-                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267&autoplay=true" 
-                    width="267" height="476" 
-                    style="border:none;overflow:hidden;border-radius:14px;max-width:100%;box-shadow:0 10px 30px rgba(0,0,0,0.5);" 
+            <div class="relative w-full flex items-center justify-center p-0 bg-black min-h-[480px] sm:min-h-[520px]">
+                <iframe src="https://www.facebook.com/video/embed?video_id=${encodeURIComponent(reel.id)}&autoplay=1" 
+                    width="100%" height="520" 
+                    style="border:none;overflow:hidden;width:100%;height:520px;max-height:75vh;background:#000;" 
                     scrolling="no" frameborder="0" allowfullscreen="true" 
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; accelerometer; gyroscope"
+                    title="${title}">
                 </iframe>
             </div>
         `;
