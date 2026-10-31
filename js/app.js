@@ -1669,10 +1669,14 @@ function renderReels() {
                     </span>
                 </div>
 
-                <!-- Center Animated Play Button -->
+                <!-- Center Animated Play Button (Gradient Stroke + White Transparent Fill + White Triangle) -->
                 <div class="relative z-20 self-center flex items-center justify-center">
-                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] text-white flex items-center justify-center text-lg sm:text-xl shadow-xl shadow-sky-500/35 group-hover:scale-115 transition-all pl-1">
-                        ▶
+                    <div class="p-[1.5px] rounded-full bg-gradient-to-r from-[#0284c7] via-[#38bdf8] to-[#f97316] shadow-lg shadow-black/50 group-hover:scale-115 transition-transform duration-300">
+                        <div class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center transition-colors group-hover:bg-white/30">
+                            <svg class="w-5 h-5 text-white fill-current ml-0.5 drop-shadow-md" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
                     </div>
                 </div>
 
@@ -1719,15 +1723,13 @@ window.openReelModal = function(id) {
 
     if (container) {
         container.innerHTML = `
-            <div class="relative w-full flex items-center justify-center p-3 sm:p-4 bg-slate-950 min-h-[480px]">
-                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267" 
-                    width="267" height="476" 
-                    style="border:none;overflow:hidden;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.5);" 
-                    scrolling="no" frameborder="0" allowfullscreen="true" 
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    title="${title}">
-                </iframe>
-            </div>
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267" 
+                width="267" height="476" 
+                style="border:none;overflow:hidden;width:267px;height:476px;display:block;" 
+                scrolling="no" frameborder="0" allowfullscreen="true" 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                title="${title}">
+            </iframe>
         `;
     }
 
