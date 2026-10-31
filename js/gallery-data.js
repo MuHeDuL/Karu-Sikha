@@ -56,8 +56,8 @@ window.KARU_SHIKHA_GALLERY = [
     "category": "women",
     "category_bn": "সমতা ও নারী ক্ষমতায়ন",
     "tag": "সমতায় তারুণ্য",
-    "date": "১৬ অক্টোবর ২০২৬",
-    "date_en": "16 October 2026",
+    "date": "১৫ অক্টোবর ২০২৬",
+    "date_en": "15 October 2026",
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122232098858342988/",
@@ -116,8 +116,8 @@ window.KARU_SHIKHA_GALLERY = [
     "category": "humanitarian",
     "category_bn": "মানবিক ও রক্তদান",
     "tag": "Mind Game সেশন",
-    "date": "২৬ সেপ্টেম্বর ২০২৬",
-    "date_en": "26 September 2026",
+    "date": "২৫ সেপ্টেম্বর ২০২৬",
+    "date_en": "25 September 2026",
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122229616496342988/",
@@ -275,14 +275,29 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "pym-healthcare-checkup.webp"
   },
   {
+    "file": "madrasa-tree-plantation-1.webp",
+    "title": "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ",
+    "title_en": "Tree Plantation & Distribution with Students at Lailatul Madani Madrasa, C&B Ghat",
+    "category": "climate",
+    "category_bn": "জলবায়ু ও পরিবেশ",
+    "tag": "বৃক্ষরোপণ কর্মসূচি",
+    "date": "২২ জুলাই ২০২৬",
+    "date_en": "22 July 2026",
+    "location": "সিএন্ডবি ঘাট, ফরিদপুর",
+    "location_en": "C&B Ghat, Faridpur",
+    "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
+    "size_kb": 76.9,
+    "src": "madrasa-tree-plantation-1.webp"
+  },
+  {
     "file": "gbv-leadership-1.webp",
     "title": "কারু শিখা কার্যালয়ে Gender-Based Violence (GBV) ও Leadership বিষয়ক আলোচনা সভা",
     "title_en": "Discussion on Gender-Based Violence (GBV) & Leadership at Karu Shikha Office",
     "category": "women",
     "category_bn": "সমতা ও নারী ক্ষমতায়ন",
     "tag": "GBV ও নেতৃত্ব",
-    "date": "১০ জুলাই ২০২৬",
-    "date_en": "10 July 2026",
+    "date": "০৯ জুলাই ২০২৬",
+    "date_en": "09 July 2026",
     "location": "কারু শিখা প্রধান কার্যালয়, ফরিদপুর",
     "location_en": "Karu Shikha Central Office, Faridpur",
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122221170056342988/",
@@ -318,21 +333,6 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/61560289663754/posts/122220947936342988/",
     "size_kb": 90.3,
     "src": "lead-4.webp"
-  },
-  {
-    "file": "madrasa-tree-plantation-1.webp",
-    "title": "সিএন্ডবি ঘাট লাইলাতুল মাদানি মাদ্রাসায় কোরআনের পাখিদের নিয়ে বৃক্ষরোপণ ও বিতরণ",
-    "title_en": "Tree Plantation & Distribution with Students at Lailatul Madani Madrasa, C&B Ghat",
-    "category": "climate",
-    "category_bn": "জলবায়ু ও পরিবেশ",
-    "tag": "বৃক্ষরোপণ কর্মসূচি",
-    "date": "জুলাই ২০২৬",
-    "date_en": "July 2026",
-    "location": "সিএন্ডবি ঘাট, ফরিদপুর",
-    "location_en": "C&B Ghat, Faridpur",
-    "facebook_url": "https://www.facebook.com/61560289663754/posts/122223099242342988/",
-    "size_kb": 76.9,
-    "src": "madrasa-tree-plantation-1.webp"
   },
   {
     "file": "volunteer-award-crest.webp",
@@ -590,6 +590,21 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "advisor-rizwana-hasan.webp"
   },
   {
+    "file": "pym-education-future-generation.webp",
+    "title": "Project Your Mentor: সুবিধাবঞ্চিত শিশুদের শিক্ষা সহায়তা ও ভবিষ্যৎ নেতৃত্ব বিকাশ",
+    "title_en": "Empowering Underprivileged Children through Quality Education & Mentorship",
+    "category": "children",
+    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
+    "tag": "Project Your Mentor",
+    "date": "০৪ জানুয়ারি ২০২৬",
+    "date_en": "04 January 2026",
+    "location": "ফরিদপুর",
+    "location_en": "Faridpur",
+    "facebook_url": "https://www.facebook.com/share/p/1ErKE71hLn/",
+    "size_kb": 86.2,
+    "src": "pym-education-future-generation.webp"
+  },
+  {
     "file": "wateraid-household-survey.webp",
     "title": "WaterAid Bangladesh-এর সহযোগিতায় মাঠপর্যায়ে ৬ দিনব্যাপী কমিউনিটি হাউজহোল্ড ওয়াশ সার্ভে",
     "title_en": "6-Day Field WASH Household Survey in Collaboration with WaterAid Bangladesh",
@@ -785,9 +800,9 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "pym-group-learning.webp"
   },
   {
-    "file": "pym-confident-leadership.webp",
-    "title": "শিশুদের হাত ধরে গড়ে উঠুক আগামীর আত্মবিশ্বাসী নেতৃত্ব ও ইন্টার‌অ্যাকটিভ মানসিক বিকাশ",
-    "title_en": "Fostering Confident Future Leadership & Mindset for Children through Mentorship",
+    "file": "pym-joyful-learning.webp",
+    "title": "৫ থেকে ১৫ বছর বয়সী শিশুদের জন্য আনন্দময়, নিরাপদ ও অংশগ্রহণমূলক পাঠদান কার্যক্রম",
+    "title_en": "Joyful, Safe and Inclusive Experiential Learning for Children Aged 5-15",
     "category": "children",
     "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
     "tag": "Project Your Mentor",
@@ -795,14 +810,14 @@ window.KARU_SHIKHA_GALLERY = [
     "date_en": "10 February 2025",
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/share/p/1Ge8mkHWzi/",
-    "size_kb": 253.9,
-    "src": "pym-confident-leadership.webp"
+    "facebook_url": "https://www.facebook.com/share/p/19cQEkdUew/",
+    "size_kb": 230.1,
+    "src": "pym-joyful-learning.webp"
   },
   {
-    "file": "pym-joyful-learning.webp",
-    "title": "৫ থেকে ১৫ বছর বয়সী শিশুদের জন্য আনন্দময়, নিরাপদ ও অংশগ্রহণমূলক পাঠদান কার্যক্রম",
-    "title_en": "Joyful, Safe and Inclusive Experiential Learning for Children Aged 5-15",
+    "file": "pym-confident-leadership.webp",
+    "title": "শিশুদের হাত ধরে গড়ে উঠুক আগামীর আত্মবিশ্বাসী নেতৃত্ব ও ইন্টার‌অ্যাকটিভ মানসিক বিকাশ",
+    "title_en": "Fostering Confident Future Leadership & Mindset for Children through Mentorship",
     "category": "children",
     "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
     "tag": "Project Your Mentor",
@@ -810,9 +825,9 @@ window.KARU_SHIKHA_GALLERY = [
     "date_en": "18 January 2025",
     "location": "ফরিদপুর",
     "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/share/p/19cQEkdUew/",
-    "size_kb": 230.1,
-    "src": "pym-joyful-learning.webp"
+    "facebook_url": "https://www.facebook.com/share/p/1Ge8mkHWzi/",
+    "size_kb": 253.9,
+    "src": "pym-confident-leadership.webp"
   },
   {
     "file": "women-6.webp",
@@ -828,21 +843,6 @@ window.KARU_SHIKHA_GALLERY = [
     "facebook_url": "https://www.facebook.com/tihan.ahmed.9081/posts/2089138831535910/",
     "size_kb": 50.0,
     "src": "women-6.webp"
-  },
-  {
-    "file": "pym-education-future-generation.webp",
-    "title": "Project Your Mentor: সুবিধাবঞ্চিত শিশুদের শিক্ষা সহায়তা ও ভবিষ্যৎ নেতৃত্ব বিকাশ",
-    "title_en": "Empowering Underprivileged Children through Quality Education & Mentorship",
-    "category": "children",
-    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
-    "tag": "Project Your Mentor",
-    "date": "০৪ ডিসেম্বর ২০২৪",
-    "date_en": "04 December 2024",
-    "location": "ফরিদপুর",
-    "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/share/p/1ErKE71hLn/",
-    "size_kb": 86.2,
-    "src": "pym-education-future-generation.webp"
   },
   {
     "file": "pym-social-mental-skills.webp",
