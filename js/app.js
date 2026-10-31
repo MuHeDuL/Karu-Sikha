@@ -1529,26 +1529,85 @@ window.closeGalleryLightbox = function() {
 // ==========================================
 // 8.5 FACEBOOK REELS SLIDER & LIGHTBOX PLAYER
 // ==========================================
+let reelsAutoPlayTimer = null;
+let isReelsHovered = false;
+
 function setupReelsSlider() {
     renderReels();
 
     const prevBtn = document.getElementById('reels-prev-btn');
     const nextBtn = document.getElementById('reels-next-btn');
     const track = document.getElementById('reels-slider-track');
+    const container = document.getElementById('reels-slider-container');
 
-    if (prevBtn && track) {
-        prevBtn.addEventListener('click', () => {
-            const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 16 : 280;
-            track.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
-        });
+    function getCardStep() {
+        if (!track || !track.firstElementChild) return 280;
+        return track.firstElementChild.offsetWidth + 16;
     }
 
-    if (nextBtn && track) {
+    function scrollNext(loop = true) {
+        if (!track) return;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= maxScroll - 15) {
+            if (loop) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+        } else {
+            track.scrollBy({ left: getCardStep() * 1.5, behavior: 'smooth' });
+        }
+    }
+
+    function scrollPrev(loop = true) {
+        if (!track) return;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft <= 15) {
+            if (loop) {
+                track.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            }
+        } else {
+            track.scrollBy({ left: -getCardStep() * 1.5, behavior: 'smooth' });
+        }
+    }
+
+    if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-            const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 16 : 280;
-            track.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+            scrollNext(true);
         });
     }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            scrollPrev(true);
+        });
+    }
+
+    // Auto-looping carousel
+    function startReelsAutoLoop() {
+        if (reelsAutoPlayTimer) clearInterval(reelsAutoPlayTimer);
+        reelsAutoPlayTimer = setInterval(() => {
+            const modal = document.getElementById('reel-modal');
+            const isModalOpen = modal && !modal.classList.contains('hidden');
+            if (!isReelsHovered && !isModalOpen && track) {
+                const maxScroll = track.scrollWidth - track.clientWidth;
+                if (track.scrollLeft >= maxScroll - 15) {
+                    track.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    track.scrollBy({ left: getCardStep(), behavior: 'smooth' });
+                }
+            }
+        }, 3200);
+    }
+
+    if (container) {
+        container.addEventListener('mouseenter', () => { isReelsHovered = true; });
+        container.addEventListener('mouseleave', () => { isReelsHovered = false; });
+        container.addEventListener('touchstart', () => { isReelsHovered = true; }, { passive: true });
+        container.addEventListener('touchend', () => {
+            setTimeout(() => { isReelsHovered = false; }, 2000);
+        }, { passive: true });
+    }
+
+    startReelsAutoLoop();
 
     // Close on ESC
     window.addEventListener('keydown', (e) => {
@@ -1661,7 +1720,7 @@ window.openReelModal = function(id) {
     if (container) {
         container.innerHTML = `
             <div class="relative w-full flex items-center justify-center p-2 bg-black min-h-[460px] sm:min-h-[490px]">
-                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267" 
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267&autoplay=true" 
                     width="267" height="476" 
                     style="border:none;overflow:hidden;border-radius:14px;max-width:100%;box-shadow:0 10px 30px rgba(0,0,0,0.5);" 
                     scrolling="no" frameborder="0" allowfullscreen="true" 
