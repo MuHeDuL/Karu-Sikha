@@ -114,6 +114,7 @@
                 <a href="#committee" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_committee">কার্যনির্বাহী পরিষদ</a>
                 <a href="#future" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_future">ভবিষ্যৎ পরিকল্পনা</a>
                 <a href="#gallery" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_gallery">ফটো গ্যালারি</a>
+                <a href="#reels" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_reels">🎬 ভিডিও রিলস</a>
                 <a href="#contact" class="text-slate-200 py-1.5 px-3 rounded-xl hover:bg-slate-800/60" data-i18n="nav_contact">ঠিকানা ও যোগাযোগ</a>
                 <hr class="border-white/10 my-1">
                 <div class="flex gap-2">
@@ -755,6 +756,56 @@
         </div>
     </section>
 
+    <!-- Facebook Reels Video Showcase Section -->
+    <section id="reels" class="relative z-10 py-16 sm:py-20 bg-slate-900/40 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header & Navigation Buttons -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-r from-rose-500/15 via-purple-500/15 to-sky-500/15 border border-rose-500/30 text-rose-300 text-xs font-bold uppercase tracking-wider mb-3 select-none">
+                        <span>🎬</span>
+                        <span data-i18n="reels_tag">সোশ্যাল ভিডিও রিলস</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight" data-i18n="reels_title">
+                        সচেতনতামূলক রিল ও শর্ট ভিডিও
+                    </h2>
+                    <p class="text-slate-400 text-xs sm:text-sm md:text-base mt-2.5 leading-relaxed" data-i18n="reels_desc">
+                        যৌতুক প্রতিরোধ, সমতা, পরিবেশ, ক্লাইমেট, মাসিক স্বাস্থ্য ও তারুণ্যের ভাবনা নিয়ে কারু শিখার সচেতনতামূলক রিলসমূহ সরাসরি উপভোগ করুন।
+                    </p>
+                </div>
+
+                <!-- Slider Controls (Counter + Prev / Next Arrows) -->
+                <div class="flex items-center gap-3 shrink-0">
+                    <span id="reels-count-badge" class="px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/10 text-xs text-sky-400 font-bold shadow-inner" data-i18n="reels_count_badge">
+                        ১৪টি রিল ভিডিও
+                    </span>
+                    <button id="reels-prev-btn" type="button" class="w-10 h-10 rounded-xl bg-slate-900/90 hover:bg-[#0284c7] border border-white/10 hover:border-sky-400 text-white flex items-center justify-center transition-all cursor-pointer shadow-md select-none" aria-label="Previous Reels">
+                        ◀
+                    </button>
+                    <button id="reels-next-btn" type="button" class="w-10 h-10 rounded-xl bg-slate-900/90 hover:bg-[#0284c7] border border-white/10 hover:border-sky-400 text-white flex items-center justify-center transition-all cursor-pointer shadow-md select-none" aria-label="Next Reels">
+                        ▶
+                    </button>
+                </div>
+            </div>
+
+            <!-- Horizontal Reels Slider Track -->
+            <div id="reels-slider-container" class="relative overflow-hidden -mx-4 px-4 sm:mx-0 sm:px-0">
+                <div id="reels-slider-track" class="flex gap-4 sm:gap-5 overflow-x-auto pb-4 pt-1 scroll-smooth no-scrollbar snap-x snap-mandatory">
+                    <!-- Populated dynamically via JS from js/reels-data.js -->
+                </div>
+            </div>
+
+            <!-- Bottom CTA: View on Facebook -->
+            <div class="mt-8 text-center">
+                <a href="https://www.facebook.com/61560289663754" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900/80 hover:bg-sky-500/20 border border-white/10 hover:border-sky-400/40 text-slate-300 hover:text-white text-xs sm:text-sm font-semibold transition-all shadow-md">
+                    <span>📱</span>
+                    <span data-i18n="reels_visit_page">অফিসিয়াল ফেসবুক পেজের সকল রিল ও ভিডিও এক্সপ্লোর করুন</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Future Strategic Vision Section -->
     <section id="future" class="relative z-10 py-16 sm:py-20 bg-slate-950/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1012,6 +1063,7 @@
                         <li><a href="#projects" class="hover:text-emerald-400 transition-colors" data-i18n="footer_coks">Climate Olympiad (COKS)</a></li>
                         <li><a href="#projects" class="hover:text-orange-400 transition-colors" data-i18n="footer_ewgsf">EWGSF প্রকল্প (নারী স্বাবলম্বিতা)</a></li>
                         <li><a href="#activities" class="hover:text-sky-400 transition-colors" data-i18n="footer_act">৬৮টি বাস্তব কার্যক্রম</a></li>
+                        <li><a href="#reels" class="hover:text-rose-400 transition-colors" data-i18n="footer_reels">🎬 ১৪টি ভিডিও রিল</a></li>
                     </ul>
                 </div>
 
@@ -1744,6 +1796,40 @@
         </div>
     </div>
 
+    <!-- FACEBOOK REELS LIGHTBOX MODAL -->
+    <div id="reel-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
+        <div class="glass-panel modal-card bg-slate-950/95 border border-white/15 rounded-3xl overflow-hidden shadow-2xl relative w-full max-w-sm sm:max-w-md flex flex-col max-h-[94vh]">
+            <!-- Modal Header -->
+            <div class="p-3.5 sm:p-4 border-b border-white/10 flex items-center justify-between gap-3 bg-slate-900/90 shrink-0">
+                <div class="flex items-center gap-2 min-w-0">
+                    <span class="w-7 h-7 rounded-lg bg-gradient-to-r from-rose-500 to-orange-500 flex items-center justify-center text-xs text-white shrink-0">🎬</span>
+                    <h3 id="reel-modal-title" class="text-xs sm:text-sm font-bold text-white truncate">
+                        ভিডিও রিল প্লেয়ার
+                    </h3>
+                </div>
+                <button type="button" onclick="closeReelModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-rose-600/80 text-slate-300 hover:text-white flex items-center justify-center text-base transition-colors shrink-0 cursor-pointer" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Video Player Area (Facebook Official Embedded Video) -->
+            <div class="relative bg-black flex items-center justify-center min-h-[460px] sm:min-h-[490px] overflow-hidden" id="reel-modal-iframe-container">
+                <!-- Dynamically injected iframe -->
+            </div>
+
+            <!-- Modal Footer Info -->
+            <div class="p-3.5 sm:p-4 border-t border-white/10 bg-slate-900/95 space-y-2 shrink-0">
+                <p id="reel-modal-desc" class="text-xs text-slate-300 leading-relaxed line-clamp-2"></p>
+                <div class="flex items-center justify-between gap-2 pt-1 text-[11px]">
+                    <span id="reel-modal-tag" class="px-2.5 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300 font-semibold truncate max-w-[180px]"></span>
+                    <a id="reel-modal-fb-link" href="#" target="_blank" rel="noopener noreferrer" class="text-sky-400 hover:underline flex items-center gap-1 font-bold shrink-0">
+                        <span data-i18n="reels_modal_fb_btn">ফেসবুকে দেখুন ↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- LEGAL & POLICIES MODAL (Privacy Policy & Terms of Use) -->
     <div id="legal-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 modal-backdrop hidden">
         <div class="glass-panel modal-card bg-slate-900/95 border border-sky-500/30 rounded-3xl p-5 sm:p-7 max-w-2xl w-full shadow-2xl relative max-h-[92vh] flex flex-col">
@@ -1962,9 +2048,10 @@
     <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
     <script src="js/activities-data.js?v=20261031s"></script>
     <script src="js/gallery-data.js?v=20261031s"></script>
+    <script src="js/reels-data.js?v=20261031a"></script>
     <script src="js/members-data.js?v=20261031p"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261030q"></script>
-    <script src="js/app.js?v=20261031u"></script>
+    <script src="js/app.js?v=20261031v"></script>
 </body>
 </html>

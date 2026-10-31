@@ -161,6 +161,13 @@ const translations = {
         "gal_cat_craft": "🎨 হস্তশিল্প ও উদ্যোক্তা (৫)",
         "gal_cat_partnership": "🌐 পার্টনারশিপ ও সভা (১৫)",
         "gal_view_all_btn": "সবগুলো ৫১টি ছবি দেখুন (+৩৯টি আরো) ▾",
+        "reels_tag": "সোশ্যাল ভিডিও রিলস",
+        "reels_title": "সচেতনতামূলক রিল ও শর্ট ভিডিও",
+        "reels_desc": "যৌতুক প্রতিরোধ, সমতা, পরিবেশ, ক্লাইমেট, মাসিক স্বাস্থ্য ও তারুণ্যের ভাবনা নিয়ে কারু শিখার সচেতনতামূলক রিলসমূহ সরাসরি উপভোগ করুন।",
+        "reels_count_badge": "১৪টি রিল ভিডিও",
+        "reels_visit_page": "অফিসিয়াল ফেসবুক পেজের সকল রিল ও ভিডিও এক্সপ্লোর করুন",
+        "nav_reels": "ভিডিও রিলস",
+        "footer_reels": "১৪টি সচেতনতামূলক রিল",
         "volunteer_cta_title": "কারু শিখার আলোকযাত্রায় যুক্ত হোন",
         "volunteer_cta_desc": "২০১৯ সাল থেকে শুরু হওয়া আমাদের সামাজিক বিপ্লবে আপনার সক্রিয় অংশগ্রহণ, মেধা কিংবা সামর্থ্য দিয়ে সমাজ বিনির্মাণে ভূমিকা রাখুন।",
         "btn_apply_volunteer": "ভলান্টিয়ার ফর্ম পূরণ করুন",
@@ -567,6 +574,13 @@ const translations = {
         "gal_cat_craft": "🎨 Crafts & Enterprise (5)",
         "gal_cat_partnership": "🌐 Partnerships & Forum (15)",
         "gal_view_all_btn": "View All 51 Photos (+39 more) ▾",
+        "reels_tag": "Social Video Reels",
+        "reels_title": "Awareness Reels & Short Videos",
+        "reels_desc": "Watch Karu Shikha's high-impact grassroots awareness reels on anti-dowry, equality, climate action, menstrual health, and youth voice.",
+        "reels_count_badge": "14 Video Reels",
+        "reels_visit_page": "Explore all reels on our official Facebook Page",
+        "nav_reels": "Reels",
+        "footer_reels": "14 Advocacy Reels",
         "volunteer_cta_title": "Become a Torchbearer of Karu Shikha",
         "volunteer_cta_desc": "Join our community journey started in 2019. Your contribution of passion, skills, or resources sparks lasting generational change.",
         "btn_apply_volunteer": "Submit Volunteer Application",
@@ -923,6 +937,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 8. Photo Gallery Explorer & Lightbox
     setupGalleryExplorer();
 
+    // 8.5 Facebook Reels Slider & Modal Player
+    setupReelsSlider();
+
     // 9. Members Directory (7 Executive + 25 General Members)
     setupMembersExplorer();
 
@@ -1058,6 +1075,11 @@ function applyTranslations(lang) {
             btn.textContent = dict['comm_tab_gen'] || btn.textContent;
         }
     });
+
+    // Re-render Reels with translated titles and tags
+    if (typeof renderReels === 'function') {
+        renderReels();
+    }
 }
 
 function initCounters() {
@@ -1501,6 +1523,169 @@ window.closeGalleryLightbox = function() {
     const lightbox = document.getElementById('gallery-lightbox');
     if (lightbox) {
         lightbox.classList.add('hidden');
+    }
+};
+
+// ==========================================
+// 8.5 FACEBOOK REELS SLIDER & LIGHTBOX PLAYER
+// ==========================================
+function setupReelsSlider() {
+    renderReels();
+
+    const prevBtn = document.getElementById('reels-prev-btn');
+    const nextBtn = document.getElementById('reels-next-btn');
+    const track = document.getElementById('reels-slider-track');
+
+    if (prevBtn && track) {
+        prevBtn.addEventListener('click', () => {
+            const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 16 : 280;
+            track.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+        });
+    }
+
+    if (nextBtn && track) {
+        nextBtn.addEventListener('click', () => {
+            const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 16 : 280;
+            track.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+        });
+    }
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeReelModal();
+        }
+    });
+
+    // Close on backdrop click
+    const modal = document.getElementById('reel-modal');
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeReelModal();
+            }
+        });
+    }
+}
+
+function renderReels() {
+    const track = document.getElementById('reels-slider-track');
+    const countBadge = document.getElementById('reels-count-badge');
+    if (!track || !window.KARU_SHIKHA_REELS) return;
+
+    const list = window.KARU_SHIKHA_REELS;
+    const isBn = currentLang === 'bn';
+
+    if (countBadge) {
+        countBadge.textContent = isBn ? `${list.length}টি রিল ভিডিও` : `${list.length} Video Reels`;
+    }
+
+    track.innerHTML = list.map((r) => {
+        const title = isBn ? r.title : (r.title_en || r.title);
+        const tag = isBn ? r.tag : (r.tag_en || r.tag);
+        const date = isBn ? r.date : (r.date_en || r.date);
+        const watchLabel = isBn ? 'প্লে করুন ▶' : 'Watch Reel ▶';
+
+        return `
+            <div class="reel-card shrink-0 w-[230px] sm:w-[260px] aspect-[9/16] rounded-3xl overflow-hidden relative border border-white/10 hover:border-sky-400/60 transition-all transform hover:-translate-y-1.5 shadow-xl group cursor-pointer snap-start bg-slate-900 select-none flex flex-col justify-between" onclick="openReelModal('${r.id}')" title="${title}">
+                <!-- Background Image / Thumbnail -->
+                <div class="absolute inset-0 z-0 overflow-hidden bg-slate-950">
+                    <img src="${r.thumbnail}" alt="${title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hidden absolute inset-0 bg-gradient-to-tr from-slate-950 via-sky-950 to-slate-900 flex flex-col items-center justify-center p-4 text-center">
+                        <span class="text-4xl mb-2">🎬</span>
+                        <span class="text-xs font-bold text-sky-300">${tag}</span>
+                    </div>
+                </div>
+
+                <!-- Top & Bottom Gradient Overlay -->
+                <div class="absolute inset-0 z-10 bg-gradient-to-t from-slate-950 via-slate-950/30 to-black/60 pointer-events-none"></div>
+
+                <!-- Card Top Info -->
+                <div class="relative z-20 p-3.5 flex items-center justify-between gap-2">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-slate-950/80 backdrop-blur-md border border-white/15 text-sky-300 truncate max-w-[170px] shadow-sm">
+                        🎬 ${tag}
+                    </span>
+                    <span class="w-6 h-6 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 flex items-center justify-center text-[10px] font-bold shrink-0">
+                        📱
+                    </span>
+                </div>
+
+                <!-- Center Animated Play Button -->
+                <div class="relative z-20 self-center flex items-center justify-center">
+                    <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] text-white flex items-center justify-center text-lg sm:text-xl shadow-xl shadow-sky-500/35 group-hover:scale-115 transition-all pl-1">
+                        ▶
+                    </div>
+                </div>
+
+                <!-- Card Bottom Info -->
+                <div class="relative z-20 p-4 pt-2">
+                    <div class="flex items-center gap-1.5 text-[10px] text-slate-300 font-medium mb-1.5">
+                        <span>📅</span>
+                        <span>${date}</span>
+                    </div>
+                    <h4 class="text-xs sm:text-[13px] font-bold text-white line-clamp-2 leading-snug group-hover:text-sky-300 transition-colors drop-shadow-md">
+                        ${title}
+                    </h4>
+                    <div class="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-sky-400 font-bold">
+                        <span>${watchLabel}</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+window.openReelModal = function(id) {
+    const list = window.KARU_SHIKHA_REELS || [];
+    const reel = list.find(r => r.id === id);
+    if (!reel) return;
+
+    const modal = document.getElementById('reel-modal');
+    const titleEl = document.getElementById('reel-modal-title');
+    const descEl = document.getElementById('reel-modal-desc');
+    const tagEl = document.getElementById('reel-modal-tag');
+    const fbLink = document.getElementById('reel-modal-fb-link');
+    const container = document.getElementById('reel-modal-iframe-container');
+
+    const isBn = currentLang === 'bn';
+    const title = isBn ? reel.title : (reel.title_en || reel.title);
+    const desc = isBn ? reel.desc : (reel.desc_en || reel.desc);
+    const tag = isBn ? reel.tag : (reel.tag_en || reel.tag);
+
+    if (titleEl) titleEl.textContent = title;
+    if (descEl) descEl.textContent = desc;
+    if (tagEl) tagEl.textContent = `🎬 ${tag}`;
+    if (fbLink) fbLink.href = reel.facebook_url;
+
+    if (container) {
+        container.innerHTML = `
+            <div class="relative w-full flex items-center justify-center p-2 bg-black min-h-[460px] sm:min-h-[490px]">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267" 
+                    width="267" height="476" 
+                    style="border:none;overflow:hidden;border-radius:14px;max-width:100%;box-shadow:0 10px 30px rgba(0,0,0,0.5);" 
+                    scrolling="no" frameborder="0" allowfullscreen="true" 
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            </div>
+        `;
+    }
+
+    if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeReelModal = function() {
+    const modal = document.getElementById('reel-modal');
+    const container = document.getElementById('reel-modal-iframe-container');
+    if (container) {
+        container.innerHTML = '';
+    }
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
     }
 };
 
