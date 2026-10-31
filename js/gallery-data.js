@@ -245,21 +245,6 @@ window.KARU_SHIKHA_GALLERY = [
     "src": "youth-day-dialogue-1.webp"
   },
   {
-    "file": "medical-camp-children.webp",
-    "title": "সুবিধাবঞ্চিত শিশুদের সুস্বাস্থ্য নিশ্চিত করতে ফ্রি মেডিকেল ক্যাম্প আয়োজন",
-    "title_en": "Free Medical Health Camp for Underprivileged Children",
-    "category": "children",
-    "category_bn": "শিশু শিক্ষা ও যত্ন (PYM)",
-    "tag": "ফ্রি মেডিকেল ক্যাম্প",
-    "date": "২৬ জুলাই ২০২৬",
-    "date_en": "26 July 2026",
-    "location": "ফরিদপুর",
-    "location_en": "Faridpur",
-    "facebook_url": "https://www.facebook.com/61560289663754/posts/122223309968342988/",
-    "size_kb": 77.6,
-    "src": "medical-camp-children.webp"
-  },
-  {
     "file": "pym-healthcare-checkup.webp",
     "title": "Project Your Mentor শিশুদের সুস্বাস্থ্য রক্ষায় ফ্রি হেলথ চেকআপ ও পুষ্টি পরামর্শ ক্যাম্প",
     "title_en": "Free Pediatric Health Checkup & Nutrition Counseling for PYM Children",
