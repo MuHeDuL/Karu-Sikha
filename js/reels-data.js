@@ -6,20 +6,6 @@
 
 window.KARU_SHIKHA_REELS = [
     {
-        id: "1922618778640066",
-        title: "Project Your Mentor | শিশুশিক্ষা ও অন্তর্ভুক্তিমূলক ভবিষ্যৎ নেতৃত্ব",
-        title_en: "Project Your Mentor | Holistic Child Education & Future Leadership",
-        desc: "খেলায়, গল্পে আর ভালোবাসায় গড়ে ওঠে শিশুদের আত্মবিশ্বাস ও উজ্জ্বল ভবিষ্যৎ। সুবিধাবঞ্চিত শিশুদের মেধা বিকাশ ও পাঠদানের অনুপ্রেরণামূলক ভিডিও।",
-        desc_en: "Inspiring reel highlighting holistic learning, fun, care, and child mentorship under Project Your Mentor.",
-        thumbnail: "assets/reels/reel-1922618778640066.webp",
-        category: "children",
-        tag: "Project Your Mentor",
-        tag_en: "Child Mentorship",
-        date: "৩১ অক্টোবর ২০২৬",
-        date_en: "31 October 2026",
-        facebook_url: "https://www.facebook.com/reel/1922618778640066/"
-    },
-    {
         id: "2928709177498857",
         title: "উপহারের নামে বলিদান | যৌতুক ও তথাকথিত লৌকিকতার বিরুদ্ধে সচেতনতা",
         title_en: "Sacrifice in Name of Gifts | Campaign Against Dowry & Harmful Customs",
@@ -88,6 +74,20 @@ window.KARU_SHIKHA_REELS = [
         date: "২৮ জানুয়ারি ২০২৬",
         date_en: "28 January 2026",
         facebook_url: "https://www.facebook.com/reel/869099655744457/"
+    },
+    {
+        id: "1922618778640066",
+        title: "Project Your Mentor | শিশুশিক্ষা ও অন্তর্ভুক্তিমূলক ভবিষ্যৎ নেতৃত্ব",
+        title_en: "Project Your Mentor | Holistic Child Education & Future Leadership",
+        desc: "খেলায়, গল্পে আর ভালোবাসায় গড়ে ওঠে শিশুদের আত্মবিশ্বাস ও উজ্জ্বল ভবিষ্যৎ। সুবিধাবঞ্চিত শিশুদের মেধা বিকাশ ও পাঠদানের অনুপ্রেরণামূলক ভিডিও।",
+        desc_en: "Inspiring reel highlighting holistic learning, fun, care, and child mentorship under Project Your Mentor.",
+        thumbnail: "assets/reels/reel-1922618778640066.webp",
+        category: "children",
+        tag: "Project Your Mentor",
+        tag_en: "Child Mentorship",
+        date: "১০ জানুয়ারি ২০২৬",
+        date_en: "10 January 2026",
+        facebook_url: "https://www.facebook.com/reel/1922618778640066/"
     },
     {
         id: "872606782187556",
