@@ -2267,15 +2267,39 @@ window.openProjectAlbum = function(projKey) {
     if (titleEl) titleEl.textContent = isBn ? data.title_bn : data.title_en;
     if (subEl) subEl.textContent = isBn ? `মোট ${data.events.length}টি ভেরিফায়েড ইভেন্ট ও অফিশিয়াল ফেসবুক পোস্টের রেকর্ড` : `Total ${data.events.length} verified milestones with direct Facebook post records`;
 
+    const albumAccentStyles = {
+        emerald: {
+            border: 'hover:border-emerald-500/40',
+            btnBg: 'hover:bg-emerald-600',
+            btnBorder: 'hover:border-emerald-400'
+        },
+        orange: {
+            border: 'hover:border-orange-500/40',
+            btnBg: 'hover:bg-orange-600',
+            btnBorder: 'hover:border-orange-400'
+        },
+        sky: {
+            border: 'hover:border-sky-500/40',
+            btnBg: 'hover:bg-sky-600',
+            btnBorder: 'hover:border-sky-400'
+        },
+        indigo: {
+            border: 'hover:border-indigo-500/40',
+            btnBg: 'hover:bg-indigo-600',
+            btnBorder: 'hover:border-indigo-400'
+        }
+    };
+
     if (gridEl) {
         gridEl.innerHTML = data.events.map((ev, idx) => {
             const evTitle = isBn ? ev.title_bn : ev.title_en;
             const evTag = isBn ? ev.tag_bn : ev.tag_en;
             const evDate = isBn ? ev.date_bn : ev.date_en;
             const viewFb = isBn ? "ফেসবুকে পোস্টটি দেখুন ↗" : "View on Facebook ↗";
+            const accStyle = albumAccentStyles[data.accent] || albumAccentStyles.sky;
 
             return `
-                <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-${data.accent}-500/40 transition-all flex flex-col group/card bg-slate-950/60 shadow-lg">
+                <div class="glass-panel rounded-2xl overflow-hidden border border-white/10 ${accStyle.border} transition-all flex flex-col group/card bg-slate-950/60 shadow-lg">
                     <div class="relative w-full h-44 overflow-hidden bg-slate-900">
                         <img src="${ev.img}" alt="${evTitle}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover/card:scale-105 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-[10px] font-bold text-white border border-white/15">
@@ -2291,7 +2315,7 @@ window.openProjectAlbum = function(projKey) {
                                 ${evTitle}
                             </h4>
                         </div>
-                        <a href="${ev.url}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-xl bg-slate-900/90 hover:bg-${data.accent}-600 border border-white/15 hover:border-${data.accent}-400 text-xs font-semibold text-white transition-all text-center flex items-center justify-center gap-1.5 shadow">
+                        <a href="${ev.url}" target="_blank" rel="noopener noreferrer" class="w-full py-2 px-3 rounded-xl bg-slate-900/90 ${accStyle.btnBg} border border-white/15 ${accStyle.btnBorder} text-xs font-semibold text-white transition-all text-center flex items-center justify-center gap-1.5 shadow">
                             <span>${viewFb}</span>
                         </a>
                     </div>

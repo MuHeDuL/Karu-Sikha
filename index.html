@@ -25,35 +25,10 @@
     <meta name="twitter:title" content="কারু শিখা ইয়ুথ ডেভেলপমেন্ট সোসাইটি | Karu Shikha Youth Development Society">
     <meta name="twitter:description" content="দক্ষ যুবশক্তিই আগামীর বাংলাদেশ — তরুণদের মেধা, প্রযুক্তি ও নেতৃত্বের সমন্বিত বিকাশ।">
     <meta name="twitter:image" content="assets/karu-shikha-logo.webp">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: {
-                            900: '#060d19',
-                            800: '#0a1324',
-                            700: '#101d36',
-                            600: '#1b2a4a'
-                        },
-                        karu: {
-                            blue: '#0284c7',
-                            sky: '#38bdf8',
-                            orange: '#f97316',
-                            amber: '#f59e0b',
-                            crimson: '#f43f5e',
-                            emerald: '#10b981'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Pre-built Production Tailwind CSS (Ultra-fast, zero-delay static styles) -->
+    <link rel="stylesheet" href="css/tailwind.min.css?v=20261031a">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20261031g">
+    <link rel="stylesheet" href="css/style.css?v=20261031h">
 </head>
 <body class="bg-[#060d19] text-slate-100 selection:bg-orange-500 selection:text-slate-950 antialiased">
 
@@ -2558,8 +2533,8 @@
         </a>
     </aside>
 
-    <!-- Three.js CDN (Loaded non-blocking at bottom for instant FCP load) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js (Local, zero CDN latency, 100% offline capable) -->
+    <script src="js/three.min.js?v=r128"></script>
 
     <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
     <script src="js/activities-data.js?v=20261031u"></script>
@@ -2568,6 +2543,6 @@
     <script src="js/members-data.js?v=20261031p"></script>
     <script src="js/logo-points.js?v=20261030q"></script>
     <script src="js/three-scene.js?v=20261031t"></script>
-    <script src="js/app.js?v=20261031ap"></script>
+    <script src="js/app.js?v=20261031aq"></script>
 </body>
 </html>

@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@source "../index.html";
+@source "../js";
+
+@theme {
+  --color-dark-900: #060d19;
+  --color-dark-800: #0a1324;
+  --color-dark-700: #101d36;
+  --color-dark-600: #1b2a4a;
+
+  --color-karu-blue: #0284c7;
+  --color-karu-sky: #38bdf8;
+  --color-karu-orange: #f97316;
+  --color-karu-amber: #f59e0b;
+  --color-karu-crimson: #f43f5e;
+  --color-karu-emerald: #10b981;
+}
