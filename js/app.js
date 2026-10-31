@@ -1669,14 +1669,12 @@ function renderReels() {
                     </span>
                 </div>
 
-                <!-- Center Animated Play Button (Gradient Stroke + White Transparent Fill + White Triangle) -->
+                <!-- Center Animated Play Button (Pure White Transparent Glassmorphism + White Triangle) -->
                 <div class="relative z-20 self-center flex items-center justify-center">
-                    <div class="p-[1.5px] rounded-full bg-gradient-to-r from-[#0284c7] via-[#38bdf8] to-[#f97316] shadow-lg shadow-black/50 group-hover:scale-115 transition-transform duration-300">
-                        <div class="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center transition-colors group-hover:bg-white/30">
-                            <svg class="w-5 h-5 text-white fill-current ml-0.5 drop-shadow-md" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/20 group-hover:bg-white/30 backdrop-blur-md border border-white/50 group-hover:border-white/80 shadow-xl shadow-black/40 flex items-center justify-center group-hover:scale-115 transition-all duration-300">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white fill-current ml-0.5 drop-shadow-md" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
                     </div>
                 </div>
 
@@ -1721,11 +1719,44 @@ window.openReelModal = function(id) {
     if (tagEl) tagEl.textContent = `🎬 ${tag}`;
     if (fbLink) fbLink.href = reel.facebook_url;
 
+    // Responsive Video Dimensions: Large & sharp on Desktop; optimized for Mobile screens
+    const winW = window.innerWidth || document.documentElement.clientWidth;
+    const winH = window.innerHeight || document.documentElement.clientHeight;
+
+    let vWidth = 267;
+    let vHeight = 476;
+
+    if (winW >= 1200 && winH >= 860) {
+        // Large desktop monitor (1080p+)
+        vWidth = 380;
+        vHeight = 676;
+    } else if (winW >= 768 && winH >= 760) {
+        // Standard desktop / laptop
+        vWidth = 350;
+        vHeight = 622;
+    } else if (winW >= 640 && winH >= 680) {
+        // Small laptop / tablet
+        vWidth = 300;
+        vHeight = 533;
+    } else {
+        // Mobile screens: optimized snug fit for smartphone viewport
+        const maxAvailableH = winH - 125; // modal header (~45px) + footer (~65px) + padding
+        if (maxAvailableH < 476 && maxAvailableH >= 340) {
+            vHeight = Math.floor(maxAvailableH);
+            vWidth = Math.floor(vHeight * (9 / 16));
+        } else {
+            vWidth = 267;
+            vHeight = 476;
+        }
+    }
+
     if (container) {
+        container.style.width = `${vWidth}px`;
+        container.style.height = `${vHeight}px`;
         container.innerHTML = `
-            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=267" 
-                width="267" height="476" 
-                style="border:none;overflow:hidden;width:267px;height:476px;display:block;" 
+            <iframe src="https://www.facebook.com/plugins/video.php?height=${vHeight}&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F${encodeURIComponent(reel.id)}%2F&show_text=false&width=${vWidth}" 
+                width="${vWidth}" height="${vHeight}" 
+                style="border:none;overflow:hidden;width:${vWidth}px;height:${vHeight}px;display:block;" 
                 scrolling="no" frameborder="0" allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="${title}">
@@ -1744,6 +1775,8 @@ window.closeReelModal = function() {
     const container = document.getElementById('reel-modal-iframe-container');
     if (container) {
         container.innerHTML = '';
+        container.style.width = '';
+        container.style.height = '';
     }
     if (modal) {
         modal.classList.add('hidden');
