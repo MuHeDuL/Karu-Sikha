@@ -396,51 +396,98 @@ class KaruShikhaHero3D {
         });
 
         // -------------------------------------------------------------
-        // Mobile Gyroscope & Accelerometer Tilt Detection (DeviceOrientation)
+        // Multi-Sensor Mobile Tilt Engine (Orientation + Accelerometer Motion)
         // -------------------------------------------------------------
-        const handleOrientation = (e) => {
-            if (e.gamma === null || e.beta === null) return;
+        let lastSensorEventTime = 0;
+        let activeSensorType = 'none';
 
-            // gamma: left-to-right tilt in degrees [-90, 90]
-            // Clamped to [-35, 35] for comfortable natural hand holding range
-            const gamma = Math.max(-35, Math.min(35, e.gamma || 0));
-
-            // beta: front-to-back tilt in degrees [-180, 180]
-            // Natural portrait reading angle is ~45 degrees upright
-            const restingBeta = 45;
-            const betaDiff = (e.beta || restingBeta) - restingBeta;
-            const clampedBeta = Math.max(-30, Math.min(30, betaDiff));
-
-            this.targetTilt.x = gamma / 35; // Range: [-1, 1]
-            this.targetTilt.y = clampedBeta / 30; // Range: [-1, 1]
+        const onSensorTilt = (normX, normY, source) => {
+            this.targetTilt.x = normX;
+            this.targetTilt.y = normY;
             this.isTiltActive = true;
+            activeSensorType = source;
+            lastSensorEventTime = performance.now();
+
+            if (typeof window.updateTiltUiPill === 'function') {
+                window.updateTiltUiPill(true);
+            }
         };
 
-        // Android, Chrome, Firefox, Samsung Internet - activate immediately without prompt
-        if (typeof window !== 'undefined' && 'DeviceOrientationEvent' in window) {
-            if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
-                window.addEventListener('deviceorientation', handleOrientation, { passive: true });
-            }
-        }
+        // 1. DeviceOrientationEvent (Standard Gyroscope)
+        const handleOrientation = (e) => {
+            if (e.gamma === null || e.beta === null || typeof e.gamma === 'undefined' || typeof e.beta === 'undefined') return;
 
-        // iOS Safari (iOS 13+) requires user gesture to grant orientation permission
-        let gyroPermissionRequested = false;
-        const requestIosGyro = () => {
-            if (gyroPermissionRequested) return;
-            gyroPermissionRequested = true;
+            const gamma = Math.max(-30, Math.min(30, e.gamma || 0));
+            const restingBeta = 45;
+            const deltaBeta = (e.beta || restingBeta) - restingBeta;
+            const beta = Math.max(-28, Math.min(28, deltaBeta));
+
+            const normX = gamma / 24.0;
+            const normY = beta / 22.0;
+
+            onSensorTilt(normX, normY, 'orientation');
+        };
+
+        // 2. DeviceMotionEvent (Raw Accelerometer with Gravity)
+        // High-reliability fallback across 100% of Android & iOS devices without requiring compass calibration
+        const handleMotion = (e) => {
+            if (activeSensorType === 'orientation' && performance.now() - lastSensorEventTime < 350) return;
+
+            const acc = e.accelerationIncludingGravity;
+            if (!acc || acc.x === null || acc.y === null || typeof acc.x === 'undefined') return;
+
+            // Tilting phone right: gravity pulls along -X
+            const normX = Math.max(-1, Math.min(1, -acc.x / 4.2));
+
+            // Tilting phone back/forward (standard reading posture has acc.y around 6.8 m/s^2)
+            const restingY = 6.8;
+            const diffY = acc.y - restingY;
+            const normY = Math.max(-1, Math.min(1, diffY / 3.8));
+
+            onSensorTilt(normX, normY, 'motion');
+        };
+
+        const attachSensorListeners = () => {
+            if (typeof window === 'undefined') return;
+            window.addEventListener('deviceorientation', handleOrientation, { passive: true });
+            window.addEventListener('deviceorientationabsolute', handleOrientation, { passive: true });
+            window.addEventListener('devicemotion', handleMotion, { passive: true });
+        };
+
+        // Auto-attach immediately for Android / Chrome / Firefox
+        attachSensorListeners();
+
+        // iOS Safari (iOS 13+) permission handler
+        this.requestMobileTiltPermission = () => {
             if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
                 DeviceOrientationEvent.requestPermission()
                     .then(state => {
                         if (state === 'granted') {
-                            window.addEventListener('deviceorientation', handleOrientation, { passive: true });
+                            attachSensorListeners();
+                            if (typeof window.updateTiltUiPill === 'function') window.updateTiltUiPill(true);
+                        } else {
+                            if (typeof window.updateTiltUiPill === 'function') window.updateTiltUiPill(false);
                         }
                     })
-                    .catch(() => {});
+                    .catch(() => {
+                        if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
+                            DeviceMotionEvent.requestPermission()
+                                .then(mState => {
+                                    if (mState === 'granted') {
+                                        attachSensorListeners();
+                                        if (typeof window.updateTiltUiPill === 'function') window.updateTiltUiPill(true);
+                                    }
+                                })
+                                .catch(() => {});
+                        }
+                    });
+            } else {
+                attachSensorListeners();
+                if (typeof window.updateTiltUiPill === 'function') window.updateTiltUiPill(true);
             }
         };
 
-        window.addEventListener('touchstart', requestIosGyro, { passive: true, once: true });
-        window.addEventListener('pointerdown', requestIosGyro, { passive: true, once: true });
+        window.requestMobile3DTiltPermission = () => this.requestMobileTiltPermission();
     }
 
     onResize() {
@@ -577,9 +624,9 @@ class KaruShikhaHero3D {
         posAttr.needsUpdate = true;
         colAttr.needsUpdate = true;
 
-        // Smoothly interpolate device tilt from mobile gyroscope
+        // Smoothly interpolate device tilt from mobile sensors
         if (this.isTiltActive) {
-            this.tilt.lerp(this.targetTilt, 0.08);
+            this.tilt.lerp(this.targetTilt, 0.12);
         }
 
         // Active interaction calculation: Touch/Mouse + Mobile Gyro Tilt
@@ -592,7 +639,7 @@ class KaruShikhaHero3D {
             activeInteractX = this.mouse.x;
             activeInteractY = this.mouse.y;
             hasActiveInteraction = true;
-        } else if (this.isTiltActive && (Math.abs(this.tilt.x) > 0.01 || Math.abs(this.tilt.y) > 0.01)) {
+        } else if (this.isTiltActive && (Math.abs(this.tilt.x) > 0.005 || Math.abs(this.tilt.y) > 0.005)) {
             // Phone tilt gives smooth, continuous 3D gyro perspective
             activeInteractX = this.tilt.x;
             activeInteractY = this.tilt.y;
@@ -604,61 +651,69 @@ class KaruShikhaHero3D {
         }
 
         if (this.currentShape === 'logo') {
-            // Elegant continuous 3D floating & tilt reacting to phone tilt, touch or ambient wave
-            let targetRotY = Math.sin(time * 0.75) * 0.16;
-            let targetRotX = Math.cos(time * 0.55) * 0.08;
+            // Visibly responsive 3D floating & tilt reacting to phone tilt, touch or ambient wave
+            const isTilted = this.isTiltActive && !this.isTouchActive && (Math.abs(this.tilt.x) > 0.04 || Math.abs(this.tilt.y) > 0.04);
+            const ambientFactor = isTilted ? 0.2 : 1.0;
+            let targetRotY = Math.sin(time * 0.75) * 0.12 * ambientFactor;
+            let targetRotX = Math.cos(time * 0.55) * 0.07 * ambientFactor;
+
             if (hasActiveInteraction) {
-                targetRotY += activeInteractX * 0.45;
-                targetRotX -= activeInteractY * 0.35;
+                targetRotY += activeInteractX * 0.72; // Up to ~42 degrees visible rotation
+                targetRotX -= activeInteractY * 0.52; // Up to ~30 degrees visible pitch
             }
-            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.10;
-            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.10;
+
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.12;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.12;
             this.points.position.y = Math.sin(time * 1.2) * 0.28;
+
+            // Z roll rotation for ultra-tactile physical feel
+            let targetRotZ = hasActiveInteraction ? -activeInteractX * 0.22 : 0;
+            this.points.rotation.z += (targetRotZ - this.points.rotation.z) * 0.10;
         } else if (this.currentShape === 'shikha') {
             let targetRotY = Math.sin(time * 0.4) * 0.15;
             let targetRotX = Math.cos(time * 0.3) * 0.06;
             if (hasActiveInteraction) {
-                targetRotY += activeInteractX * 0.28;
-                targetRotX -= activeInteractY * 0.20;
+                targetRotY += activeInteractX * 0.40;
+                targetRotX -= activeInteractY * 0.28;
             }
-            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.08;
-            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.08;
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.10;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.10;
             this.points.position.y = 0;
         } else if (this.currentShape === 'hands') {
             let targetRotY = Math.sin(time * 0.3) * 0.15;
             let targetRotX = Math.sin(time * 0.2) * 0.08;
             if (hasActiveInteraction) {
-                targetRotY += activeInteractX * 0.28;
-                targetRotX -= activeInteractY * 0.20;
+                targetRotY += activeInteractX * 0.40;
+                targetRotX -= activeInteractY * 0.28;
             }
-            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.08;
-            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.08;
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.10;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.10;
             this.points.position.y = 0;
         } else {
             let targetRotY = Math.sin(time * 0.4) * 0.18;
             let targetRotX = Math.cos(time * 0.3) * 0.08;
             if (hasActiveInteraction) {
-                targetRotY += activeInteractX * 0.32;
-                targetRotX -= activeInteractY * 0.24;
+                targetRotY += activeInteractX * 0.45;
+                targetRotX -= activeInteractY * 0.32;
             }
-            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.08;
-            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.08;
+            this.points.rotation.y += (targetRotY - this.points.rotation.y) * 0.10;
+            this.points.rotation.x += (targetRotX - this.points.rotation.x) * 0.10;
             this.points.position.y = 0;
         }
 
         let targetCamX = 0;
         let targetCamY = 0;
         if (hasActiveInteraction) {
-            targetCamX = activeInteractX * 3.6;
-            targetCamY = activeInteractY * 2.6;
+            targetCamX = activeInteractX * 5.5;
+            targetCamY = activeInteractY * 3.8;
         }
-        this.camera.position.x += (targetCamX - this.camera.position.x) * 0.06;
-        this.camera.position.y += (targetCamY - this.camera.position.y) * 0.06;
+        this.camera.position.x += (targetCamX - this.camera.position.x) * 0.08;
+        this.camera.position.y += (targetCamY - this.camera.position.y) * 0.08;
         this.camera.lookAt(0, 0, 0);
 
         if (this.dust) {
-            this.dust.rotation.y = time * 0.02 + (hasActiveInteraction ? activeInteractX * 0.12 : 0);
-            this.dust.rotation.x = time * 0.015 - (hasActiveInteraction ? activeInteractY * 0.10 : 0);
+            this.dust.rotation.y = time * 0.02 + (hasActiveInteraction ? activeInteractX * 0.35 : 0);
+            this.dust.rotation.x = time * 0.015 - (hasActiveInteraction ? activeInteractY * 0.25 : 0);
         }
 
         this.renderer.render(this.scene, this.camera);

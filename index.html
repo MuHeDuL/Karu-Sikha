@@ -171,7 +171,7 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-4">
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-3">
                 <a href="#projects" class="w-full sm:w-auto px-6 sm:px-7 py-3 rounded-xl bg-gradient-to-r from-[#0284c7] via-[#0ea5e9] to-[#f97316] hover:opacity-95 text-white font-extrabold text-xs sm:text-sm shadow-xl shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
                     <span data-i18n="hero_btn_explore">চলমান প্রকল্প ও কার্যক্রম</span>
                     <span>↓</span>
@@ -182,7 +182,15 @@
                 </button>
             </div>
 
-            <p class="text-[11px] text-slate-400 mt-3 font-medium pointer-events-none" data-i18n="hero_hint">
+            <!-- Interactive 3D Motion / Tilt Control Pill -->
+            <div class="mt-3 flex items-center justify-center">
+                <button id="enable-3d-tilt-btn" type="button" onclick="if(window.requestMobile3DTiltPermission) window.requestMobile3DTiltPermission();" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/90 hover:bg-sky-500/20 border border-sky-400/40 hover:border-sky-400 text-sky-300 hover:text-white text-xs font-bold shadow-lg shadow-sky-500/15 active:scale-95 transition-all cursor-pointer select-none">
+                    <span id="tilt-status-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span id="tilt-status-text" data-i18n="tilt_active">📱 ফোন নাড়িয়ে ৩ডি দেখুন (Tilt Mode)</span>
+                </button>
+            </div>
+
+            <p class="text-[11px] text-slate-400 mt-2.5 font-medium pointer-events-none" data-i18n="hero_hint">
                 💡 মাউস, টাচ অথবা মোবাইল ফোন নড়িয়ে (Tilt) ৩ডি লোগোর ত্রিমাত্রিক মুভমেন্ট দেখুন
             </p>
         </div>
@@ -2544,12 +2552,12 @@
     <script src="js/three.min.js?v=r128"></script>
 
     <!-- Scripts (In Order: Data -> 3D Logo Points -> Three Scene -> App Logic) -->
-    <script src="js/activities-data.js?v=20261031tilt"></script>
-    <script src="js/gallery-data.js?v=20261031tilt"></script>
-    <script src="js/reels-data.js?v=20261031tilt"></script>
-    <script src="js/members-data.js?v=20261031tilt"></script>
-    <script src="js/logo-points.js?v=20261031tilt"></script>
-    <script src="js/three-scene.js?v=20261031tilt"></script>
-    <script src="js/app.js?v=20261031tilt"></script>
+    <script src="js/activities-data.js?v=20261031tilt2"></script>
+    <script src="js/gallery-data.js?v=20261031tilt2"></script>
+    <script src="js/reels-data.js?v=20261031tilt2"></script>
+    <script src="js/members-data.js?v=20261031tilt2"></script>
+    <script src="js/logo-points.js?v=20261031tilt2"></script>
+    <script src="js/three-scene.js?v=20261031tilt2"></script>
+    <script src="js/app.js?v=20261031tilt2"></script>
 </body>
 </html>

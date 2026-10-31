@@ -38,6 +38,7 @@ const translations = {
         "hero_btn_explore": "চলমান প্রকল্প ও কার্যক্রম",
         "hero_btn_volunteer": "আমাদের সাথে যুক্ত হোন",
         "hero_hint": "💡 মাউস, টাচ অথবা মোবাইল ফোন নড়িয়ে (Tilt) ৩ডি লোগোর ত্রিমাত্রিক মুভমেন্ট দেখুন",
+        "tilt_active": "📱 ফোন নাড়িয়ে ৩ডি দেখুন (Tilt Mode)",
         "domain_1": "🌱 যুব উন্নয়ন",
         "domain_2": "👩 নারী ক্ষমতায়ন",
         "domain_3": "📚 শিশু শিক্ষা",
@@ -468,6 +469,7 @@ const translations = {
         "hero_btn_explore": "Explore Programs & Projects",
         "hero_btn_volunteer": "Join Our Collective",
         "hero_hint": "💡 Tilt your phone, touch, or move mouse to explore real-time 3D Logo depth & physics",
+        "tilt_active": "📱 Tilt Phone for 3D Motion (Tilt Mode)",
         "domain_1": "🌱 Youth Development",
         "domain_2": "👩 Women Empowerment",
         "domain_3": "📚 Child Education",
@@ -879,6 +881,24 @@ const INITIAL_VISIBLE_COUNT = 12;
 // Gallery state
 let currentGalleryFilter = 'all';
 
+// Global 3D Tilt UI Pill Status Handler
+window.updateTiltUiPill = function(isActive) {
+    const dot = document.getElementById('tilt-status-dot');
+    const text = document.getElementById('tilt-status-text');
+    if (!dot || !text) return;
+    if (isActive) {
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse';
+        text.textContent = currentLang === 'bn' 
+            ? '📱 ৩ডি টিল্ট সক্রিয় (ফোন নাড়ান) ✓' 
+            : '📱 3D Tilt Active (Tilt Phone) ✓';
+    } else {
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse';
+        text.textContent = currentLang === 'bn' 
+            ? '📱 ৩ডি টিল্ট চালু করতে ট্যাপ করুন' 
+            : '📱 Tap to Enable 3D Tilt Mode';
+    }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize 3D Hero
     try {
@@ -887,6 +907,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } catch (err) {
         console.warn('3D Hero safely caught:', err);
+    }
+
+    // Initialize 3D Tilt Pill Status for iOS Safari vs Android
+    if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+        window.updateTiltUiPill(false);
+    } else {
+        window.updateTiltUiPill(true);
     }
 
     // 2. 3D Shape Switcher
